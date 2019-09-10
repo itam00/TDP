@@ -22,10 +22,10 @@ import javax.swing.ImageIcon;
 			setContentPane(contentPane);
 			panelLabels= new JPanel();
 			
-			getContentPane().setLayout(new FlowLayout());
-			panelLabels.setLayout(new GridLayout (6,10));
+			getContentPane().setLayout(null);
+			panelLabels.setLayout(null);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			panelLabels.setLocation(0,0);
+			panelLabels.setBounds(0,0,1024,560);
 			setBounds(150, 0, 1024, 768);
 			
 			panelLabels.setOpaque(false);
@@ -43,23 +43,24 @@ import javax.swing.ImageIcon;
 		}
 		
 		private void agregarDibujo(){
-			ImageIcon imagen = new ImageIcon(this.getClass().getResource("sprites\\sueloMapa.png"));
+			ImageIcon imagen = new ImageIcon(this.getClass().getResource("sprites\\suelo2.png"));
 			dibujo = new JLabel(imagen);
 			dibujo.setOpaque(false);
-			dibujo.setBounds(0, 0, 1024, 768);
-			
 			contentPane.add(dibujo);
+			dibujo.setBounds(0, 0,1024,580);
 		}
 		
 		private void inicializarLabels() {
 			botones= new JLabel[6][10];
 			for (int i=0; i<botones.length;i++)
 				for (int j=0; j<botones[0].length;j++) {
-					botones[i][j]=new JLabel(i+"  "+j);
+					botones[i][j]=new JLabel();
+					botones[i][j].setIcon(new ImageIcon(this.getClass().getResource("sprites\\torre4.png")));
 					botones[i][j].setOpaque(false);
-					botones[i][j].setSize(300, 30);
+					botones[i][j].setSize(62, 62);
 					panelLabels.add(botones[i][j]);
-					botones[i][j].setLocation(i*10, j*10);
+					//contentPane.add(botones[i][j]);
+					botones[i][j].setLocation(i*(1024/6), j*(580/6));
 				}
 			contentPane.add(panelLabels);
 					
