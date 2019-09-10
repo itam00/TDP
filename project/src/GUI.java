@@ -36,7 +36,7 @@
 		}
 		
 		private void agregarDibujo(){
-			ImageIcon imagen = new ImageIcon(this.getClass().getResource("fondo.png"));
+			ImageIcon imagen = new ImageIcon(this.getClass().getResource("sprites\\sueloMapa.png"));
 			dibujo = new JLabel(imagen);
 			
 			dibujo.setBounds(0, 0, 1024, 768);
