@@ -1,9 +1,7 @@
 
-	import java.awt.EventQueue;
 	import java.awt.*;
-	import java.awt.Rectangle;
 
-	import javax.swing.ImageIcon;
+import javax.swing.ImageIcon;
 	import javax.swing.*;
 	import javax.swing.JLabel;
 	import javax.swing.JPanel;
@@ -15,31 +13,28 @@
 		private static final long serialVersionUID = 1L;
 
 		private JPanel contentPane;
-		private JButton[][] botones;
-		private JPanel panelBotones;
+		private JLabel[][] botones;
 		private JLabel dibujo;
+		private JPanel panelLabels;
+		
 		public GUI() {
-
-			getContentPane().setLayout(null);
+			contentPane = new JPanel();
+			setContentPane(contentPane);
+			panelLabels= new JPanel();
 			
+			getContentPane().setLayout(new FlowLayout());
+			panelLabels.setLayout(new GridLayout (6,10));
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			panelLabels.setLocation(0,0);
 			setBounds(150, 0, 1024, 768);
 			
-			contentPane = new JPanel();
-			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			
-		    //contentPane.setLayout();
-			
-			panelBotones= new JPanel();
-			panelBotones.setOpaque(false);
-			panelBotones.setLayout(new GridLayout(6,10));
-			
+			panelLabels.setOpaque(false);
+			inicializarLabels();
 			agregarDibujo();
-			inicializarBotones();
-			panelBotones.setBackground(Color.BLACK);
+
+			
 			this.setVisible(true);
-			contentPane.add(panelBotones);
-			setContentPane(contentPane);
+
 		}
 		
 		public static void main(String[] args) {
@@ -56,16 +51,19 @@
 			contentPane.add(dibujo);
 		}
 		
-		private void inicializarBotones() {
-			botones= new JButton[6][10];
+		private void inicializarLabels() {
+			botones= new JLabel[6][10];
 			for (int i=0; i<botones.length;i++)
-				for (int j=0; j<botones.length;j++) {
-					botones[i][j]=new JButton();
-					botones[i][j].setSize(1024/10,768/6);
+				for (int j=0; j<botones[0].length;j++) {
+					botones[i][j]=new JLabel(i+"  "+j);
 					botones[i][j].setOpaque(false);
-					botones[i][j].setContentAreaFilled(false);
-					panelBotones.add(botones[i][j]);
+					botones[i][j].setSize(300, 30);
+					panelLabels.add(botones[i][j]);
+					botones[i][j].setLocation(i*10, j*10);
 				}
+			contentPane.add(panelLabels);
 					
 		}
 }
+//setbound
+	//setlocation
