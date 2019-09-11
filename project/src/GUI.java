@@ -21,12 +21,14 @@ import javax.swing.ImageIcon;
 			contentPane = new JPanel();
 			setContentPane(contentPane);
 			panelBotones= new JPanel();
+			this.setResizable(false);
 			
 			getContentPane().setLayout(null);
 			panelBotones.setLayout(null);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			panelBotones.setBounds(0,0,1024,580);
 			setBounds(150, 0, 1028, 768);//esto quedo asi porque con 1024 no se ve el borde
+
 			
 			panelBotones.setOpaque(false);
 			inicializarLabels();
