@@ -26,7 +26,7 @@ import javax.swing.ImageIcon;
 			panelBotones.setLayout(null);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			panelBotones.setBounds(0,0,1024,580);
-			setBounds(150, 0, 1035, 768);//esto quedo asi porque con 1024 no se ve el borde
+			setBounds(150, 0, 1028, 768);//esto quedo asi porque con 1024 no se ve el borde
 			
 			panelBotones.setOpaque(false);
 			inicializarLabels();
@@ -34,6 +34,7 @@ import javax.swing.ImageIcon;
 
 			
 			this.setVisible(true);
+			this.setResizable(false);
 
 		}
 		
@@ -62,6 +63,11 @@ import javax.swing.ImageIcon;
 					panelBotones.add(botones[i][j]);
 					botones[i][j].setLocation(j*(1024/10), i*(580/6));
 				}
+			
+			for(int i=0;i<botones.length;i++) {
+				botones[i][8].setIcon(new ImageIcon(this.getClass().getResource("sprites\\proyectil.png")));
+				botones[i][9].setIcon(new ImageIcon(this.getClass().getResource("sprites\\proyectilImpacto.gif")));
+			}
 			contentPane.add(panelBotones);
 					
 		}
