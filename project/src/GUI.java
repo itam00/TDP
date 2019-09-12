@@ -1,7 +1,8 @@
 
 	import java.awt.*;
 
-import javax.swing.ImageIcon;
+
+	import javax.swing.ImageIcon;
 	import javax.swing.*;
 	import javax.swing.JLabel;
 	import javax.swing.JPanel;
@@ -16,11 +17,18 @@ import javax.swing.ImageIcon;
 		private JButton[][] botones;
 		private JLabel dibujo;
 		private JPanel panelBotones;
+		private JPanel panelMovimiento;
+		private int i;
+		private static Controlador controlador;
 		
 		public GUI() {
+			i=0;
+			controlador = new Controlador(this);
+			
 			contentPane = new JPanel();
 			setContentPane(contentPane);
 			panelBotones= new JPanel();
+			panelMovimiento= new JPanel();
 			this.setResizable(false);
 			
 			getContentPane().setLayout(null);
@@ -37,12 +45,15 @@ import javax.swing.ImageIcon;
 			
 			this.setVisible(true);
 			this.setResizable(false);
-
 		}
 		
 		public static void main(String[] args) {
 						GUI frame = new GUI();
 						frame.setVisible(true);
+						
+						controlador= new Controlador(frame);
+						ContadorTiempo c= new ContadorTiempo(controlador);
+						c.run();
 		}
 		
 		private void agregarDibujo(){
@@ -71,8 +82,13 @@ import javax.swing.ImageIcon;
 				botones[i][9].setIcon(new ImageIcon(this.getClass().getResource("sprites\\proyectilImpacto.gif")));
 			}
 			contentPane.add(panelBotones);
-					
+				
 		}
+		
+		public void avanzar() {
+			i++;
+		}
+		
 }
 //setbound
 	//setlocation

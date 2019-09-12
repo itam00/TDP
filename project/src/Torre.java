@@ -20,7 +20,7 @@ public class Torre extends Personaje{
 	}
 
 	@Override
-	public void aplicarPowerUp(PowerUp p) {
+	public void aplicarPowerUp(Recolectable p) {
 		// TODO Auto-generated method stub
 		
 	}
