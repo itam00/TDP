@@ -58,7 +58,7 @@ import javax.swing.ImageIcon;
 			for (int i=0; i<botones.length;i++)
 				for (int j=0; j<botones[0].length;j++) {
 					botones[i][j]=new JButton();
-					botones[i][j].setIcon(new ImageIcon(this.getClass().getResource("sprites\\isaac.gif")));
+					botones[i][j].setIcon(new ImageIcon(this.getClass().getResource("sprites\\proyectil.gif")));
 					botones[i][j].setOpaque(false);
 					botones[i][j].setContentAreaFilled(false);
 					botones[i][j].setSize(103, 97);
@@ -72,6 +72,13 @@ import javax.swing.ImageIcon;
 			}
 			contentPane.add(panelBotones);
 					
+		}
+		
+		public void avanzar() {
+			for(int i=0;i<botones.length;i++) {
+				botones[3][i].setIcon(new ImageIcon(this.getClass().getResource("sprites\\isaac.gif")));
+			}
+			
 		}
 }
 //setbound

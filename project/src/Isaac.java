@@ -9,4 +9,22 @@ public class Isaac extends Personaje{
 		rango = 2;
 	}
 
+	@Override
+	public void atacar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean detectarEnemigo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void aplicarPowerUp(Recolectable p) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
