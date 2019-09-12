@@ -1,6 +1,7 @@
 
 	import java.awt.*;
 
+
 import javax.swing.ImageIcon;
 	import javax.swing.*;
 	import javax.swing.JLabel;
@@ -16,8 +17,13 @@ import javax.swing.ImageIcon;
 		private JButton[][] botones;
 		private JLabel dibujo;
 		private JPanel panelBotones;
-		
+		int i;
+		protected Controlador controlador;
+		protected ContadorTiempo cont;
 		public GUI() {
+			i=0;
+			controlador = new Controlador(this);
+			
 			contentPane = new JPanel();
 			setContentPane(contentPane);
 			panelBotones= new JPanel();
@@ -43,6 +49,8 @@ import javax.swing.ImageIcon;
 		public static void main(String[] args) {
 						GUI frame = new GUI();
 						frame.setVisible(true);
+						ContadorTiempo  c= new ContadorTiempo(frame.getControlador());
+						c.run();
 		}
 		
 		private void agregarDibujo(){
@@ -58,7 +66,7 @@ import javax.swing.ImageIcon;
 			for (int i=0; i<botones.length;i++)
 				for (int j=0; j<botones[0].length;j++) {
 					botones[i][j]=new JButton();
-					botones[i][j].setIcon(new ImageIcon(this.getClass().getResource("sprites\\proyectil.gif")));
+					//botones[i][j].setIcon(new ImageIcon(this.getClass().getResource("sprites\\proyectil.png")));
 					botones[i][j].setOpaque(false);
 					botones[i][j].setContentAreaFilled(false);
 					botones[i][j].setSize(103, 97);
@@ -75,10 +83,14 @@ import javax.swing.ImageIcon;
 		}
 		
 		public void avanzar() {
-			for(int i=0;i<botones.length;i++) {
-				botones[3][i].setIcon(new ImageIcon(this.getClass().getResource("sprites\\isaac.gif")));
-			}
-			
+			i++;
+			botones[0][0].setIcon(new ImageIcon(this.getClass().getResource("sprites\\proyectil.png")));
+			botones[0][0].setBorderPainted(false);
+			botones[0][0].setLocation(10*i,10);
+		}
+		
+		public Controlador getControlador() {
+			return controlador;
 		}
 }
 //setbound
