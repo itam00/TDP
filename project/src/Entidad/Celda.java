@@ -1,3 +1,4 @@
+package Entidad;
 
 public class Celda {
 	protected int x;

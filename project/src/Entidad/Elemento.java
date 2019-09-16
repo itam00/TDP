@@ -1,3 +1,4 @@
+package Entidad;
 
 public abstract class Elemento {
 	protected Celda celda;
