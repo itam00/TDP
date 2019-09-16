@@ -44,7 +44,7 @@ public class GUI extends JFrame {
 	}
 		
 	private void agregarDibujo(){
-		ImageIcon imagen = new ImageIcon(this.getClass().getResource("Sprites\\sueloMapa.png"));
+		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Sprites/sueloMapa.png"));
 		dibujo = new JLabel(imagen);
 		dibujo.setOpaque(false);
 		contentPane.add(dibujo);
@@ -56,7 +56,7 @@ public class GUI extends JFrame {
 		for (int i=0; i<botones.length;i++)
 			for (int j=0; j<botones[0].length;j++) {
 				botones[i][j]=new JButton();
-				botones[i][j].setIcon(new ImageIcon(this.getClass().getResource("Sprites\\isaac.gif")));
+				botones[i][j].setIcon(new ImageIcon(this.getClass().getResource("/Sprites/isaac.gif")));
 				botones[i][j].setOpaque(false);
 				botones[i][j].setContentAreaFilled(false);
 				botones[i][j].setSize(103, 97);
@@ -65,8 +65,8 @@ public class GUI extends JFrame {
 			}
 			
 		for(int i=0;i<botones.length;i++) {
-			botones[i][8].setIcon(new ImageIcon(this.getClass().getResource("Sprites\\proyectil.png")));
-			botones[i][9].setIcon(new ImageIcon(this.getClass().getResource("Sprites\\proyectilImpacto.gif")));
+			botones[i][8].setIcon(new ImageIcon(this.getClass().getResource("/Sprites/proyectil.png")));
+			botones[i][9].setIcon(new ImageIcon(this.getClass().getResource("/Sprites/proyectilImpacto.gif")));
 		}
 		contentPane.add(panelBotones);
 					
