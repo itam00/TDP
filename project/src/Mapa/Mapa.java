@@ -1,3 +1,4 @@
+package Mapa;
 
 public class Mapa {
 	protected Celda[][] matriz;

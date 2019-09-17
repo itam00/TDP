@@ -1,3 +1,5 @@
+package Juego;
+import GUI.*;
 
 public class Controlador {
 	protected GUI gui;
@@ -7,7 +9,7 @@ public class Controlador {
 	}
 	
 	public void mover() {
-		gui.avanzar();
+		//gui.avanzar();
 	}
 	
 }

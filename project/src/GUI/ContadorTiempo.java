@@ -1,4 +1,5 @@
-
+package GUI;
+import Juego.Controlador;
 
 public class ContadorTiempo extends Thread {
 

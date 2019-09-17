@@ -1,6 +1,6 @@
 package Personajes;
 
-import Entidad.Celda;
+import Mapa.Celda;
 
 public abstract class Torre extends Personaje{
 	protected int precio, tamanio;

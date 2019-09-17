@@ -1,6 +1,6 @@
 package Personajes;
-
-import Entidad.Celda;
+import Mapa.Celda;
+import Recolectable.PowerUp;
 
 public class Isaac extends Torre{
 
@@ -23,6 +23,12 @@ public class Isaac extends Torre{
 	public boolean detectarEnemigo() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void aplicarPowerUp(PowerUp p) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/*@Override AGREGAR METODO CUANDO SE CREE LA CLASE POWER UP

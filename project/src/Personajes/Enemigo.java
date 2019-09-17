@@ -1,6 +1,6 @@
 package Personajes;
 
-import Entidad.Celda;
+import Mapa.Celda;
 
 public abstract class Enemigo extends Personaje{
 	protected int puntos, recompensa;
