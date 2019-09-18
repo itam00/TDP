@@ -1,16 +1,18 @@
 package Personajes;
 import Mapa.Celda;
+import PersonajeGrafico.*;
 import Recolectable.PowerUp;
 
 public class Isaac extends Torre{
 
-	public Isaac(Celda c) {
-		super(c);
+	public Isaac(int x,int y) {
+		super(x,y);
 		vida= 100;
 		danio= 1;
 		rango= 2;
 		precio= 0;//MODIFICAR LUEGO
 		tamanio= 0;//CONSULTAR QUE REPRESENTA EL TAMANIO
+		grafico = new IsaacGrafico(x,y);
 	}
 
 	@Override
@@ -31,10 +33,5 @@ public class Isaac extends Torre{
 		
 	}
 
-	/*@Override AGREGAR METODO CUANDO SE CREE LA CLASE POWER UP
-	public void aplicarPowerUp(PowerUp p) {
-		// TODO Auto-generated method stub
-		
-	}*/
 
 }

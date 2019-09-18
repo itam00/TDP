@@ -1,16 +1,24 @@
 package Entidad;
 
+import EntidadGrafica.ElementoGrafico;
 import Mapa.Celda;
 
 public abstract class Elemento {
-	protected Celda celda;
+	protected int posY,posX;
+	protected ElementoGrafico grafico;
 	
-	public Elemento(Celda c) {
-		celda = c;
+	public Elemento(int x,int y) {
+		posY = y;
+		posX = x;
 	}
-	
-	public Celda getCelda() {
-		return celda;
+	public int getPosY() {
+		return posY;
+	}
+	public int getPosX() {
+		return posX;
+	}
+	public ElementoGrafico obtenerGrafico() {
+		return grafico;
 	}
 	
 }
