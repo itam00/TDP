@@ -5,8 +5,8 @@ import EntidadGrafica.*;
 public class IsaacGrafico extends ElementoGrafico{
 
 	public IsaacGrafico(int x,int y) {
-		posY = y;
-		posX = x;
+		this.y= (int)y*96;
+		this.x = (int)(x*102.4);
 		width  =100;
 		height = 100;
 		image = new ImageIcon(getClass().getResource("/Sprites/isaac.gif"));

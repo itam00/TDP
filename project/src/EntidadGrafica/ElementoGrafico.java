@@ -4,15 +4,16 @@ import javax.swing.Icon;
 import javax.swing.JLabel;
 
 public abstract class ElementoGrafico extends JLabel{
-	protected int posX,posY;
+	protected int x,y;
 	protected int width, height;
 	protected Icon image;
 	
-	public int getPosX() {
-		return posX;
+	
+	public int getX() {
+		return x;
 	}
-	public int getPosY() {
-		return posY;
+	public int getY() {
+		return y;
 	}
 	
 	public int getAncho() {

@@ -66,8 +66,9 @@ public class GUI extends JFrame implements MouseListener{
 	
 	public void añadir(ElementoGrafico e) {
 		contentPane.add(e);
-		int x = (int)(e.getPosX()*102.4);
-		int y = (int)(e.getPosY()*96);
+		int x = e.getX();
+		int y = e.getY();
+		System.out.println(x+" - "+y);
 		e.setBounds(x,y,x+e.getAlto(),e.getAncho());
 		contentPane.setComponentZOrder(e, 0);
 	}
