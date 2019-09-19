@@ -8,6 +8,4 @@ public abstract class Enemigo extends Personaje{
 	public Enemigo(int x, int y) {
 		super(x,y);
 	}
-	
-	
 }
