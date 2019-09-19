@@ -33,5 +33,11 @@ public class Isaac extends Torre{
 		
 	}
 
+	@Override
+	public void actualizar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

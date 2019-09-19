@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
@@ -20,7 +21,7 @@ public class GUI extends JFrame implements MouseListener{
 
 	private JPanel contentPane;
 	private JLabel dibujo;
-	
+	private ContadorTiempo tiempo;
 	private Controlador controlador;
 	
 	private int posY,posX;
@@ -29,6 +30,11 @@ public class GUI extends JFrame implements MouseListener{
 	public static void main(String[] args) {
 		GUI frame = new GUI();
 		frame.setVisible(true);
+		EventQueue.invokeLater(new Runnable(){
+			public void run() {
+			}
+		}
+		);
 	}
 		
 	public GUI() {
@@ -36,6 +42,9 @@ public class GUI extends JFrame implements MouseListener{
 		posY=0;
 		
 		controlador = new Controlador(this);
+		tiempo= new ContadorTiempo(controlador,this);
+		
+		
 		
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -50,6 +59,8 @@ public class GUI extends JFrame implements MouseListener{
 			
 		this.setVisible(true);
 		this.setResizable(false);
+		
+		tiempo.start();
 
 	}
 		
@@ -66,8 +77,9 @@ public class GUI extends JFrame implements MouseListener{
 	
 	public void añadir(ElementoGrafico e) {
 		contentPane.add(e);
-		int x = (int)(e.getPosX()*102.4);
-		int y = (int)(e.getPosY()*96);
+		int x = (int)(e.getX());
+		int y = (int)(e.getY());
+		System.out.println(x+"   "+y);
 		e.setBounds(x,y,x+e.getAlto(),e.getAncho());
 		contentPane.setComponentZOrder(e, 0);
 	}
@@ -92,17 +104,27 @@ public class GUI extends JFrame implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		posX = (int) (e.getX()/102.4);
-		posY = (int) (e.getY()/96);
-		controlador.comprarTorre(posX, posY);
+		if(e.getButton()==MouseEvent.BUTTON1) {
+			posX = (int) (e.getX()/102.4);
+			posY = (int) (e.getY()/96);
+			controlador.comprarTorre(posX, posY);
+		}
+	//	else
+		//	controlador.remover();
 		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
+	
+	/*public void remover(ElementoGrafico obj) {
+		contentPane.remove(obj);
+	}*/
+	
+
+	
 }
 //setbound
 //setlocation

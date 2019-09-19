@@ -11,14 +11,19 @@ public abstract class Elemento {
 		posY = y;
 		posX = x;
 	}
+	
 	public int getPosY() {
 		return posY;
 	}
+	
 	public int getPosX() {
 		return posX;
 	}
+	
 	public ElementoGrafico obtenerGrafico() {
 		return grafico;
 	}
+	
+	public abstract void actualizar();
 	
 }

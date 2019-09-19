@@ -1,47 +1,51 @@
 package Juego;
-import java.util.*;
+import java.util.*; 
 
 import GUI.*;
 import Personajes.*;
+import Entidad.*;
 
 public class Controlador {
 	protected GUI gui;
-	protected List<Torre> torres;
-	protected List<Enemigo> enemigos;
+	protected List<Elemento> entidades;
+	protected ContadorTiempo contador;
 	
 	public Controlador(GUI g) {
 		gui = g;
-		torres = new ArrayList<Torre>();
-		enemigos = new ArrayList<Enemigo>();
+		entidades = new ArrayList<Elemento>();
 	}
 	
-	public void mover() {
-		//gui.avanzar();
-		for(Torre t: torres) {
-			//t.buscarEnemigo();
+	public void actualizar() {
+		for (Elemento e:entidades) {
+			e.actualizar();
 		}
-		for(Enemigo e: enemigos) {
-			//e.avanzar
-		}
-		
-		
 	}
 	
 	public void comprarTorre(int x,int y) {
 		boolean lugarLibre=true;
-		Iterator<Torre> it = torres.iterator();
-		Torre aux;
+		Iterator<Elemento> it = entidades.iterator();
+		Elemento aux;
 		System.out.println("x:" +x+" y: "+y);
-		while(it.hasNext() && lugarLibre) {
+		/*while(it.hasNext() && lugarLibre) {
 			aux = it.next();
 			lugarLibre = aux.getPosX()!=x || aux.getPosY()!=y;
 		}
+		*/
 		if(lugarLibre) {
-			Torre nueva = new Isaac(x,y);
-			torres.add(nueva);
+		//	Torre nueva = new Isaac(x,y);
+			Disparo nueva= new DisparoAliado(x,y);
+			entidades.add(nueva);
 			System.out.println("comprado");
 			gui.añadir(nueva.obtenerGrafico());
 		}
 	}
 	
+//	public void remover() {
+//		for(Disparo s: entidades) {
+//			s.obtenerGrafico().cambiar();
+//		}
+		//también que borrarlo del controlador.
+//	}
+	
+	//cada objeto gráfico tiene que conocer a su objeto lógico.
 }
