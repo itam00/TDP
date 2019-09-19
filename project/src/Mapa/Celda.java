@@ -1,3 +1,6 @@
+package Mapa;
+
+import Entidad.Elemento;
 
 public class Celda {
 	protected int x;
