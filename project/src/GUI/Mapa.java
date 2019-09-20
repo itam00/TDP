@@ -8,7 +8,6 @@ import javax.swing.ImageIcon;
 
 import Entidad.Elemento;
 import EntidadGrafica.*;
-import Personajes.Torre;
 
 public class Mapa {
 	protected List<ElementoGrafico>[] entidades;
@@ -46,5 +45,6 @@ public class Mapa {
 		}
 		return coincide;
 	}
+	
 	
 }
