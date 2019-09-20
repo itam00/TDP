@@ -1,7 +1,7 @@
 package Personajes;
 import Recolectable.*;
+
 import Entidad.Elemento;
-import Mapa.Celda;
 
 public abstract class Personaje extends Elemento{
 	protected int vida, danio, rango;

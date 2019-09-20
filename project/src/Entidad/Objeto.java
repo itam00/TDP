@@ -1,6 +1,5 @@
 package Entidad;
 
-import Mapa.Celda;
 
 public abstract class Objeto extends Elemento{
 

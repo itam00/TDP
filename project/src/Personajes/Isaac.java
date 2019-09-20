@@ -1,5 +1,5 @@
 package Personajes;
-import Mapa.Celda;
+
 import PersonajeGrafico.*;
 import Recolectable.PowerUp;
 
@@ -12,6 +12,7 @@ public class Isaac extends Torre{
 		rango= 2;
 		precio= 0;//MODIFICAR LUEGO
 		tamanio= 0;//CONSULTAR QUE REPRESENTA EL TAMANIO
+		
 		grafico = new IsaacGrafico(x,y);
 	}
 

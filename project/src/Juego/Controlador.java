@@ -8,17 +8,19 @@ public class Controlador {
 	protected GUI gui;
 	protected List<Torre> torres;
 	protected List<Enemigo> enemigos;
+	protected Mapa mapa;
 	
 	public Controlador(GUI g) {
 		gui = g;
 		torres = new ArrayList<Torre>();
 		enemigos = new ArrayList<Enemigo>();
+		mapa = new Mapa(g);
 	}
 	
 	public void mover() {
 		//gui.avanzar();
 		for(Torre t: torres) {
-			//t.buscarEnemigo();
+			//t.buscarEnemigo()|
 		}
 		for(Enemigo e: enemigos) {
 			//e.avanzar
@@ -34,14 +36,16 @@ public class Controlador {
 		System.out.println("x:" +x+" y: "+y);
 		while(it.hasNext() && lugarLibre) {
 			aux = it.next();
-			lugarLibre = aux.getPosX()!=x || aux.getPosY()!=y;
+			//lugarLibre = !coincidePosicion(aux,x,y);
 		}
 		if(lugarLibre) {
 			Torre nueva = new Isaac(x,y);
 			torres.add(nueva);
-			System.out.println("comprado");
+			System.out.println(nueva.obtenerGrafico().obtenerFila());
 			gui.añadir(nueva.obtenerGrafico());
 		}
 	}
+	
+	
 	
 }

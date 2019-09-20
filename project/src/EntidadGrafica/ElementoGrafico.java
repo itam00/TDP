@@ -22,4 +22,6 @@ public abstract class ElementoGrafico extends JLabel{
 	public int getAlto() {
 		return height;
 	}
+	public abstract int obtenerFila();
+
 }

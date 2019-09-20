@@ -1,6 +1,6 @@
 package GUI;
 
-import java.awt.GridLayout;
+
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -20,6 +20,7 @@ public class GUI extends JFrame implements MouseListener{
 
 	private JPanel contentPane;
 	private JLabel dibujo;
+	
 	
 	private Controlador controlador;
 	
@@ -46,6 +47,7 @@ public class GUI extends JFrame implements MouseListener{
 		setBounds(150, 0, 1028, 768);//esto quedo asi porque con 1024 no se ve el borde
 
 		agregarDibujo();
+
 
 			
 		this.setVisible(true);
@@ -93,9 +95,8 @@ public class GUI extends JFrame implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		posX = (int) (e.getX()/102.4);
-		posY = (int) (e.getY()/96);
-		controlador.comprarTorre(posX, posY);
+
+		controlador.comprarTorre(e.getX(), e.getY());
 		
 	}
 

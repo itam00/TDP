@@ -9,7 +9,8 @@ public class Enemigo1 extends Enemigo{
 		vida = 100;
 		danio = 100;
 		rango = 10;
-		
+		puntos =  10;
+		recompensa = 100;
 
 	}
 
@@ -27,6 +28,12 @@ public class Enemigo1 extends Enemigo{
 
 	@Override
 	public void aplicarPowerUp(PowerUp p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void avanzar() {
 		// TODO Auto-generated method stub
 		
 	}
