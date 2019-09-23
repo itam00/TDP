@@ -18,8 +18,6 @@ public class Controlador {
 	public void actualizar() {
 		for (Elemento e:entidades) {
 			e.actualizar();
-		}
-	}
 	
 	public void comprarTorre(int x,int y) {
 		boolean lugarLibre=true;
@@ -28,7 +26,7 @@ public class Controlador {
 		System.out.println("x:" +x+" y: "+y);
 		/*while(it.hasNext() && lugarLibre) {
 			aux = it.next();
-			lugarLibre = aux.getPosX()!=x || aux.getPosY()!=y;
+			//lugarLibre = !coincidePosicion(aux,x,y);
 		}
 		*/
 		if(lugarLibre) {
@@ -36,6 +34,7 @@ public class Controlador {
 			Disparo nueva= new DisparoAliado(x,y);
 			entidades.add(nueva);
 			System.out.println("comprado");
+
 			gui.añadir(nueva.obtenerGrafico());
 		}
 	}

@@ -1,10 +1,9 @@
 package Entidad;
 
 import EntidadGrafica.ElementoGrafico;
-import Mapa.Celda;
+
 
 public abstract class Elemento {
-	protected int posY,posX;
 	protected ElementoGrafico grafico;
 	
 	public Elemento(int x,int y) {
@@ -24,6 +23,8 @@ public abstract class Elemento {
 		return grafico;
 	}
 	
+
 	public abstract void actualizar();
+
 	
 }

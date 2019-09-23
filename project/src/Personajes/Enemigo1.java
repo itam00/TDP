@@ -1,19 +1,17 @@
 package Personajes;
 
-import PersonajeGrafico.*;
 import Recolectable.PowerUp;
 
-public class Isaac extends Torre{
+public class Enemigo1 extends Enemigo{
 
-	public Isaac(int x,int y) {
-		super(x,y);
-		vida= 100;
-		danio= 1;
-		rango= 2;
-		precio= 0;//MODIFICAR LUEGO
-		tamanio= 0;//CONSULTAR QUE REPRESENTA EL TAMANIO
-		
-		grafico = new IsaacGrafico(x,y);
+	public Enemigo1(int x, int y) {
+		super(x, y);
+		vida = 100;
+		danio = 100;
+		rango = 10;
+		puntos =  10;
+		recompensa = 100;
+
 	}
 
 	@Override
@@ -35,10 +33,9 @@ public class Isaac extends Torre{
 	}
 
 	@Override
-	public void actualizar() {
+	public void avanzar() {
 		// TODO Auto-generated method stub
 		
 	}
-
 
 }
