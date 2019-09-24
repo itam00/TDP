@@ -26,13 +26,10 @@ public class DisparoGrafico extends ElementoGrafico {
 		image.getImage().flush();
 		image= new ImageIcon(getClass().getResource("/Sprites/proyectilImpacto.gif"));
 		this.setIcon(image);
-
 	}
 
 	public void actualizar() {
 		this.setLocation(x+=2, y);
-		if (x>560)
-			cambiar();
 		if (x>600) {
 			muerto=true;
 		}

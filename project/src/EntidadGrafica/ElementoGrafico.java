@@ -15,8 +15,8 @@ public abstract class ElementoGrafico extends JLabel{
 	protected boolean muerto;
 	
 	public ElementoGrafico(int x, int y) {
-		this.x=x*102;
-		this.y=y*96;
+		this.x=x;
+		this.y=y;
 		muerto=false;
 	}
 	
