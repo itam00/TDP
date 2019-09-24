@@ -23,74 +23,71 @@ public class GUI extends JFrame implements MouseListener{
 
 	private JPanel contentPane;
 	private JLabel dibujo;
-
+	private JPanel principal;
 	private ContadorTiempo tiempo;
-
-	
-	
-
 	private Controlador controlador;
-	
-	private int posY,posX;
 	
 	
 	public static void main(String[] args) {
 		GUI frame = new GUI();
 		frame.setVisible(true);
-		EventQueue.invokeLater(new Runnable(){
+	/*	EventQueue.invokeLater(new Runnable(){
 			public void run() {
 			}
 		}
 		);
+		*/
 	}
 		
 	public GUI() {
-		posX=0;
-		posY=0;
 		
 		controlador = new Controlador(this);
+		
 		tiempo= new ContadorTiempo(controlador,this);
-		
-		
-		
-		contentPane = new JPanel();
-		setContentPane(contentPane);
-		this.setResizable(false);
-			
-		getContentPane().setLayout(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(150, 0, 1028, 768);//esto quedo asi porque con 1024 no se ve el borde
 
+		setearVentana();
+		setearPanelPrincipal();
+		
 		agregarDibujo();
-
-
-			
-		this.setVisible(true);
-		this.setResizable(false);
 		
 		tiempo.start();
+	}
+	
+	private void setearVentana() {
+		getContentPane().setLayout(null);
+		setResizable(false);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(150, 0, 1028, 768);//esto quedo asi porque con 1024 no se ve el borde
+	}
+	
+	private void setearPanelPrincipal() {
+		principal=new JPanel();
+		principal.setLayout(null);
+		principal.setVisible(true);
+		principal.setOpaque(false);
+		getContentPane().add(principal);
+		principal.setBounds(0, 0, 1028, 576);//esto quedo asi porque con 1024 no se ve el borde
+
 
 	}
-		
 	
 	private void agregarDibujo(){
 		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Sprites/sueloMapa.png"));
 		dibujo = new JLabel(imagen);
 		dibujo.setOpaque(false);
-		contentPane.add(dibujo);
+		getContentPane().add(dibujo);
 		dibujo.setBounds(0, 0,1024,576);
 		dibujo.addMouseListener(this);
-
 	}
 	
 	public void añadir(ElementoGrafico e) {
-		contentPane.add(e);
-
+		principal.add(e);
 		int x = e.getX();
 		int y = e.getY();
-		System.out.println(x+" - "+y);
-		e.setBounds(x,y,x+e.getAlto(),e.getAncho());
-		contentPane.setComponentZOrder(e, 0);
+		System.out.println(x+" -aca- "+y);
+		e.setBounds(x,y,e.getAlto(),e.getAncho());
+		principal.setComponentZOrder(e, 0);
 	}
 		
 
@@ -113,13 +110,12 @@ public class GUI extends JFrame implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		if(e.getButton()==MouseEvent.BUTTON1) {
-			posX = (int) (e.getX()/102.4);
-			posY = (int) (e.getY()/96);
+	/*	if(e.getButton()==MouseEvent.BUTTON1) {
 			controlador.comprarTorre(e.getX(), e.getY());
 		}
 	//	else
 		//	controlador.remover();
+		 */
 		controlador.comprarTorre(e.getX(), e.getY());
 		
 	}
@@ -129,9 +125,9 @@ public class GUI extends JFrame implements MouseListener{
 		
 	}
 	
-	/*public void remover(ElementoGrafico obj) {
-		contentPane.remove(obj);
-	}*/
+	public void remover(ElementoGrafico obj) {
+		principal.remove(obj);
+	}
 	
 
 	

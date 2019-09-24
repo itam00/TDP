@@ -16,8 +16,17 @@ public class Controlador {
 	}
 	
 	public void actualizar() {
+		List<Elemento> toRemove= new ArrayList<Elemento>();
 		for (Elemento e:entidades) {
 			e.actualizar();
+			if( e.estaMuerto())
+				toRemove.add(e);
+		}
+		for (Elemento e:toRemove) {
+			entidades.remove(e);
+			gui.remover(e.obtenerGrafico());
+		}
+	}
 	
 	public void comprarTorre(int x,int y) {
 		boolean lugarLibre=true;
@@ -34,7 +43,6 @@ public class Controlador {
 			Disparo nueva= new DisparoAliado(x,y);
 			entidades.add(nueva);
 			System.out.println("comprado");
-
 			gui.añadir(nueva.obtenerGrafico());
 		}
 	}

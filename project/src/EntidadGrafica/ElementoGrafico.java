@@ -8,12 +8,19 @@ public abstract class ElementoGrafico extends JLabel{
 	protected int x,y;
 	protected int width, height;
 	protected ImageIcon image;
+	protected boolean muerto;
 	
+	public ElementoGrafico(int x, int y) {
+		this.x=x*102;
+		this.y=y*96;
+		muerto=false;
+	}
 	
 
 	public int getX() {
 		return x;
 	}
+	
 	public int getY() {
 		return y;
 	}
@@ -23,6 +30,10 @@ public abstract class ElementoGrafico extends JLabel{
 	}
 	public int getAlto() {
 		return height;
+	}
+	
+	public boolean estaMuerto() {
+		return muerto;
 	}
 
 	
