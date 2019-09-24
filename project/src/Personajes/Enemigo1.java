@@ -38,4 +38,10 @@ public class Enemigo1 extends Enemigo{
 		
 	}
 
+	@Override
+	public void actualizar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

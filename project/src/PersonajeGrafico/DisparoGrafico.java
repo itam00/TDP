@@ -31,6 +31,8 @@ public class DisparoGrafico extends ElementoGrafico {
 
 	public void actualizar() {
 		this.setLocation(x+=2, y);
+		if (x>560)
+			cambiar();
 		if (x>600) {
 			muerto=true;
 		}

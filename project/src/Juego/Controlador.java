@@ -19,8 +19,9 @@ public class Controlador {
 		List<Elemento> toRemove= new ArrayList<Elemento>();
 		for (Elemento e:entidades) {
 			e.actualizar();
-			if( e.estaMuerto())
+			if( e.estaMuerto()) {
 				toRemove.add(e);
+			}
 		}
 		for (Elemento e:toRemove) {
 			entidades.remove(e);

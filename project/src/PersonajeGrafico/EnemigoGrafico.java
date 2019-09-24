@@ -16,5 +16,10 @@ public class EnemigoGrafico extends TorreGrafica{
 	public int obtenerFila() {
 		return (int)(y/96);
 	}
+	@Override
+	public void actualizar() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
