@@ -10,11 +10,13 @@ public class Controlador {
 	protected Mapa mapa;
 	protected List<Elemento> entidades;
 	protected ContadorTiempo contador;
+	protected Jugador jugador;
 	
-	public Controlador(GUI g, Mapa m) {
+	public Controlador(GUI g, Mapa m, Jugador j) {
 		gui = g;
 		mapa=m;
 		entidades = new ArrayList<Elemento>();
+		jugador = j;
 	}
 	
 	public void actualizar() {
@@ -28,6 +30,16 @@ public class Controlador {
 		for (Elemento e:toRemove) {
 			entidades.remove(e);
 			mapa.eliminar(e.obtenerGrafico());
+			
+			////////////////////////////////////////////
+			
+			//ESTO ES SOLO PARA EL SPRINT DSP MUERE
+			if(e instanceof Enemigo) {
+				jugador.sumarPuntaje(((Enemigo) e).getPuntos());
+				System.out.println(jugador.getPuntaje());
+			}
+			
+			/////////////////////////////////////
 		}
 		mapa.repaint();
 	}

@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 
 import EntidadGrafica.ElementoGrafico;
 import Juego.Controlador;
+import Juego.Jugador;
 import Personajes.*;
 
 public class GUI extends JFrame implements MouseListener, KeyListener{
@@ -42,7 +43,7 @@ public class GUI extends JFrame implements MouseListener, KeyListener{
 		
 	public GUI() {
 		mapa= new Mapa(this);
-		controlador = new Controlador(this,mapa);
+		controlador = new Controlador(this,mapa,new Jugador());
 		tiempo= new ContadorTiempo(controlador,this);
 		addKeyListener(this);
 		setearVentana();

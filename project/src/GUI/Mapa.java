@@ -2,6 +2,7 @@ package GUI;
 import java.util.ArrayList; 
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -26,9 +27,9 @@ public class Mapa extends JPanel{
 		addMouseListener(gui);
 
 		
-		entidades = (List<ElementoGrafico>[]) new ArrayList[6];
+		entidades = (List<ElementoGrafico>[]) new LinkedList[6];
 		for(int i=0;i<entidades.length;i++) {
-			entidades[i] = new ArrayList<ElementoGrafico>();
+			entidades[i] = new LinkedList<ElementoGrafico>();
 		}
 	}
 	

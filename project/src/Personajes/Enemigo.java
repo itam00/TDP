@@ -8,5 +8,12 @@ public abstract class Enemigo extends Personaje{
 		super(x,y);
 	}
 	
+	public int getPuntos() {
+		return puntos;
+	}
+	public int getRecompensa() {
+		return recompensa;
+	}
+	
 	
 }
