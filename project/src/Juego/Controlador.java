@@ -7,11 +7,13 @@ import Entidad.*;
 
 public class Controlador {
 	protected GUI gui;
+	protected Mapa mapa;
 	protected List<Elemento> entidades;
 	protected ContadorTiempo contador;
 	
-	public Controlador(GUI g) {
+	public Controlador(GUI g, Mapa m) {
 		gui = g;
+		mapa=m;
 		entidades = new ArrayList<Elemento>();
 	}
 	
@@ -25,14 +27,13 @@ public class Controlador {
 		}
 		for (Elemento e:toRemove) {
 			entidades.remove(e);
-			gui.remover(e.obtenerGrafico());
+			mapa.eliminar(e.obtenerGrafico());
 		}
+		mapa.repaint();
 	}
 	
 	public void comprarTorre(int x,int y) {
 		boolean lugarLibre=true;
-		Iterator<Elemento> it = entidades.iterator();
-		Elemento aux;
 		System.out.println("x:" +x+" y: "+y);
 		/*while(it.hasNext() && lugarLibre) {
 			aux = it.next();
@@ -44,8 +45,14 @@ public class Controlador {
 			Disparo nueva= new DisparoAliado(x,y);
 			entidades.add(nueva);
 			System.out.println("comprado");
-			gui.añadir(nueva.obtenerGrafico());
+			mapa.agregar(nueva.obtenerGrafico());
 		}
+	}
+	
+	public void colocarEnemigo(int x, int y) {
+		Enemigo enemigo= new Enemigo1(x,y);
+		entidades.add(enemigo);
+		mapa.agregar(enemigo.obtenerGrafico());
 	}
 	
 //	public void remover() {

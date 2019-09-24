@@ -1,6 +1,7 @@
 package Personajes;
 
-import Recolectable.PowerUp;
+import PersonajeGrafico.*;
+import Recolectable.*;
 
 public class Enemigo1 extends Enemigo{
 
@@ -11,7 +12,7 @@ public class Enemigo1 extends Enemigo{
 		rango = 10;
 		puntos =  10;
 		recompensa = 100;
-
+		grafico= new Enemigo1Grafico(x,y);
 	}
 
 	@Override
@@ -32,16 +33,5 @@ public class Enemigo1 extends Enemigo{
 		
 	}
 
-	@Override
-	public void avanzar() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actualizar() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

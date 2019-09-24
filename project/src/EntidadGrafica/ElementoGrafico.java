@@ -16,10 +16,13 @@ public abstract class ElementoGrafico extends JLabel{
 	
 	public ElementoGrafico(int x, int y) {
 		this.x=x;
-		this.y=y;
+		this.y=(int)(y/96)*96;
 		muerto=false;
 	}
 	
+	public void setMuerto(boolean b) {
+		muerto=b;
+	}
 
 	public int getX() {
 		return x;

@@ -6,11 +6,12 @@ public abstract class Elemento {
 	protected ElementoGrafico grafico;
 	//protected int x;
 	//protected int y;
-	protected boolean muerto=false;
+	protected boolean muerto;
 	
 	public Elemento(int x,int y) {
 	//	this.y = (int)(y/96);
 	//	this.x = (int)(x/102.4);
+		muerto=false;
 	}
 	
 	public int getPosY() {
@@ -31,7 +32,11 @@ public abstract class Elemento {
 	}
 	
 
-	public abstract void actualizar();
+	public void actualizar() {
+		grafico.actualizar();
+		muerto=grafico.estaMuerto();
+		
+	}
 
 	
 }

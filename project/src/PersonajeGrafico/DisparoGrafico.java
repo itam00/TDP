@@ -19,7 +19,6 @@ public class DisparoGrafico extends ElementoGrafico {
 		image = new ImageIcon(getClass().getResource("/Sprites/proyectil.png"));
 		this.setIcon(image);
 		this.setOpaque(false);
-		System.out.println(this.x+"--"+this.y);
 	}
 
 	public void cambiar() {

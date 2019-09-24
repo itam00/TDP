@@ -9,13 +9,4 @@ public class DisparoAliado extends Disparo {
 		grafico=  new DisparoGrafico(x, y);
 	}
 
-	@Override
-	public void actualizar() {
-		grafico.actualizar();
-		//esto podría estar en la interfaz directamente, todos lo tienen que comprobar.
-		if (grafico.estaMuerto())
-			muerto=true;
-	}
-	
-
 }

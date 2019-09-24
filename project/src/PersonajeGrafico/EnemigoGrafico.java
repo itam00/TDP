@@ -2,23 +2,26 @@ package PersonajeGrafico;
 
 import javax.swing.ImageIcon;
 
-public class EnemigoGrafico extends TorreGrafica{
+import EntidadGrafica.ElementoGrafico;
+
+public class EnemigoGrafico extends ElementoGrafico{
 
 	public EnemigoGrafico(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
 		width  =103;
 		height = 97;
-		image = new ImageIcon(getClass().getResource("/Sprites/enemigo1.gif"));
-		this.setIcon(image);
-		this.setOpaque(false);
 	}
+	
 	public int obtenerFila() {
 		return (int)(y/96);
 	}
+	
+	
 	@Override
 	public void actualizar() {
-		// TODO Auto-generated method stub
+		this.setLocation(x-=1, y);
+		if (x<=10)
+			muerto=true;
 		
 	}
 

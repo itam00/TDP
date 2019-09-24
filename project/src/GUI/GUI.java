@@ -5,6 +5,8 @@ import java.awt.GridLayout;
 
 
 import java.awt.Point;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
@@ -18,12 +20,11 @@ import EntidadGrafica.ElementoGrafico;
 import Juego.Controlador;
 import Personajes.*;
 
-public class GUI extends JFrame implements MouseListener{
+public class GUI extends JFrame implements MouseListener, KeyListener{
 	private static final long serialVersionUID = 1L;
 
-	private JPanel contentPane;
 	private JLabel dibujo;
-	private JPanel principal;
+	private Mapa mapa;
 	private ContadorTiempo tiempo;
 	private Controlador controlador;
 	
@@ -40,17 +41,14 @@ public class GUI extends JFrame implements MouseListener{
 	}
 		
 	public GUI() {
-		
-		controlador = new Controlador(this);
-		
+		mapa= new Mapa(this);
+		controlador = new Controlador(this,mapa);
 		tiempo= new ContadorTiempo(controlador,this);
-
+		addKeyListener(this);
 		setearVentana();
 		setearPanelPrincipal();
-		
-		agregarDibujo();
-		
 		tiempo.start();
+
 	}
 	
 	private void setearVentana() {
@@ -62,33 +60,10 @@ public class GUI extends JFrame implements MouseListener{
 	}
 	
 	private void setearPanelPrincipal() {
-		principal=new JPanel();
-		principal.setLayout(null);
-		principal.setVisible(true);
-		principal.setOpaque(false);
-		getContentPane().add(principal);
-		principal.setBounds(0, 0, 1028, 576);//esto quedo asi porque con 1024 no se ve el borde
-
-
+		getContentPane().add(mapa);
 	}
 	
-	private void agregarDibujo(){
-		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Sprites/sueloMapa.png"));
-		dibujo = new JLabel(imagen);
-		dibujo.setOpaque(false);
-		getContentPane().add(dibujo);
-		dibujo.setBounds(0, 0,1024,576);
-		dibujo.addMouseListener(this);
-	}
-	
-	public void añadir(ElementoGrafico e) {
-		principal.add(e);
-		int x = e.getX();
-		int y = e.getY();
-		System.out.println(x+" -aca- "+y);
-		e.setBounds(x,y,e.getAlto(),e.getAncho());
-		principal.setComponentZOrder(e, 0);
-	}
+
 		
 
 	@Override
@@ -110,13 +85,11 @@ public class GUI extends JFrame implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-	/*	if(e.getButton()==MouseEvent.BUTTON1) {
+		if(e.getButton()==MouseEvent.BUTTON1) {
 			controlador.comprarTorre(e.getX(), e.getY());
 		}
-	//	else
-		//	controlador.remover();
-		 */
-		controlador.comprarTorre(e.getX(), e.getY());
+		else
+			controlador.colocarEnemigo(mapa.getWidth(), e.getY());
 		
 	}
 
@@ -124,10 +97,24 @@ public class GUI extends JFrame implements MouseListener{
 	public void mouseReleased(MouseEvent e) {
 		
 	}
-	
-	public void remover(ElementoGrafico obj) {
-		principal.remove(obj);
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		if (arg0.getKeyChar()=='k')
+			mapa.genocidio();
 	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		
+	}
+	
+	
 	
 
 	

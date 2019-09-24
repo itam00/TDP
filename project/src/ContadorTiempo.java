@@ -16,6 +16,7 @@ public class ContadorTiempo extends Thread {
 				e.printStackTrace();
 			}
 			elJuego.actualizar();
+			System.gc();
 		}
 	}
 }
