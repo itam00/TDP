@@ -20,27 +20,25 @@ public class Controlador {
 	}
 	
 	public void actualizar() {
-		List<Elemento> toRemove= new ArrayList<Elemento>();
-		for (Elemento e:entidades) {
-			e.actualizar();
-			if( e.estaMuerto()) {
-				toRemove.add(e);
+		Iterator<Elemento> it = entidades.iterator();
+		Elemento aux;
+		
+		while(it.hasNext()) {
+			aux = it.next();
+			aux.actualizar();
+			if(aux.estaMuerto()) {
+				it.remove();
+				mapa.eliminar(aux.obtenerGrafico());
+				///////////////
+				//ESTO MUERE DSP DEL SIGUIENTE SPRINT
+				if(aux instanceof Enemigo) {
+					jugador.sumarPuntaje(((Enemigo) aux).getPuntos());
+					System.out.println(jugador.getPuntaje());
+				}
+				//////////////////
 			}
 		}
-		for (Elemento e:toRemove) {
-			entidades.remove(e);
-			mapa.eliminar(e.obtenerGrafico());
-			
-			////////////////////////////////////////////
-			
-			//ESTO ES SOLO PARA EL SPRINT DSP MUERE
-			if(e instanceof Enemigo) {
-				jugador.sumarPuntaje(((Enemigo) e).getPuntos());
-				System.out.println(jugador.getPuntaje());
-			}
-			
-			/////////////////////////////////////
-		}
+
 		mapa.repaint();
 	}
 	
