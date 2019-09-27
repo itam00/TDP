@@ -31,10 +31,14 @@ public abstract class Elemento {
 		return muerto;
 	}
 	
+	public void setMuerto(boolean b) {
+		muerto=b;
+	}
+	
 
 	public void actualizar() {
 		grafico.actualizar();
-		muerto=grafico.estaMuerto();
+		muerto= (muerto==true || grafico.estaMuerto());
 		
 	}
 

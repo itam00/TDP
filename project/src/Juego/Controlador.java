@@ -4,6 +4,7 @@ import java.util.*;
 import GUI.*;
 import Personajes.*;
 import Entidad.*;
+import EntidadGrafica.ElementoGrafico;
 
 public class Controlador {
 	protected GUI gui;
@@ -12,23 +13,34 @@ public class Controlador {
 	protected ContadorTiempo contador;
 	protected Jugador jugador;
 	
-	public Controlador(GUI g, Mapa m, Jugador j) {
+	public Controlador(GUI g, Jugador j) {
 		gui = g;
-		mapa=m;
+		//mapa=m;
 		entidades = new ArrayList<Elemento>();
 		jugador = j;
 	}
 	
-	public void actualizar() {
+	public synchronized void actualizar() {
 		Iterator<Elemento> it = entidades.iterator();
+		List<Elemento> aEliminar= new ArrayList<Elemento>();
 		Elemento aux;
 		
+			
 		while(it.hasNext()) {
 			aux = it.next();
 			aux.actualizar();
+			
+			for (Elemento e:entidades) {
+				if (e!=aux && gui.coincidePosicion(aux,e)) {
+					e.setMuerto(true);
+					aux.setMuerto(true);
+				}
+			}
+			
 			if(aux.estaMuerto()) {
 				it.remove();
-				mapa.eliminar(aux.obtenerGrafico());
+				gui.eliminar(aux);
+				aEliminar.add(aux);
 				///////////////
 				//ESTO MUERE DSP DEL SIGUIENTE SPRINT
 				if(aux instanceof Enemigo) {
@@ -38,11 +50,12 @@ public class Controlador {
 				//////////////////
 			}
 		}
-
-		mapa.repaint();
+		for (Elemento e: aEliminar)
+			entidades.remove(e);
+		
 	}
 	
-	public void comprarTorre(int x,int y) {
+	public synchronized void comprarTorre(int x,int y) {
 		boolean lugarLibre=true;
 		System.out.println("x:" +x+" y: "+y);
 		/*while(it.hasNext() && lugarLibre) {
@@ -55,14 +68,21 @@ public class Controlador {
 			Disparo nueva= new DisparoAliado(x,y);
 			entidades.add(nueva);
 			System.out.println("comprado");
-			mapa.agregar(nueva.obtenerGrafico());
+			gui.añadirElemento(nueva);
 		}
 	}
 	
-	public void colocarEnemigo(int x, int y) {
+	public synchronized void colocarEnemigo(int x, int y) {
 		Enemigo enemigo= new Enemigo1(x,y);
 		entidades.add(enemigo);
-		mapa.agregar(enemigo.obtenerGrafico());
+		gui.añadirElemento(enemigo);
+	}
+	
+	public void genocidio() {
+		for (Elemento e:entidades) {
+				e.setMuerto(true);
+		}
+		
 	}
 	
 //	public void remover() {
