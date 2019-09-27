@@ -13,7 +13,7 @@ import Entidad.Elemento;
 import EntidadGrafica.*;
 import Personajes.Enemigo;
 
-public class Mapa extends JPanel{
+public class Mapa{
 	public final int cantFilas = 6;
 	protected List<Elemento>[] entidades;
 	protected ImageIcon fondo;
@@ -116,11 +116,7 @@ public class Mapa extends JPanel{
 		e.setBounds(x,y,e.getAlto(),e.getAncho());
 		setComponentZOrder(e, 0);
 	}
-	
-	public void agregar(ElementoGrafico e) {
-		entidades[e.obtenerFila()].add(e);
-		añadirElemento(e);
-	}
+
 	
 	public void eliminar(ElementoGrafico e) {
 		boolean eliminado=false;
