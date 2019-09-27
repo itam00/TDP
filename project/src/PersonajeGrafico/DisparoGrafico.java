@@ -29,15 +29,9 @@ public class DisparoGrafico extends ElementoGrafico {
 
 	public void actualizar() {
 		this.setLocation(x+=2, y);
-		if (x>600) {
+		if (x>800) {
 			muerto=true;
 		}
-	}
-
-	@Override
-	public int obtenerFila() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 

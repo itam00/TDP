@@ -16,9 +16,7 @@ public class IsaacGrafico extends ElementoGrafico{
 	}
 
 	@Override
-	public int obtenerFila() {
-		return (int)(y/96);
-	}
+	
 	
 	public void actualizar() {
 		

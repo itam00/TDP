@@ -45,9 +45,7 @@ public abstract class ElementoGrafico extends JLabel{
 
 	
 	public abstract void actualizar();
-	
 
-	public abstract int obtenerFila();
 
 
 }

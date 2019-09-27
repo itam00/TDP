@@ -17,7 +17,7 @@ public class Controlador {
 		jugador = j;
 	}
 	
-	public void actualizar() {
+	public synchronized void actualizar() {
 		mapa.actualizar();
 	}
 	
@@ -41,6 +41,7 @@ public class Controlador {
 	
 	public synchronized void colocarEnemigo(int x, int y) {
 		Enemigo enemigo= new Enemigo1(x,y);
+		System.out.println("enemigdo agregado en " + enemigo.obtenerFila());
 		mapa.agregar(enemigo);
 	}
 

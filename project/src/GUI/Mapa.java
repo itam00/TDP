@@ -48,6 +48,17 @@ public class Mapa{
 					}
 					//////////////////
 				}
+				else {
+					for(Elemento e: entidades[i]) {
+						
+						if(e!=aux && coincidePosicion(e, aux)) {
+							System.out.println(e.obtenerFila()+"   "+ aux.obtenerFila()+ "   " +i);
+							aux.setMuerto(true);
+							e.setMuerto(true);
+							System.out.println("aaaaaaaaaaaaaaaaaaaaaaaa");
+						}
+					}
+				}
 			}
 		}
 
@@ -59,7 +70,7 @@ public class Mapa{
 		ElementoGrafico grafico1 = e1.obtenerGrafico();
 		ElementoGrafico grafico2 = e2.obtenerGrafico();
 		System.out.println(grafico1.getX()+"    "+grafico2.getX());
-		return  (grafico1.getX() == grafico2.getX()) && (grafico1.getY() == grafico2.getY());
+		return  Math.abs(grafico1.getX() - grafico2.getX()) <= 3;
 	}
 	
 	public boolean coincidePosicion(Elemento g,int x,int y) {
@@ -76,6 +87,7 @@ public class Mapa{
 	
 	public void agregar(Elemento e) {
 		entidades[e.obtenerFila()].add(e);
+		System.out.println("En el mapa se agrego en "+ e.obtenerFila());
 		gui.añadirElemento(e);
 	}
 	

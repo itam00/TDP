@@ -31,7 +31,7 @@ public abstract class Elemento {
 	}
 	
 	public int obtenerFila() {
-		return grafico.obtenerFila();
+		return (int)(grafico.getY()/96);
 	}
 
 	
@@ -44,11 +44,14 @@ public abstract class Elemento {
 	}
 	
 
+	public void setMuerto(boolean b) {
+		muerto=b;
+	}
+	
+
 	public void actualizar() {
 		grafico.actualizar();
-		muerto=grafico.estaMuerto();
-		
+		muerto= (muerto==true || grafico.estaMuerto());
 	}
-
 	
 }
