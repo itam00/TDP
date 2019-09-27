@@ -43,6 +43,11 @@ public class Controlador {
 		Enemigo enemigo= new Enemigo1(x,y);
 		mapa.agregar(enemigo);
 	}
+
+	public void genocidio() {
+		mapa.genocidio();
+		
+	}
 	
 //	public void remover() {
 //		for(Disparo s: entidades) {

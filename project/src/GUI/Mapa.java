@@ -20,15 +20,8 @@ public class Mapa{
 	protected GUI gui;
 	
 	public Mapa(GUI g) {
-		gui= g;
-		this.setLayout(null);
-		this.setVisible(true);
-		this.setOpaque(false);
-		this.setBounds(0, 0, 1028, 576);//esto quedo asi porque con 1024 no se ve el borde
-		agregarFondo();
-		addMouseListener(gui);
+		gui = g;
 
-		
 		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
 		for(int i=0;i<entidades.length;i++) {
 			entidades[i] = new LinkedList<Elemento>();
@@ -46,7 +39,7 @@ public class Mapa{
 				aux.actualizar();
 				if(aux.estaMuerto()) {
 					it.remove();
-					gui.eliminar(aux.obtenerGrafico());
+					gui.eliminar(aux);
 					///////////////
 					//ESTO MUERE DSP DEL SIGUIENTE SPRINT
 					
@@ -58,7 +51,6 @@ public class Mapa{
 			}
 		}
 
-		gui.repaintMapa();
 	}
 	
 	
@@ -84,6 +76,7 @@ public class Mapa{
 	
 	public void agregar(Elemento e) {
 		entidades[e.obtenerFila()].add(e);
+		gui.añadirElemento(e);
 	}
 	
 	
@@ -100,35 +93,6 @@ public class Mapa{
 	///////////////////////////////
 	//ESTO IRIA EN LA GUI
 	
-	private void agregarFondo(){
-		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Sprites/sueloMapa.png"));
-		JLabel dibujo = new JLabel(imagen);
-		dibujo.setOpaque(false);
-		add(dibujo);
-		dibujo.setBounds(0, 0,1024,576);
-	}
-	
-	public void añadirElemento(ElementoGrafico e) {
-		add(e);
-		int x = e.getX();
-		int y = e.getY();
-		System.out.println(x+" -aca- "+y);
-		e.setBounds(x,y,e.getAlto(),e.getAncho());
-		setComponentZOrder(e, 0);
-	}
-
-	
-	public void eliminar(ElementoGrafico e) {
-		boolean eliminado=false;
-		int fila = e.obtenerFila();
-		for(int i=0;i<entidades[fila].size() && !eliminado;i++) {
-			if(e==entidades[fila].get(i)) {
-				entidades[fila].remove(i);
-				remove(e);
-				eliminado=true;
-			}
-		}
-	}
 	
 	
 
