@@ -11,9 +11,11 @@ import javax.swing.JPanel;
 
 import Entidad.Elemento;
 import EntidadGrafica.*;
+import Personajes.Enemigo;
 
 public class Mapa extends JPanel{
-	protected List<ElementoGrafico>[] entidades;
+	public final int cantFilas = 6;
+	protected List<Elemento>[] entidades;
 	protected ImageIcon fondo;
 	protected GUI gui;
 	
@@ -27,11 +29,76 @@ public class Mapa extends JPanel{
 		addMouseListener(gui);
 
 		
-		entidades = (List<ElementoGrafico>[]) new LinkedList[6];
+		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
 		for(int i=0;i<entidades.length;i++) {
-			entidades[i] = new LinkedList<ElementoGrafico>();
+			entidades[i] = new LinkedList<Elemento>();
 		}
 	}
+	
+	public synchronized void actualizar() {
+		Elemento aux;
+		
+		for(int i=0;i<entidades.length;i++) {
+			Iterator<Elemento> it = entidades[i].iterator();
+		
+			while(it.hasNext()) {
+				aux = it.next();
+				aux.actualizar();
+				if(aux.estaMuerto()) {
+					it.remove();
+					gui.eliminar(aux.obtenerGrafico());
+					///////////////
+					//ESTO MUERE DSP DEL SIGUIENTE SPRINT
+					
+					if(aux instanceof Enemigo) {
+						//jugador.sumarPuntaje(((Enemigo) aux).getPuntos());
+					}
+					//////////////////
+				}
+			}
+		}
+
+		gui.repaintMapa();
+	}
+	
+	
+	
+	public boolean coincidePosicion(Elemento e1, Elemento e2) {
+		ElementoGrafico grafico1 = e1.obtenerGrafico();
+		ElementoGrafico grafico2 = e2.obtenerGrafico();
+		System.out.println(grafico1.getX()+"    "+grafico2.getX());
+		return  (grafico1.getX() == grafico2.getX()) && (grafico1.getY() == grafico2.getY());
+	}
+	
+	public boolean coincidePosicion(Elemento g,int x,int y) {
+		boolean coincide = false;
+		Elemento elem = g,aux;
+		Iterator<Elemento> it = entidades[g.obtenerFila()].iterator();
+		
+		while(it.hasNext() && !coincide) {
+			aux = it.next();
+			coincide = aux.getX() == elem.getX(); 
+		}
+		return coincide;
+	}
+	
+	public void agregar(Elemento e) {
+		entidades[e.obtenerFila()].add(e);
+	}
+	
+	
+	//solo para el sprint
+	public void genocidio() {
+		for(int i = 0; i<entidades.length;i++) {
+			for (Elemento e:entidades[i]) {
+					e.obtenerGrafico().setMuerto(true);
+			}
+		}
+		
+	}
+	
+	///////////////////////////////
+	//ESTO IRIA EN LA GUI
 	
 	private void agregarFondo(){
 		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Sprites/sueloMapa.png"));
@@ -67,24 +134,6 @@ public class Mapa extends JPanel{
 		}
 	}
 	
-	public boolean coincidePosicion(Elemento g,int x,int y) {
-		boolean coincide = false;
-		ElementoGrafico elem = g.obtenerGrafico(),aux;
-		Iterator<ElementoGrafico> it = entidades[elem.obtenerFila()].iterator();
-		
-		while(it.hasNext() && !coincide) {
-			aux = it.next();
-			coincide = aux.getX() == elem.getX(); 
-		}
-		return coincide;
-	}
 	
-	public void genocidio() {
-		for (List<ElementoGrafico> e:entidades)
-			for (int i=0; i<e.size();i++)
-				if (e.get(i)!=null) {
-					e.get(i).setMuerto(true);
-				}
-		
-	}
+
 }

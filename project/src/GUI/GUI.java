@@ -51,8 +51,8 @@ public class GUI extends JFrame implements MouseListener, KeyListener{
 		setearVentana();
 		setearPanelPrincipal();
 		tiempo.start();
-		getContentPane().add(jugador);
-		jugador.setBounds(500,600,100,100);
+		//getContentPane().add(jugador);
+		//jugador.setBounds(500,600,100,100);
 
 	}
 	

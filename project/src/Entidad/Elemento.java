@@ -14,12 +14,24 @@ public abstract class Elemento {
 		muerto=false;
 	}
 	
+	public int getX() {
+		return grafico.getX();
+	}
+	
+	public int getY() {
+		return grafico.getY();
+	}
+	
 	public int getPosY() {
 		return (int)(grafico.getY()/96);
 	}
 	
 	public int getPosX() {
 		return (int)(grafico.getX()/102.4);
+	}
+	
+	public int obtenerFila() {
+		return grafico.obtenerFila();
 	}
 
 	
