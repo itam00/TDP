@@ -19,7 +19,7 @@ public class EnemigoGrafico extends ElementoGrafico{
 	
 	@Override
 	public void actualizar() {
-		this.setLocation(x-=1, y);
+		this.setLocation(x-=2, y);
 		if (x<=10)
 			muerto=true;
 		

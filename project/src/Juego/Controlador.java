@@ -19,7 +19,7 @@ public class Controlador {
 		jugador = j;
 	}
 	
-	public void actualizar() {
+	public synchronized void actualizar() {
 		Iterator<Elemento> it = entidades.iterator();
 		Elemento aux;
 		
@@ -33,7 +33,6 @@ public class Controlador {
 				//ESTO MUERE DSP DEL SIGUIENTE SPRINT
 				if(aux instanceof Enemigo) {
 					jugador.sumarPuntaje(((Enemigo) aux).getPuntos());
-					System.out.println(jugador.getPuntaje());
 				}
 				//////////////////
 			}
@@ -42,7 +41,7 @@ public class Controlador {
 		mapa.repaint();
 	}
 	
-	public void comprarTorre(int x,int y) {
+	public synchronized void comprarTorre(int x,int y) {
 		boolean lugarLibre=true;
 		System.out.println("x:" +x+" y: "+y);
 		/*while(it.hasNext() && lugarLibre) {
@@ -59,7 +58,7 @@ public class Controlador {
 		}
 	}
 	
-	public void colocarEnemigo(int x, int y) {
+	public synchronized void colocarEnemigo(int x, int y) {
 		Enemigo enemigo= new Enemigo1(x,y);
 		entidades.add(enemigo);
 		mapa.agregar(enemigo.obtenerGrafico());

@@ -28,6 +28,7 @@ public class GUI extends JFrame implements MouseListener, KeyListener{
 	private Mapa mapa;
 	private ContadorTiempo tiempo;
 	private Controlador controlador;
+	private Jugador jugador;
 	
 	
 	public static void main(String[] args) {
@@ -43,12 +44,15 @@ public class GUI extends JFrame implements MouseListener, KeyListener{
 		
 	public GUI() {
 		mapa= new Mapa(this);
-		controlador = new Controlador(this,mapa,new Jugador());
+		jugador=new Jugador();
+		controlador = new Controlador(this,mapa,jugador);
 		tiempo= new ContadorTiempo(controlador,this);
 		addKeyListener(this);
 		setearVentana();
 		setearPanelPrincipal();
 		tiempo.start();
+		getContentPane().add(jugador);
+		jugador.setBounds(500,600,100,100);
 
 	}
 	
