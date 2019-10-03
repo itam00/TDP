@@ -41,7 +41,6 @@ public class Controlador {
 	
 	public synchronized void colocarEnemigo(int x, int y) {
 		Enemigo enemigo= new Enemigo1(x,y);
-		System.out.println("enemigdo agregado en " + enemigo.obtenerFila());
 		mapa.agregar(enemigo);
 	}
 

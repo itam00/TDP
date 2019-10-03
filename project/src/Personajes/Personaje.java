@@ -14,4 +14,12 @@ public abstract class Personaje extends Elemento{
 	public abstract void atacar();
 	public abstract boolean detectarEnemigo();
 	public abstract void aplicarPowerUp(PowerUp p);
+	public void disminuirVida(int n) {
+		vida-=n;
+	}
+	
+	public boolean getMuerto() {
+		return vida<=0;
+	}
+	
 }

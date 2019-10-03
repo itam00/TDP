@@ -1,6 +1,7 @@
 package Entidad;
 
 import EntidadGrafica.ElementoGrafico;
+import Visitor.Visitor;
 
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
@@ -47,6 +48,8 @@ public abstract class Elemento {
 	public void setMuerto(boolean b) {
 		muerto=b;
 	}
+	
+	public abstract void accept(Visitor v); // preguntar
 	
 
 	public void actualizar() {

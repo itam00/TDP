@@ -69,7 +69,6 @@ public class Mapa{
 	public boolean coincidePosicion(Elemento e1, Elemento e2) {
 		ElementoGrafico grafico1 = e1.obtenerGrafico();
 		ElementoGrafico grafico2 = e2.obtenerGrafico();
-		System.out.println(grafico1.getX()+"    "+grafico2.getX());
 		return  Math.abs(grafico1.getX() - grafico2.getX()) <= 3;
 	}
 	
