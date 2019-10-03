@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 
@@ -20,8 +21,9 @@ import EntidadGrafica.ElementoGrafico;
 import Juego.Controlador;
 import Juego.Jugador;
 import Personajes.*;
+import Tienda.Tienda;
 
-public class GUI extends JFrame implements MouseListener, KeyListener {
+public class GUI extends JFrame implements MouseListener{
 	private static final long serialVersionUID = 1L;
 
 	private ContadorTiempo tiempo;
@@ -29,6 +31,7 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 	protected List<ElementoGrafico>[] entidades;
 	protected ImageIcon fondo;
 	protected JPanel panelJuego;
+	protected Tienda tienda;
 
 	public static void main(String[] args) {
 		GUI frame = new GUI();
@@ -37,12 +40,14 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 
 	public GUI() {
 		// mapa= new Mapa(this);
-		controlador = new Controlador(this,new Mapa(this), new Jugador());
+		Jugador jugador = new Jugador();
+		tienda = new Tienda(jugador);
+		controlador = new Controlador(this,new Mapa(this), jugador,tienda);
 		tiempo = new ContadorTiempo(controlador, this);
-		addKeyListener(this);
 		addMouseListener(this);
 		setearVentana();
 		setearPanelJuego();
+		agregarPanelTienda();
 
 		tiempo.start();
 
@@ -71,6 +76,7 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 			controlador.comprarTorre(e.getX(), e.getY());
 		} else
 			controlador.colocarEnemigo(getWidth(), e.getY());
+		//controlador.click(e.getX(),e.getY());
 
 	}
 
@@ -79,28 +85,17 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 
 	}
 
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		if (arg0.getKeyChar() == 'k')
-			controlador.genocidio();
-	}
-
-	@Override
-	public void keyReleased(KeyEvent arg0) {
-
-	}
-
-	@Override
-	public void keyTyped(KeyEvent arg0) {
-
-	}
 
 	private void setearVentana() {
-		getContentPane().setLayout(null);
+		getContentPane().setLayout(new BorderLayout());
 		setResizable(false);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(150, 0, 1028, 768);// esto quedo asi porque con 1024 no se ve el borde
+	}
+	
+	private void agregarPanelTienda() {
+		getContentPane().add(tienda,BorderLayout.SOUTH);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -109,9 +104,9 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 		panelJuego.setLayout(null);
 		panelJuego.setVisible(true);
 		panelJuego.setOpaque(false);
-		this.add(panelJuego);
-		panelJuego.setBounds(0, 0, 1028, 576);// esto quedo asi porque con 1024 no se ve el borde
+		panelJuego.setSize( 1028, 576);// esto quedo asi porque con 1024 no se ve el borde
 		agregarFondo();
+		this.add(panelJuego,BorderLayout.CENTER);
 		repaint();
 	}
 
@@ -120,7 +115,8 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 		JLabel dibujo = new JLabel(imagen);
 		dibujo.setOpaque(false);
 		add(dibujo);
-		dibujo.setBounds(0, 0, 1024, 576);
+		dibujo.setSize( 1024, 576);
+		
 		panelJuego.add(dibujo);
 	}
 

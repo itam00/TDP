@@ -10,6 +10,7 @@ public abstract class Personaje extends Elemento{
 	public Personaje(int x, int y) {
 		super(x,y);
 	}
+	public Personaje() {}
 
 	public abstract void atacar();
 	public abstract boolean detectarEnemigo();

@@ -3,6 +3,7 @@ import java.util.*;
 
 import GUI.*;
 import Personajes.*;
+import Tienda.Tienda;
 import Entidad.*;
 
 public class Controlador {
@@ -10,11 +11,13 @@ public class Controlador {
 	protected Mapa mapa;
 	protected ContadorTiempo contador;
 	protected Jugador jugador;
+	protected Tienda tienda;
 	
-	public Controlador(GUI g, Mapa m, Jugador j) {
+	public Controlador(GUI g, Mapa m, Jugador j,Tienda t) {
 		gui = g;
 		mapa=m;
 		jugador = j;
+		tienda = t;
 	}
 	
 	public synchronized void actualizar() {
@@ -44,9 +47,12 @@ public class Controlador {
 		mapa.agregar(enemigo);
 	}
 
-	public void genocidio() {
-		mapa.genocidio();
-		
+	public void click(int x,int y) {
+		if(tienda.hayComprado()) {
+			Torre t = tienda.getComprado();
+			t.setPos(x, y);
+			mapa.agregar(t);
+		}
 	}
 	
 //	public void remover() {
