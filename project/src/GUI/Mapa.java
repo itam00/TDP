@@ -40,24 +40,6 @@ public class Mapa{
 				if(aux.estaMuerto()) {
 					it.remove();
 					gui.eliminar(aux);
-					///////////////
-					//ESTO MUERE DSP DEL SIGUIENTE SPRINT
-					
-					if(aux instanceof Enemigo) {
-						//jugador.sumarPuntaje(((Enemigo) aux).getPuntos());
-					}
-					//////////////////
-				}
-				else {
-					for(Elemento e: entidades[i]) {
-						
-						if(e!=aux && coincidePosicion(e, aux)) {
-							System.out.println(e.obtenerFila()+"   "+ aux.obtenerFila()+ "   " +i);
-							aux.setMuerto(true);
-							e.setMuerto(true);
-							System.out.println("aaaaaaaaaaaaaaaaaaaaaaaa");
-						}
-					}
 				}
 			}
 		}
@@ -72,14 +54,18 @@ public class Mapa{
 		return  Math.abs(grafico1.getX() - grafico2.getX()) <= 3;
 	}
 	
-	public boolean coincidePosicion(Elemento g,int x,int y) {
+	public boolean coincidePosicion(int x,int y) {
 		boolean coincide = false;
-		Elemento elem = g,aux;
-		Iterator<Elemento> it = entidades[g.obtenerFila()].iterator();
+		int fila= (int)(y/96);
+		x = (int)(x/102)*102;
+		Iterator<Elemento> it = entidades[fila].iterator();
+		Elemento aux;
+		
 		
 		while(it.hasNext() && !coincide) {
 			aux = it.next();
-			coincide = aux.getX() == elem.getX(); 
+			coincide = aux.getX() == x;
+			System.out.println(aux.getX() + " - " +x);
 		}
 		return coincide;
 	}

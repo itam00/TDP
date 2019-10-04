@@ -48,7 +48,7 @@ public class Controlador {
 	}
 
 	public void click(int x,int y) {
-		if(tienda.hayComprado()) {
+		if(tienda.hayComprado() && !mapa.coincidePosicion(x,y)) {
 			Torre t = tienda.getComprado();
 			t.setPos(x, y);
 			mapa.agregar(t);

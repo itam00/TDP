@@ -7,4 +7,8 @@ import javax.swing.JButton;
 
 public abstract class BotonTienda extends JButton{
 	protected Tienda tienda;
+	public BotonTienda(Tienda t) {
+		tienda = t;
+	}
+	
 }

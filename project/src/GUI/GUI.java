@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 
@@ -11,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -72,11 +74,11 @@ public class GUI extends JFrame implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		if (e.getButton() == MouseEvent.BUTTON1) {
+		/*if (e.getButton() == MouseEvent.BUTTON1) {
 			controlador.comprarTorre(e.getX(), e.getY());
 		} else
-			controlador.colocarEnemigo(getWidth(), e.getY());
-		//controlador.click(e.getX(),e.getY());
+			controlador.colocarEnemigo(getWidth(), e.getY());*/
+		controlador.click(e.getX(),e.getY());
 
 	}
 
@@ -87,15 +89,15 @@ public class GUI extends JFrame implements MouseListener{
 
 
 	private void setearVentana() {
-		getContentPane().setLayout(new BorderLayout());
+		getContentPane().setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
 		setResizable(false);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(150, 0, 1028, 768);// esto quedo asi porque con 1024 no se ve el borde
+		setBounds(0, 0, 1028, 768);// esto quedo asi porque con 1024 no se ve el borde
 	}
 	
 	private void agregarPanelTienda() {
-		getContentPane().add(tienda,BorderLayout.SOUTH);
+		getContentPane().add(tienda);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -104,9 +106,9 @@ public class GUI extends JFrame implements MouseListener{
 		panelJuego.setLayout(null);
 		panelJuego.setVisible(true);
 		panelJuego.setOpaque(false);
-		panelJuego.setSize( 1028, 576);// esto quedo asi porque con 1024 no se ve el borde
+		panelJuego.setPreferredSize(new Dimension( 1028, 640));// esto quedo asi porque con 1024 no se ve el borde
 		agregarFondo();
-		this.add(panelJuego,BorderLayout.CENTER);
+		this.add(panelJuego);
 		repaint();
 	}
 
