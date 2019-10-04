@@ -10,8 +10,16 @@ public abstract class Torre extends Personaje{
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Torre() {}
+	
+	public abstract void setPos(int x,int y);
+	
 	public void accept(Visitor v) {
 		v.visit(this);
+	}
+	
+	public int getPrecio() {
+		return precio;
 	}
 
 

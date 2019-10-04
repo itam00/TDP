@@ -4,18 +4,23 @@ import PersonajeGrafico.*;
 import Recolectable.PowerUp;
 
 public class Isaac extends Torre{
+	int vida  =100;
+	int danio = 1;
+	int rango = 2;
+	int precio = 10;
 
 	public Isaac(int x,int y) {
 		super(x,y);
-		vida= 100;
-		danio= 1;
-		rango= 2;
-		precio= 0;//MODIFICAR LUEGO
-		tamanio= 0;//CONSULTAR QUE REPRESENTA EL TAMANIO
-		
 		grafico = new IsaacGrafico(x,y);
 	}
 
+	public Isaac() {
+	}
+	
+	public void setPos(int x,int y) {
+		grafico = new IsaacGrafico(x,y);
+	}
+	
 	@Override
 	public void atacar() {
 		// TODO Auto-generated method stub

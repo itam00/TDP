@@ -2,7 +2,7 @@ package PersonajeGrafico;
 import javax.swing.ImageIcon;
 
 import EntidadGrafica.*;
-public class IsaacGrafico extends ElementoGrafico{
+public class IsaacGrafico extends TorreGrafica{
 
 	private static final long serialVersionUID = 1L;
 

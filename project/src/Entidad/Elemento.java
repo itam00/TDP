@@ -1,6 +1,7 @@
 package Entidad;
 
 import EntidadGrafica.ElementoGrafico;
+import State.*;
 import Visitor.Visitor;
 
 public abstract class Elemento {
@@ -9,10 +10,18 @@ public abstract class Elemento {
 	//protected int y;
 	protected boolean muerto;
 	
+	protected Visitor visitor;
+	protected State estado;
+	
+	
 	public Elemento(int x,int y) {
 	//	this.y = (int)(y/96);
 	//	this.x = (int)(x/102.4);
 		muerto=false;
+	}
+	
+	public Elemento() {
+		
 	}
 	
 	public int getX() {

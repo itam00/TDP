@@ -27,4 +27,10 @@ public class Torre3 extends Torre{
 		
 	}
 
+	@Override
+	public void setPos(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

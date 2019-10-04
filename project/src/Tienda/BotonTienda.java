@@ -5,14 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public abstract class BotonTienda extends JButton implements ActionListener{
-	public BotonTienda() {
-		this.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+public abstract class BotonTienda extends JButton{
+	protected Tienda tienda;
+	public BotonTienda(Tienda t) {
+		tienda = t;
 	}
+	
 }
