@@ -86,10 +86,7 @@ public class Mapa{
 		}
 		
 	}
-	
-	///////////////////////////////
-	//ESTO IRIA EN LA GUI
-	
+
 	
 	
 
