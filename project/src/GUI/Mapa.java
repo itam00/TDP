@@ -41,6 +41,9 @@ public class Mapa{
 					it.remove();
 					gui.eliminar(aux);
 				}
+				else {
+					//verificarColision(aux);
+				}
 			}
 		}
 
@@ -49,10 +52,15 @@ public class Mapa{
 	
 	
 	public boolean coincidePosicion(Elemento e1, Elemento e2) {
-		ElementoGrafico grafico1 = e1.obtenerGrafico();
-		ElementoGrafico grafico2 = e2.obtenerGrafico();
-		return  Math.abs(grafico1.getX() - grafico2.getX()) <= 3;
+		return  Math.abs(e1.getX() - e2.getX()) <= 3;
 	}
+	
+	/**
+	 * Verifica si x e y coincide con cualquiera de las POSICIONES de los elementos en la fila
+	 * @param x 
+	 * @param y
+	 * @return En caso de que la posicion este ocupada retorna true y falso en caso contrario
+	 */
 	
 	public boolean coincidePosicion(int x,int y) {
 		boolean coincide = false;
@@ -65,10 +73,49 @@ public class Mapa{
 		while(it.hasNext() && !coincide) {
 			aux = it.next();
 			coincide = aux.getX() == x;
-			System.out.println(aux.getX() + " - " +x);
 		}
 		return coincide;
 	}
+	/**
+	 * Verifica si el elemento e "colisiona" con otro elemento en su fila segun el rango del elemento
+	 * @param e elemento a partir del cual se verica la colision
+	 */
+	public void verificarColision(Elemento e) {
+		boolean colisiona = false;
+		Iterator<Elemento> it = entidades[e.obtenerFila()].iterator();
+		Elemento aux;
+		while(it.hasNext() && !colisiona) {
+			aux = it.next();
+			colisiona = estaEnRango(e,aux);
+		}
+		if(colisiona) {
+			//VISITAR
+		}
+		else {
+			//CAMBIAR AL ELEMENTO A SU ESTAO POR DEFECTO
+		}
+	}
+	/**
+	 * Computa si el elmento destino esta en el rango del elemento origen
+	 * @param origen elemento a partir del cual se obtendra el rango
+	 * @param destino elemento al que se verifica si esta en rango o no del origen
+	 * @return true en el caso de que este en rango false caso contrario
+	 */
+	//PREGUNTAR SI ESTARIA BIEN QUE ESTO ESTE EN LOS ELEMENTOS EN VEZ DEL MAPA
+	//SOLO SE PASARIA UN ELEMENTO COM PARAMETRO
+	public boolean estaEnRango(Elemento origen,Elemento destino) {
+		int r = origen.limiteRango();
+		int x = origen.getX();
+		
+		//se computa con el minimo y el maximo ya que el limite de rango de un enemigo
+		//estan invertidos con respecto a los de las torres
+		return Math.min(r,x)<destino.getX() && destino.getX()<Math.max(r, x); 
+	}
+	
+	/**
+	 * agrega un elemento al mapa y a la gui
+	 * @param e elemento a agregar
+	 */
 	
 	public void agregar(Elemento e) {
 		entidades[e.obtenerFila()].add(e);
@@ -76,16 +123,6 @@ public class Mapa{
 		gui.añadirElemento(e);
 	}
 	
-	
-	//solo para el sprint
-	public void genocidio() {
-		for(int i = 0; i<entidades.length;i++) {
-			for (Elemento e:entidades[i]) {
-					e.obtenerGrafico().setMuerto(true);
-			}
-		}
-		
-	}
 
 	
 	

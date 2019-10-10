@@ -16,5 +16,10 @@ public class DisparoAliado extends Disparo {
 		v.visit(this);
 		
 	}
+	
+	@Override
+	public int limiteRango() {
+		return getX()+grafico.getAncho();	//esto hay q corregirlo dps
+	}
 
 }

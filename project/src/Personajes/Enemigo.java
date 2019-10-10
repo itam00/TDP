@@ -20,5 +20,8 @@ public abstract class Enemigo extends Personaje{
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
+	public int limiteRango() {
+		return getX()-rango;
+	}
 	
 }

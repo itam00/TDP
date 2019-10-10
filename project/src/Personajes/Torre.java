@@ -21,6 +21,9 @@ public abstract class Torre extends Personaje{
 	public int getPrecio() {
 		return precio;
 	}
+	public int limiteRango() {
+		return getX()+rango*grafico.getAncho();
+	}
 
 
 

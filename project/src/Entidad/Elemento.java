@@ -60,6 +60,8 @@ public abstract class Elemento {
 	
 	public abstract void accept(Visitor v); // preguntar
 	
+	public abstract int limiteRango();
+	
 
 	public void actualizar() {
 		grafico.actualizar();
