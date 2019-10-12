@@ -114,6 +114,7 @@ public class GUI extends JFrame implements MouseListener{
 		repaint();
 	}
 
+
 	private void agregarFondo() {
 		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Sprites/sueloMapa.png"));
 		JLabel dibujo = new JLabel(imagen);
@@ -140,6 +141,28 @@ public class GUI extends JFrame implements MouseListener{
 		repaint();
 	}
 
+	public synchronized void añadirElemento(Elemento e) {
+		ElementoGrafico grafico = e.obtenerGrafico();
+		panelJuego.add(grafico);
+		int x = grafico.getX();
+		int y = grafico.getY();
+		System.out.println(x + " -aca- " + y);
+		grafico.setBounds(x, y, grafico.getAlto(), grafico.getAncho());
+		panelJuego.setComponentZOrder(grafico, 0);
+	}
+
+	public void eliminar(Elemento e) {
+		panelJuego.remove(e.obtenerGrafico());
+		panelJuego.repaint();
+		repaint();
+	}
+
+	public boolean coincidePosicion(Elemento e1, Elemento e2) {
+		ElementoGrafico grafico1 = e1.obtenerGrafico();
+		ElementoGrafico grafico2 = e2.obtenerGrafico();
+		System.out.println(grafico1.getX()+"    "+grafico2.getX());
+		return  (grafico1.getX() == grafico2.getX()) && (grafico1.getY() == grafico2.getY());
+	}
 
 }
 //setbound

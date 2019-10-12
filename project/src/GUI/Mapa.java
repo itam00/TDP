@@ -127,18 +127,11 @@ public class Mapa{
 	//	System.out.println(destino.getX());
 	//	System.out.println(inicioRangoX); use esto para ver por que no colisionaba.
 	//	System.out.println(finRangoX);
-		
-		//se computa con el minimo y el maximo ya que el limite de rango de un enemigo
-		//estan invertidos con respecto a los de las torres
-		return  Math.min(inicioRangoX, finRangoX)<destino.getX() && destino.getX()<Math.max(inicioRangoX,finRangoX); 
-	}
 	
 	/**
 	 * agrega un elemento al mapa y a la gui
 	 * @param e elemento a agregar
 	 */
-	
-
 	public synchronized void agregar(Elemento e) {
 		entidades[e.obtenerFila()].add(e);
 		System.out.println("En el mapa se agrego en "+ e.obtenerFila());

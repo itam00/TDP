@@ -1,6 +1,5 @@
 package Personajes;
 
-
 import GUI.Mapa;
 import Visitor.Visitor;
 import Visitor.VisitorEnemigo;
@@ -20,19 +19,19 @@ public abstract class Enemigo extends Personaje{
 	public int getRecompensa() {
 		return recompensa;
 	}
-	
+
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
+	
 	public int limiteRango() {
 		return getX()-rango;
 	}
-
 	
 	public void setQuieto(boolean q) {
 		quieto=q;
 	}
-	
+
 	public boolean getQuieto() {
 		return quieto;
 	}

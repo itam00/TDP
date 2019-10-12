@@ -5,7 +5,6 @@ import GUI.Mapa;
 import State.*;
 import Visitor.Visitor;
 
-
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
 	protected int inicioRangoX, finRangoX;
@@ -34,28 +33,12 @@ public abstract class Elemento {
 		return grafico.getY();
 	}
 	
-	public int getPosY() {
-		return (int)(grafico.getY()/96);
+	
+	public Elemento(int x,int y, Mapa m) {
+		muerto=false;
+		mapa=m;
 	}
 	
-	public int getPosX() {
-		return (int)(grafico.getX()/102.4);
-	}
-	
-	public int obtenerFila() {
-		return (int)(grafico.getY()/96);
-	}
-
-	
-	public ElementoGrafico obtenerGrafico() {
-		return grafico;
-	}
-	
-	public boolean estaMuerto() {
-		return muerto;
-	}
-	
-
 	public void setMuerto(boolean b) {
 		muerto=b;
 	}

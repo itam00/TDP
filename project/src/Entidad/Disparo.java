@@ -14,7 +14,8 @@ public abstract class Disparo extends Elemento {
 	
 	public int getDanio() {
 		return danio;
-	}
+	public Disparo(int x, int y, Mapa m) {
+		super(x, y,m);
 	
 	/*public void removerDisparo() {
 		controlador.remover(this);

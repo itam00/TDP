@@ -5,6 +5,7 @@ import GUI.*;
 import Personajes.*;
 import Tienda.Tienda;
 import Entidad.*;
+import EntidadGrafica.ElementoGrafico;
 
 public class Controlador {
 	protected GUI gui;
@@ -25,6 +26,7 @@ public class Controlador {
 	}
 	
 	
+	
 	public synchronized void comprarTorre(int x,int y) {
 		boolean lugarLibre=true;
 		System.out.println("x:" +x+" y: "+y);
@@ -38,8 +40,6 @@ public class Controlador {
 			Disparo nueva= new DisparoAliado(x,y,mapa);
 			mapa.agregar(nueva);
 			System.out.println("comprado");
-			
-		}
 	}
 	
 	public synchronized void colocarEnemigo(int x, int y) {

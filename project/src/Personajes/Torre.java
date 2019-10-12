@@ -19,6 +19,26 @@ public abstract class Torre extends Personaje{
 		visitor=new VisitorTorre(this);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Torre() {
+		visitor=new VisitorTorre(this);
+	}
+	
+	public abstract void setPos(int x,int y, Mapa m);
+	
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
+	
+	public void atacar() {
+		System.out.println("aca llega");
+		DisparoAliado d= new DisparoAliado(x,y,mapa);
+		mapa.agregar(d);
+	}
+	
+	public int getPrecio() {
+		return precio;
+	}
 
 	public Torre() {
 		visitor=new VisitorTorre(this);

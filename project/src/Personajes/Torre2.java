@@ -23,10 +23,13 @@ public class Torre2 extends Torre{
 		
 	}
 
+<<<<<<< Updated upstream
+=======
 	@Override
 	public void setPos(int x, int y, Mapa m) {
 		// TODO Auto-generated method stub
 		
 	}
 
+>>>>>>> Stashed changes
 }

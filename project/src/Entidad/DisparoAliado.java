@@ -17,12 +17,11 @@ public class DisparoAliado extends Disparo {
 		grafico=  new DisparoGrafico(x, y);
 	}
 
+
 	@Override
 	public void accept(Visitor v) {
 		v.visit(this);
 		
 	}
 	
-
-
 }
