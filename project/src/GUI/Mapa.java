@@ -29,7 +29,23 @@ public class Mapa extends JPanel{
 		
 		entidades = (List<ElementoGrafico>[]) new LinkedList[6];
 		for(int i=0;i<entidades.length;i++) {
+<<<<<<< Updated upstream
 			entidades[i] = new LinkedList<ElementoGrafico>();
+=======
+			Iterator<Elemento> it = entidades[i].iterator();
+		
+			while(it.hasNext()) {
+				aux = it.next();
+				aux.actualizar();
+				if(aux.estaMuerto()) {
+					it.remove();
+					gui.eliminar(aux);
+				}
+				else {
+					verificarColision(aux);
+				}
+			}
+>>>>>>> Stashed changes
 		}
 	}
 	
@@ -78,6 +94,7 @@ public class Mapa extends JPanel{
 		}
 		return coincide;
 	}
+<<<<<<< Updated upstream
 	
 	public void genocidio() {
 		for (List<ElementoGrafico> e:entidades)
@@ -86,5 +103,59 @@ public class Mapa extends JPanel{
 					e.get(i).setMuerto(true);
 				}
 		
+=======
+	/**
+	 * Verifica si el elemento e "colisiona" con otro elemento en su fila segun el rango del elemento
+	 * @param e elemento a partir del cual se verica la colision
+	 */
+	public void verificarColision(Elemento e) {
+		boolean colisiona1 = false;
+		Iterator<Elemento> it = entidades[e.obtenerFila()].iterator();
+		Elemento aux;
+		while(it.hasNext() && !colisiona1 ) {
+			aux = it.next();
+			if (e!=aux) {
+				colisiona1 = estaEnRango(e,aux);
+				if(colisiona1) {
+					aux.accept(e.getVisitor());
+				}
+				else{
+					//CAMBIAR AL ELEMENTO A SU ESTAO POR DEFECTO
+				}
+			}
+		}
+	}
+	/**
+	 * Computa si el elmento destino esta en el rango del elemento origen
+	 * @param origen elemento a partir del cual se obtendra el rango
+	 * @param destino elemento al que se verifica si esta en rango o no del origen
+	 * @return true en el caso de que este en rango false caso contrario
+	 */
+	//PREGUNTAR SI ESTARIA BIEN QUE ESTO ESTE EN LOS ELEMENTOS EN VEZ DEL MAPA
+	//SOLO SE PASARIA UN ELEMENTO COM PARAMETRO
+	public boolean estaEnRango(Elemento origen,Elemento destino) {
+		if (origen==destino)
+			return false;
+		int inicioRangoX= origen.getInicioRangoX();
+		int finRangoX= origen.getFinRangoX();
+	//	System.out.println(destino.getX());
+	//	System.out.println(inicioRangoX); use esto para ver por que no colisionaba.
+	//	System.out.println(finRangoX);
+		
+		//se computa con el minimo y el maximo ya que el limite de rango de un enemigo
+		//estan invertidos con respecto a los de las torres
+		return  Math.min(inicioRangoX, finRangoX)<destino.getX() && destino.getX()<Math.max(inicioRangoX,finRangoX); 
+	}
+	
+	/**
+	 * agrega un elemento al mapa y a la gui
+	 * @param e elemento a agregar
+	 */
+	
+	public synchronized void agregar(Elemento e) {
+		entidades[e.obtenerFila()].add(e);
+		System.out.println("En el mapa se agrego en "+ e.obtenerFila());
+		gui.añadirElemento(e);
+>>>>>>> Stashed changes
 	}
 }

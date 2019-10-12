@@ -1,17 +1,33 @@
 package Entidad;
 
 import EntidadGrafica.ElementoGrafico;
+<<<<<<< Updated upstream
+=======
+import GUI.Mapa;
+import State.*;
+import Visitor.Visitor;
+>>>>>>> Stashed changes
 
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
-	//protected int x;
-	//protected int y;
+	protected int inicioRangoX, finRangoX;
+	protected int inicioRangoY, finRangoY;
 	protected boolean muerto;
+	protected Mapa mapa;
 	
+<<<<<<< Updated upstream
 	public Elemento(int x,int y) {
 	//	this.y = (int)(y/96);
 	//	this.x = (int)(x/102.4);
+=======
+	protected Visitor visitor;
+	protected State estado;
+	
+	
+	public Elemento(int x,int y, Mapa m) {
+>>>>>>> Stashed changes
 		muerto=false;
+		mapa=m;
 	}
 	
 	public int getPosY() {
@@ -35,6 +51,27 @@ public abstract class Elemento {
 		muerto=b;
 	}
 	
+<<<<<<< Updated upstream
+=======
+	public abstract void accept(Visitor v); // preguntar
+	
+	public int getInicioRangoX() {
+		return inicioRangoX;
+	}
+	
+	public int getFinRangoX() {
+		return finRangoX;
+	}
+	
+	public int getInicioRangoY() {
+		return inicioRangoY;
+	}
+	
+	public int getFinRangoY() {
+		return inicioRangoY;
+	}
+	
+>>>>>>> Stashed changes
 
 	public void actualizar() {
 		grafico.actualizar();
@@ -42,5 +79,9 @@ public abstract class Elemento {
 		
 	}
 
+	
+	public Visitor getVisitor() {
+		return visitor;
+	}
 	
 }

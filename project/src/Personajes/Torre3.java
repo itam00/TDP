@@ -1,11 +1,12 @@
 package Personajes;
 
+import GUI.Mapa;
 import Recolectable.PowerUp;
 
 public class Torre3 extends Torre{
 
-	public Torre3(int x, int y) {
-		super(x, y);
+	public Torre3(int x, int y, Mapa m) {
+		super(x, y,m);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -15,11 +16,6 @@ public class Torre3 extends Torre{
 		
 	}
 
-	@Override
-	public boolean detectarEnemigo() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public void aplicarPowerUp(PowerUp p) {
@@ -27,4 +23,13 @@ public class Torre3 extends Torre{
 		
 	}
 
+<<<<<<< Updated upstream
+=======
+	@Override
+	public void setPos(int x, int y, Mapa m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+>>>>>>> Stashed changes
 }

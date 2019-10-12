@@ -65,14 +65,20 @@ public class Controlador {
 		*/
 		if(lugarLibre) {
 		//	Torre nueva = new Isaac(x,y);
+<<<<<<< Updated upstream
 			Disparo nueva= new DisparoAliado(x,y);
 			entidades.add(nueva);
+=======
+			Disparo nueva= new DisparoAliado(x,y,mapa);
+			mapa.agregar(nueva);
+>>>>>>> Stashed changes
 			System.out.println("comprado");
 			gui.añadirElemento(nueva);
 		}
 	}
 	
 	public synchronized void colocarEnemigo(int x, int y) {
+<<<<<<< Updated upstream
 		Enemigo enemigo= new Enemigo1(x,y);
 		entidades.add(enemigo);
 		gui.añadirElemento(enemigo);
@@ -81,6 +87,17 @@ public class Controlador {
 	public void genocidio() {
 		for (Elemento e:entidades) {
 				e.setMuerto(true);
+=======
+		Enemigo enemigo= new Enemigo1(x,y,mapa);
+		mapa.agregar(enemigo);
+	}
+
+	public void click(int x,int y) {
+		if(y<576&&tienda.hayComprado() && !mapa.coincidePosicion(x,y)) {
+			Torre t = tienda.getComprado();
+			t.setPos(x, y,mapa);
+			mapa.agregar(t);
+>>>>>>> Stashed changes
 		}
 		
 	}

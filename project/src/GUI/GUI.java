@@ -45,6 +45,8 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 		setearPanelJuego();
 
 		tiempo.start();
+		for (int i=0; i<6;i++)
+			controlador.colocarEnemigo(918+100, i*96);
 
 	}
 
@@ -124,7 +126,7 @@ public class GUI extends JFrame implements MouseListener, KeyListener {
 		panelJuego.add(dibujo);
 	}
 
-	public void añadirElemento(Elemento e) {
+	public synchronized void añadirElemento(Elemento e) {
 		ElementoGrafico grafico = e.obtenerGrafico();
 		panelJuego.add(grafico);
 		int x = grafico.getX();

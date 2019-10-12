@@ -1,15 +1,20 @@
 package Personajes;
 
+import GUI.Mapa;
 import PersonajeGrafico.*;
 import Recolectable.*;
 
 public class Enemigo1 extends Enemigo{
 
-	public Enemigo1(int x, int y) {
-		super(x, y);
+	public Enemigo1(int x, int y, Mapa m) {
+		super(x, y, m);
 		vida = 100;
 		danio = 100;
-		rango = 10;
+		rango = 1;
+		inicioRangoX=x;
+		finRangoX=x-10;
+		inicioRangoY=y+10;
+		finRangoY=y-10;
 		puntos =  10;
 		recompensa = 100;
 		grafico= new Enemigo1Grafico(x,y);
@@ -21,11 +26,6 @@ public class Enemigo1 extends Enemigo{
 		
 	}
 
-	@Override
-	public boolean detectarEnemigo() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public void aplicarPowerUp(PowerUp p) {
