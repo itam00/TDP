@@ -55,6 +55,7 @@ public class Mapa{
 			entidades[e.obtenerFila()].add(e);
 			gui.añadirElemento(e);
 		}
+		porAgregar.clear();
 
 	}
 	

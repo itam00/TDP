@@ -3,6 +3,7 @@ package Entidad;
 import GUI.Mapa;
 import PersonajeGrafico.DisparoGrafico;
 import Visitor.Visitor;
+import Visitor.VisitorDisparo;
 
 public class DisparoAliado extends Disparo {
 
@@ -15,6 +16,7 @@ public class DisparoAliado extends Disparo {
 		inicioRangoY=y-5;
 		finRangoY=y+5;
 		grafico=  new DisparoGrafico(x, y);
+		visitor = new VisitorDisparo();
 	}
 
 	@Override
