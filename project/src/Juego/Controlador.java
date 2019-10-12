@@ -35,7 +35,7 @@ public class Controlador {
 		*/
 		if(lugarLibre) {
 		//	Torre nueva = new Isaac(x,y);
-			Disparo nueva= new DisparoAliado(x,y);
+			Disparo nueva= new DisparoAliado(x,y,mapa);
 			mapa.agregar(nueva);
 			System.out.println("comprado");
 			
@@ -43,14 +43,14 @@ public class Controlador {
 	}
 	
 	public synchronized void colocarEnemigo(int x, int y) {
-		Enemigo enemigo= new Enemigo1(x,y);
+		Enemigo enemigo= new Enemigo1(x,y,mapa);
 		mapa.agregar(enemigo);
 	}
 
 	public void click(int x,int y) {
 		if(y<576&&tienda.hayComprado() && !mapa.coincidePosicion(x,y)) {
 			Torre t = tienda.getComprado();
-			t.setPos(x, y);
+			t.setPos(x, y,mapa);
 			mapa.agregar(t);
 		}
 	}

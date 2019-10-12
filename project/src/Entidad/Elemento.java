@@ -1,23 +1,25 @@
 package Entidad;
 
-import EntidadGrafica.ElementoGrafico;
+import EntidadGrafica.ElementoGrafico; 
+import GUI.Mapa;
 import State.*;
 import Visitor.Visitor;
 
+
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
-	//protected int x;
-	//protected int y;
+	protected int inicioRangoX, finRangoX;
+	protected int inicioRangoY, finRangoY;
 	protected boolean muerto;
-	
+	protected Mapa mapa;
+
 	protected Visitor visitor;
 	protected State estado;
 	
 	
-	public Elemento(int x,int y) {
-	//	this.y = (int)(y/96);
-	//	this.x = (int)(x/102.4);
+	public Elemento(int x,int y, Mapa m) {
 		muerto=false;
+		mapa=m;
 	}
 	
 	public Elemento() {
@@ -57,15 +59,32 @@ public abstract class Elemento {
 	public void setMuerto(boolean b) {
 		muerto=b;
 	}
-	
+
 	public abstract void accept(Visitor v); // preguntar
 	
-	public abstract int limiteRango();
+	public int getInicioRangoX() {
+		return inicioRangoX;
+	}
 	
+	public int getFinRangoX() {
+		return finRangoX;
+	}
+	
+	public int getInicioRangoY() {
+		return inicioRangoY;
+	}
+	
+	public int getFinRangoY() {
+		return inicioRangoY;
+	}
 
 	public void actualizar() {
 		grafico.actualizar();
 		muerto= (muerto==true || grafico.estaMuerto());
+	}
+	
+	public Visitor getVisitor() {
+		return visitor;
 	}
 	
 }

@@ -7,27 +7,34 @@ import Recolectable.PowerUp;
 
 public class VisitorEnemigo extends Visitor {
 
+	protected Enemigo mio;
+	
+	public VisitorEnemigo(Enemigo e) {
+		mio= e;
+	}
+	
 	@Override
 	public void visit(Torre t) {
-		// TODO Auto-generated method stub
+		mio.setQuieto(true);
+		System.out.println("ME frene");
+		
 		
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("llega a enemigo");
 	}
 
 	@Override
 	public void visit(Disparo d) {
-		// TODO Auto-generated method stub
+		System.out.println("llega a disparo");
 		
 	}
 
 	@Override
 	public void visit(PowerUp p) {
-		// TODO Auto-generated method stub
+		System.out.println("llega a powerup");
 		
 	}
 

@@ -23,8 +23,22 @@ public class Mapa{
 		gui = g;
 
 		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
+		Elemento aux;
 		for(int i=0;i<entidades.length;i++) {
 			entidades[i] = new LinkedList<Elemento>();
+			Iterator<Elemento> it = entidades[i].iterator();
+		
+			while(it.hasNext()) {
+				aux = it.next();
+				aux.actualizar();
+				if(aux.estaMuerto()) {
+					it.remove();
+					gui.eliminar(aux);
+				}
+				else {
+					verificarColision(aux);
+				}
+			}
 		}
 	}
 	
@@ -76,23 +90,26 @@ public class Mapa{
 		}
 		return coincide;
 	}
+
 	/**
 	 * Verifica si el elemento e "colisiona" con otro elemento en su fila segun el rango del elemento
 	 * @param e elemento a partir del cual se verica la colision
 	 */
 	public void verificarColision(Elemento e) {
-		boolean colisiona = false;
+		boolean colisiona1 = false;
 		Iterator<Elemento> it = entidades[e.obtenerFila()].iterator();
 		Elemento aux;
-		while(it.hasNext() && !colisiona) {
+		while(it.hasNext() && !colisiona1 ) {
 			aux = it.next();
-			colisiona = estaEnRango(e,aux);
-		}
-		if(colisiona) {
-			//VISITAR
-		}
-		else {
-			//CAMBIAR AL ELEMENTO A SU ESTAO POR DEFECTO
+			if (e!=aux) {
+				colisiona1 = estaEnRango(e,aux);
+				if(colisiona1) {
+					aux.accept(e.getVisitor());
+				}
+				else{
+					//CAMBIAR AL ELEMENTO A SU ESTAO POR DEFECTO
+				}
+			}
 		}
 	}
 	/**
@@ -104,12 +121,17 @@ public class Mapa{
 	//PREGUNTAR SI ESTARIA BIEN QUE ESTO ESTE EN LOS ELEMENTOS EN VEZ DEL MAPA
 	//SOLO SE PASARIA UN ELEMENTO COM PARAMETRO
 	public boolean estaEnRango(Elemento origen,Elemento destino) {
-		int r = origen.limiteRango();
-		int x = origen.getX();
+		if (origen==destino)
+			return false;
+		int inicioRangoX= origen.getInicioRangoX();
+		int finRangoX= origen.getFinRangoX();
+	//	System.out.println(destino.getX());
+	//	System.out.println(inicioRangoX); use esto para ver por que no colisionaba.
+	//	System.out.println(finRangoX);
 		
 		//se computa con el minimo y el maximo ya que el limite de rango de un enemigo
 		//estan invertidos con respecto a los de las torres
-		return Math.min(r,x)<destino.getX() && destino.getX()<Math.max(r, x); 
+		return  Math.min(inicioRangoX, finRangoX)<destino.getX() && destino.getX()<Math.max(inicioRangoX,finRangoX); 
 	}
 	
 	/**
@@ -117,7 +139,8 @@ public class Mapa{
 	 * @param e elemento a agregar
 	 */
 	
-	public void agregar(Elemento e) {
+
+	public synchronized void agregar(Elemento e) {
 		entidades[e.obtenerFila()].add(e);
 		System.out.println("En el mapa se agrego en "+ e.obtenerFila());
 		gui.añadirElemento(e);
