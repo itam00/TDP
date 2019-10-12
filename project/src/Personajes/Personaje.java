@@ -5,7 +5,8 @@ import Entidad.Elemento;
 import GUI.Mapa;
 
 public abstract class Personaje extends Elemento{
-	protected int vida, danio, rango;
+	protected int vida, danio, rango,frecuencia;
+	protected long ultimoAtaque;
 	
 
 	public Personaje(int x, int y,Mapa m) {

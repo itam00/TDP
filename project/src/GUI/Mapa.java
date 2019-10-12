@@ -18,26 +18,17 @@ public class Mapa{
 	protected List<Elemento>[] entidades;
 	protected ImageIcon fondo;
 	protected GUI gui;
+	protected List<Elemento> porAgregar;
 	
 	public Mapa(GUI g) {
 		gui = g;
 
 		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
+		porAgregar = new LinkedList<Elemento>();
 		Elemento aux;
 		for(int i=0;i<entidades.length;i++) {
 			entidades[i] = new LinkedList<Elemento>();
 			Iterator<Elemento> it = entidades[i].iterator();
-			while(it.hasNext()) {
-				aux = it.next();
-				aux.actualizar();
-				if(aux.estaMuerto()) {
-					it.remove();
-					gui.eliminar(aux);
-				}
-				else {
-					verificarColision(aux);
-				}
-			}
 		}
 	}
 	
@@ -58,6 +49,11 @@ public class Mapa{
 					verificarColision(aux);
 				}
 			}
+		}
+		
+		for(Elemento e: porAgregar) {
+			entidades[e.obtenerFila()].add(e);
+			gui.añadirElemento(e);
 		}
 
 	}
@@ -139,10 +135,10 @@ public class Mapa{
 	 */
 	
 
-	public synchronized void agregar(Elemento e) {
-		entidades[e.obtenerFila()].add(e);
+	public void agregar(Elemento e) {
+		porAgregar.add(e);
 		System.out.println("En el mapa se agrego en "+ e.obtenerFila());
-		gui.añadirElemento(e);
+		
 	}
 	
 
