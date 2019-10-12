@@ -27,7 +27,6 @@ public class Mapa{
 		for(int i=0;i<entidades.length;i++) {
 			entidades[i] = new LinkedList<Elemento>();
 			Iterator<Elemento> it = entidades[i].iterator();
-		
 			while(it.hasNext()) {
 				aux = it.next();
 				aux.actualizar();
@@ -56,7 +55,7 @@ public class Mapa{
 					gui.eliminar(aux);
 				}
 				else {
-					//verificarColision(aux);
+					verificarColision(aux);
 				}
 			}
 		}
