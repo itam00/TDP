@@ -2,11 +2,11 @@ package PersonajeGrafico;
 import javax.swing.ImageIcon;
 
 import EntidadGrafica.*;
-public class IsaacGrafico extends TorreGrafica{
+public class Torre1Grafica extends TorreGrafica{
 
 	private static final long serialVersionUID = 1L;
 
-	public IsaacGrafico(int x,int y) {
+	public Torre1Grafica(int x,int y) {
 		super(x,y);
 		width  =103;
 		height = 97;

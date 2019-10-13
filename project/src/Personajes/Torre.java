@@ -2,8 +2,6 @@ package Personajes;
 
 
 import Visitor.Visitor; 
-
-import Entidad.DisparoAliado;
 import GUI.Mapa;
 import Visitor.Visitor;
 import Visitor.VisitorTorre;
@@ -25,7 +23,12 @@ public abstract class Torre extends Personaje{
 		visitor=new VisitorTorre(this);
 	}
 	
-	public abstract void setPos(int x,int y, Mapa m);
+	public void setPos(int x,int y, Mapa m) {
+		crearGrafico(x,y);
+		mapa=m;
+		this.x=grafico.getX();
+		this.y=grafico.getY();
+	}
 	
 	public void accept(Visitor v) {
 		v.visit(this);
@@ -39,6 +42,18 @@ public abstract class Torre extends Personaje{
 	
 	public int getVida() {
 		return vida;
+	}
+	
+	public abstract void crearGrafico(int x,int y);
+	
+	@Override
+	public int getInicioRangoX() {
+		return grafico.getX();
+	}
+
+	@Override
+	public int getFinRangoX() {
+		return grafico.getX()+rango*50;
 	}
 
 

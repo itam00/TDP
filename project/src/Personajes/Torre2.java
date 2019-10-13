@@ -1,44 +1,36 @@
 package Personajes;
 
+
+import Entidad.DisparoTorre2;
 import GUI.Mapa;
+import PersonajeGrafico.Torre2Grafica;
 import Recolectable.PowerUp;
 
 public class Torre2 extends Torre{
 
-	public Torre2(int x, int y, Mapa m) {
-		super(x, y, m);
-		// TODO Auto-generated constructor stub
+	public Torre2() {
+		precio = 0; //cambiar
+		rango = 10;
+		danio = 10;
+		vida = 100;
+		tamanio=1;
+		frecuencia =300;
 	}
 
 	@Override
 	public void atacar() {
-		// TODO Auto-generated method stub
+		if(System.currentTimeMillis()-ultimoAtaque>frecuencia) {
+			mapa.agregar(new DisparoTorre2(grafico.getX(),grafico.getY(),mapa,danio));
+			ultimoAtaque = System.currentTimeMillis();
+		}
+	}
+
+	@Override
+	public void crearGrafico(int x, int y) {
+		grafico = new Torre2Grafica(x,y);
 		
 	}
 
 
-	@Override
-	public void aplicarPowerUp(PowerUp p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setPos(int x, int y, Mapa m) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getInicioRangoX() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getFinRangoX() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }

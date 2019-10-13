@@ -16,15 +16,8 @@ public class Torre3 extends Torre{
 		
 	}
 
-
 	@Override
-	public void aplicarPowerUp(PowerUp p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setPos(int x, int y, Mapa m) {
+	public void crearGrafico(int x, int y) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -40,5 +33,7 @@ public class Torre3 extends Torre{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
 }

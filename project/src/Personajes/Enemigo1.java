@@ -1,6 +1,5 @@
 package Personajes;
 
-import Entidad.DisparoAliado;
 import GUI.Mapa;
 import PersonajeGrafico.*;
 import Recolectable.*;

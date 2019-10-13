@@ -15,7 +15,9 @@ public abstract class Personaje extends Elemento{
 	public Personaje() {}
 
 	public abstract void atacar();
-	public abstract void aplicarPowerUp(PowerUp p);
+	public void aplicarPowerUp(PowerUp p) {
+		//IMPLEMENTAR ESTA PARTE ES COMUN PARA TODOS
+	}
 	public void disminuirVida(int n) {
 		vida-=n;
 		muerto = vida<=0;
