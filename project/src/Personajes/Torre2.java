@@ -29,4 +29,16 @@ public class Torre2 extends Torre{
 		
 	}
 
+	@Override
+	public int getInicioRangoX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getFinRangoX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

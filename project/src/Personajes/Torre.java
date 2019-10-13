@@ -17,7 +17,6 @@ public abstract class Torre extends Personaje{
 		this.x=x;
 		this.y=y;
 		visitor=new VisitorTorre(this);
-		frecuencia = 2000;
 		ultimoAtaque = 0;
 		// TODO Auto-generated constructor stub
 	}
@@ -32,16 +31,14 @@ public abstract class Torre extends Personaje{
 		v.visit(this);
 	}
 	
-	public void atacar() {
-		if(System.currentTimeMillis()-ultimoAtaque>frecuencia) {
-			mapa.agregar(new DisparoAliado(x,y,mapa));
-			ultimoAtaque = System.currentTimeMillis();
-		}
-		
-	}
+	public abstract void atacar();
 	
 	public int getPrecio() {
 		return precio;
+	}
+	
+	public int getVida() {
+		return vida;
 	}
 
 

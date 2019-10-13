@@ -21,7 +21,6 @@ public class VisitorTorre extends Visitor{
 
 	@Override
 	public void visit(Enemigo e) {
-		System.out.println("llega");
 		mio.atacar();
 		
 	}

@@ -15,26 +15,32 @@ public class VisitorEnemigo extends Visitor {
 	
 	@Override
 	public void visit(Torre t) {
-		mio.setQuieto(true);
-		System.out.println("ME frene");
+		Torre ultimo = mio.getUltimoAtacado();
 		
 		
+		if(ultimo!=null) {
+			mio.atacar();
+		}
+		else {
+			mio.setQuieto(true);
+			mio.setUltimoAtacado(t);
+		}
+		 
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		System.out.println("llega a enemigo");
+
 	}
 
 	@Override
 	public void visit(Disparo d) {
-		System.out.println("llega a disparo");
+
 		
 	}
 
 	@Override
 	public void visit(PowerUp p) {
-		System.out.println("llega a powerup");
 		
 	}
 

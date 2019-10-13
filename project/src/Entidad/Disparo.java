@@ -5,8 +5,6 @@ import PersonajeGrafico.DisparoGrafico;
 import Visitor.Visitor;
 
 public abstract class Disparo extends Elemento {
-	protected Visitor visitor;
-	
 	protected int danio;
 	
 	

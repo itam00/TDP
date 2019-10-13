@@ -129,7 +129,6 @@ public class GUI extends JFrame implements MouseListener{
 		panelJuego.add(grafico);
 		int x = grafico.getX();
 		int y = grafico.getY();
-		System.out.println(x + " -aca- " + y);
 		grafico.setBounds(x, y, grafico.getAlto(), grafico.getAncho());
 		panelJuego.setComponentZOrder(grafico, 0);
 	}

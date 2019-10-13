@@ -33,13 +33,6 @@ public class Controlador {
 			//lugarLibre = !coincidePosicion(aux,x,y);
 		}
 		*/
-		if(lugarLibre) {
-		//	Torre nueva = new Isaac(x,y);
-			Disparo nueva= new DisparoAliado(x,y,mapa);
-			mapa.agregar(nueva);
-			System.out.println("comprado");
-			
-		}
 	}
 	
 	public synchronized void colocarEnemigo(int x, int y) {

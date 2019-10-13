@@ -127,7 +127,7 @@ public class Mapa{
 		
 		//se computa con el minimo y el maximo ya que el limite de rango de un enemigo
 		//estan invertidos con respecto a los de las torres
-		return  Math.min(inicioRangoX, finRangoX)<destino.getX() && destino.getX()<Math.max(inicioRangoX,finRangoX); 
+		return  Math.min(inicioRangoX, finRangoX)<=destino.getX() && destino.getX()<=Math.max(inicioRangoX,finRangoX); 
 	}
 	
 	/**
@@ -138,7 +138,6 @@ public class Mapa{
 
 	public void agregar(Elemento e) {
 		porAgregar.add(e);
-		System.out.println("En el mapa se agrego en "+ e.obtenerFila());
 		
 	}
 	

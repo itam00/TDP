@@ -18,10 +18,15 @@ public abstract class Personaje extends Elemento{
 	public abstract void aplicarPowerUp(PowerUp p);
 	public void disminuirVida(int n) {
 		vida-=n;
+		muerto = vida<=0;
 	}
 	
 	public boolean getMuerto() {
 		return vida<=0;
+	}
+	
+	public int getDanio() {
+		return danio;
 	}
 	
 }

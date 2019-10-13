@@ -8,11 +8,9 @@ import Visitor.Visitor;
 
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
-	protected int inicioRangoX, finRangoX;
-	protected int inicioRangoY, finRangoY;
 	protected boolean muerto;
 	protected Mapa mapa;
-
+	protected int inicioRangoY,finRangoY;
 	protected Visitor visitor;
 	protected State estado;
 	
@@ -62,14 +60,9 @@ public abstract class Elemento {
 
 	public abstract void accept(Visitor v); // preguntar
 	
-	public int getInicioRangoX() {
-		return inicioRangoX;
-	}
+	public abstract int getInicioRangoX();
 	
-	public int getFinRangoX() {
-		return finRangoX;
-	}
-	
+	public abstract int getFinRangoX();
 	public int getInicioRangoY() {
 		return inicioRangoY;
 	}
@@ -77,6 +70,8 @@ public abstract class Elemento {
 	public int getFinRangoY() {
 		return inicioRangoY;
 	}
+
+	
 
 	public void actualizar() {
 		grafico.actualizar();

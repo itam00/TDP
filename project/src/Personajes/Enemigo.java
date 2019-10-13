@@ -8,8 +8,10 @@ import Visitor.VisitorEnemigo;
 public abstract class Enemigo extends Personaje{
 	protected int puntos, recompensa;
 	protected boolean quieto;
+	protected Torre ultimoAtacado;
 	public Enemigo(int x, int y, Mapa m) {
 		super(x,y,m);
+		ultimoAtacado=null;
 		visitor= new VisitorEnemigo(this);
 	}
 	
@@ -49,5 +51,12 @@ public abstract class Enemigo extends Personaje{
 	
 	public int getFinRangoX() {
 		return grafico.getX()-rango*50;
+	}
+	
+	public Torre getUltimoAtacado() {
+		return ultimoAtacado;
+	}
+	public void setUltimoAtacado(Torre t) {
+		ultimoAtacado = t;
 	}
 }

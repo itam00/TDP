@@ -6,6 +6,11 @@ import Personajes.Torre;
 import Recolectable.PowerUp;
 
 public class VisitorDisparo extends Visitor{
+	protected Disparo disparo;
+	
+	public VisitorDisparo(Disparo d) {
+		disparo = d;
+	}
 
 	@Override
 	public void visit(Torre t) {	
@@ -13,8 +18,8 @@ public class VisitorDisparo extends Visitor{
 
 	@Override
 	public void visit(Enemigo e) {
-		e.disminuirVida(10);
-		
+		e.disminuirVida(disparo.getDanio());
+		disparo.setMuerto(true);
 	}
 
 	@Override
