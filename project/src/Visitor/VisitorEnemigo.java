@@ -1,6 +1,7 @@
 package Visitor;
 
 import Entidad.Disparo;
+import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
@@ -41,6 +42,13 @@ public class VisitorEnemigo extends Visitor {
 
 	@Override
 	public void visit(PowerUp p) {
+		
+	}
+
+	@Override
+	public void visit(Obstaculo o) {
+		System.out.println("chocó contra un obstaculo");
+		o.disminuirVida(mio.getDanio());
 		
 	}
 

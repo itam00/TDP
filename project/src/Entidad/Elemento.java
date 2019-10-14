@@ -18,6 +18,8 @@ public abstract class Elemento {
 	public Elemento(int x,int y, Mapa m) {
 		muerto=false;
 		mapa=m;
+		inicioRangoY=y;
+		finRangoY=y+96;
 	}
 	
 	public Elemento() {
@@ -63,6 +65,7 @@ public abstract class Elemento {
 	public abstract int getInicioRangoX();
 	
 	public abstract int getFinRangoX();
+	
 	public int getInicioRangoY() {
 		return inicioRangoY;
 	}

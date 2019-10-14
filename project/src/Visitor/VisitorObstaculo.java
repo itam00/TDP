@@ -6,23 +6,24 @@ import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
 
-public class VisitorPowerUp extends Visitor{
+public class VisitorObstaculo extends Visitor {
 
-	protected PowerUp p;
+	Obstaculo mio;
 	
-	public VisitorPowerUp(PowerUp p) {
-		this.p=p;
+	public VisitorObstaculo(Obstaculo o) {
+		mio=o;
 	}
 	
 	@Override
 	public void visit(Torre t) {
-		t.aplicarPowerUp(p);
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		e.aplicarPowerUp(p);
+		mio.afectar(e);
+		
 	}
 
 	@Override

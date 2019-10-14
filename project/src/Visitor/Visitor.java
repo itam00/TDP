@@ -1,6 +1,7 @@
 package Visitor;
 
 import Entidad.Disparo;
+import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
@@ -11,4 +12,5 @@ public abstract class Visitor {
 	public abstract void visit(Enemigo e);
 	public abstract void visit(Disparo  d);
 	public abstract void visit(PowerUp p);
+	public abstract void visit(Obstaculo o);
 }
