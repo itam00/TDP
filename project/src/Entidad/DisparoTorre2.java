@@ -14,12 +14,12 @@ public class DisparoTorre2 extends Disparo {
 
 	@Override
 	public int getInicioRangoX() {
-		return grafico.getX()-5;
+		return grafico.getX()-7;
 	}
 
 	@Override
 	public int getFinRangoX() {
-		return grafico.getX()+5;
+		return grafico.getX()+7;
 	}
 	
 
