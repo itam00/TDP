@@ -52,8 +52,10 @@ public class GUI extends JFrame implements MouseListener{
 		agregarPanelTienda();
 
 		tiempo.start();
-		for (int i=0; i<6;i++)
+		for (int i=0; i<6;i++) {
 			controlador.colocarEnemigo(918+100, i*96);
+			controlador.colocarEnemigo(918+100, i*96);
+		}
 		
 		controlador.colocarPiedra(306, 96);
 		
