@@ -39,7 +39,10 @@ public class Controlador {
 		Enemigo enemigo= new Enemigo1(x,y,mapa);
 		mapa.agregar(enemigo);
 	}
-	
+	public synchronized void colocarEnemigo3(int x, int y) {
+		Enemigo enemigo= new Enemigo3(x,y,mapa);
+		mapa.agregar(enemigo);
+	}
 	public synchronized void colocarPiedra(int x, int y) {
 		Obstaculo piedra= new Piedra(x,y,mapa);
 		mapa.agregar(piedra);

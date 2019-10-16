@@ -52,12 +52,16 @@ public class GUI extends JFrame implements MouseListener{
 		agregarPanelTienda();
 
 		tiempo.start();
-		for (int i=0; i<6;i++) {
-			controlador.colocarEnemigo(918+100, i*96);
-			controlador.colocarEnemigo(918+100, i*96);
+		for (int i=0; i<3;i++) {
+			controlador.colocarEnemigo(1000, i*96);
+			controlador.colocarEnemigo3(1118, i*96);
+		}
+		for (int i=3; i<6;i++) {
+			controlador.colocarEnemigo3(1000, i*96);
+			controlador.colocarEnemigo(1118, i*96);
 		}
 		
-		controlador.colocarPiedra(306, 96);
+		controlador.colocarPiedra(304, 96);
 		
 
 	}
@@ -80,7 +84,7 @@ public class GUI extends JFrame implements MouseListener{
 	}
 
 	@Override
-	public void mousePressed(MouseEvent e) {
+	public synchronized void mousePressed(MouseEvent e) {
 		/*if (e.getButton() == MouseEvent.BUTTON1) {
 			controlador.comprarTorre(e.getX(), e.getY());
 		} else

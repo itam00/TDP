@@ -1,6 +1,7 @@
 package Visitor;
 
 import Entidad.Disparo;
+import Entidad.Elemento;
 import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
@@ -15,18 +16,14 @@ public class VisitorEnemigo extends Visitor {
 	}
 	
 	@Override
-	public void visit(Torre t) {
-		Torre ultimo = mio.getUltimoAtacado();
-		
-		
-		if(ultimo!=null) {
-			mio.atacar();
+	public void visit(Torre t) {	
+		if(mio.puedeAtacar()) {
+			t.disminuirVida(mio.getDanio());
+			if(!t.estaMuerto()) {
+				mio.setQuieto(true);
+				mio.setUltimoAtacado(t);
+			}
 		}
-		else {
-			mio.setQuieto(true);
-			mio.setUltimoAtacado(t);
-		}
-		 
 	}
 
 	@Override
@@ -47,9 +44,13 @@ public class VisitorEnemigo extends Visitor {
 
 	@Override
 	public void visit(Obstaculo o) {
-		System.out.println("chocó contra un obstaculo");
-		o.disminuirVida(mio.getDanio());
-		
+		if(mio.puedeAtacar()) {
+			o.disminuirVida(mio.getDanio());
+			if(!o.estaMuerto()) {
+				mio.setQuieto(true);
+				mio.setUltimoAtacado(o);
+			}
+		}
 	}
 
 }

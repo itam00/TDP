@@ -18,11 +18,9 @@ public class Torre2 extends Torre{
 	}
 
 	@Override
-	public void atacar() {
-		if(System.currentTimeMillis()-ultimoAtaque>frecuencia) {
-			mapa.agregar(new DisparoTorre2(grafico.getX(),grafico.getY(),mapa,danio));
-			ultimoAtaque = System.currentTimeMillis();
-		}
+	public void disparar() {
+		mapa.agregar(new DisparoTorre2(grafico.getX(),grafico.getY(),mapa,danio));
+			
 	}
 
 	@Override

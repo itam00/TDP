@@ -1,6 +1,7 @@
 package Personajes;
 import Recolectable.*;
 
+
 import Entidad.Elemento;
 import GUI.Mapa;
 
@@ -14,7 +15,6 @@ public abstract class Personaje extends Elemento{
 	}
 	public Personaje() {}
 
-	public abstract void atacar();
 	public void aplicarPowerUp(PowerUp p) {
 		//IMPLEMENTAR ESTA PARTE ES COMUN PARA TODOS
 	}
@@ -30,5 +30,12 @@ public abstract class Personaje extends Elemento{
 	public int getDanio() {
 		return danio;
 	}
-	
+
+	public boolean puedeAtacar() {
+		boolean puede=System.currentTimeMillis()-ultimoAtaque>frecuencia;
+		if(puede) {
+			ultimoAtaque = System.currentTimeMillis();
+		}
+		return puede;
+	}
 }

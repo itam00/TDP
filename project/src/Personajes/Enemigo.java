@@ -1,6 +1,7 @@
 package Personajes;
 
 
+import Entidad.Elemento;
 import GUI.Mapa;
 import Visitor.Visitor;
 import Visitor.VisitorEnemigo;
@@ -8,7 +9,7 @@ import Visitor.VisitorEnemigo;
 public abstract class Enemigo extends Personaje{
 	protected int puntos, recompensa;
 	protected boolean quieto;
-	protected Torre ultimoAtacado;
+	protected Elemento ultimoAtacado;
 	public Enemigo(int x, int y, Mapa m) {
 		super(x,y,m);
 		ultimoAtacado=null;
@@ -43,6 +44,12 @@ public abstract class Enemigo extends Personaje{
 		if (!quieto) {
 			super.actualizar();
 		}
+		else {
+			if(ultimoAtacado.estaMuerto()) {
+				ultimoAtacado=null;
+				quieto=false;
+			}
+		}
 	}
 	
 	public int getInicioRangoX() {
@@ -53,10 +60,10 @@ public abstract class Enemigo extends Personaje{
 		return grafico.getX()-rango*50;
 	}
 	
-	public Torre getUltimoAtacado() {
+	public Elemento getUltimoAtacado() {
 		return ultimoAtacado;
 	}
-	public void setUltimoAtacado(Torre t) {
-		ultimoAtacado = t;
+	public void setUltimoAtacado(Elemento e) {
+		ultimoAtacado = e;
 	}
 }

@@ -34,7 +34,6 @@ public abstract class Torre extends Personaje{
 		v.visit(this);
 	}
 	
-	public abstract void atacar();
 	
 	public int getPrecio() {
 		return precio;
@@ -46,6 +45,7 @@ public abstract class Torre extends Personaje{
 	
 	public abstract void crearGrafico(int x,int y);
 	
+	public abstract void disparar();
 	@Override
 	public int getInicioRangoX() {
 		return grafico.getX();

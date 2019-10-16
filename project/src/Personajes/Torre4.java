@@ -10,11 +10,6 @@ public class Torre4 extends Torre{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void crearGrafico(int x, int y) {
@@ -32,6 +27,12 @@ public class Torre4 extends Torre{
 	public int getFinRangoX() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public void disparar() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

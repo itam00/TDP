@@ -1,6 +1,7 @@
 package Visitor;
 
 import Entidad.Disparo;
+import Entidad.DisparoTorre1;
 import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
@@ -16,13 +17,14 @@ public class VisitorTorre extends Visitor{
 	
 	@Override
 	public void visit(Torre t) {
-		System.out.println("llega a torre");
-		
+
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		mio.atacar();
+		if(mio.puedeAtacar()) {
+			mio.disparar();
+		}
 		
 	}
 

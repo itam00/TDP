@@ -103,7 +103,7 @@ public class Mapa{
 					aux.accept(e.getVisitor());
 				}
 				else{
-					//CAMBIAR AL ELEMENTO A SU ESTAO POR DEFECTO
+					//CAMBIAR AL ELEMENTO A SU ESTADO POR DEFECTO
 				}
 			}
 		}
