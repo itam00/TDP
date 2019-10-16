@@ -43,9 +43,6 @@ public abstract class Torre extends Personaje{
 		return vida;
 	}
 	
-	public abstract void crearGrafico(int x,int y);
-	
-	public abstract void disparar();
 	@Override
 	public int getInicioRangoX() {
 		return grafico.getX();
@@ -55,6 +52,10 @@ public abstract class Torre extends Personaje{
 	public int getFinRangoX() {
 		return grafico.getX()+rango*50;
 	}
+	
+	public abstract void crearGrafico(int x,int y);
+	
+	public abstract void disparar();
 
 
 

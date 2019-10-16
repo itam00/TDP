@@ -9,7 +9,7 @@ public class BotonTorre1 extends BotonTienda{
 	public BotonTorre1(Tienda t){
 		super(t);
 		this.setIcon(new ImageIcon(getClass().getResource("/Sprites/isaac.gif")));
-		this.setOpaque(true);
+		
 		this.addActionListener(new ActionListener() {
 
 			@Override
