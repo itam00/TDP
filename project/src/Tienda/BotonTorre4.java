@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 import Personajes.Torre1;
+import Personajes.Torre4;
 
 @SuppressWarnings("serial")
 public class BotonTorre4 extends BotonTienda{

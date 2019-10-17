@@ -9,10 +9,10 @@ public class Torre4 extends Torre{
 	public Torre4() {
 		precio = 0; //cambiar
 		rango = 10;
-		danio = 10;
+		danio = 20;
 		vida = 100;
 		tamanio=1;
-		frecuencia =300;
+		frecuencia =500;
 	}
 
 	@Override
