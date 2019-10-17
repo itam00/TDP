@@ -9,11 +9,11 @@ public class Torre1 extends Torre{
 	
 	public Torre1() {
 		precio = 0; //cambiar
-		rango = 10;
+		rango = 15;
 		danio = 10;
 		vida =100;
 		tamanio=1;
-		frecuencia =500;
+		frecuencia =400;
 	}
 	
 	
