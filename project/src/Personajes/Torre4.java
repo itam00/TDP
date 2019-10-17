@@ -1,6 +1,6 @@
 package Personajes;
 
-import GUI.Mapa;
+import Juego.Mapa;
 import Recolectable.PowerUp;
 
 public class Torre4 extends Torre{

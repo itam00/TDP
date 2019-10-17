@@ -1,8 +1,8 @@
 package Personajes;
 
 
-import Visitor.Visitor; 
-import GUI.Mapa;
+import Juego.Mapa;
+import Visitor.Visitor;
 import Visitor.Visitor;
 import Visitor.VisitorTorre;
 

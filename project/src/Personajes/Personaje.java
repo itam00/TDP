@@ -3,7 +3,7 @@ import Recolectable.*;
 
 
 import Entidad.Elemento;
-import GUI.Mapa;
+import Juego.Mapa;
 
 public abstract class Personaje extends Elemento{
 	protected int vida, danio, rango,frecuencia;

@@ -1,10 +1,9 @@
-package PersonajeGrafico;
+package Graficos;
 
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-import EntidadGrafica.ElementoGrafico;
 import Personajes.Enemigo;
 
 public class DisparoGrafico extends ElementoGrafico {

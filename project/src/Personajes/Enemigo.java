@@ -2,7 +2,7 @@ package Personajes;
 
 
 import Entidad.Elemento;
-import GUI.Mapa;
+import Juego.Mapa;
 import Visitor.Visitor;
 import Visitor.VisitorEnemigo;
 

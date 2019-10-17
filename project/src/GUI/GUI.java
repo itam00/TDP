@@ -19,9 +19,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Entidad.Elemento;
-import EntidadGrafica.ElementoGrafico;
+import Graficos.ElementoGrafico;
 import Juego.Controlador;
 import Juego.Jugador;
+import Juego.Mapa;
 import Personajes.*;
 import Tienda.Tienda;
 

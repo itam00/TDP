@@ -1,7 +1,7 @@
-package Entidad;
+package Disparos;
 
-import GUI.Mapa;
-import PersonajeGrafico.DisparoGrafico2;
+import Graficos.DisparoGrafico2;
+import Juego.Mapa;
 
 public class DisparoTorre2 extends Disparo {
 

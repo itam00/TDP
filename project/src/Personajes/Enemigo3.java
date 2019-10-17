@@ -1,8 +1,8 @@
 package Personajes;
 
-import GUI.Mapa;
-import PersonajeGrafico.Enemigo1Grafico;
-import PersonajeGrafico.Enemigo3Grafico;
+import Graficos.Enemigo1Grafico;
+import Graficos.Enemigo3Grafico;
+import Juego.Mapa;
 import Recolectable.PowerUp;
 
 public class Enemigo3 extends Enemigo {

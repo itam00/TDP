@@ -1,7 +1,8 @@
-package Entidad;
+package Disparos;
 
-import GUI.Mapa;
-import PersonajeGrafico.DisparoGrafico;
+import Entidad.Elemento;
+import Graficos.DisparoGrafico;
+import Juego.Mapa;
 import Visitor.Visitor;
 import Visitor.VisitorDisparo;
 

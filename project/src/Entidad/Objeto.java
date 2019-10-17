@@ -1,6 +1,6 @@
 package Entidad;
 
-import GUI.Mapa;
+import Juego.Mapa;
 
 public abstract class Objeto extends Elemento{
 

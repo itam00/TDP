@@ -1,4 +1,4 @@
-import GUI.Mapa;
+import Juego.Mapa;
 
 public abstract class Recolectable extends Objeto {
 

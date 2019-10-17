@@ -1,17 +1,11 @@
-package GUI;
-import java.util.ArrayList; 
-import java.util.Hashtable;
+package Juego;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 import Entidad.Elemento;
-import EntidadGrafica.*;
-import Personajes.Enemigo;
+import GUI.GUI;
 
 public class Mapa{
 	public final int cantFilas = 6;

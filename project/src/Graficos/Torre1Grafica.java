@@ -1,7 +1,6 @@
-package PersonajeGrafico;
+package Graficos;
 import javax.swing.ImageIcon;
 
-import EntidadGrafica.*;
 public class Torre1Grafica extends ElementoGrafico{
 
 	private static final long serialVersionUID = 1L;

@@ -1,8 +1,6 @@
-package PersonajeGrafico;
+package Graficos;
 
 import javax.swing.ImageIcon;
-
-import EntidadGrafica.ElementoGrafico;
 
 public class Enemigo3Grafico extends ElementoGrafico{
 	public Enemigo3Grafico() {

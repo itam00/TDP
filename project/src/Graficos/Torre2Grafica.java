@@ -1,8 +1,6 @@
-package PersonajeGrafico;
+package Graficos;
 
 import javax.swing.ImageIcon;
-
-import EntidadGrafica.ElementoGrafico;
 
 public class Torre2Grafica extends ElementoGrafico{
 

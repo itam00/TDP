@@ -1,6 +1,6 @@
 package Entidad;
 
-import GUI.Mapa;
+import Juego.Mapa;
 import Personajes.Enemigo;
 import Visitor.Visitor;
 import Visitor.VisitorObstaculo;

@@ -1,8 +1,8 @@
 package Personajes;
 
-import Entidad.DisparoTorre1;
-import GUI.Mapa;
-import PersonajeGrafico.*;  
+import Disparos.DisparoTorre1;
+import Graficos.Torre1Grafica;
+import Juego.Mapa; 
 import Recolectable.PowerUp;
 
 public class Torre1 extends Torre{

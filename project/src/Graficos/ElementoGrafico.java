@@ -1,4 +1,4 @@
-package EntidadGrafica;
+package Graficos;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;

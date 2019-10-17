@@ -1,6 +1,6 @@
 package Visitor;
 
-import Entidad.Disparo;
+import Disparos.Disparo;
 import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;

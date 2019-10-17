@@ -1,7 +1,7 @@
 package Entidad;
 
-import EntidadGrafica.ElementoGrafico; 
-import GUI.Mapa;
+import Graficos.ElementoGrafico;
+import Juego.Mapa;
 import State.*;
 import Visitor.Visitor;
 

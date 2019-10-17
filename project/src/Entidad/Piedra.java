@@ -1,7 +1,7 @@
 package Entidad;
 
-import GUI.Mapa;
-import PersonajeGrafico.PiedraGrafica;
+import Graficos.PiedraGrafica;
+import Juego.Mapa;
 import Personajes.Enemigo;
 
 public class Piedra extends Obstaculo {
