@@ -6,7 +6,7 @@ import Visitor.Visitor;
 import Visitor.VisitorDisparo;
 
 public abstract class Disparo extends Elemento {
-	protected int danio;
+	protected int danio,velocidad;
 	
 	
 	public Disparo(int x, int y, Mapa m,int danio) {
@@ -22,6 +22,13 @@ public abstract class Disparo extends Elemento {
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
+	@Override
+	public void actualizar() {
+		x+=velocidad;
+		super.actualizar();
+	}
+	
+	
 	
 	/*public void removerDisparo() {
 		controlador.remover(this);

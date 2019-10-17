@@ -2,18 +2,21 @@ package PersonajeGrafico;
 
 import javax.swing.ImageIcon;
 
-public class Enemigo1Grafico extends EnemigoGrafico {
+import EntidadGrafica.ElementoGrafico;
+
+public class Enemigo1Grafico extends ElementoGrafico {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public Enemigo1Grafico(int x, int y) {
-		super(x, y);
+	public Enemigo1Grafico() {
+		super();
 		image = new ImageIcon(getClass().getResource("/Sprites/enemigo1.gif"));
 		this.setIcon(image);
-		this.setOpaque(false);
+		width  =103;
+		height = 97;
 	}
 
 }

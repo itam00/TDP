@@ -25,7 +25,7 @@ public class Torre2 extends Torre{
 
 	@Override
 	public void crearGrafico(int x, int y) {
-		grafico = new Torre2Grafica(x,y);
+		grafico = new Torre2Grafica();
 		
 	}
 

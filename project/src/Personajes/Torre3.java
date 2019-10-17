@@ -6,7 +6,6 @@ import Recolectable.PowerUp;
 public class Torre3 extends Torre{
 
 	public Torre3(int x, int y, Mapa m) {
-		super(x, y,m);
 		// TODO Auto-generated constructor stub
 	}
 

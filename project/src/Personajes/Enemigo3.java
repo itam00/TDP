@@ -9,6 +9,7 @@ public class Enemigo3 extends Enemigo {
 
 	public Enemigo3(int x, int y, Mapa m) {
 		super(x, y, m);
+		velocidad = 1;
 		vida = 100;
 		danio = 20;
 		rango = 1;
@@ -16,7 +17,7 @@ public class Enemigo3 extends Enemigo {
 		recompensa = 100;
 		ultimoAtaque=0;
 		frecuencia = 500;
-		grafico= new Enemigo3Grafico(x,y);
+		grafico= new Enemigo3Grafico();
 	}
 
 
@@ -26,5 +27,5 @@ public class Enemigo3 extends Enemigo {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

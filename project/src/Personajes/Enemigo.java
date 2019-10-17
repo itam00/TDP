@@ -7,11 +7,12 @@ import Visitor.Visitor;
 import Visitor.VisitorEnemigo;
 
 public abstract class Enemigo extends Personaje{
-	protected int puntos, recompensa;
+	protected int puntos, recompensa,velocidad;
 	protected boolean quieto;
 	protected Elemento ultimoAtacado;
 	public Enemigo(int x, int y, Mapa m) {
 		super(x,y,m);
+		mapa = m;
 		ultimoAtacado=null;
 		visitor= new VisitorEnemigo(this);
 	}
@@ -39,18 +40,7 @@ public abstract class Enemigo extends Personaje{
 	public boolean getQuieto() {
 		return quieto;
 	}
-	
-	public void actualizar() {
-		if (!quieto) {
-			super.actualizar();
-		}
-		else {
-			if(ultimoAtacado.estaMuerto()) {
-				ultimoAtacado=null;
-				quieto=false;
-			}
-		}
-	}
+
 	
 	public int getInicioRangoX() {
 		return grafico.getX();
@@ -65,5 +55,18 @@ public abstract class Enemigo extends Personaje{
 	}
 	public void setUltimoAtacado(Elemento e) {
 		ultimoAtacado = e;
+	}
+	@Override
+	public void actualizar() {	
+		if (!quieto) {
+			x-=velocidad;
+		}
+		else {
+			if(ultimoAtacado.estaMuerto()) {//SI ESTOY QUIETO SE SUPONE QUE MI ULTIMO
+				ultimoAtacado=null;			//ENEMIGO ES NULO
+				quieto=false;
+			}
+		}
+		super.actualizar();
 	}
 }

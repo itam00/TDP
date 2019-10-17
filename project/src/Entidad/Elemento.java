@@ -9,6 +9,7 @@ import Visitor.Visitor;
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
 	protected boolean muerto;
+	protected int x,y;
 	protected Mapa mapa;
 	protected int inicioRangoY,finRangoY;
 	protected Visitor visitor;
@@ -20,6 +21,8 @@ public abstract class Elemento {
 		mapa=m;
 		inicioRangoY=y;
 		finRangoY=y+96;
+		this.x=(int)(x/102)*102;
+		this.y=(int)(y/96)*96;
 	}
 	
 	public Elemento() {
@@ -27,23 +30,23 @@ public abstract class Elemento {
 	}
 	
 	public int getX() {
-		return grafico.getX();
+		return x;
 	}
 	
 	public int getY() {
-		return grafico.getY();
+		return y;
 	}
 	
 	public int getPosY() {
-		return (int)(grafico.getY()/96);
+		return (int)(y/96);
 	}
 	
 	public int getPosX() {
-		return (int)(grafico.getX()/102.4);
+		return (int)(x/102.4);
 	}
 	
 	public int obtenerFila() {
-		return (int)(grafico.getY()/96);
+		return (int)(y/96);
 	}
 
 	
@@ -77,8 +80,8 @@ public abstract class Elemento {
 	
 
 	public void actualizar() {
-		grafico.actualizar();
-		muerto= (muerto==true || grafico.estaMuerto());
+		grafico.actualizar(x,y);
+		//muerto= (muerto==true || grafico.estaMuerto());
 	}
 	
 	public Visitor getVisitor() {

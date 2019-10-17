@@ -9,6 +9,7 @@ public class DisparoTorre2 extends Disparo {
 	public DisparoTorre2(int x, int y,Mapa m,int danio) {
 		super(x, y,m,danio);
 		grafico=  new DisparoGrafico2(x, y);
+		velocidad = 3;
 	}
 
 

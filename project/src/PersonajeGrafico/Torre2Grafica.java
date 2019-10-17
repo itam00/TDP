@@ -2,21 +2,16 @@ package PersonajeGrafico;
 
 import javax.swing.ImageIcon;
 
-public class Torre2Grafica extends TorreGrafica{
+import EntidadGrafica.ElementoGrafico;
 
-	public Torre2Grafica(int x,int y) {
-		super(x,y);
+public class Torre2Grafica extends ElementoGrafico{
+
+	public Torre2Grafica() {
+		super();
 		width  =103;
 		height = 97;
 		image = new ImageIcon(getClass().getResource("/Sprites/torre2.gif"));
 		this.setIcon(image);
-		this.setOpaque(false);
-	}
-
-	@Override
-	public void actualizar() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

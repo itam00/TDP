@@ -22,20 +22,19 @@ public class Torre1 extends Torre{
 		mapa.agregar(new DisparoTorre1(grafico.getX(),grafico.getY(),mapa,danio));
 	}
 
-
-
-
 	@Override
 	public void crearGrafico(int x, int y) {
 		grafico = new Torre1Grafica(x,y);
 	}
-
 
 	@Override
 	public void aplicarPowerUp(PowerUp p) {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	
 
 
 }

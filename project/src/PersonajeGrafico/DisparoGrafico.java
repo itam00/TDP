@@ -11,12 +11,11 @@ public class DisparoGrafico extends ElementoGrafico {
 
 
 	public DisparoGrafico(int x, int y) {
-		super(x,y);
+		super();
 		width  =100;
 		height = 100;
 		image = new ImageIcon(getClass().getResource("/Sprites/proyectil.png"));
 		this.setIcon(image);
-		this.setOpaque(false);
 	}
 
 	public void cambiar() {
@@ -25,10 +24,5 @@ public class DisparoGrafico extends ElementoGrafico {
 		this.setIcon(image);
 	}
 
-	public void actualizar() {
-		this.setLocation(x+=2, y);
-		if (x>800) {
-			muerto=true;
-		}
-	}
+
 }

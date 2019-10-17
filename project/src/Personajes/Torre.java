@@ -9,15 +9,6 @@ import Visitor.VisitorTorre;
 public abstract class Torre extends Personaje{
 	
 	protected int precio, tamanio;
-	protected int x,y;
-	public Torre(int x, int y, Mapa m) {
-		super(x, y,m);
-		this.x=x;
-		this.y=y;
-		visitor=new VisitorTorre(this);
-		ultimoAtaque = 0;
-		// TODO Auto-generated constructor stub
-	}
 
 	public Torre() {
 		visitor=new VisitorTorre(this);
@@ -26,8 +17,9 @@ public abstract class Torre extends Personaje{
 	public void setPos(int x,int y, Mapa m) {
 		crearGrafico(x,y);
 		mapa=m;
-		this.x=grafico.getX();
-		this.y=grafico.getY();
+		this.x=(int)(x/102)*102;
+		this.y=(int)(y/96)*96;
+		
 	}
 	
 	public void accept(Visitor v) {
