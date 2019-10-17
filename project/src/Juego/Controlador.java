@@ -35,6 +35,7 @@ public class Controlador {
 		*/
 	}
 	
+	
 	public synchronized void colocarEnemigo(int x, int y) {
 		Enemigo enemigo= new Enemigo1(x,y,mapa);
 		mapa.agregar(enemigo);
@@ -47,6 +48,11 @@ public class Controlador {
 		Obstaculo piedra= new Piedra(x,y,mapa);
 		mapa.agregar(piedra);
 	}
+	public synchronized void colocarEnemigo4(int x, int y) {
+		Enemigo enemigo= new Enemigo4(x,y,mapa);
+		mapa.agregar(enemigo);
+	}
+	
 
 	public void click(int x,int y) {
 		if(y<576&&tienda.hayComprado() && !mapa.coincidePosicion(x,y)) {

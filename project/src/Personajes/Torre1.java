@@ -19,7 +19,7 @@ public class Torre1 extends Torre{
 	
 	@Override
 	public void disparar() {
-		mapa.agregar(new DisparoTorre1(grafico.getX(),grafico.getY(),mapa,danio));
+		mapa.agregar(new DisparoTorre1(x,y,mapa,danio));
 	}
 
 	@Override

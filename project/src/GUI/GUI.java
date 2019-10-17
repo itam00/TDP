@@ -1,13 +1,8 @@
 package GUI;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.GridLayout;
 
-import java.awt.Point;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
@@ -56,8 +51,10 @@ public class GUI extends JFrame implements MouseListener{
 		for (int i=0; i<3;i++) {
 			controlador.colocarEnemigo(1000, i*96);
 			controlador.colocarEnemigo3(1118, i*96);
+			controlador.colocarEnemigo4(1218, i*96);
 		}
 		for (int i=3; i<6;i++) {
+			controlador.colocarEnemigo4(1218, i*96);
 			controlador.colocarEnemigo3(1000, i*96);
 			controlador.colocarEnemigo(1118, i*96);
 		}
