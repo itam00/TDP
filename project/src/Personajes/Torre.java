@@ -22,6 +22,13 @@ public abstract class Torre extends Personaje{
 		
 	}
 	
+	public void setVelocidad(float v) {
+	}
+	
+	public void setDefault() {
+		frecuencia=frecuenciaDefault;
+	}
+	
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
@@ -48,7 +55,5 @@ public abstract class Torre extends Personaje{
 	public abstract void crearGrafico(int x,int y);
 	
 	public abstract void disparar();
-
-
 
 }
