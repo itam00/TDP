@@ -1,8 +1,5 @@
 package GUI;
 
-import java.awt.Dimension;
-
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
@@ -18,7 +15,6 @@ import Graficos.ElementoGrafico;
 import Juego.Controlador;
 import Juego.Jugador;
 import Juego.Mapa;
-import Personajes.*;
 import Tienda.Tienda;
 
 public class GUI extends JFrame implements MouseListener{
@@ -109,7 +105,6 @@ public class GUI extends JFrame implements MouseListener{
 		getContentPane().add(tienda);
 	}
 
-	@SuppressWarnings("unchecked")
 	private void setearPanelJuego() {
 		panelJuego = new JPanel();
 		panelJuego.setLayout(null);
