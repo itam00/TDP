@@ -16,13 +16,12 @@ public class VisitorPowerUp extends Visitor{
 	
 	@Override
 	public void visit(Torre t) {
-		t.aplicarPowerUp(p);
-		
+		p.afectar(t);
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		e.aplicarPowerUp(p);
+		p.afectar(e);
 	}
 
 	@Override

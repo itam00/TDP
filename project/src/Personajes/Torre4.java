@@ -6,13 +6,16 @@ import Graficos.Torre4Grafica;
 
 public class Torre4 extends Torre{
 
+	
+	
 	public Torre4() {
 		precio = 0; //cambiar
 		rango = 10;
 		danio = 20;
 		vida = 100;
 		tamanio=1;
-		frecuencia =500;
+		frecuenciaDefault=500;
+		frecuencia =frecuenciaDefault;
 	}
 
 	@Override
@@ -26,7 +29,6 @@ public class Torre4 extends Torre{
 		grafico = new Torre4Grafica();
 		
 	}
-
 
 
 }

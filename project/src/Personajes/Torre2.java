@@ -14,7 +14,8 @@ public class Torre2 extends Torre{
 		danio = 10;
 		vida = 100;
 		tamanio=1;
-		frecuencia =300;
+		frecuenciaDefault=300;
+		frecuencia =frecuenciaDefault;
 	}
 
 	@Override

@@ -7,9 +7,12 @@ import Visitor.Visitor;
 import Visitor.VisitorEnemigo;
 
 public abstract class Enemigo extends Personaje{
-	protected int puntos, recompensa,velocidad;
+	protected int puntos, recompensa;
+	protected float velocidad, velocidadDefault;
 	protected boolean quieto;
 	protected Elemento ultimoAtacado;
+	
+	
 	public Enemigo(int x, int y, Mapa m) {
 		super(x,y,m);
 		mapa = m;
@@ -56,6 +59,16 @@ public abstract class Enemigo extends Personaje{
 	public void setUltimoAtacado(Elemento e) {
 		ultimoAtacado = e;
 	}
+	
+	public void setVelocidad(float v) {
+		velocidad=v;
+	}
+	
+	public void setDefault() {
+		frecuencia=frecuenciaDefault;
+		velocidad=velocidadDefault;
+	}
+	
 	@Override
 	public void actualizar() {	
 		if (!quieto) {

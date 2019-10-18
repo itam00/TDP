@@ -8,22 +8,19 @@ public class Enemigo4 extends Enemigo{
 
 	public Enemigo4(int x, int y, Mapa m) {
 		super(x, y, m);
-		velocidad = 2;
+		velocidadDefault=2;
+		velocidad = velocidadDefault;
 		vida = 100;
 		danio = 5;
 		rango = 1;
 		puntos =  10;
 		recompensa = 100;
 		ultimoAtaque=0;
-		frecuencia = 500;
+		frecuenciaDefault=500;
+		frecuencia=frecuenciaDefault;
 		grafico= new Enemigo4Grafico();
 	}
 
-	@Override
-	public void aplicarPowerUp(PowerUp p) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
 

@@ -13,7 +13,8 @@ public class Torre1 extends Torre{
 		danio = 10;
 		vida =100;
 		tamanio=1;
-		frecuencia =400;
+		frecuenciaDefault=400;
+		frecuencia = frecuenciaDefault;
 	}
 	
 	
@@ -27,11 +28,6 @@ public class Torre1 extends Torre{
 		grafico = new Torre1Grafica(x,y);
 	}
 
-	@Override
-	public void aplicarPowerUp(PowerUp p) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
 	
