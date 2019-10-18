@@ -62,9 +62,9 @@ public abstract class Enemigo extends Personaje{
 			x-=velocidad;
 		}
 		else {
-			if(ultimoAtacado.estaMuerto()) {//SI ESTOY QUIETO SE SUPONE QUE MI ULTIMO
-				ultimoAtacado=null;			//ENEMIGO ES NULO
+			if(ultimoAtacado.estaMuerto()) {//SI ESTOY QUIETO SE SUPONE QUE MI ULTIMO 
 				quieto=false;
+				ultimoAtacado=null;			//ATACADO NO ES NULO
 			}
 		}
 		super.actualizar();

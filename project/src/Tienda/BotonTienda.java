@@ -10,7 +10,6 @@ public abstract class BotonTienda extends JButton{
 	public BotonTienda(Tienda t) {
 		tienda = t;
 		this.setOpaque(true);
-		this.setSize(103, 96);
 	}
 	
 }

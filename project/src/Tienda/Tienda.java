@@ -19,7 +19,7 @@ public class Tienda extends JPanel{
 	protected Jugador jugador;
 	
 	public Tienda(Jugador j) {
-		this.setPreferredSize(new Dimension(1024, 170));
+		this.setPreferredSize(new Dimension(724, 170));
 		this.setLayout(new FlowLayout());
 		botones = new JButton[cantBotones];
 		jugador = j;
@@ -61,4 +61,5 @@ public class Tienda extends JPanel{
         setOpaque(false);
         super.paint(g);
     }
+	
 }

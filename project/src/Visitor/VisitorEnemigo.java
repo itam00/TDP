@@ -20,8 +20,8 @@ public class VisitorEnemigo extends Visitor {
 		if(mio.puedeAtacar()) {
 			t.disminuirVida(mio.getDanio());
 			if(!t.estaMuerto()) {
-				mio.setQuieto(true);
 				mio.setUltimoAtacado(t);
+				mio.setQuieto(true);
 			}
 		}
 	}
@@ -47,8 +47,8 @@ public class VisitorEnemigo extends Visitor {
 		if(mio.puedeAtacar()) {
 			o.disminuirVida(mio.getDanio());
 			if(!o.estaMuerto()) {
-				mio.setQuieto(true);
 				mio.setUltimoAtacado(o);
+				mio.setQuieto(true);
 			}
 		}
 	}

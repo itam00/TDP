@@ -13,7 +13,7 @@ public class Piedra extends Obstaculo {
 	}
 	
 	public void afectar(Enemigo e) {
-		e.setQuieto(true);
+		//
 	}
 
 }

@@ -1,16 +1,16 @@
 package GUI;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
-
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import Entidad.Elemento;
 import Graficos.ElementoGrafico;
 import Juego.Controlador;
@@ -25,8 +25,9 @@ public class GUI extends JFrame implements MouseListener{
 	private Controlador controlador;
 	protected List<ElementoGrafico>[] entidades;
 	protected ImageIcon fondo;
-	protected JPanel panelJuego;
+	protected JPanel panelJuego,panelUtilidades;
 	protected Tienda tienda;
+	protected Jugador jugador;
 
 	public static void main(String[] args) {
 		GUI frame = new GUI();
@@ -35,14 +36,14 @@ public class GUI extends JFrame implements MouseListener{
 
 	public GUI() {
 		// mapa= new Mapa(this);
-		Jugador jugador = new Jugador();
+		jugador = new Jugador();
 		tienda = new Tienda(jugador);
 		controlador = new Controlador(this,new Mapa(this), jugador,tienda);
 		tiempo = new ContadorTiempo(controlador, this);
 		addMouseListener(this);
 		setearVentana();
 		setearPanelJuego();
-		agregarPanelTienda();
+		setearPanelUtilidades();
 
 		tiempo.start();
 		for (int i=0; i<3;i++) {
@@ -80,10 +81,6 @@ public class GUI extends JFrame implements MouseListener{
 
 	@Override
 	public synchronized void mousePressed(MouseEvent e) {
-		/*if (e.getButton() == MouseEvent.BUTTON1) {
-			controlador.comprarTorre(e.getX(), e.getY());
-		} else
-			controlador.colocarEnemigo(getWidth(), e.getY());*/
 		controlador.click(e.getX(),e.getY());
 
 	}
@@ -95,26 +92,31 @@ public class GUI extends JFrame implements MouseListener{
 
 
 	private void setearVentana() {
-		getContentPane().setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
-		setResizable(false);
+		getContentPane().setLayout(null);
+		setResizable(true);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1028, 768);// esto quedo asi porque con 1024 no se ve el borde
 	}
 	
-	private void agregarPanelTienda() {
-		getContentPane().add(tienda);
-	}
+
 
 	private void setearPanelJuego() {
 		panelJuego = new JPanel();
 		panelJuego.setLayout(null);
 		panelJuego.setVisible(true);
 		panelJuego.setOpaque(false);
-		panelJuego.setPreferredSize(new Dimension( 1028, 640));// esto quedo asi porque con 1024 no se ve el borde
+		//panelJuego.setPreferredSize(new Dimension( 1028, 640));// esto quedo asi porque con 1024 no se ve el borde
 		agregarFondo();
+		panelJuego.setBounds(0,0,1028,640);
 		this.add(panelJuego);
 		repaint();
+	}
+	private void setearPanelUtilidades(){
+		tienda.setBounds(0,576,728,160);
+		getContentPane().add(tienda);
+		jugador.setBounds(728,576,300,160);
+		getContentPane().add(jugador);
 	}
 
 	private void agregarFondo() {
@@ -141,6 +143,8 @@ public class GUI extends JFrame implements MouseListener{
 		panelJuego.repaint();
 		repaint();
 	}
+	
+
 
 
 }

@@ -10,7 +10,7 @@ public class Enemigo4 extends Enemigo{
 		super(x, y, m);
 		velocidad = 2;
 		vida = 100;
-		danio = 20;
+		danio = 5;
 		rango = 1;
 		puntos =  10;
 		recompensa = 100;

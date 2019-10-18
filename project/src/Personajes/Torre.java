@@ -3,7 +3,6 @@ package Personajes;
 
 import Juego.Mapa;
 import Visitor.Visitor;
-import Visitor.Visitor;
 import Visitor.VisitorTorre;
 
 public abstract class Torre extends Personaje{

@@ -23,7 +23,6 @@ public class VisitorObstaculo extends Visitor {
 	@Override
 	public void visit(Enemigo e) {
 		mio.afectar(e);
-		
 	}
 
 	@Override
