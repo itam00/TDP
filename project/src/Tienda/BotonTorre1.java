@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import Personajes.Torre1;
 
-public class BotonTorre1 extends BotonTienda{
+public class BotonTorre1 extends BotonTorre{
 	public BotonTorre1(Tienda t){
 		super(t);
 		this.setIcon(new ImageIcon(getClass().getResource("/Sprites/isaac.gif")));

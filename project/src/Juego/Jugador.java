@@ -45,6 +45,10 @@ public class Jugador extends JPanel{
 	public void reiniciarPuntaje() {
 		puntaje=0;
 	}
+	public void agregarPowerUp(PowerUp p) {
+		powerUps.add(p);
+	}
+
 	
 	public void configurarPanel(){
 		JLabel lPuntos = new JLabel("Puntos: ");

@@ -9,6 +9,10 @@ public class Congelador extends PowerUp{
 	public Congelador(int x, int y, Mapa m) {
 		super(x, y, m);
 	}
+	public Congelador() {
+		precio=0;
+		
+	}
 
 	@Override
 	public void afectar(Personaje p) {

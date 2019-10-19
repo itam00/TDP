@@ -7,7 +7,7 @@ import Personajes.Torre1;
 import Personajes.Torre3;
 
 @SuppressWarnings("serial")
-public class BotonTorre3 extends BotonTienda{
+public class BotonTorre3 extends BotonTorre{
 	public BotonTorre3(Tienda t){
 		super(t);
 		this.setIcon(new ImageIcon(getClass().getResource("/Sprites/torre3.gif")));

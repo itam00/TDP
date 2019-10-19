@@ -9,7 +9,7 @@ import Personajes.Torre1;
 import Personajes.Torre4;
 
 @SuppressWarnings("serial")
-public class BotonTorre4 extends BotonTienda{
+public class BotonTorre4 extends BotonTorre{
 
 	public BotonTorre4(Tienda t){
 		super(t);

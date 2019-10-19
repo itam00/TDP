@@ -7,6 +7,7 @@ public abstract class Objeto extends Elemento{
 	public Objeto(int x,int y,Mapa m) {
 		super(x,y,m);
 	}
+	public Objeto() {}
 
 	public int getInicioRangoX() {
 		return grafico.getX();
