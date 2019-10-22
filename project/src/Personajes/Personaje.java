@@ -60,4 +60,9 @@ public abstract class Personaje extends Elemento{
 		}
 		return puede;
 	}
+	
+	public void actualizar() {
+		estado.actualizar();
+		super.actualizar();
+	}
 }

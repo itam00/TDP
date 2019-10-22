@@ -70,8 +70,8 @@ public abstract class Elemento {
 	public abstract int getFinRangoX();
 	
 	public void setPos (int x, int y, Mapa m) {
-		this.x=x-60;
-		this.y=y-110;
+		this.x=x-50;
+		this.y=(int)(y/96)*96;
 		mapa=m;
 	}
 	

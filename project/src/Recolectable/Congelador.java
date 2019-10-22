@@ -15,6 +15,7 @@ public class Congelador extends PowerUp{
 		grafico = new CongeladorGrafico();
 		visitor = new VisitorVacio();
 	}
+	
 	public Congelador() {
 		precio=0;
 		grafico = new CongeladorGrafico();
