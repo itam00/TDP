@@ -23,6 +23,9 @@ public class ManejadorCongelacion extends ManejadorPowerUp {
 
 	@Override
 	public void usarPowerUp() {
-		cant--;
+		if(cant>=0) {
+			cant--;
+			tienda.setPowerUpUsado(new Congelador());
+		}
 	}
 }

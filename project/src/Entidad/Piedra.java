@@ -23,4 +23,5 @@ public class Piedra extends Obstaculo {
 		return grafico.getX()+50;
 	}
 
+
 }

@@ -44,6 +44,10 @@ public class Tienda extends JPanel{
 		}
 	}
 	
+	public void setPowerUpUsado(PowerUp p) {
+		usado = p;
+	}
+	
 	public Torre getComprado() {
 		Torre aux = comprado;
 		//arreglar botones
@@ -52,7 +56,9 @@ public class Tienda extends JPanel{
 	}
 	
 	public PowerUp getPowerUpUsado() {
-		return usado;
+		PowerUp aux = usado;
+		usado = null;
+		return aux;
 	}
 	public boolean hayComprado() {
 		return comprado != null;

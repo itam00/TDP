@@ -3,6 +3,7 @@ import java.util.*;
 
 import GUI.*;
 import Personajes.*;
+import Recolectable.PowerUp;
 import Tienda.Tienda;
 import Entidad.*;
 
@@ -55,10 +56,17 @@ public class Controlador {
 	
 
 	public void click(int x,int y) {
-		if(y<576&&tienda.hayComprado() && !mapa.coincidePosicion(x,y)) {
-			Torre t = tienda.getComprado();
-			t.setPos(x, y,mapa);
-			mapa.agregar(t);
+		if(y<576) {
+			if(tienda.hayComprado() && !mapa.coincidePosicion(x,y)) {
+				Torre t = tienda.getComprado();
+				t.setPos(x, y,mapa);
+				mapa.agregar(t);
+			}
+			if(tienda.hayPowerUpUsado()) {
+				PowerUp p = tienda.getPowerUpUsado();
+				p.setPos(x, y, mapa);
+				mapa.agregar(p);
+			}
 		}
 	}
 	

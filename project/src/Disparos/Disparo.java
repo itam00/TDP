@@ -31,6 +31,7 @@ public abstract class Disparo extends Elemento {
 	
 	
 	
+	
 	/*public void removerDisparo() {
 		controlador.remover(this);
 	}*/
