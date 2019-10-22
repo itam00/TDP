@@ -15,5 +15,12 @@ public class Piedra extends Obstaculo {
 	public void afectar(Enemigo e) {
 		//
 	}
+	
+	public int getInicioRangoX() {
+		return grafico.getX()-50;
+	}
+	public int getFinRangoX() {
+		return grafico.getX()+50;
+	}
 
 }

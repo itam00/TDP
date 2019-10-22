@@ -3,6 +3,7 @@ package Recolectable;
 import Entidad.Objeto;
 import Juego.Mapa;
 import Personajes.Personaje;
+import Tienda.Tienda;
 import Visitor.Visitor;
 
 public abstract class PowerUp extends Objeto{
@@ -24,4 +25,6 @@ public abstract class PowerUp extends Objeto{
 	}
 	
 	public abstract void afectar(Personaje p);
+	
+	public abstract void agregar(Tienda tienda);
 }

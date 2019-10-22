@@ -1,6 +1,7 @@
 package Tienda;
 
 import java.awt.Dimension;
+
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -11,17 +12,22 @@ import javax.swing.JPanel;
 
 import Juego.Jugador;
 import Personajes.Torre;
+import Recolectable.*;
 import Recolectable.PowerUp;
 
 public class Tienda extends JPanel{
 	protected Torre comprado;
 	protected PowerUp usado;
 	protected Jugador jugador;
+	ManejadorPowerUp manejadorCongelacion;
 	
 	public Tienda(Jugador j) {
 		this.setPreferredSize(new Dimension(724, 170));
 		this.setLayout(new FlowLayout());
 		jugador = j;
+		manejadorCongelacion = new ManejadorCongelacion(this);
+		
+		
 		agregarBotones();
 	}
 	public void comprar(Torre t) {
@@ -57,9 +63,7 @@ public class Tienda extends JPanel{
 	
 	public void agregarBotones() {
 		JButton torres[] = new JButton[4];
-		ManejadorPowerUp manejador[] = new ManejadorPowerUp[1];
 		
-		manejador[0] = new ManejadorCongelacion(this);
 		torres[0] = new BotonTorre1(this);
 		torres[1] = new BotonTorre2(this);
 		torres[2] = new BotonTorre3(this);
@@ -68,10 +72,7 @@ public class Tienda extends JPanel{
 		for(int i=0;i<torres.length;i++) {
 			this.add(torres[i]);
 		}
-		for(int i=0;i<manejador.length;i++) {
-			this.add(manejador[i].getBotonComprar());
-			this.add(manejador[i].getBotonUsar());
-		}
+		manejadorCongelacion.colocarEnTienda();
 	}
 
 	public void paint(Graphics g) {
@@ -81,5 +82,9 @@ public class Tienda extends JPanel{
         setOpaque(false);
         super.paint(g);
     }
+	
+	public void agregar(Congelador c) {
+		manejadorCongelacion.agregarPowerUp();
+	}
 	
 }

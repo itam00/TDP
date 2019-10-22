@@ -5,23 +5,24 @@ import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
+import Tienda.Tienda;
 
-public class VisitorPowerUp extends Visitor{
-
-	protected PowerUp p;
+public class VisitorMouse extends Visitor{
+	Tienda tienda;
 	
-	public VisitorPowerUp(PowerUp p) {
-		this.p=p;
+	public VisitorMouse(Tienda tienda) {
+		this.tienda = tienda;
 	}
-	
 	@Override
 	public void visit(Torre t) {
-		//p.afectar(t);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		//p.afectar(e);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -32,8 +33,8 @@ public class VisitorPowerUp extends Visitor{
 
 	@Override
 	public void visit(PowerUp p) {
-		// TODO Auto-generated method stub
-		
+		p.agregar(tienda);
+		p.setMuerto(true);
 	}
 
 	@Override

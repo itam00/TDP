@@ -20,6 +20,9 @@ public class VisitorDisparo extends Visitor{
 	@Override
 	public void visit(Enemigo e) {
 		e.disminuirVida(disparo.getDanio());
+		if(e.getMuerto()) {
+			e.soltarPowerUp();
+		}
 		disparo.setMuerto(true);
 	}
 

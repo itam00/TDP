@@ -36,11 +36,11 @@ public abstract class ManejadorPowerUp {
 		cant++;
 	}
 	
-	public JButton getBotonComprar() {
-		return comprar;
-	}
-	public JButton getBotonUsar() {
-		return usar;
+
+	
+	public void colocarEnTienda() {
+		tienda.add(usar);
+		tienda.add(comprar);
 	}
 	
 	public abstract void comprar();
