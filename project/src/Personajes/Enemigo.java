@@ -4,6 +4,9 @@ package Personajes;
 import Entidad.Elemento;
 import Juego.Mapa;
 import Recolectable.Congelador;
+import State.DefaultEnemigo;
+import State.StateEnemigo;
+import State.StateTorre;
 import Visitor.Visitor;
 import Visitor.VisitorEnemigo;
 
@@ -13,6 +16,7 @@ public abstract class Enemigo extends Personaje{
 	protected boolean quieto;
 	protected Elemento ultimoAtacado;
 	protected final float probCongelacion;
+	protected StateEnemigo state;
 	
 	
 	public Enemigo(int x, int y, Mapa m) {
@@ -21,6 +25,7 @@ public abstract class Enemigo extends Personaje{
 		ultimoAtacado=null;
 		visitor= new VisitorEnemigo(this);
 		probCongelacion = 0.8f;
+		state = new DefaultEnemigo(this);
 	}
 	
 	public int getPuntos() {
@@ -59,37 +64,32 @@ public abstract class Enemigo extends Personaje{
 	public Elemento getUltimoAtacado() {
 		return ultimoAtacado;
 	}
+	public float getVelocidad() {
+		return velocidad;
+	}
 	public void setUltimoAtacado(Elemento e) {
 		ultimoAtacado = e;
-	}
-	
-	public void setVelocidad(float v) {
-		velocidad=v;
 	}
 	
 	public void setDefault() {
 		frecuencia=frecuenciaDefault;
 		velocidad=velocidadDefault;
 	}
-	
-	@Override
-	public void actualizar() {	
-		if (!quieto) {
-			x-=velocidad;
-		}
-		else {
-			if(ultimoAtacado.estaMuerto()) {//SI ESTOY QUIETO SE SUPONE QUE MI ULTIMO 
-				quieto=false;
-				ultimoAtacado=null;			//ATACADO NO ES NULO
-			}
-		}
-		super.actualizar();
+	public void setX(int x) {
+		this.x = x;
 	}
-	
+
 	public void soltarPowerUp() {
 		if(Math.random()<probCongelacion) {
 			mapa.agregar(new Congelador(x,y,mapa));
 			System.out.println("se solto un congelador");
 		}
+	}
+	public void setState(StateEnemigo state) {
+		this.state = state;
+	}
+	
+	public void actualizar() {
+		state.actualizar();
 	}
 }

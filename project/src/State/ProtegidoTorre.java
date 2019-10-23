@@ -1,23 +1,26 @@
 package State;
 
 import Personajes.Personaje;
+import Personajes.Torre;
 
-public class Protegido implements State{
+public class ProtegidoTorre extends StateTorre{
 
 	protected int vidaEscudo;
 	protected Personaje p;
 	protected int vidapersonaje;
 	
-	public Protegido (Personaje p, int vida) {
+	public ProtegidoTorre (Personaje p, int vida,Torre t) {
+		super(t);
 		this.p=p;
 		vidapersonaje=vida;
 	}
 	@Override
 	public void actualizar() {
 		vidaEscudo-=(vidapersonaje-p.getVida());
-		p.setVida(vidapersonaje);
+		//torre.setVida(vidapersonaje);
 		if (vidaEscudo<=0)
-			p.setState(new Default(p));		
+			torre.setState(new DefaultTorre(torre));		
 	}
 
 }
+;

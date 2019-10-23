@@ -2,15 +2,18 @@ package Personajes;
 
 
 import Juego.Mapa;
+import State.DefaultTorre;
+import State.StateTorre;
 import Visitor.Visitor;
 import Visitor.VisitorTorre;
 
 public abstract class Torre extends Personaje{
-	
+	protected StateTorre state;
 	protected int precio, tamanio;
 
 	public Torre() {
 		visitor=new VisitorTorre(this);
+		state = new DefaultTorre(this);
 	}
 	
 	public void setPos(int x,int y, Mapa m) {
@@ -51,8 +54,16 @@ public abstract class Torre extends Personaje{
 		return grafico.getX()+rango*50;
 	}
 	
+	public void setState(StateTorre state) {
+		this.state = state;
+	}
+	
 	public abstract void crearGrafico(int x,int y);
 	
 	public abstract void disparar();
+	
+	public void actualizar() {
+		state.actualizar();
+	}
 
 }

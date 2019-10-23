@@ -6,24 +6,20 @@ import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
+import State.AtacandoEnemigo;
+import State.AtacandoEnemigoObstaculo;
 
 public class VisitorEnemigo extends Visitor {
 
-	protected Enemigo mio;
+	protected Enemigo enemigo;
 	
 	public VisitorEnemigo(Enemigo e) {
-		mio= e;
+		enemigo= e;
 	}
 	
 	@Override
 	public void visit(Torre t) {	
-		if(mio.puedeAtacar()) {
-			t.disminuirVida(mio.getDanio());
-			if(!t.estaMuerto()) {
-				mio.setUltimoAtacado(t);
-				mio.setQuieto(true);
-			}
-		}
+		enemigo.setState(new AtacandoEnemigo(enemigo,t));
 	}
 
 	@Override
@@ -44,13 +40,7 @@ public class VisitorEnemigo extends Visitor {
 
 	@Override
 	public void visit(Obstaculo o) {
-		if(mio.puedeAtacar()) {
-			o.disminuirVida(mio.getDanio());
-			if(!o.estaMuerto()) {
-				mio.setUltimoAtacado(o);
-				mio.setQuieto(true);
-			}
-		}
+		enemigo.setState(new AtacandoEnemigoObstaculo(enemigo,o));
 	}
 
 }

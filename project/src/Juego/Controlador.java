@@ -62,10 +62,13 @@ public class Controlador {
 				t.setPos(x, y,mapa);
 				mapa.agregar(t);
 			}
-			if(tienda.hayPowerUpUsado()) {
+			else if(tienda.hayPowerUpUsado()) {
 				PowerUp p = tienda.getPowerUpUsado();
 				p.setPos(x, y, mapa);
 				mapa.agregar(p);
+			}
+			else {
+				
 			}
 		}
 	}

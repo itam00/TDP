@@ -2,7 +2,9 @@ package Recolectable;
 
 import Entidad.Objeto;
 import Juego.Mapa;
+import Personajes.Enemigo;
 import Personajes.Personaje;
+import Personajes.Torre;
 import Tienda.Tienda;
 import Visitor.Visitor;
 
@@ -24,7 +26,9 @@ public abstract class PowerUp extends Objeto{
 		return precio;
 	}
 	
-	public abstract void afectar(Personaje p);
+	public abstract void afectar(Enemigo e);
+	
+	public abstract void afectar(Torre t);
 	
 	public abstract void agregar(Tienda tienda);
 }

@@ -13,8 +13,6 @@ public abstract class Elemento {
 	protected Mapa mapa;
 	protected int inicioRangoY,finRangoY;
 	protected Visitor visitor;
-	protected State estado;
-	
 	
 	public Elemento(int x,int y, Mapa m) {
 		muerto=false;

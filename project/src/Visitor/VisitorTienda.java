@@ -7,10 +7,10 @@ import Personajes.Torre;
 import Recolectable.PowerUp;
 import Tienda.Tienda;
 
-public class VisitorMouse extends Visitor{
+public class VisitorTienda extends Visitor{
 	Tienda tienda;
 	
-	public VisitorMouse(Tienda tienda) {
+	public VisitorTienda(Tienda tienda) {
 		this.tienda = tienda;
 	}
 	@Override
