@@ -8,6 +8,7 @@ public class CongeladorEfectoGrafico extends ElementoGrafico{
 		width  =97;
 		height = 191;
 		image = new ImageIcon(getClass().getResource("/Sprites/congelacionEfecto.gif"));
+
 		this.setIcon(image);
 	}
 	
