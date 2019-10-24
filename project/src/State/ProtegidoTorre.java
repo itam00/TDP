@@ -2,6 +2,7 @@ package State;
 
 import Personajes.Personaje;
 import Personajes.Torre;
+import Recolectable.Escudo;
 
 public class ProtegidoTorre extends StateTorre{
 
@@ -18,16 +19,15 @@ public class ProtegidoTorre extends StateTorre{
 	public void actualizar() {
 		if (vidaEscudo<=0 || System.currentTimeMillis()-tiempoCreado>10000) {
 			torre.setState(new DefaultTorre(torre));
-			System.out.println("ya no tengo escudo xdxd");
 		}
-		else
-			System.out.println("tengo escudo xdxd");
 	}
 	
 	public void disminuirVida(int n) {
 		vidaEscudo-=n;
-		if (vidaEscudo<0)
-			torre.disminuirVida(n+vidaEscudo);
+		if (vidaEscudo<0) {
+			torre.aplicarDaño(n);
+			System.out.println("llegue");
+		}
 	}
 
 }

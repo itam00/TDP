@@ -6,6 +6,7 @@ import Juego.Mapa;
 
 public abstract class Personaje extends Elemento{
 	protected int vida, danio, rango,frecuencia, frecuenciaDefault;
+	
 	protected long ultimoAtaque;
 	
 
@@ -16,10 +17,10 @@ public abstract class Personaje extends Elemento{
 	public Personaje() {
 	}
 	
-	public void disminuirVida(int n) {
-		vida-=n;
-		muerto = vida<=0;
+	/*public void disminuirVida(int n) {
+		state.disminuirVida
 	}
+	*/
 	
 	
 	public abstract void setDefault();

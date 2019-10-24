@@ -9,4 +9,6 @@ public abstract class StateTorre{
 		torre = t;
 	}
 	public abstract void actualizar();
+	
+	public abstract void disminuirVida(int n);
 }
