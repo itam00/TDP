@@ -11,10 +11,11 @@ public class Enemigo1Grafico extends ElementoGrafico {
 
 	public Enemigo1Grafico() {
 		super();
-		image = new ImageIcon(getClass().getResource("/Sprites/enemigo1.gif"));
-		this.setIcon(image);
 		width  =103;
 		height = 97;
+		porDefecto = "enemigo1.gif";
+		setDefaultGif();
 	}
+	
 
 }
