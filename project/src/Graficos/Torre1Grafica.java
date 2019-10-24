@@ -9,8 +9,8 @@ public class Torre1Grafica extends ElementoGrafico{
 		super();
 		width  =103;
 		height = 97;
-		porDefecto = "isaac.gif";
-		setDefaultGif();
+		image = new ImageIcon(getClass().getResource("/Sprites/isaac.gif"));
+		this.setIcon(image);
 	}
 	
 }

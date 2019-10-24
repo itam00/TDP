@@ -8,8 +8,8 @@ public class Torre4Grafica extends ElementoGrafico{
 		super();
 		width  =103;
 		height = 97;
-		porDefecto = "torre4.gif";
-		setDefaultGif();
+		image = new ImageIcon(getClass().getResource("/Sprites/torre4.gif"));
+		this.setIcon(image);
 	}
 
 }

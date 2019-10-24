@@ -24,6 +24,7 @@ public abstract class PowerUp extends Objeto{
 		v.visit(this);
 		
 	}
+	
 	public int getPrecio() {
 		return precio;
 	}
@@ -38,4 +39,5 @@ public abstract class PowerUp extends Objeto{
 		muerto=(muerto || grafico.estaMuerto());
 		super.actualizar();
 	}
+	
 }
