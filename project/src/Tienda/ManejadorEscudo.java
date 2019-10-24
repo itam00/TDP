@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Recolectable.Bomba;
 import Recolectable.Escudo;
+import Recolectable.PowerUp;
 
 public class ManejadorEscudo extends ManejadorPowerUp {
 	
@@ -14,14 +15,18 @@ public class ManejadorEscudo extends ManejadorPowerUp {
 
 	@Override
 	public void comprar() {
-		tienda.comprar(new Escudo(), this); //esto es innecesario, podes poner cant++
+		tienda.comprar(new Escudo(this), this); //esto es innecesario, podes poner cant++
 	}
 
 	@Override
 	public void usarPowerUp() {
 		if(cant>=0) {
 			cant--;
-			tienda.setPowerUpUsado(new Escudo());
+			tienda.setPowerUpUsado(new Escudo(this));
 		}
+	}
+	
+	public PowerUp crear() {
+		return new Escudo(this);
 	}
 }

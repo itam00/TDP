@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import Recolectable.PowerUp;
+
 public abstract class ManejadorPowerUp {
 	protected Tienda tienda;
 	protected JButton comprar,usar;
@@ -47,6 +49,7 @@ public abstract class ManejadorPowerUp {
 	
 	public abstract void usarPowerUp();
 
+	public abstract PowerUp crear();
 	
 
 }

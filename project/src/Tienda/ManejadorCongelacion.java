@@ -8,6 +8,7 @@ import javax.swing.JButton;
 
 import Personajes.Torre1;
 import Recolectable.Congelador;
+import Recolectable.PowerUp;
 
 public class ManejadorCongelacion extends ManejadorPowerUp {
 	
@@ -18,14 +19,18 @@ public class ManejadorCongelacion extends ManejadorPowerUp {
 
 	@Override
 	public void comprar() {
-		tienda.comprar(new Congelador(), this);
+		tienda.comprar(new Congelador(this), this);
 	}
 
 	@Override
 	public void usarPowerUp() {
 		if(cant>=0) {
 			cant--;
-			tienda.setPowerUpUsado(new Congelador());
+			tienda.setPowerUpUsado(new Congelador(this));
 		}
+	}
+	
+	public PowerUp crear() {
+		return new Congelador(this);
 	}
 }
