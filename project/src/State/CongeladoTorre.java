@@ -19,5 +19,11 @@ public class CongeladoTorre extends StateTorre{
 			torre.setState(new DefaultTorre(torre));
 		}	
 	}
+
+	@Override
+	public void disminuirVida(int n) {
+		torre.aplicarDaño(n);
+		
+	}
 	
 }

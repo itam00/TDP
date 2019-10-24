@@ -39,6 +39,12 @@ public abstract class Enemigo extends Personaje{
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
+	
+	public void disminuirVida(int n) {
+		vida-=n;
+		muerto=vida<=0;
+	}
+	
 	public int limiteRango() {
 		return getX()-rango;
 	}

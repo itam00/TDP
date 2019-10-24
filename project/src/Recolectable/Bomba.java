@@ -1,7 +1,7 @@
 package Recolectable;
 
 
-import java.util.List;
+import java.util.List; 
 
 import Entidad.Elemento;
 import Graficos.BombaEfectoGrafico;
@@ -32,6 +32,7 @@ public class Bomba extends PowerUp{
 	}
 
 	public void afectar(Torre p) {
+		
 	}
 	
 	public void afectar(Enemigo p) {

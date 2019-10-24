@@ -35,6 +35,14 @@ public abstract class Torre extends Personaje{
 		v.visit(this);
 	}
 	
+	public void disminuirVida(int n) {
+		state.disminuirVida( n);
+	}
+	
+	public void aplicarDaño(int n) {
+		vida-=n;
+		muerto=vida<=0;
+	}
 	
 	public int getPrecio() {
 		return precio;

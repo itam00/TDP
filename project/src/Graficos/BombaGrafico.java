@@ -14,7 +14,7 @@ public class BombaGrafico extends PowerUpGrafico {
 			super(m);
 			width  =103;
 			height = 97;
-			image = new ImageIcon(getClass().getResource("bombaPowerUp.gif"));
+			image = new ImageIcon(getClass().getResource("/Sprites/bombaPowerUp.gif"));
 			this.setIcon(image);
 		}
 }
