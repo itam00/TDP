@@ -20,12 +20,14 @@ public class Tienda extends JPanel{
 	protected PowerUp usado;
 	protected Jugador jugador;
 	ManejadorPowerUp manejadorCongelacion;
+	ManejadorPowerUp manejadorBomba;
 	
 	public Tienda(Jugador j) {
 		this.setPreferredSize(new Dimension(724, 170));
 		this.setLayout(new FlowLayout());
 		jugador = j;
 		manejadorCongelacion = new ManejadorCongelacion(this);
+		manejadorBomba= new ManejadorBomba(this);
 		
 		
 		agregarBotones();
@@ -93,4 +95,7 @@ public class Tienda extends JPanel{
 		manejadorCongelacion.agregarPowerUp();
 	}
 	
+	public void agregar(Bomba b) {
+		manejadorBomba.agregarPowerUp();
+	}
 }

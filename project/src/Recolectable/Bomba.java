@@ -2,45 +2,38 @@ package Recolectable;
 
 import java.awt.event.MouseEvent;
 
+import Graficos.BombaGrafico;
 import Graficos.CongeladorEfectoGrafico;
-import Graficos.CongeladorGrafico;
-
 import Juego.Mapa;
 import Personajes.Enemigo;
-import Personajes.Personaje;
 import Personajes.Torre;
-import State.CongeladoEnemigo;
-import State.CongeladoTorre;
-import Tienda.ManejadorCongelacion;
+import Tienda.ManejadorBomba;
 import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
 import Visitor.VisitorVacio;
 
-public class Congelador extends PowerUp{
+public class Bomba extends PowerUp{
 
-	public Congelador(int x, int y, Mapa m, ManejadorCongelacion maneja) {
+	public Bomba(int x, int y, Mapa m, ManejadorBomba maneja) {
 		super(x, y, m,maneja);
-		grafico = new CongeladorGrafico();
+		grafico = new BombaGrafico();
 		visitor = new VisitorVacio();
 	}
 	
-	public Congelador() {
+	public Bomba() {
 		precio=0;
 		grafico = new CongeladorEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 	}
 
 	public void afectar(Torre p) {
-		p.setState(new CongeladoTorre(p));
+		p.setMuerto(true);;
 	}
 	
 	public void afectar(Enemigo p) {
-		p.setState(new CongeladoEnemigo(p));
+		p.setMuerto(true);
 	}
-	@Override
-	public void agregar(Tienda tienda) {
-		tienda.agregar(this);
-	}
+	
 	
 	@Override
 	public int getInicioRangoX() {
@@ -49,6 +42,12 @@ public class Congelador extends PowerUp{
 	@Override
 	public int getFinRangoX() {
 		return x+20;
+	}
+
+	@Override
+	public void agregar(Tienda tienda) {
+		tienda.agregar(this);
+		
 	}
 
 }
