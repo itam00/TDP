@@ -32,8 +32,7 @@ public class ManejadorCongelacion extends ManejadorPowerUp {
 	}
 	
 	public PowerUp getPowerUp(int x, int y, Mapa m) {
-		cant++;
-		System.out.println("se aumento en 1 el controlador del powerup congelacion");
 		return new Congelador(x, y, m, this);
 	}
+	
 }

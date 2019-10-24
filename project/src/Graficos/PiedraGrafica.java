@@ -10,8 +10,8 @@ public class PiedraGrafica extends ElementoGrafico {
 		super();
 		width  =100;
 		height = 100;
-		porDefecto = "piedra.gif";
-		setDefaultGif();
+		image = new ImageIcon(getClass().getResource("/Sprites/piedra.png"));
+		this.setIcon(image);
 	}
 
 }

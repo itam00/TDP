@@ -13,8 +13,14 @@ public class DisparoGrafico extends ElementoGrafico {
 		super();
 		width  =100;
 		height = 100;
-		porDefecto = "proyectil.gif";
-		setDefaultGif();
+		image = new ImageIcon(getClass().getResource("/Sprites/proyectil.gif"));
+		this.setIcon(image);
+	}
+
+	public void cambiar() {
+		image.getImage().flush();
+		image= new ImageIcon(getClass().getResource("/Sprites/proyectilImpacto.gif"));
+		this.setIcon(image);
 	}
 
 

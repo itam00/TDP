@@ -16,8 +16,14 @@ public class DisparoGrafico3 extends ElementoGrafico {
 		super();
 		width  =100;
 		height = 100;
-		porDefecto = "proyectilTorre3.gif";
-		setDefaultGif();
+		image = new ImageIcon(getClass().getResource("/Sprites/proyectilTorre3.gif"));
+		this.setIcon(image);
+	}
+
+	public void cambiar() {
+		image.getImage().flush();
+		image= new ImageIcon(getClass().getResource("/Sprites/proyectilImpacto.gif"));
+		this.setIcon(image);
 	}
 
 }

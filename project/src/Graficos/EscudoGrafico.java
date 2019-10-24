@@ -1,5 +1,7 @@
 package Graficos;
 
+import javax.swing.ImageIcon;
+
 import Tienda.ManejadorEscudo;
 
 public class EscudoGrafico extends PowerUpGrafico{
@@ -13,7 +15,7 @@ public class EscudoGrafico extends PowerUpGrafico{
 		super(m);
 		width  =103;
 		height = 97;
-		porDefecto = "bombaPowerUp.gif";
-		setDefaultGif();
+		image = new ImageIcon(getClass().getResource("bombaPowerUp.gif"));
+		this.setIcon(image);
 	}
 }

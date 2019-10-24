@@ -52,5 +52,8 @@ public abstract class ManejadorPowerUp {
 
 	public abstract PowerUp getPowerUp(int x, int y, Mapa m);
 	
-
+	public void recogido() {
+		System.out.println("contador de congeladores aumenta en 1");
+		cant++;
+	}
 }

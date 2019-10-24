@@ -19,7 +19,7 @@ public class PowerUpGrafico extends ElementoGrafico implements MouseListener {
 	public void mouseClicked(MouseEvent arg0) {
 		muerto=true;
 		setVisible(false);
-		manejador.agregarPowerUp();
+		manejador.recogido();
 	}
 
 	@Override
@@ -35,7 +35,6 @@ public class PowerUpGrafico extends ElementoGrafico implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		System.out.println("algo");
 		
 	}
 
