@@ -2,10 +2,12 @@ package Graficos;
 
 import javax.swing.ImageIcon;
 
-public class CongeladorGrafico extends ElementoGrafico{
-	public CongeladorGrafico() {
-		super();
-		width  =102;
+import Tienda.ManejadorCongelacion;
+
+public class CongeladorGrafico extends PowerUpGrafico{
+	public CongeladorGrafico(ManejadorCongelacion m) {
+		super(m);
+		width  =103;
 		height = 97;
 		porDefecto = "congelacionPowerUp.gif";
 		setDefaultGif();

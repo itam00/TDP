@@ -17,13 +17,11 @@ public class VisitorPowerUp extends Visitor{
 	@Override
 	public void visit(Torre t) {
 		p.afectar(t);
-		t.setMuerto(true);
 	}
 
 	@Override
 	public void visit(Enemigo e) {
 		p.afectar(e);
-		p.setMuerto(true);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package Recolectable;
+package Recolectable; 
 
 import Graficos.CongeladorEfectoGrafico;
 import Graficos.CongeladorGrafico;
@@ -9,6 +9,7 @@ import Personajes.Personaje;
 import Personajes.Torre;
 import State.CongeladoEnemigo;
 import State.CongeladoTorre;
+import Tienda.ManejadorCongelacion;
 import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
 import Visitor.VisitorVacio;
@@ -29,15 +30,19 @@ public class Congelador extends PowerUp{
 
 	public void afectar(Torre p) {
 		p.setState(new CongeladoTorre(p));
+		muerto=true;
 	}
 	
 	public void afectar(Enemigo p) {
 		p.setState(new CongeladoEnemigo(p));
+		muerto=true;
 	}
+	
 	@Override
 	public void agregar(Tienda tienda) {
 		tienda.agregar(this);
 	}
+	
 	@Override
 	public int getInicioRangoX() {
 		return x-20;

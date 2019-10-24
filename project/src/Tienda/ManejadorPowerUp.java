@@ -47,5 +47,6 @@ public abstract class ManejadorPowerUp {
 	
 	public abstract void usarPowerUp();
 
+	
 
 }

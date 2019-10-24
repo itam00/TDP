@@ -35,7 +35,7 @@ public class VisitorTorre extends Visitor{
 
 	@Override
 	public void visit(PowerUp p) {
-		System.out.println("llega a powerup");
+		//System.out.println("llega a powerup");
 	}
 
 	@Override

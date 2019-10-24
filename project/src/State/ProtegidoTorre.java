@@ -6,21 +6,28 @@ import Personajes.Torre;
 public class ProtegidoTorre extends StateTorre{
 
 	protected int vidaEscudo;
-	protected Personaje p;
-	protected int vidapersonaje;
+	protected long tiempoCreado;
 	
-	public ProtegidoTorre (Personaje p, int vida,Torre t) {
+	public ProtegidoTorre (Torre t) {
 		super(t);
-		this.p=p;
-		vidapersonaje=vida;
+		vidaEscudo=100;
+		tiempoCreado= System.currentTimeMillis();
 	}
+	
 	@Override
 	public void actualizar() {
-		vidaEscudo-=(vidapersonaje-p.getVida());
-		//torre.setVida(vidapersonaje);
-		if (vidaEscudo<=0)
-			torre.setState(new DefaultTorre(torre));		
+		if (vidaEscudo<=0 || System.currentTimeMillis()-tiempoCreado>10000) {
+			torre.setState(new DefaultTorre(torre));
+			System.out.println("ya no tengo escudo xdxd");
+		}
+		else
+			System.out.println("tengo escudo xdxd");
+	}
+	
+	public void disminuirVida(int n) {
+		vidaEscudo-=n;
+		if (vidaEscudo<0)
+			torre.disminuirVida(n+vidaEscudo);
 	}
 
 }
-;
