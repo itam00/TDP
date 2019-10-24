@@ -41,6 +41,10 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void disminuirVida(int n) {
+		state.disminuirVida(n);
+	}
+	
+	public void aplicarDaño(int n) {
 		vida-=n;
 		muerto=vida<=0;
 	}

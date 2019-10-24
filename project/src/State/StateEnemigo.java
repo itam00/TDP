@@ -8,4 +8,8 @@ public abstract class StateEnemigo {
 		enemigo = e;
 	}
 	public abstract void actualizar();
+	
+	public void disminuirVida(int n) {
+		enemigo.aplicarDaño(n);
+	}
 }
