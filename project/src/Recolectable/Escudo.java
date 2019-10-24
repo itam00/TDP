@@ -8,22 +8,22 @@ import Graficos.BombaGrafico;
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Tienda.ManejadorBomba;
+import State.ProtegidoTorre;
 import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
 import Visitor.VisitorVacio;
 
-public class Bomba extends PowerUp{
+public class Escudo extends PowerUp{
 
 	long tiempoCreado;
 	
-	public Bomba(int x, int y, Mapa m, ManejadorBomba maneja) {
+	public Escudo(int x, int y, Mapa m) {
 		super(x, y, m);
-		grafico = new BombaGrafico(maneja);
+		grafico = new BombaGrafico();
 		visitor = new VisitorVacio();
 	}
 	
-	public Bomba() {
+	public Escudo() {
 		precio=0;
 		grafico = new BombaGrafico();
 		visitor= new VisitorPowerUp(this);
@@ -31,6 +31,8 @@ public class Bomba extends PowerUp{
 	}
 
 	public void afectar(Torre p) {
+		p.setState(new ProtegidoTorre(p));
+		muerto=true;
 	}
 	
 	public void afectar(Enemigo p) {
@@ -53,11 +55,5 @@ public class Bomba extends PowerUp{
 	}
 
 	public void actualizar() {
-		if (System.currentTimeMillis()-tiempoCreado>3000) {
-			List<Elemento> enRango= mapa.enRango(this);
-			for (Elemento e:enRango)
-				e.setMuerto(true);
-			muerto=true;
-		}
 	}
 }

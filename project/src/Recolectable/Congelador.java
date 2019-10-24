@@ -1,6 +1,4 @@
-package Recolectable;
-
-import java.awt.event.MouseEvent;
+package Recolectable; 
 
 import Graficos.CongeladorEfectoGrafico;
 import Graficos.CongeladorGrafico;
@@ -18,8 +16,8 @@ import Visitor.VisitorVacio;
 
 public class Congelador extends PowerUp{
 
-	public Congelador(int x, int y, Mapa m, ManejadorCongelacion maneja) {
-		super(x, y, m,maneja);
+	public Congelador(int x, int y, Mapa m) {
+		super(x, y, m);
 		grafico = new CongeladorGrafico();
 		visitor = new VisitorVacio();
 	}
@@ -32,11 +30,14 @@ public class Congelador extends PowerUp{
 
 	public void afectar(Torre p) {
 		p.setState(new CongeladoTorre(p));
+		muerto=true;
 	}
 	
 	public void afectar(Enemigo p) {
 		p.setState(new CongeladoEnemigo(p));
+		muerto=true;
 	}
+	
 	@Override
 	public void agregar(Tienda tienda) {
 		tienda.agregar(this);

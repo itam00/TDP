@@ -136,6 +136,14 @@ public class Mapa{
 	}
 	
 
+	public List<Elemento> enRango(Elemento e){
+		List<Elemento> toreturn= new LinkedList<Elemento>();
+		for (Elemento elem:entidades[e.obtenerFila()])
+			if (estaEnRango(e,elem))
+				toreturn.add(elem);
+			
+		return toreturn;
+	}
 	
 	
 
