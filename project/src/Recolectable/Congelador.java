@@ -16,9 +16,9 @@ import Visitor.VisitorVacio;
 
 public class Congelador extends PowerUp{
 
-	public Congelador(int x, int y, Mapa m) {
-		super(x, y, m);
-		grafico = new CongeladorGrafico();
+	public Congelador(int x, int y, Mapa m, ManejadorCongelacion maneja) {
+		super(x, y, m,maneja);
+		grafico = new CongeladorGrafico(maneja);
 		visitor = new VisitorVacio();
 	}
 	

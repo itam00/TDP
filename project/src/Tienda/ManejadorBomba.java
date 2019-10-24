@@ -2,6 +2,7 @@ package Tienda;
 
 import javax.swing.ImageIcon;
 
+import Juego.Mapa;
 import Recolectable.Bomba;
 import Recolectable.PowerUp;
 
@@ -14,18 +15,19 @@ public class ManejadorBomba extends ManejadorPowerUp {
 
 	@Override
 	public void comprar() {
-		tienda.comprar(new Bomba(this), this);
+		tienda.comprar(new Bomba(), this);
 	}
 
 	@Override
 	public void usarPowerUp() {
 		if(cant>=0) {
 			cant--;
-			tienda.setPowerUpUsado(new Bomba(this));
+			tienda.setPowerUpUsado(new Bomba());
 		}
 	}
 	
-	public PowerUp crear() {
-		return new Bomba(this);
+	public PowerUp getPowerUp(int x, int y, Mapa m) {
+		cant++;
+		return new Bomba(x,y,m,this);
 	}
 }

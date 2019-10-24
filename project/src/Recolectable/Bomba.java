@@ -4,6 +4,7 @@ package Recolectable;
 import java.util.List;
 
 import Entidad.Elemento;
+import Graficos.BombaEfectoGrafico;
 import Graficos.BombaGrafico; 
 import Juego.Mapa;
 import Personajes.Enemigo;
@@ -18,14 +19,14 @@ public class Bomba extends PowerUp{
 	long tiempoCreado;
 	
 	public Bomba(int x, int y, Mapa m, ManejadorBomba maneja) {
-		super(x, y, m);
+		super(x, y, m, maneja);
 		grafico = new BombaGrafico(maneja);
 		visitor = new VisitorVacio();
 	}
 	
 	public Bomba() {
 		precio=0;
-		grafico = new BombaGrafico();
+		grafico = new BombaEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado= System.currentTimeMillis();
 	}

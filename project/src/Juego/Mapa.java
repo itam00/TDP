@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import Entidad.Elemento;
 import GUI.GUI;
+import Tienda.Tienda;
 
 public class Mapa{
 	public final int cantFilas = 6;
@@ -13,9 +14,11 @@ public class Mapa{
 	protected ImageIcon fondo;
 	protected GUI gui;
 	protected List<Elemento> porAgregar;
+	protected Tienda tienda;
 	
-	public Mapa(GUI g) {
+	public Mapa(GUI g, Tienda t) {
 		gui = g;
+		tienda=t;
 
 		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
 		porAgregar = new LinkedList<Elemento>();
@@ -145,6 +148,9 @@ public class Mapa{
 		return toreturn;
 	}
 	
-	
+	public void soltarPowerUp(int x, int y) {
+		Elemento powerup=tienda.getPowerUp(x,y,this);
+		porAgregar.add(powerup);
+	}
 
 }

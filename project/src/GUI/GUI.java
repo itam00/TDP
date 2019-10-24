@@ -36,10 +36,10 @@ public class GUI extends JFrame implements MouseListener{
 	}
 
 	public GUI() {
-		Mapa mapa= new Mapa(this);
-		new nivel1(mapa);
 		jugador = new Jugador();
 		tienda = new Tienda(jugador);
+		Mapa mapa= new Mapa(this,tienda);
+		new nivel1(mapa);
 		controlador = new Controlador(this,mapa, jugador,tienda);
 		tiempo = new ContadorTiempo(controlador, this);
 		addMouseListener(this);
@@ -144,6 +144,10 @@ public class GUI extends JFrame implements MouseListener{
 		panelJuego.remove(e.obtenerGrafico());
 		panelJuego.repaint();
 		repaint();
+	}
+	
+	public Tienda getTienda() {
+		return tienda;
 	}
 	
 

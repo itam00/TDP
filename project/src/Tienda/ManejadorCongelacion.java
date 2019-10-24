@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import Juego.Mapa;
 import Personajes.Torre1;
 import Recolectable.Congelador;
 import Recolectable.PowerUp;
@@ -19,18 +20,20 @@ public class ManejadorCongelacion extends ManejadorPowerUp {
 
 	@Override
 	public void comprar() {
-		tienda.comprar(new Congelador(this), this);
+		tienda.comprar(new Congelador(), this);
 	}
 
 	@Override
 	public void usarPowerUp() {
 		if(cant>=0) {
 			cant--;
-			tienda.setPowerUpUsado(new Congelador(this));
+			tienda.setPowerUpUsado(new Congelador());
 		}
 	}
 	
-	public PowerUp crear() {
-		return new Congelador(this);
+	public PowerUp getPowerUp(int x, int y, Mapa m) {
+		cant++;
+		System.out.println("se aumento en 1 el controlador del powerup congelacion");
+		return new Congelador(x, y, m, this);
 	}
 }

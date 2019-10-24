@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import Juego.Mapa;
 import Recolectable.PowerUp;
 
 public abstract class ManejadorPowerUp {
@@ -49,7 +50,7 @@ public abstract class ManejadorPowerUp {
 	
 	public abstract void usarPowerUp();
 
-	public abstract PowerUp crear();
+	public abstract PowerUp getPowerUp(int x, int y, Mapa m);
 	
 
 }

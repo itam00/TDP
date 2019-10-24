@@ -25,7 +25,7 @@ public class nivel1 {
 			 this.mapa = mapa;
 			 lista = new LinkedList();
 			 Properties prop=new Properties();
-			 FileInputStream ip= new FileInputStream("C:\\Users\\mati\\Documents\\GitHub\\TDP\\project\\src\\Niveles\\nivel1.properties");
+			 FileInputStream ip= new FileInputStream(".\\src\\Niveles\\nivel1.properties");
 			 prop.load(ip);		 
 				 
 			 Set<String> keys = prop.stringPropertyNames();

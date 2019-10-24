@@ -5,16 +5,18 @@ import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Personaje;
 import Personajes.Torre;
+import Tienda.ManejadorPowerUp;
 import Tienda.Tienda;
 import Visitor.Visitor;
 
 public abstract class PowerUp extends Objeto{
 
-	int duracion,precio;
+	protected int duracion,precio;
 	
-	public PowerUp(int x, int y, Mapa m) {
+	public PowerUp(int x, int y, Mapa m, ManejadorPowerUp maneja) {
 		super(x, y, m);
 	}
+	
 	public PowerUp() {}
 
 	@Override
@@ -33,7 +35,7 @@ public abstract class PowerUp extends Objeto{
 	public abstract void agregar(Tienda tienda);
 	
 	public void actualizar() {
-		muerto=grafico.estaMuerto();
+		muerto=(muerto || grafico.estaMuerto());
 		super.actualizar();
 	}
 }

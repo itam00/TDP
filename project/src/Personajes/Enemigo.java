@@ -81,7 +81,7 @@ public abstract class Enemigo extends Personaje{
 
 	public void soltarPowerUp() {
 		if(Math.random()<probCongelacion) {
-			mapa.agregar(new Congelador(x,y,mapa));
+			mapa.soltarPowerUp(x,y);
 			System.out.println("se solto un congelador");
 		}
 	}

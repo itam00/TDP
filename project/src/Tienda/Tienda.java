@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import Juego.Jugador;
+import Juego.Mapa;
 import Personajes.Torre;
 import Recolectable.*;
 import Recolectable.PowerUp;
@@ -105,5 +106,9 @@ public class Tienda extends JPanel{
 	
 	public void agregar(Escudo e) {
 		manejadorEscudo.agregarPowerUp();
+	}
+	
+	public PowerUp getPowerUp(int x, int y, Mapa m) {
+		return manejadorCongelacion.getPowerUp(x,y,m);
 	}
 }

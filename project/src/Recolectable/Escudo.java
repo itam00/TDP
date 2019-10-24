@@ -4,28 +4,31 @@ package Recolectable;
 import java.util.List;
 
 import Entidad.Elemento;
-import Graficos.BombaGrafico; 
+import Graficos.BombaEfectoGrafico;
+import Graficos.BombaGrafico;
+import Graficos.EscudoGrafico;
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import State.ProtegidoTorre;
+import Tienda.ManejadorEscudo;
 import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
 import Visitor.VisitorVacio;
 
 public class Escudo extends PowerUp{
 
-	long tiempoCreado;
+	protected long tiempoCreado;
 	
-	public Escudo(int x, int y, Mapa m) {
-		super(x, y, m);
-		grafico = new BombaGrafico();
+	public Escudo(int x, int y, Mapa m,ManejadorEscudo maneja) {
+		super(x, y, m,maneja);
+		grafico = new EscudoGrafico(maneja);
 		visitor = new VisitorVacio();
 	}
 	
 	public Escudo() {
 		precio=0;
-		grafico = new BombaGrafico();
+		grafico = new BombaEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado= System.currentTimeMillis();
 	}
