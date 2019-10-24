@@ -10,5 +10,7 @@ public abstract class StateTorre{
 	}
 	public abstract void actualizar();
 	
-	public abstract void disminuirVida(int n);
+	public void disminuirVida(int n) {
+		torre.aplicarDaño(n);
+	}
 }

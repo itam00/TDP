@@ -15,10 +15,5 @@ public class DefaultTorre extends StateTorre{
 		torre.obtenerGrafico().actualizar(torre.getX(),torre.getY());
 	}
 
-	@Override
-	public void disminuirVida(int n) {
-		torre.aplicarDaño(n);
-		
-	}
 
 }
