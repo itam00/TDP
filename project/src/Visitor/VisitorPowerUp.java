@@ -7,7 +7,6 @@ import Personajes.Torre;
 import Recolectable.PowerUp;
 
 public class VisitorPowerUp extends Visitor{
-
 	protected PowerUp mio;
 	
 	public VisitorPowerUp(PowerUp mio) {
