@@ -5,10 +5,10 @@ import javax.swing.ImageIcon;
 public class CongeladorGrafico extends ElementoGrafico{
 	public CongeladorGrafico() {
 		super();
-		image = new ImageIcon(getClass().getResource("/Sprites/congelacionPowerUp.gif"));
-		this.setIcon(image);
-		width  =103;
+		width  =102;
 		height = 97;
+		porDefecto = "congelacionPowerUp.gif";
+		setDefaultGif();
 	}
 	
 }

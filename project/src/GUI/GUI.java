@@ -16,6 +16,7 @@ import Graficos.ElementoGrafico;
 import Juego.Controlador;
 import Juego.Jugador;
 import Juego.Mapa;
+import Juego.nivel1;
 import Tienda.Tienda;
 
 public class GUI extends JFrame implements MouseListener{
@@ -35,10 +36,11 @@ public class GUI extends JFrame implements MouseListener{
 	}
 
 	public GUI() {
-		// mapa= new Mapa(this);
+		Mapa mapa= new Mapa(this);
+		new nivel1(mapa);
 		jugador = new Jugador();
 		tienda = new Tienda(jugador);
-		controlador = new Controlador(this,new Mapa(this), jugador,tienda);
+		controlador = new Controlador(this,mapa, jugador,tienda);
 		tiempo = new ContadorTiempo(controlador, this);
 		addMouseListener(this);
 		setearVentana();
