@@ -15,23 +15,27 @@ import Personajes.Enemigo1;
 import Personajes.Enemigo3;
 import Personajes.Enemigo4;
 
-public class nivel1 {
+public class nivel1 implements Nivel{
 	
 	protected LinkedList<Enemigo> lista;
 	protected Mapa mapa;
+	protected int cantEnemigos;
+	protected int frecuencia;
 	
 	public nivel1(Mapa mapa) {
 		 try {
+			 frecuencia=500;
+			 cantEnemigos=0;
 			 this.mapa = mapa;
 			 lista = new LinkedList();
 			 Properties prop=new Properties();
-			 FileInputStream ip= new FileInputStream(".\\src\\Niveles\\nivel1.properties");
+			 FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+"\\src\\Niveles\\nivel1.properties");
 			 prop.load(ip);		 
 				 
 			 Set<String> keys = prop.stringPropertyNames();
 			 for (String key : keys){
 				 int fila =  Integer.parseInt(key)%5;;
-				 
+				 cantEnemigos++;
 				 switch(prop.getProperty(key)){
 				 
 					 case "enemigo1":
@@ -61,5 +65,12 @@ public class nivel1 {
 	
 	public List<Enemigo> getOleada(){
 		return lista;
+	}
+	
+	public int cantEnemigos() {
+		return cantEnemigos;
+	}
+	public int getFrecuencia() {
+		return frecuencia;
 	}
 }

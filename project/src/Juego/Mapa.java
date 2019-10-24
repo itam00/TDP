@@ -15,10 +15,12 @@ public class Mapa{
 	protected GUI gui;
 	protected List<Elemento> porAgregar;
 	protected Tienda tienda;
+	protected int enemigosDerrotados;
 	
 	public Mapa(GUI g, Tienda t) {
 		gui = g;
 		tienda=t;
+		enemigosDerrotados =0;
 
 		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
 		porAgregar = new LinkedList<Elemento>();
@@ -149,6 +151,13 @@ public class Mapa{
 	public void soltarPowerUp(int x, int y) {
 		Elemento powerup=tienda.getPowerUp(x,y,this);
 		porAgregar.add(powerup);
+	}
+	
+	public void incrementarDerrotados() {
+		enemigosDerrotados++;
+	}
+	public int getDerrotados() {
+		return enemigosDerrotados;
 	}
 
 }

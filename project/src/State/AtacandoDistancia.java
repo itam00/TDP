@@ -15,7 +15,7 @@ public class AtacandoDistancia extends StateEnemigo{
 	@Override
 	public void actualizar() {
 		if(enemigo.puedeAtacar()) {
-			mapa.agregar(new DisparoTorre3(x,y,mapa,danio));
+			//mapa.agregar(new DisparoTorre3(x,y,mapa,danio));
 		}
 		
 		if(ultimoAtacado.estaMuerto()) {

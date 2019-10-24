@@ -13,16 +13,28 @@ public class Controlador {
 	protected ContadorTiempo contador;
 	protected Jugador jugador;
 	protected Tienda tienda;
+	protected Nivel nivel;
+	protected Iterator<Enemigo> oleada;
 	
 	public Controlador(GUI g, Mapa m, Jugador j,Tienda t) {
 		gui = g;
 		mapa=m;
 		jugador = j;
 		tienda = t;
+		nivel = new nivel1(mapa);
+		oleada = nivel.getOleada().iterator();
 	}
 	
 	public synchronized void actualizar() {
+		
+		/*Enemigo aux;
+		while(oleada.hasNext()) {
+			aux = oleada.next();
+			
+			oleada.remove();
+		}*/
 		mapa.actualizar();
+		
 	}
 	
 	

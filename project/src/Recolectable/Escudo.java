@@ -6,6 +6,7 @@ import java.util.List;
 import Entidad.Elemento;
 import Graficos.BombaEfectoGrafico;
 import Graficos.BombaGrafico;
+import Graficos.EscudoEfectoGrafico;
 import Graficos.EscudoGrafico;
 import Juego.Mapa;
 import Personajes.Enemigo;
@@ -28,7 +29,7 @@ public class Escudo extends PowerUp{
 	
 	public Escudo() {
 		precio=0;
-		grafico = new BombaEfectoGrafico();
+		grafico = new EscudoEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado= System.currentTimeMillis();
 	}
