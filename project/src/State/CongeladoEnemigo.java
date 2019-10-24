@@ -3,8 +3,7 @@ package State;
 import Personajes.Enemigo;
 
 public class CongeladoEnemigo extends StateEnemigo{
-	protected float velocidad;
-	protected int frecuencia;
+
 	long tiempoInicial;
 	
 	public CongeladoEnemigo(Enemigo e) {
@@ -13,7 +12,7 @@ public class CongeladoEnemigo extends StateEnemigo{
 	}
 	
 	public void actualizar() {
-		if (System.currentTimeMillis()-tiempoInicial>5500) {
+		if (System.currentTimeMillis()-tiempoInicial>3500) {
 			enemigo.setState(new DefaultEnemigo(enemigo));
 		}	
 	}

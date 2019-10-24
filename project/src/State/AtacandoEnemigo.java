@@ -16,6 +16,7 @@ public class AtacandoEnemigo extends StateEnemigo{
 		if(enemigo.puedeAtacar()) {
 			ultimoAtacado.disminuirVida(enemigo.getDanio());
 		}
+		
 		if(ultimoAtacado.estaMuerto()) {
 			enemigo.setState(new DefaultEnemigo(enemigo));
 		}

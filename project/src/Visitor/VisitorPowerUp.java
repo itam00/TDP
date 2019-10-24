@@ -8,20 +8,20 @@ import Recolectable.PowerUp;
 
 public class VisitorPowerUp extends Visitor{
 
-	protected PowerUp p;
+	protected PowerUp mio;
 	
-	public VisitorPowerUp(PowerUp p) {
-		this.p=p;
+	public VisitorPowerUp(PowerUp mio) {
+		this.mio=mio;
 	}
 	
 	@Override
 	public void visit(Torre t) {
-		p.afectar(t);
+		mio.afectar(t);
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		p.afectar(e);
+		mio.afectar(e);
 	}
 
 	@Override

@@ -7,9 +7,8 @@ public class CongeladorEfectoGrafico extends ElementoGrafico{
 		super();
 		width  =97;
 		height = 191;
-		frecActualizacion=60;
-		porDefecto = "congelacionEfecto.gif";
-		setDefaultGif();
+		image = new ImageIcon(getClass().getResource("/Sprites/congelacionPowerUp.gif"));
+		this.setIcon(image);
 	}
 	
 }
