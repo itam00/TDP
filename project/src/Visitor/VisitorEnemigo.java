@@ -24,7 +24,6 @@ public class VisitorEnemigo extends Visitor {
 
 	@Override
 	public void visit(Enemigo e) {
-
 	}
 
 	@Override
@@ -35,7 +34,6 @@ public class VisitorEnemigo extends Visitor {
 
 	@Override
 	public void visit(PowerUp p) {
-		
 	}
 
 	@Override

@@ -92,15 +92,13 @@ public class Mapa{
 		boolean colisiona1 = false;
 		Iterator<Elemento> it = entidades[e.obtenerFila()].iterator();
 		Elemento aux;
-		while(it.hasNext() && !colisiona1 ) {
+		while(it.hasNext() ) {
+			colisiona1 = false;
 			aux = it.next();
 			if (e!=aux) {
 				colisiona1 = estaEnRango(e,aux);
 				if(colisiona1) {
 					aux.accept(e.getVisitor());
-				}
-				else{
-					//CAMBIAR AL ELEMENTO A SU ESTADO POR DEFECTO
 				}
 			}
 		}
