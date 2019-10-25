@@ -40,10 +40,6 @@ public class Congelador extends PowerUp{
 		p.setState(new CongeladoEnemigo(p));
 	}
 	
-	@Override
-	public void agregar(Tienda tienda) {
-		tienda.agregar(this);
-	}
 	
 	@Override
 	public int getInicioRangoX() {

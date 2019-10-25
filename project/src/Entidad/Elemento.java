@@ -92,6 +92,6 @@ public abstract class Elemento {
 		return visitor;
 	}
 	
-	public void serAtacado(int n) {}
+	public void disminuirVida(int n) {}
 	
 }

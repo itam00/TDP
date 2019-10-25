@@ -11,7 +11,7 @@ public class ManejadorEscudo extends ManejadorPowerUp {
 	
 	public ManejadorEscudo(Tienda t) {
 		super(t);
-		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/congelacionIcono.png")));
+		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/escudoIcono.png")));
 	}
 
 	@Override

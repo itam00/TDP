@@ -25,8 +25,8 @@ public class Tienda extends JPanel{
 	ManejadorPowerUp manejadorEscudo;
 	
 	public Tienda(Jugador j) {
-		this.setPreferredSize(new Dimension(724, 170));
-		this.setLayout(new FlowLayout());
+		this.setPreferredSize(new Dimension(824, 170));
+		this.setLayout(null);
 		jugador = j;
 		manejadorCongelacion = new ManejadorCongelacion(this);
 		manejadorBomba= new ManejadorBomba(this);
@@ -82,10 +82,11 @@ public class Tienda extends JPanel{
 		
 		for(int i=0;i<torres.length;i++) {
 			this.add(torres[i]);
+			torres[i].setBounds(i*100+20, 20,100,100);
 		}
-		manejadorCongelacion.colocarEnTienda();
-		manejadorBomba.colocarEnTienda();
-		manejadorEscudo.colocarEnTienda();
+		manejadorCongelacion.colocarEnTienda(600,20);
+		manejadorBomba.colocarEnTienda(600,60);
+		manejadorEscudo.colocarEnTienda(600,100);
 	}
 
 	public void paint(Graphics g) {
@@ -95,18 +96,7 @@ public class Tienda extends JPanel{
         setOpaque(false);
         super.paint(g);
     }
-	
-	public void agregar(Congelador c) {
-		manejadorCongelacion.agregarPowerUp();
-	}
-	
-	public void agregar(Bomba b) {
-		manejadorBomba.agregarPowerUp();
-	}
-	
-	public void agregar(Escudo e) {
-		manejadorEscudo.agregarPowerUp();
-	}
+
 	
 	public PowerUp getPowerUp(int x, int y, Mapa m) {
 		return manejadorCongelacion.getPowerUp(x,y,m);

@@ -1,26 +1,20 @@
 package State;
 
+import Entidad.Elemento;
 import Personajes.Enemigo; 
 import Personajes.Torre;
 
 public class AtacandoEnemigo extends StateEnemigo{
-	Torre ultimoAtacado;
+	Elemento ultimoAtacado;
 
-	public AtacandoEnemigo(Enemigo e,Torre t) {
+	public AtacandoEnemigo(Enemigo e,Elemento elem) {
 		super(e);
-		ultimoAtacado = t;
+		ultimoAtacado = elem;
 	}
 
 	@Override
 	public void actualizar() {
-		if(enemigo.puedeAtacar()) {
-			ultimoAtacado.disminuirVida(enemigo.getDanio());
-		}
-		
-		if(ultimoAtacado.estaMuerto()) {
-			enemigo.setState(new DefaultEnemigo(enemigo));
-		}
-		
+		enemigo.atacar(ultimoAtacado);		
 	}
 
 }

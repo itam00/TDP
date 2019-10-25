@@ -33,7 +33,6 @@ public abstract class PowerUp extends Objeto{
 	
 	public abstract void afectar(Torre t);
 	
-	public abstract void agregar(Tienda tienda);
 	
 	public void actualizar() {
 		muerto=(muerto || grafico.estaMuerto());

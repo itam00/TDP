@@ -10,7 +10,7 @@ public class ManejadorBomba extends ManejadorPowerUp {
 	
 	public ManejadorBomba(Tienda t) {
 		super(t);
-		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/congelacionIcono.png")));
+		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/bombaIcono.png")));
 	}
 
 	@Override

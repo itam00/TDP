@@ -18,8 +18,9 @@ public class Torre3 extends Torre{
 
 	@Override
 	public void disparar() {
-		mapa.agregar(new DisparoTorre3(x,y,mapa,danio));
-			
+		if(puedeAtacar()) {
+			mapa.agregar(new DisparoTorre3(x,y,mapa,danio));
+		}
 	}
 
 	@Override

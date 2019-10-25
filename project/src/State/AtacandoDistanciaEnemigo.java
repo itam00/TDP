@@ -4,10 +4,10 @@ import Disparos.DisparoTorre3;
 import Personajes.Enemigo;
 import Personajes.Torre;
 
-public class AtacandoDistancia extends StateEnemigo{
+public class AtacandoDistanciaEnemigo extends StateEnemigo{
 	Torre ultimoAtacado;
 
-	public AtacandoDistancia(Enemigo e,Torre t) {
+	public AtacandoDistanciaEnemigo(Enemigo e,Torre t) {
 		super(e);
 		ultimoAtacado = t;
 	}

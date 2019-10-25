@@ -6,6 +6,7 @@ import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
+import State.AtacandoTorre;
 
 public class VisitorTorre extends Visitor{
 
@@ -22,9 +23,7 @@ public class VisitorTorre extends Visitor{
 
 	@Override
 	public void visit(Enemigo e) {
-		if(mio.puedeAtacar()) {
-			mio.disparar();
-		}
+		mio.setState(new AtacandoTorre(mio));
 		
 	}
 

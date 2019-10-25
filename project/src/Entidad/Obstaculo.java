@@ -19,10 +19,10 @@ public abstract class Obstaculo extends Objeto {
 		v.visit(this);
 	}
 	
-	public void serAtacado(int n) {
+	public abstract void afectar(Enemigo e);
+	
+	public void disminuirVida(int n) {
 		vida-=n;
 		muerto = vida<=0;
 	}
-	
-	public abstract void afectar(Enemigo e);
 }

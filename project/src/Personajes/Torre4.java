@@ -2,6 +2,7 @@ package Personajes;
 
 
 import Disparos.DisparoTorre4;
+import Entidad.Elemento;
 import Graficos.Torre4Grafica;
 
 public class Torre4 extends Torre{
@@ -20,8 +21,9 @@ public class Torre4 extends Torre{
 
 	@Override
 	public void disparar() {
-		mapa.agregar(new DisparoTorre4(x,y,mapa,danio));
-			
+		if(puedeAtacar()) {
+			mapa.agregar(new DisparoTorre4(x,y,mapa,danio));
+		}
 	}
 
 	@Override
@@ -29,6 +31,7 @@ public class Torre4 extends Torre{
 		grafico = new Torre4Grafica();
 		
 	}
+
 
 
 }

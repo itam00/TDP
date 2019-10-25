@@ -14,7 +14,6 @@ public abstract class Enemigo extends Personaje{
 	protected int puntos, recompensa;
 	protected float velocidad, velocidadDefault;
 	protected boolean quieto;
-	protected Elemento ultimoAtacado;
 	protected final float probCongelacion;
 	protected StateEnemigo state;
 	
@@ -22,7 +21,6 @@ public abstract class Enemigo extends Personaje{
 	public Enemigo(int x, int y, Mapa m) {
 		super(x,y,m);
 		mapa = m;
-		ultimoAtacado=null;
 		visitor= new VisitorEnemigo(this);
 		probCongelacion = 0.8f;
 		state = new DefaultEnemigo(this);
@@ -71,15 +69,11 @@ public abstract class Enemigo extends Personaje{
 		return grafico.getX()-rango*50;
 	}
 	
-	public Elemento getUltimoAtacado() {
-		return ultimoAtacado;
-	}
+	
 	public float getVelocidad() {
 		return velocidad;
 	}
-	public void setUltimoAtacado(Elemento e) {
-		ultimoAtacado = e;
-	}
+
 	
 	public void setDefault() {
 		frecuencia=frecuenciaDefault;
@@ -101,5 +95,15 @@ public abstract class Enemigo extends Personaje{
 	
 	public void actualizar() {
 		state.actualizar();
+	}
+	
+	public void atacar(Elemento elem) {
+		if(puedeAtacar()) {
+			elem.disminuirVida(danio);
+		}
+		
+		if(elem.estaMuerto()) {
+			state = new DefaultEnemigo(this);
+		}
 	}
 }

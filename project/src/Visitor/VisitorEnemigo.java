@@ -1,13 +1,13 @@
 package Visitor;
 
 import Disparos.Disparo;
+
 import Entidad.Elemento;
 import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
 import State.AtacandoEnemigo;
-import State.AtacandoEnemigoObstaculo;
 
 public class VisitorEnemigo extends Visitor {
 
@@ -38,7 +38,7 @@ public class VisitorEnemigo extends Visitor {
 
 	@Override
 	public void visit(Obstaculo o) {
-		enemigo.setState(new AtacandoEnemigoObstaculo(enemigo,o));
+		enemigo.setState(new AtacandoEnemigo(enemigo,o));
 	}
 
 }

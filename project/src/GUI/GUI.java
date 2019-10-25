@@ -114,9 +114,9 @@ public class GUI extends JFrame implements MouseListener{
 		repaint();
 	}
 	private void setearPanelUtilidades(){
-		tienda.setBounds(0,576,728,160);
+		tienda.setBounds(0,576,828,160);
 		getContentPane().add(tienda);
-		jugador.setBounds(728,576,300,160);
+		jugador.setBounds(828,576,300,160);
 		getContentPane().add(jugador);
 	}
 

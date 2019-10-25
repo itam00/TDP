@@ -52,11 +52,6 @@ public class Escudo extends PowerUp{
 		return x+80;
 	}
 
-	@Override
-	public void agregar(Tienda tienda) {
-		tienda.agregar(this);
-		
-	}
 
 	public void actualizar() {
 	}

@@ -17,10 +17,7 @@ public abstract class Personaje extends Elemento{
 	public Personaje() {
 	}
 	
-	/*public void disminuirVida(int n) {
-		state.disminuirVida
-	}
-	*/
+	public abstract void disminuirVida(int n);
 	
 	
 	public abstract void setDefault();
@@ -44,5 +41,6 @@ public abstract class Personaje extends Elemento{
 		}
 		return puede;
 	}
+	
 
 }

@@ -41,9 +41,12 @@ public abstract class ManejadorPowerUp {
 	
 
 	
-	public void colocarEnTienda() {
+	public void colocarEnTienda(int x, int y) {
 		tienda.add(usar);
 		tienda.add(comprar);
+		
+		usar.setBounds(x,y,31,31);
+		comprar.setBounds(x+31,y,31,31);
 	}
 	
 	public abstract void comprar();
