@@ -27,7 +27,7 @@ public class nivel1 implements Nivel{
 			 frecuencia=500;
 			 cantEnemigos=0;
 			 this.mapa = mapa;
-			 lista = new LinkedList();
+			 lista = new LinkedList<Enemigo>();
 			 Properties prop=new Properties();
 			 FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+"\\src\\Niveles\\nivel1.properties");
 			 prop.load(ip);		 
