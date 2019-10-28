@@ -100,12 +100,6 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void atacar(Elemento elem) {
-		if(puedeAtacar()) {
-			elem.disminuirVida(danio);
-		}
-		
-		if(elem.estaMuerto()) {
-			state = new DefaultEnemigo(this);
-		}
+		elem.disminuirVida(danio);
 	}
 }

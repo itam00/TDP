@@ -14,7 +14,13 @@ public class AtacandoEnemigo extends StateEnemigo{
 
 	@Override
 	public void actualizar() {
-		enemigo.atacar(ultimoAtacado);		
+		if(enemigo.puedeAtacar()) {
+			enemigo.atacar(ultimoAtacado);
+		}
+
+		if(ultimoAtacado.estaMuerto()) {
+			enemigo.setState(new DefaultEnemigo(enemigo));
+		}
 	}
 
 }

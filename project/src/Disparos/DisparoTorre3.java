@@ -2,6 +2,7 @@ package Disparos;
 
 import Graficos.DisparoGrafico3;
 import Juego.Mapa;
+import Visitor.VisitorDisparoTorre;
 
 public class DisparoTorre3 extends Disparo {
 
@@ -10,6 +11,7 @@ public class DisparoTorre3 extends Disparo {
 		super(x, y,m,danio);
 		grafico=  new DisparoGrafico3(x, y);
 		velocidad = 3;
+		visitor = new VisitorDisparoTorre(this);
 	}
 
 

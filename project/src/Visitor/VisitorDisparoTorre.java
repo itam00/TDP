@@ -6,10 +6,10 @@ import Personajes.Enemigo;
 import Personajes.Torre;
 import Recolectable.PowerUp;
 
-public class VisitorDisparo extends Visitor{
+public class VisitorDisparoTorre extends Visitor{
 	protected Disparo disparo;
 	
-	public VisitorDisparo(Disparo d) {
+	public VisitorDisparoTorre(Disparo d) {
 		disparo = d;
 	}
 

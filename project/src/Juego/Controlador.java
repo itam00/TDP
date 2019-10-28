@@ -54,7 +54,7 @@ public class Controlador {
 		mapa.agregar(enemigo);
 	}
 	public synchronized void colocarEnemigo3(int x, int y) {
-		Enemigo enemigo= new Enemigo3(x,y,mapa);
+		Enemigo enemigo= new Enemigo2(x,y,mapa);
 		mapa.agregar(enemigo);
 	}
 	public synchronized void colocarPiedra(int x, int y) {
@@ -62,7 +62,7 @@ public class Controlador {
 		mapa.agregar(piedra);
 	}
 	public synchronized void colocarEnemigo4(int x, int y) {
-		Enemigo enemigo= new Enemigo4(x,y,mapa);
+		Enemigo enemigo= new Enemigo5(x,y,mapa);
 		mapa.agregar(enemigo);
 	}
 	

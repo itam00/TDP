@@ -1,9 +1,9 @@
 package Disparos;
 
 import Entidad.Elemento;
+
 import Juego.Mapa;
 import Visitor.Visitor;
-import Visitor.VisitorDisparo;
 
 public abstract class Disparo extends Elemento {
 	protected int danio,velocidad;
@@ -12,7 +12,6 @@ public abstract class Disparo extends Elemento {
 	public Disparo(int x, int y, Mapa m,int danio) {
 		super(x, y,m);
 		this.danio = danio;
-		visitor = new VisitorDisparo(this);
 	}
 	
 	public int getDanio() {
