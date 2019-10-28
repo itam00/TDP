@@ -8,6 +8,5 @@ public class DisparoGrafico extends ElementoGrafico {
 		super();
 		width  =0;
 		height = 0;
-		System.out.println();
 	}
 }
