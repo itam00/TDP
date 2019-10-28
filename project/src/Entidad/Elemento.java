@@ -1,30 +1,42 @@
 package Entidad;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import Graficos.ElementoGrafico;
 import Juego.Mapa;
-import State.*;
 import Visitor.Visitor;
 
 
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
 	protected boolean muerto;
-	protected int x,y;
+	protected int x,y,cantFilas;
 	protected Mapa mapa;
-	protected int inicioRangoY,finRangoY;
+	protected int inicioRangoY,finRangoY; //no se usa
 	protected Visitor visitor;
+	protected List<Integer> filas;
 	
 	public Elemento(int x,int y, Mapa m) {
 		muerto=false;
 		mapa=m;
-		inicioRangoY=y;
-		finRangoY=y+96;
+		inicioRangoY=y; //no se usa
+		finRangoY=y+96; //no se usa
 		this.x=(int)(x/102)*102;
 		this.y=(int)(y/96)*96;
+		cantFilas=1;
+		
+		int fila= (int)(y/96); //Es la fila donde se encuentra el y pasado por parametro
+		filas= new LinkedList<Integer>();
+		for (int i=0;i<cantFilas;i++) {
+			filas.add(fila);
+			fila--;
+		}
 	}
 	
 	public Elemento() {
-		
+		cantFilas=1;
+		filas= new LinkedList<Integer>();
 	}
 	
 	public int getX() {
@@ -35,16 +47,16 @@ public abstract class Elemento {
 		return y;
 	}
 	
-	public int getPosY() {
-		return (int)(y/96);
+	public List<Integer> obtenerFilas() {
+		return filas;
 	}
 	
-	public int getPosX() {
-		return (int)(x/102.4);
+	public int getAncho() {
+		return grafico.getAncho();
 	}
 	
-	public int obtenerFila() {
-		return (int)(y/96);
+	public int getCantFilas() {
+		return cantFilas;
 	}
 
 	
@@ -68,16 +80,21 @@ public abstract class Elemento {
 	public abstract int getFinRangoX();
 	
 	public void setPos (int x, int y, Mapa m) {
-		this.x=x-50;
+		this.x=x-50; // por defecto es x-50 porque solo las torres tienen el formateo para que queden en "celdas" (se redefine en torre)
 		this.y=(int)(y/96)*96;
+		int fila= (int)(y/96); //Es la fila donde se encuentra el y pasado por parametro
+		for (Integer i=0;i<cantFilas;i++) {
+			filas.add(fila);
+			fila--;
+		}
 		mapa=m;
 	}
 	
-	public int getInicioRangoY() {
+	public int getInicioRangoY() { //no se usa
 		return inicioRangoY;
 	}
 	
-	public int getFinRangoY() {
+	public int getFinRangoY() { //no se usa
 		return inicioRangoY;
 	}
 

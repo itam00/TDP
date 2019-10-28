@@ -1,7 +1,6 @@
 package Disparos;
 
 import Entidad.Elemento;
-import Graficos.DisparoGrafico;
 import Juego.Mapa;
 import Visitor.Visitor;
 import Visitor.VisitorDisparo;

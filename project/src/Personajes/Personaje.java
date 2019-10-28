@@ -15,6 +15,7 @@ public abstract class Personaje extends Elemento{
 	}
 	
 	public Personaje() {
+		super();
 	}
 	
 	public abstract void disminuirVida(int n);

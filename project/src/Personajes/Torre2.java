@@ -9,6 +9,7 @@ import Recolectable.PowerUp;
 public class Torre2 extends Torre{
 
 	public Torre2() {
+		super();
 		precio = 0; //cambiar
 		rango = 10;
 		danio = 10;

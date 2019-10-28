@@ -13,15 +13,15 @@ public abstract class Torre extends Personaje{
 	protected int precio, tamanio;
 
 	public Torre() {
+		super();
 		visitor=new VisitorTorre(this);
 		state = new DefaultTorre(this);
 	}
 	
 	public void setPos(int x,int y, Mapa m) {
+		super.setPos(x,y,m);
 		crearGrafico(x,y);
-		mapa=m;
 		this.x=(int)(x/102)*102;
-		this.y=(int)(y/96)*96;
 		
 	}
 	

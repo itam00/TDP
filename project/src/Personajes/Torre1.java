@@ -8,11 +8,13 @@ import Recolectable.PowerUp;
 public class Torre1 extends Torre{
 	
 	public Torre1() {
+		super();
 		precio = 0; //cambiar
 		rango = 15;
 		danio = 10;
-		vida =100;
+		vida =2000;
 		tamanio=1;
+		cantFilas=6;
 		frecuenciaDefault=400;
 		frecuencia = frecuenciaDefault;
 	}

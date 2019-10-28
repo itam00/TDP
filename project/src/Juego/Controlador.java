@@ -21,8 +21,8 @@ public class Controlador {
 		mapa=m;
 		jugador = j;
 		tienda = t;
-		nivel = new nivel1(mapa);
-		oleada = nivel.getOleada().iterator();
+		//nivel = new nivel1(mapa);
+		//oleada = nivel.getOleada().iterator();
 	}
 	
 	public synchronized void actualizar() {
@@ -69,10 +69,14 @@ public class Controlador {
 
 	public void click(int x,int y) {
 		if(y<576) {
-			if(tienda.hayComprado() && !mapa.coincidePosicion(x,y)) {
+			if(tienda.hayComprado()){
 				Torre t = tienda.getComprado();
-				t.setPos(x, y,mapa);
-				mapa.agregar(t);
+				if (mapa.puedoPoner(t,x,y)) {
+					t.setPos(x, y,mapa);
+					mapa.agregar(t);
+				}
+				else
+					tienda.devolver(t);
 			}
 			else if(tienda.hayPowerUpUsado()) {
 				PowerUp p = tienda.getPowerUpUsado();

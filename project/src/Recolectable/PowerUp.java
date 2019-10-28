@@ -16,6 +16,7 @@ public abstract class PowerUp extends Objeto{
 	
 	public PowerUp(int x, int y, Mapa m, ManejadorPowerUp maneja) {
 		super(x, y, m);
+		tiempoCreado=Long.MAX_VALUE;
 	}
 	
 	public PowerUp() {

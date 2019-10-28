@@ -79,6 +79,7 @@ public abstract class Enemigo extends Personaje{
 		frecuencia=frecuenciaDefault;
 		velocidad=velocidadDefault;
 	}
+	
 	public void setX(int x) {
 		this.x = x;
 	}
@@ -89,6 +90,7 @@ public abstract class Enemigo extends Personaje{
 			System.out.println("se solto un congelador");
 		}
 	}
+	
 	public void setState(StateEnemigo state) {
 		this.state = state;
 	}

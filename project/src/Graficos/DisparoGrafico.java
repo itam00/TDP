@@ -1,27 +1,13 @@
 package Graficos;
 
-import java.awt.Image;
-
 import javax.swing.ImageIcon;
 
-import Personajes.Enemigo;
-
 public class DisparoGrafico extends ElementoGrafico {
-
-
-	public DisparoGrafico(int x, int y) {
+	
+	public DisparoGrafico() {
 		super();
-		width  =100;
-		height = 100;
-		image = new ImageIcon(getClass().getResource("/Sprites/proyectil.gif"));
-		this.setIcon(image);
+		width  =0;
+		height = 0;
+		System.out.println();
 	}
-
-	public void cambiar() {
-		image.getImage().flush();
-		image= new ImageIcon(getClass().getResource("/Sprites/proyectilImpacto.gif"));
-		this.setIcon(image);
-	}
-
-
 }

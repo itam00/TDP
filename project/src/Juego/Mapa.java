@@ -51,7 +51,9 @@ public class Mapa{
 		}
 		
 		for(Elemento e: porAgregar) {
-			entidades[e.obtenerFila()].add(e);
+			for (int fila:e.obtenerFilas()) {
+				entidades[fila].add(e);
+			}
 			gui.añadirElemento(e);
 		}
 		porAgregar.clear();
@@ -71,19 +73,38 @@ public class Mapa{
 	 * @return En caso de que la posicion este ocupada retorna true y falso en caso contrario
 	 */
 	
-	public boolean coincidePosicion(int x,int y) {
+	public boolean coincidePosicion(int x,int fila) {
 		boolean coincide = false;
-		int fila= (int)(y/96);
-		x = (int)(x/102)*102;
+		//int fila= (int)(y/96);
+		//x = (int)(x/102)*102;
 		Iterator<Elemento> it = entidades[fila].iterator();
 		Elemento aux;
+		int ancho;
 		
 		
 		while(it.hasNext() && !coincide) {
 			aux = it.next();
-			coincide = aux.getX() == x;
+			ancho= aux.getAncho();
+			coincide = aux.getX()<= x && aux.getX()+ancho>=x;
 		}
+		
 		return coincide;
+	}
+	
+	public boolean puedoPoner(Elemento e, int x, int y) {
+		int fila= y/96;
+		boolean hayLugar=e.getCantFilas()-1<=fila;
+		boolean puedo=true;
+		if (hayLugar) {
+			for (int i=0;i<e.getCantFilas() && puedo;i++) {
+				puedo=!coincidePosicion(x,fila);
+				fila--;
+			}
+		}
+		else
+			puedo=false;
+		return puedo;
+		
 	}
 
 	/**
@@ -92,15 +113,17 @@ public class Mapa{
 	 */
 	public void verificarColision(Elemento e) {
 		boolean colisiona1 = false;
-		Iterator<Elemento> it = entidades[e.obtenerFila()].iterator();
-		Elemento aux;
-		while(it.hasNext() ) {
-			colisiona1 = false;
-			aux = it.next();
-			if (e!=aux) {
-				colisiona1 = estaEnRango(e,aux);
-				if(colisiona1) {
-					aux.accept(e.getVisitor());
+		for (Integer fila:e.obtenerFilas()) {
+			Iterator<Elemento> it = entidades[fila].iterator();
+			Elemento aux;
+			while(it.hasNext() ) {
+				colisiona1 = false;
+				aux = it.next();
+				if (e!=aux) {
+					colisiona1 = estaEnRango(e,aux);
+					if(colisiona1) {
+						aux.accept(e.getVisitor());
+					}
 				}
 			}
 		}
@@ -141,10 +164,11 @@ public class Mapa{
 
 	public List<Elemento> enRango(Elemento e){
 		List<Elemento> toreturn= new LinkedList<Elemento>();
-		for (Elemento elem:entidades[e.obtenerFila()])
-			if (estaEnRango(e,elem))
-				toreturn.add(elem);
-			
+		for (Integer fila: e.obtenerFilas())
+			for (Elemento elem:entidades[fila])
+				if (estaEnRango(e,elem))
+					toreturn.add(elem);
+				
 		return toreturn;
 	}
 	
