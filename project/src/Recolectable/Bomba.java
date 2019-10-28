@@ -15,8 +15,6 @@ import Visitor.VisitorPowerUp;
 import Visitor.VisitorVacio;
 
 public class Bomba extends PowerUp{
-
-	long tiempoCreado;
 	
 	public Bomba(int x, int y, Mapa m, ManejadorBomba maneja) {
 		super(x, y, m, maneja);
@@ -25,10 +23,10 @@ public class Bomba extends PowerUp{
 	}
 	
 	public Bomba() {
+		super();
 		precio=0;
 		grafico = new BombaEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
-		tiempoCreado= System.currentTimeMillis();
 	}
 
 	public void afectar(Torre p) {
@@ -48,7 +46,6 @@ public class Bomba extends PowerUp{
 		return x+80;
 	}
 
-
 	public void actualizar() {
 		if (System.currentTimeMillis()-tiempoCreado>3000) {
 			List<Elemento> enRango= mapa.enRango(this);
@@ -56,5 +53,6 @@ public class Bomba extends PowerUp{
 				e.setMuerto(true);
 			muerto=true;
 		}
+		muerto= (muerto || grafico.estaMuerto());
 	}
 }

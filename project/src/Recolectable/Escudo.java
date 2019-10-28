@@ -54,5 +54,6 @@ public class Escudo extends PowerUp{
 
 
 	public void actualizar() {
+		super.actualizar();
 	}
 }

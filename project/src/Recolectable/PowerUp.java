@@ -12,12 +12,16 @@ import Visitor.Visitor;
 public abstract class PowerUp extends Objeto{
 
 	protected int duracion,precio;
+	long tiempoCreado;
 	
 	public PowerUp(int x, int y, Mapa m, ManejadorPowerUp maneja) {
 		super(x, y, m);
 	}
 	
-	public PowerUp() {}
+	public PowerUp() {
+		tiempoCreado=System.currentTimeMillis();
+		duracion=500;
+	}
 
 	@Override
 	public void accept(Visitor v) {
@@ -35,6 +39,9 @@ public abstract class PowerUp extends Objeto{
 	
 	
 	public void actualizar() {
+		if (System.currentTimeMillis()-tiempoCreado>duracion) {
+			muerto=true;
+		}
 		muerto=(muerto || grafico.estaMuerto());
 		super.actualizar();
 	}

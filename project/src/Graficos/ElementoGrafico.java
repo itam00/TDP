@@ -32,6 +32,7 @@ public abstract class ElementoGrafico extends JLabel{
 	public boolean estaMuerto() {
 		return muerto;
 	}
+	
 	public void actualizar(int x,int y) {
 		this.setLocation(x, y);
 	}

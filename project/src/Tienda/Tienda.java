@@ -49,6 +49,11 @@ public class Tienda extends JPanel{
 		}
 	}
 	
+	public void devolver(Torre t) {
+		comprado=t;
+		jugador.agregarOro(t.getPrecio());
+	}
+	
 	public void setPowerUpUsado(PowerUp p) {
 		usado = p;
 	}

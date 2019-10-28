@@ -30,6 +30,7 @@ public class Congelador extends PowerUp{
 		grafico = new CongeladorEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
+		duracion=1000;
 	}
 
 	public void afectar(Torre p) {
@@ -45,6 +46,7 @@ public class Congelador extends PowerUp{
 	public int getInicioRangoX() {
 		return x-500;
 	}
+	
 	@Override
 	public int getFinRangoX() {
 		return x+500;
