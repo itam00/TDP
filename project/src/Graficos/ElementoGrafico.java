@@ -33,8 +33,8 @@ public abstract class ElementoGrafico extends JLabel{
 		return muerto;
 	}
 	
-	public void actualizar(int x,int y) {
-		this.setLocation(x, y);
+	public void actualizar(float x,float y) {
+		this.setLocation((int)x, (int)y);
 	}
 
 }

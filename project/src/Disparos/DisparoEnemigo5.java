@@ -6,8 +6,8 @@ import Juego.Mapa;
 import Visitor.VisitorDisparoEnemigo;
 
 public class DisparoEnemigo5 extends Disparo{
-	public DisparoEnemigo5(int x, int y,Mapa m,int danio) {
-		super(x, y,m,danio);
+	public DisparoEnemigo5(int x, int y,Mapa m,int danio,float rango) {
+		super(x, y,m,danio,rango);
 		grafico=  new DisparoGraficoEnemigo5(x, y);
 		velocidad = -4;
 		visitor = new VisitorDisparoEnemigo(this);
@@ -15,12 +15,12 @@ public class DisparoEnemigo5 extends Disparo{
 
 
 	@Override
-	public int getInicioRangoX() {
+	public float getInicioRangoX() {
 		return grafico.getX()-15;
 	}
 
 	@Override
-	public int getFinRangoX() {
+	public float getFinRangoX() {
 		return grafico.getX()+15;
 	}
 }

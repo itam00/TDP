@@ -11,7 +11,8 @@ import Visitor.Visitor;
 public abstract class Elemento {
 	protected ElementoGrafico grafico;
 	protected boolean muerto;
-	protected int x,y,cantFilas;
+	protected float x,y;
+	protected int cantFilas;
 	protected Mapa mapa;
 	protected int inicioRangoY,finRangoY; //no se usa
 	protected Visitor visitor;
@@ -39,11 +40,11 @@ public abstract class Elemento {
 		filas= new LinkedList<Integer>();
 	}
 	
-	public int getX() {
+	public float getX() {
 		return x;
 	}
 	
-	public int getY() {
+	public float getY() {
 		return y;
 	}
 	
@@ -75,9 +76,9 @@ public abstract class Elemento {
 
 	public abstract void accept(Visitor v); // preguntar
 	
-	public abstract int getInicioRangoX();
+	public abstract float getInicioRangoX();
 	
-	public abstract int getFinRangoX();
+	public abstract float getFinRangoX();
 	
 	public void setPos (int x, int y, Mapa m) {
 		this.x=x-50; // por defecto es x-50 porque solo las torres tienen el formateo para que queden en "celdas" (se redefine en torre)

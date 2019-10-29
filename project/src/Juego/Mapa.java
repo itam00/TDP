@@ -139,8 +139,8 @@ public class Mapa{
 	public boolean estaEnRango(Elemento origen,Elemento destino) {
 		if (origen==destino)
 			return false;
-		int inicioRangoX= origen.getInicioRangoX();
-		int finRangoX= origen.getFinRangoX();
+		float inicioRangoX= origen.getInicioRangoX();
+		float finRangoX= origen.getFinRangoX();
 	//	System.out.println(destino.getX());
 	//	System.out.println(inicioRangoX); use esto para ver por que no colisionaba.
 	//	System.out.println(finRangoX);

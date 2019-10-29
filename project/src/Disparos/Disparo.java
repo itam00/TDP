@@ -6,12 +6,15 @@ import Juego.Mapa;
 import Visitor.Visitor;
 
 public abstract class Disparo extends Elemento {
-	protected int danio,velocidad;
+	protected int danio;
+	protected float velocidad;
+	protected float rango;
 	
 	
-	public Disparo(int x, int y, Mapa m,int danio) {
+	public Disparo(int x, int y, Mapa m,int danio, float rango) {
 		super(x, y,m);
 		this.danio = danio;
+		this.rango=rango;
 	}
 	
 	public int getDanio() {
@@ -25,6 +28,12 @@ public abstract class Disparo extends Elemento {
 	public void actualizar() {
 		x+=velocidad;
 		super.actualizar();
+		if(x>rango)
+			muerto=true;
+	}
+	
+	public int getAncho() {
+		return 0;
 	}
 	
 	

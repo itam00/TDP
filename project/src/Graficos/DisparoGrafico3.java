@@ -4,7 +4,7 @@ package Graficos;
 import javax.swing.ImageIcon;
 
 
-public class DisparoGrafico3 extends ElementoGrafico {
+public class DisparoGrafico3 extends DisparoGrafico {
 
 
 	/**
@@ -14,8 +14,7 @@ public class DisparoGrafico3 extends ElementoGrafico {
 
 	public DisparoGrafico3(int x, int y) {
 		super();
-		width  =100;
-		height = 100;
+
 		image = new ImageIcon(getClass().getResource("/Sprites/proyectilTorre3.gif"));
 		this.setIcon(image);
 	}

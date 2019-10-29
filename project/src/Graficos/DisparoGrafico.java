@@ -6,7 +6,8 @@ public class DisparoGrafico extends ElementoGrafico {
 	
 	public DisparoGrafico() {
 		super();
-		width  =0;
-		height = 0;
+		width  =100;
+		height = 100;
 	}
+	
 }

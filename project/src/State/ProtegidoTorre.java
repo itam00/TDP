@@ -20,6 +20,7 @@ public class ProtegidoTorre extends StateTorre{
 		if (vidaEscudo<=0 || System.currentTimeMillis()-tiempoCreado>10000) {
 			torre.setState(new DefaultTorre(torre));
 		}
+		System.out.println("estoy protegida");
 	}
 	
 	public void disminuirVida(int n) {

@@ -1,6 +1,7 @@
 package Personajes;
 
 
+import Disparos.DisparoTorre1;
 import Disparos.DisparoTorre2;
 import Graficos.Torre2Grafica;
 import Juego.Mapa;
@@ -15,14 +16,16 @@ public class Torre2 extends Torre{
 		danio = 10;
 		vida = 100;
 		tamanio=1;
-		frecuenciaDefault=300;
+		frecuenciaDefault=600;
 		frecuencia =frecuenciaDefault;
 	}
 
 	@Override
 	public void disparar() {
 		if(puedeAtacar()) {
-			mapa.agregar(new DisparoTorre2(x,y,mapa,danio));
+			for (Integer fila:filas) {
+				mapa.agregar(new DisparoTorre2((int)x,fila*96,mapa,danio,rango*96));
+			}
 		}
 	}
 

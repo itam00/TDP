@@ -54,12 +54,12 @@ public abstract class Torre extends Personaje{
 	}
 	
 	@Override
-	public int getInicioRangoX() {
+	public float getInicioRangoX() {
 		return grafico.getX();
 	}
 
 	@Override
-	public int getFinRangoX() {
+	public float getFinRangoX() {
 		return grafico.getX()+rango*50;
 	}
 	
