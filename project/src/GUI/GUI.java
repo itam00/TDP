@@ -121,9 +121,9 @@ public class GUI extends JFrame implements MouseListener{
 	public synchronized void añadirElemento(Elemento e) {
 		ElementoGrafico grafico = e.obtenerGrafico();
 		panelJuego.add(grafico);
-		int x = e.getX();
-		int y = e.getY();
-		grafico.setBounds(x, y, grafico.getAlto(), grafico.getAncho());
+		float x = e.getX();
+		float y = e.getY();
+		grafico.setBounds((int)x,(int)y, grafico.getAlto(), grafico.getAncho());
 		panelJuego.setComponentZOrder(grafico, 0);
 	}
 

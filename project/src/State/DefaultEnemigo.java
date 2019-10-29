@@ -11,6 +11,6 @@ public class DefaultEnemigo extends StateEnemigo{
 	@Override
 	public void actualizar() {
 		enemigo.obtenerGrafico().actualizar(enemigo.getX(),enemigo.getY());
-		enemigo.setX(enemigo.getX()-(int)enemigo.getVelocidad());
+		enemigo.mover();
 	}
 }

@@ -46,10 +46,6 @@ public abstract class Enemigo extends Personaje{
 		vida-=n;
 		muerto=vida<=0;
 	}
-	
-	public int limiteRango() {
-		return getX()-rango;
-	}
 
 	
 	public void setQuieto(boolean q) {
@@ -61,11 +57,11 @@ public abstract class Enemigo extends Personaje{
 	}
 
 	
-	public int getInicioRangoX() {
+	public float getInicioRangoX() {
 		return grafico.getX();
 	}
 	
-	public int getFinRangoX() {
+	public float getFinRangoX() {
 		return grafico.getX()-rango*50;
 	}
 	
@@ -80,13 +76,10 @@ public abstract class Enemigo extends Personaje{
 		velocidad=velocidadDefault;
 	}
 	
-	public void setX(int x) {
-		this.x = x;
-	}
 
 	public void soltarPowerUp() {
 		if(Math.random()<probCongelacion) {
-			mapa.soltarPowerUp(x,y);
+			mapa.soltarPowerUp((int)x,(int)y);
 			System.out.println("se solto un congelador");
 		}
 	}
@@ -101,5 +94,9 @@ public abstract class Enemigo extends Personaje{
 	
 	public void atacar(Elemento elem) {
 		elem.disminuirVida(danio);
+	}
+	
+	public void mover() {
+		x-=velocidad;
 	}
 }

@@ -11,8 +11,6 @@ public class DisparoGrafico1 extends DisparoGrafico {
 
 	public DisparoGrafico1(int x, int y) {
 		super();
-		width  =100;
-		height = 100;
 		image = new ImageIcon(getClass().getResource("/Sprites/proyectil.gif"));
 		this.setIcon(image);
 	}

@@ -21,10 +21,10 @@ public class Piedra extends Obstaculo {
 		//
 	}
 	
-	public int getInicioRangoX() {
+	public float getInicioRangoX() {
 		return grafico.getX()-50;
 	}
-	public int getFinRangoX() {
+	public float getFinRangoX() {
 		return grafico.getX()+50;
 	}
 

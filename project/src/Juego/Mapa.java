@@ -135,9 +135,8 @@ public class Mapa{
 	public boolean estaEnRango(Elemento origen,Elemento destino) {
 		if (origen==destino)
 			return false;
-		int inicioRangoX= origen.getInicioRangoX();
-		int finRangoX= origen.getFinRangoX();
-
+		float inicioRangoX= origen.getInicioRangoX();
+		float finRangoX= origen.getFinRangoX();
 		return  Math.min(inicioRangoX, finRangoX)<=destino.getX() && destino.getX()<=Math.max(inicioRangoX,finRangoX); 
 	}
 	

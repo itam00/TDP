@@ -12,8 +12,9 @@ public class Torre1 extends Torre{
 		precio = 0; //cambiar
 		rango = 15;
 		danio = 10;
-		vida =200;
-		frecuenciaDefault=400;
+		vida =2000;
+		cantFilas=6;
+		frecuenciaDefault=1000;
 		frecuencia = frecuenciaDefault;
 	}
 	
@@ -21,7 +22,9 @@ public class Torre1 extends Torre{
 	@Override
 	public void disparar() {
 		if(puedeAtacar()) {
-			mapa.agregar(new DisparoTorre1(x,y,mapa,danio));
+			for (Integer fila:filas) {
+				mapa.agregar(new DisparoTorre1((int)x,fila*96,mapa,danio,rango*96));
+			}
 		}
 	}
 

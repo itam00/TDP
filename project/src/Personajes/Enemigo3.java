@@ -9,7 +9,7 @@ public class Enemigo3 extends Enemigo {
 
 	public Enemigo3(int x, int y, Mapa m) {
 		super(x, y, m);
-		velocidadDefault= 1;
+		velocidadDefault= 0.5f;
 		velocidad = velocidadDefault;
 		vida = 100;
 		danio = 20;
