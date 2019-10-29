@@ -12,10 +12,9 @@ public class Torre4 extends Torre{
 	public Torre4() {
 		super();
 		precio = 0; //cambiar
-		rango = 10;
+		rango = 5;
 		danio = 20;
 		vida = 100;
-		tamanio=1;
 		frecuenciaDefault=500;
 		frecuencia =frecuenciaDefault;
 	}

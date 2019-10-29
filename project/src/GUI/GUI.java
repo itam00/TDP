@@ -47,19 +47,6 @@ public class GUI extends JFrame implements MouseListener{
 		setearPanelUtilidades();
 
 		tiempo.start();
-		for (int i=0; i<3;i++) {
-			controlador.colocarEnemigo(1000, i*96);
-			controlador.colocarEnemigo3(1118, i*96);
-			controlador.colocarEnemigo4(1218, i*96);
-		}
-		for (int i=3; i<6;i++) {
-			controlador.colocarEnemigo4(1218, i*96);
-			controlador.colocarEnemigo3(1000, i*96);
-			controlador.colocarEnemigo(1118, i*96);
-		}
-		
-		controlador.colocarPiedra(304, 96);
-		
 
 	}
 
@@ -113,6 +100,7 @@ public class GUI extends JFrame implements MouseListener{
 		this.add(panelJuego);
 		repaint();
 	}
+	
 	private void setearPanelUtilidades(){
 		tienda.setBounds(0,576,828,160);
 		getContentPane().add(tienda);
@@ -148,10 +136,6 @@ public class GUI extends JFrame implements MouseListener{
 	public Tienda getTienda() {
 		return tienda;
 	}
-	
-
-
-
 }
 //setbound
 //setlocation

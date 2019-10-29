@@ -3,6 +3,7 @@ package Entidad;
 import Graficos.PiedraGrafica;
 import Juego.Mapa;
 import Personajes.Enemigo;
+import Personajes.Torre;
 
 public class Piedra extends Obstaculo {
 
@@ -10,6 +11,10 @@ public class Piedra extends Obstaculo {
 		super(x, y, m);
 		vida=100;
 		grafico= new PiedraGrafica(x,y);
+	}
+	
+	public void afectar (Torre t) {
+		//
 	}
 	
 	public void afectar(Enemigo e) {

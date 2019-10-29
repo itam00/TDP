@@ -15,57 +15,35 @@ public class Controlador {
 	protected Tienda tienda;
 	protected Nivel nivel;
 	protected Iterator<Enemigo> oleada;
+	protected long frecuenciaAgregacion,ultimaActualizacion;
 	
 	public Controlador(GUI g, Mapa m, Jugador j,Tienda t) {
 		gui = g;
 		mapa=m;
 		jugador = j;
 		tienda = t;
-		//nivel = new nivel1(mapa);
-		//oleada = nivel.getOleada().iterator();
+		nivel = new nivel1(mapa);
+		System.out.println(nivel.getOleada().size());
+		oleada = nivel.getOleada().iterator();
+		frecuenciaAgregacion = 0;
+		ultimaActualizacion = 5;
 	}
 	
 	public synchronized void actualizar() {
-		
-		/*Enemigo aux;
-		while(oleada.hasNext()) {
+		Enemigo aux;
+		int i=1;
+		while(oleada.hasNext() && ultimaActualizacion>0 && frecuenciaAgregacion % 100==0) {
 			aux = oleada.next();
-			
+			mapa.agregar(aux);
 			oleada.remove();
-		}*/
+			System.out.println(i++);
+			ultimaActualizacion--;
+		}
 		mapa.actualizar();
+		frecuenciaAgregacion++;
+		ultimaActualizacion=5;
 		
 	}
-	
-	
-	public synchronized void comprarTorre(int x,int y) {
-		boolean lugarLibre=true;
-		System.out.println("x:" +x+" y: "+y);
-		/*while(it.hasNext() && lugarLibre) {
-			aux = it.next();
-			//lugarLibre = !coincidePosicion(aux,x,y);
-		}
-		*/
-	}
-	
-	
-	public synchronized void colocarEnemigo(int x, int y) {
-		Enemigo enemigo= new Enemigo1(x,y,mapa);
-		mapa.agregar(enemigo);
-	}
-	public synchronized void colocarEnemigo3(int x, int y) {
-		Enemigo enemigo= new Enemigo2(x,y,mapa);
-		mapa.agregar(enemigo);
-	}
-	public synchronized void colocarPiedra(int x, int y) {
-		Obstaculo piedra= new Piedra(x,y,mapa);
-		mapa.agregar(piedra);
-	}
-	public synchronized void colocarEnemigo4(int x, int y) {
-		Enemigo enemigo= new Enemigo5(x,y,mapa);
-		mapa.agregar(enemigo);
-	}
-	
 
 	public void click(int x,int y) {
 		if(y<576) {
@@ -83,18 +61,7 @@ public class Controlador {
 				p.setPos(x, y, mapa);
 				mapa.agregar(p);
 			}
-			else {
-				
-			}
 		}
 	}
 	
-//	public void remover() {
-//		for(Disparo s: entidades) {
-//			s.obtenerGrafico().cambiar();
-//		}
-		//también que borrarlo del controlador.
-//	}
-	
-	//cada objeto gráfico tiene que conocer a su objeto lógico.
 }

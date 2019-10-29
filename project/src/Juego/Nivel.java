@@ -1,11 +1,16 @@
 package Juego;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import Personajes.Enemigo;
 
-public interface Nivel {
+public abstract class Nivel {
+	protected int frecuencia;
+	protected LinkedList<Enemigo> lista;
+	protected Mapa mapa;
+	protected int cantEnemigos;
 
-	public List<Enemigo> getOleada();
+	public abstract List<Enemigo> getOleada();
 
 }

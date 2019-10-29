@@ -12,15 +12,14 @@ import java.util.Set;
 
 import Personajes.Enemigo;
 import Personajes.Enemigo1;
+import Personajes.Enemigo2;
 import Personajes.Enemigo3;
 import Personajes.Enemigo4;
+import Personajes.Enemigo5;
 
-public class nivel1 implements Nivel{
+public class nivel1 extends Nivel{
 	
-	protected LinkedList<Enemigo> lista;
-	protected Mapa mapa;
-	protected int cantEnemigos;
-	protected int frecuencia;
+	
 	
 	public nivel1(Mapa mapa) {
 		 try {
@@ -34,7 +33,7 @@ public class nivel1 implements Nivel{
 				 
 			 Set<String> keys = prop.stringPropertyNames();
 			 for (String key : keys){
-				 int fila =  Integer.parseInt(key)%5;;
+				 int fila =  Integer.parseInt(key)%6;;
 				 cantEnemigos++;
 				 switch(prop.getProperty(key)){
 				 
@@ -42,7 +41,7 @@ public class nivel1 implements Nivel{
 						 lista.add(new Enemigo1(1100,96*fila,mapa));
 						 break;
 					 case "enemigo2":
-						 //lista.add(new Enemigo2(1100,96*fila,mapa));
+						 lista.add(new Enemigo2(1100,96*fila,mapa));
 						 break;
 					 case "enemigo3":
 						 lista.add(new Enemigo3(1100,96*fila,mapa));
@@ -51,7 +50,7 @@ public class nivel1 implements Nivel{
 						 lista.add(new Enemigo4(1100,96*fila,mapa));
 						 break;
 					 case "enemigo5":
-						 //lista.add(new Enemigo5(1100,96*fila,mapa));
+						 lista.add(new Enemigo5(1100,96*fila,mapa));
 						 break;
 				}
 

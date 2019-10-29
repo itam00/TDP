@@ -1,7 +1,9 @@
 package Entidad;
 
 import Juego.Mapa;
+import Objetos.Objeto;
 import Personajes.Enemigo;
+import Personajes.Torre;
 import Visitor.Visitor;
 import Visitor.VisitorObstaculo;
 
@@ -18,6 +20,7 @@ public abstract class Obstaculo extends Objeto {
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
+	public abstract void afectar(Torre t);
 	
 	public abstract void afectar(Enemigo e);
 	

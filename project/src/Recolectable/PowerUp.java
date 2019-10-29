@@ -1,6 +1,5 @@
 package Recolectable;
 
-import Entidad.Objeto;
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Personaje;
@@ -9,7 +8,7 @@ import Tienda.ManejadorPowerUp;
 import Tienda.Tienda;
 import Visitor.Visitor;
 
-public abstract class PowerUp extends Objeto{
+public abstract class PowerUp extends Recolectable{
 
 	protected int duracion,precio;
 	long tiempoCreado;
@@ -20,6 +19,7 @@ public abstract class PowerUp extends Objeto{
 	}
 	
 	public PowerUp() {
+		super();
 		tiempoCreado=System.currentTimeMillis();
 		duracion=500;
 	}

@@ -14,7 +14,6 @@ public class Torre2 extends Torre{
 		rango = 10;
 		danio = 10;
 		vida = 100;
-		tamanio=1;
 		frecuenciaDefault=300;
 		frecuencia =frecuenciaDefault;
 	}

@@ -50,7 +50,6 @@ public class Tienda extends JPanel{
 	}
 	
 	public void devolver(Torre t) {
-		comprado=t;
 		jugador.agregarOro(t.getPrecio());
 	}
 	

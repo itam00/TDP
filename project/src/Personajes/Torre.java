@@ -10,7 +10,7 @@ import Visitor.VisitorTorre;
 
 public abstract class Torre extends Personaje{
 	protected StateTorre state;
-	protected int precio, tamanio;
+	protected int precio;
 
 	public Torre() {
 		super();
