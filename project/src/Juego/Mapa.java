@@ -150,7 +150,6 @@ public class Mapa{
 		porAgregar.add(e);
 		
 	}
-	
 
 	public List<Elemento> enRango(Elemento e){
 		List<Elemento> toreturn= new LinkedList<Elemento>();
@@ -173,5 +172,7 @@ public class Mapa{
 	public int getDerrotados() {
 		return enemigosDerrotados;
 	}
+	
+	
 
 }

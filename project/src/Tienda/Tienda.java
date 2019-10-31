@@ -23,6 +23,7 @@ public class Tienda extends JPanel{
 	ManejadorPowerUp manejadorCongelacion;
 	ManejadorPowerUp manejadorBomba;
 	ManejadorPowerUp manejadorEscudo;
+	ManejadorPowerUp manejadorPortal;
 	
 	public Tienda(Jugador j) {
 		this.setPreferredSize(new Dimension(824, 170));
@@ -31,6 +32,7 @@ public class Tienda extends JPanel{
 		manejadorCongelacion = new ManejadorCongelacion(this);
 		manejadorBomba= new ManejadorBomba(this);
 		manejadorEscudo= new ManejadorEscudo(this);
+		manejadorPortal = new ManejadorPortal(this);
 		
 		
 		agregarBotones();
@@ -88,9 +90,10 @@ public class Tienda extends JPanel{
 			this.add(torres[i]);
 			torres[i].setBounds(i*100+20, 20,100,100);
 		}
-		manejadorCongelacion.colocarEnTienda(600,20);
-		manejadorBomba.colocarEnTienda(600,60);
-		manejadorEscudo.colocarEnTienda(600,100);
+		manejadorCongelacion.colocarEnTienda(600,10);
+		manejadorBomba.colocarEnTienda(600,45);
+		manejadorEscudo.colocarEnTienda(600,80);
+		manejadorPortal.colocarEnTienda(600,115);
 	}
 
 	public void paint(Graphics g) {
