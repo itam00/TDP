@@ -27,12 +27,12 @@ public class PortalAliado extends PowerUp{
 	}
 
 	@Override
-	public int getInicioRangoX() {
+	public float getInicioRangoX() {
 		return x-10;
 	}
 
 	@Override
-	public int getFinRangoX() {
+	public float getFinRangoX() {
 		return x+10;
 	}
 

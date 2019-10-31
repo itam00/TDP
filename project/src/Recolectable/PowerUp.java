@@ -21,7 +21,7 @@ public abstract class PowerUp extends Recolectable{
 	public PowerUp() {
 		super();
 		tiempoCreado=System.currentTimeMillis();
-		duracion=500;
+		duracion=1000;
 	}
 
 	@Override
