@@ -20,6 +20,14 @@ public class Enemigo4 extends Enemigo{
 		frecuencia=frecuenciaDefault;
 		grafico= new Enemigo4Grafico();
 	}
+	
+	public void actualizar() {
+		super.actualizar();
+		if(muerto) {
+			int random = (int)(Math.random()*6)*96;
+			mapa.agregar(new Enemigo4Gemelo((int)x,(int)random,mapa));
+		}
+	}
 
 	
 	
