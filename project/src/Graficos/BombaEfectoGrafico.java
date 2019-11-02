@@ -12,7 +12,8 @@ public class BombaEfectoGrafico extends ElementoGrafico {
 	public BombaEfectoGrafico() {
 		width  =103;
 		height = 97;
-		image = new ImageIcon(getClass().getResource("/Sprites/bombaPowerUp.gif"));
+		image = new ImageIcon(getClass().getResource("/Sprites/bombaEfecto.gif"));
+		image.getImage().flush();
 		this.setIcon(image);
 	}
 }

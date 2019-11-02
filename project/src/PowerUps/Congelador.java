@@ -1,4 +1,4 @@
-package Recolectable; 
+package PowerUps; 
 
 import Graficos.CongeladorEfectoGrafico;
 import Graficos.CongeladorGrafico;
@@ -18,12 +18,6 @@ public class Congelador extends PowerUp{
 
 	protected long tiempoCreado;
 	
-	public Congelador(int x, int y, Mapa m, ManejadorCongelacion maneja) {
-		super(x, y, m,maneja);
-		grafico = new CongeladorGrafico(maneja);
-		visitor = new VisitorVacio();
-		tiempoCreado=Long.MAX_VALUE;
-	}
 	
 	public Congelador() {
 		precio=0;
@@ -44,12 +38,12 @@ public class Congelador extends PowerUp{
 	
 	@Override
 	public float getInicioRangoX() {
-		return x-500;
+		return x-100;
 	}
 	
 	@Override
 	public float getFinRangoX() {
-		return x+500;
+		return x+100;
 	}
 	
 	public void actualizar() {

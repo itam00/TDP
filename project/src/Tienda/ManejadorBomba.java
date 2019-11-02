@@ -3,14 +3,17 @@ package Tienda;
 import javax.swing.ImageIcon;
 
 import Juego.Mapa;
-import Recolectable.Bomba;
-import Recolectable.PowerUp;
+import PowerUps.Bomba;
+import PowerUps.PowerUp;
+import Recolectable.BombaRecolectable;
+import Recolectable.Recolectable;
 
 public class ManejadorBomba extends ManejadorPowerUp {
 	
 	public ManejadorBomba(Tienda t) {
 		super(t);
 		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/bombaIcono.png")));
+		tiempoEspera = 2000;
 	}
 
 	@Override
@@ -23,11 +26,14 @@ public class ManejadorBomba extends ManejadorPowerUp {
 		if(cant>=0) {
 			cant--;
 			tienda.setPowerUpUsado(new Bomba());
+			bloquear();
 		}
 	}
 	
-	public PowerUp getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getPowerUp(int x, int y, Mapa m) {
 		cant++;
-		return new Bomba(x,y,m,this);
+		return new BombaRecolectable(x,y,m,this);
 	}
+	
+
 }

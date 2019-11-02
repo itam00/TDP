@@ -5,7 +5,7 @@ import Disparos.DisparoTorre1;
 import Disparos.DisparoTorre2;
 import Graficos.Torre2Grafica;
 import Juego.Mapa;
-import Recolectable.PowerUp;
+import PowerUps.PowerUp;
 
 public class Torre2 extends Torre{
 

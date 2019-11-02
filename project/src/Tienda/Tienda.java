@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 import Juego.Jugador;
 import Juego.Mapa;
 import Personajes.Torre;
+import PowerUps.PowerUp;
 import Recolectable.*;
-import Recolectable.PowerUp;
 
 public class Tienda extends JPanel{
 	protected Torre comprado;
@@ -105,7 +105,39 @@ public class Tienda extends JPanel{
     }
 
 	
-	public PowerUp getPowerUp(int x, int y, Mapa m) {
-		return manejadorCongelacion.getPowerUp(x,y,m);
+	public Recolectable getPowerUp(int x, int y, Mapa m) {
+		int numeroRandom = (int)(Math.random()*5+1);
+		int probabilidad = (int)(Math.random()*100+1);
+		Recolectable aux=null;
+		switch(numeroRandom) {
+			case 1:
+				if(probabilidad<50)
+					aux = manejadorCongelacion.getPowerUp(x,y,m);
+				break;
+			case 2:
+				if(probabilidad<50)
+					aux = manejadorPortal.getPowerUp(x, y, m);
+				break;
+			case 3:
+				if(probabilidad<50)
+					aux = manejadorEscudo.getPowerUp(x, y, m);
+				break;
+			case 4:
+				if(probabilidad<50)
+					aux = manejadorCongelacion.getPowerUp(x, y, m);
+				break;
+			case 5:
+				if(probabilidad<50)
+					aux = manejadorBomba.getPowerUp(x, y, m);
+				break;
+		}
+		return aux;
+	}
+	
+	public void actualizar() {
+		manejadorCongelacion.actualizar();
+		manejadorBomba.actualizar();
+		manejadorEscudo.actualizar();
+		manejadorPortal.actualizar();
 	}
 }

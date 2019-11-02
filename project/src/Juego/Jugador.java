@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Recolectable.PowerUp;
+import PowerUps.PowerUp;
 
 public class Jugador extends JPanel{
 	protected int oro;

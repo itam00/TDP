@@ -1,4 +1,4 @@
-package Recolectable;
+package PowerUps;
 
 import Graficos.ElementoGrafico;
 import Graficos.PortalDerechoEfectoGrafico;
@@ -15,11 +15,6 @@ import Visitor.VisitorVacio;
 
 public class PortalAliado extends PowerUp{
 	
-	public PortalAliado(int x, int y, Mapa m,ManejadorPortal maneja) {
-		super(x, y, m,maneja);
-		grafico = new PortalGrafico(maneja);
-		visitor = new VisitorVacio();
-	}
 	public PortalAliado() {
 		super();
 		precio=0;
@@ -34,11 +29,6 @@ public class PortalAliado extends PowerUp{
 		e.setState(new DefaultEnemigo(e));
 	}
 	
-	
-	public void setPos(int x, int y, Mapa m) {
-		super.setPos(x, y, m);
-		mapa.agregar(new PortalDestino(100,y,m,duracion));
-	}
 
 	@Override
 	public void afectar(Torre t) {

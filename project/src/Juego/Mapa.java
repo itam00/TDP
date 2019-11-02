@@ -163,7 +163,9 @@ public class Mapa{
 	
 	public void soltarPowerUp(int x, int y) {
 		Elemento powerup=tienda.getPowerUp(x,y,this);
-		porAgregar.add(powerup);
+		if(powerup!=null) {
+			porAgregar.add(powerup);
+		}
 	}
 	
 	public void incrementarDerrotados() {

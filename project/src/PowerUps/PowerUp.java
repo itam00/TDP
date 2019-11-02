@@ -1,22 +1,22 @@
-package Recolectable;
+package PowerUps;
 
+import Entidad.Elemento;
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Personaje;
 import Personajes.Torre;
+import Recolectable.Recolectable;
 import Tienda.ManejadorPowerUp;
 import Tienda.Tienda;
 import Visitor.Visitor;
 
-public abstract class PowerUp extends Recolectable{
+public abstract class PowerUp extends Elemento{
+	long tiempoCreado;
 
 	protected int duracion,precio;
-	long tiempoCreado;
+
 	
-	public PowerUp(int x, int y, Mapa m, ManejadorPowerUp maneja) {
-		super(x, y, m);
-		tiempoCreado=Long.MAX_VALUE;
-	}
+	
 	
 	public PowerUp() {
 		super();

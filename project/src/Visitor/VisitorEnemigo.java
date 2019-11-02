@@ -6,7 +6,7 @@ import Entidad.Elemento;
 import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Recolectable.PowerUp;
+import PowerUps.PowerUp;
 import State.AtacandoEnemigo;
 
 public class VisitorEnemigo extends Visitor {

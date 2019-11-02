@@ -3,15 +3,18 @@ package Tienda;
 import javax.swing.ImageIcon;
 
 import Juego.Mapa;
-import Recolectable.Escudo;
-import Recolectable.PortalAliado;
-import Recolectable.PowerUp;
+import PowerUps.Escudo;
+import PowerUps.PortalAliado;
+import PowerUps.PowerUp;
+import Recolectable.PortalRecolectable;
+import Recolectable.Recolectable;
 
 public class ManejadorPortal extends ManejadorPowerUp {
 	
 	public ManejadorPortal(Tienda t) {
 		super(t);
-		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/escudoIcono.png")));
+		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/portalIcono.png")));
+		tiempoEspera = 10000;
 	}
 
 	@Override
@@ -24,11 +27,12 @@ public class ManejadorPortal extends ManejadorPowerUp {
 		if(cant>=0) {
 			cant--;
 			tienda.setPowerUpUsado(new PortalAliado());
+			bloquear();
 		}
 	}
 	
-	public PowerUp getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getPowerUp(int x, int y, Mapa m) {
 		cant++;
-		return new PortalAliado(x,y,m,this);
+		return new PortalRecolectable(x,y,m,this);
 	}
 }
