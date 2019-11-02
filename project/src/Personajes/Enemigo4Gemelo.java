@@ -1,7 +1,6 @@
 package Personajes;
 
 import Graficos.Enemigo4GemeloGrafico;
-import Graficos.Enemigo4Grafico;
 import Juego.Mapa;
 
 public class Enemigo4Gemelo extends Enemigo{
