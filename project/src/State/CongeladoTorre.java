@@ -11,7 +11,6 @@ public class CongeladoTorre extends StateTorre{
 	public CongeladoTorre(Torre t) {
 		super(t);
 		tiempoInicial= System.currentTimeMillis();
-		//torre.setVelocidad(0);
 	}
 	
 	public void actualizar() {

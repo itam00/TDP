@@ -10,8 +10,8 @@ public class Torre1 extends Torre{
 	public Torre1() {
 		super();
 		precio = 0; //cambiar
-		rango = 15;
-		danio = 10;
+		rango = 2;
+		danio = 1;
 		vida =2000;
 		cantFilas=6;
 		frecuenciaDefault=1000;

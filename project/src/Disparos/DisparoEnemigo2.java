@@ -24,4 +24,5 @@ public class DisparoEnemigo2 extends Disparo{
 		return grafico.getX()+5;
 	}
 
+	
 }

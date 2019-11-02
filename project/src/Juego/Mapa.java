@@ -60,12 +60,6 @@ public class Mapa{
 
 	}
 	
-	
-	
-	public boolean coincidePosicion(Elemento e1, Elemento e2) {
-		return  Math.abs(e1.getX() - e2.getX()) <= 3;
-	}
-	
 	/**
 	 * Verifica si x e y coincide con cualquiera de las POSICIONES de los elementos en la fila
 	 * @param x 
@@ -146,7 +140,7 @@ public class Mapa{
 	 */
 	
 
-	public void agregar(Elemento e) {
+	public synchronized void agregar(Elemento e) {
 		porAgregar.add(e);
 		
 	}

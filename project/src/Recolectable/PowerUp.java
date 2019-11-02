@@ -10,18 +10,20 @@ import Visitor.Visitor;
 
 public abstract class PowerUp extends Recolectable{
 
-	protected int duracion,precio;
+	protected int precio;
+	protected long duracion;
 	long tiempoCreado;
 	
 	public PowerUp(int x, int y, Mapa m, ManejadorPowerUp maneja) {
 		super(x, y, m);
 		tiempoCreado=Long.MAX_VALUE;
+		duracion=Long.MAX_VALUE;
 	}
 	
 	public PowerUp() {
 		super();
 		tiempoCreado=System.currentTimeMillis();
-		duracion=1000;
+		duracion=1500;
 	}
 
 	@Override

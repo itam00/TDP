@@ -28,8 +28,10 @@ public abstract class Disparo extends Elemento {
 	public void actualizar() {
 		x+=velocidad;
 		super.actualizar();
-		if(x>rango)
+		rango--;
+		if(rango==0)
 			muerto=true;
+		
 	}
 	
 	public int getAncho() {
