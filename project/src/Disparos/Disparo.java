@@ -14,7 +14,7 @@ public abstract class Disparo extends Elemento {
 	public Disparo(int x, int y, Mapa m,int danio, float rango) {
 		super(x, y,m);
 		this.danio = danio;
-		this.rango=rango;
+		this.rango=rango*102;
 	}
 	
 	public int getDanio() {
