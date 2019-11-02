@@ -4,7 +4,7 @@ import Disparos.Disparo;
 import Entidad.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Recolectable.PowerUp;
+import PowerUps.PowerUp;
 
 public class VisitorDisparoTorre extends Visitor{
 	protected Disparo disparo;

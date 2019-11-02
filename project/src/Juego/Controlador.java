@@ -3,7 +3,7 @@ import java.util.*;
 
 import GUI.*;
 import Personajes.*;
-import Recolectable.PowerUp;
+import PowerUps.PowerUp;
 import Tienda.Tienda;
 import Entidad.*;
 
@@ -37,6 +37,7 @@ public class Controlador {
 			ultimaActualizacion--;
 		}
 		mapa.actualizar();
+		tienda.actualizar();
 		frecuenciaAgregacion++;
 		ultimaActualizacion=5;
 		

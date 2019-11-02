@@ -3,15 +3,18 @@ package Tienda;
 import javax.swing.ImageIcon;
 
 import Juego.Mapa;
-import Recolectable.Bomba;
-import Recolectable.Escudo;
-import Recolectable.PowerUp;
+import PowerUps.Bomba;
+import PowerUps.Escudo;
+import PowerUps.PowerUp;
+import Recolectable.EscudoRecolectable;
+import Recolectable.Recolectable;
 
 public class ManejadorEscudo extends ManejadorPowerUp {
 	
 	public ManejadorEscudo(Tienda t) {
 		super(t);
 		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/escudoIcono.png")));
+		tiempoEspera = 5000;
 	}
 
 	@Override
@@ -24,11 +27,12 @@ public class ManejadorEscudo extends ManejadorPowerUp {
 		if(cant>=0) {
 			cant--;
 			tienda.setPowerUpUsado(new Escudo());
+			bloquear();
 		}
 	}
 	
-	public PowerUp getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getPowerUp(int x, int y, Mapa m) {
 		cant++;
-		return new Escudo(x,y,m,this);
+		return new EscudoRecolectable(x,y,m,this);
 	}
 }

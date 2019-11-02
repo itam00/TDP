@@ -8,6 +8,6 @@ public class Enemigo2Grafico extends ElementoGrafico{
 		image = new ImageIcon(getClass().getResource("/Sprites/enemigo2.gif"));
 		this.setIcon(image);
 		width  =103;
-		height = 97;
+		height = 102;
 	}
 }

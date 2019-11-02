@@ -144,7 +144,6 @@ public class Mapa{
 		porAgregar.add(e);
 		
 	}
-	
 
 	public List<Elemento> enRango(Elemento e){
 		List<Elemento> toreturn= new LinkedList<Elemento>();
@@ -158,7 +157,9 @@ public class Mapa{
 	
 	public void soltarPowerUp(int x, int y) {
 		Elemento powerup=tienda.getPowerUp(x,y,this);
-		porAgregar.add(powerup);
+		if(powerup!=null) {
+			porAgregar.add(powerup);
+		}
 	}
 	
 	public void incrementarDerrotados() {
@@ -167,5 +168,7 @@ public class Mapa{
 	public int getDerrotados() {
 		return enemigosDerrotados;
 	}
+	
+	
 
 }

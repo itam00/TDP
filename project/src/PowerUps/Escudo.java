@@ -1,4 +1,4 @@
-package Recolectable;
+package PowerUps;
 
 
 import java.util.List;
@@ -20,12 +20,6 @@ import Visitor.VisitorVacio;
 public class Escudo extends PowerUp{
 
 	protected long tiempoCreado;
-	
-	public Escudo(int x, int y, Mapa m,ManejadorEscudo maneja) {
-		super(x, y, m,maneja);
-		grafico = new EscudoGrafico(maneja);
-		visitor = new VisitorVacio();
-	}
 	
 	public Escudo() {
 		precio=0;
@@ -50,10 +44,5 @@ public class Escudo extends PowerUp{
 	@Override
 	public float getFinRangoX() {
 		return x+80;
-	}
-
-
-	public void actualizar() {
-		super.actualizar();
 	}
 }

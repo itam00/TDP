@@ -2,7 +2,7 @@ package State;
 
 import Personajes.Personaje;
 import Personajes.Torre;
-import Recolectable.Escudo;
+import PowerUps.Escudo;
 
 public class ProtegidoTorre extends StateTorre{
 

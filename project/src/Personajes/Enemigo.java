@@ -3,7 +3,7 @@ package Personajes;
 
 import Entidad.Elemento;
 import Juego.Mapa;
-import Recolectable.Congelador;
+import PowerUps.Congelador;
 import State.DefaultEnemigo;
 import State.StateEnemigo;
 import State.StateTorre;

@@ -2,8 +2,8 @@ package Personajes;
 
 import Disparos.DisparoTorre1;
 import Graficos.Torre1Grafica;
-import Juego.Mapa; 
-import Recolectable.PowerUp;
+import Juego.Mapa;
+import PowerUps.PowerUp;
 
 public class Torre1 extends Torre{
 	
@@ -13,7 +13,7 @@ public class Torre1 extends Torre{
 		rango = 2;
 		danio = 1;
 		vida =2000;
-		cantFilas=6;
+		cantFilas=1;
 		frecuenciaDefault=1000;
 		frecuencia = frecuenciaDefault;
 	}

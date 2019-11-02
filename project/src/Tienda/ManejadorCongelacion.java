@@ -8,14 +8,17 @@ import javax.swing.JButton;
 
 import Juego.Mapa;
 import Personajes.Torre1;
-import Recolectable.Congelador;
-import Recolectable.PowerUp;
+import PowerUps.Congelador;
+import PowerUps.PowerUp;
+import Recolectable.CongeladorRecolectable;
+import Recolectable.Recolectable;
 
 public class ManejadorCongelacion extends ManejadorPowerUp {
 	
 	public ManejadorCongelacion(Tienda t) {
 		super(t);
 		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/congelacionIcono.png")));
+		tiempoEspera = 2000;
 	}
 
 	@Override
@@ -28,11 +31,12 @@ public class ManejadorCongelacion extends ManejadorPowerUp {
 		if(cant>=0) {
 			cant--;
 			tienda.setPowerUpUsado(new Congelador());
+			bloquear();
 		}
 	}
 	
-	public PowerUp getPowerUp(int x, int y, Mapa m) {
-		return new Congelador(x, y, m, this);
+	public Recolectable getPowerUp(int x, int y, Mapa m) {
+		return new CongeladorRecolectable(x, y, m, this);
 	}
 	
 }

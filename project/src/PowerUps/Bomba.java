@@ -1,4 +1,4 @@
-package Recolectable;
+package PowerUps;
 
 
 import java.util.List; 
@@ -15,12 +15,6 @@ import Visitor.VisitorPowerUp;
 import Visitor.VisitorVacio;
 
 public class Bomba extends PowerUp{
-	
-	public Bomba(int x, int y, Mapa m, ManejadorBomba maneja) {
-		super(x, y, m, maneja);
-		grafico = new BombaGrafico(maneja);
-		visitor = new VisitorVacio();
-	}
 	
 	public Bomba() {
 		super();

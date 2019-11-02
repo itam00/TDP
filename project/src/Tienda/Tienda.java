@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 import Juego.Jugador;
 import Juego.Mapa;
 import Personajes.Torre;
+import PowerUps.PowerUp;
 import Recolectable.*;
-import Recolectable.PowerUp;
 
 public class Tienda extends JPanel{
 	protected Torre comprado;
@@ -23,6 +23,7 @@ public class Tienda extends JPanel{
 	ManejadorPowerUp manejadorCongelacion;
 	ManejadorPowerUp manejadorBomba;
 	ManejadorPowerUp manejadorEscudo;
+	ManejadorPowerUp manejadorPortal;
 	
 	public Tienda(Jugador j) {
 		this.setPreferredSize(new Dimension(824, 170));
@@ -31,6 +32,7 @@ public class Tienda extends JPanel{
 		manejadorCongelacion = new ManejadorCongelacion(this);
 		manejadorBomba= new ManejadorBomba(this);
 		manejadorEscudo= new ManejadorEscudo(this);
+		manejadorPortal = new ManejadorPortal(this);
 		
 		
 		agregarBotones();
@@ -77,20 +79,22 @@ public class Tienda extends JPanel{
 	}
 	
 	public void agregarBotones() {
-		JButton torres[] = new JButton[4];
+		JButton torres[] = new JButton[5];
 		
 		torres[0] = new BotonTorre1(this);
 		torres[1] = new BotonTorre2(this);
 		torres[2] = new BotonTorre3(this);
 		torres[3] = new BotonTorre4(this);
+		torres[4] = new BotonTorre5(this);
 		
 		for(int i=0;i<torres.length;i++) {
 			this.add(torres[i]);
 			torres[i].setBounds(i*100+20, 20,100,100);
 		}
-		manejadorCongelacion.colocarEnTienda(600,20);
-		manejadorBomba.colocarEnTienda(600,60);
-		manejadorEscudo.colocarEnTienda(600,100);
+		manejadorCongelacion.colocarEnTienda(600,10);
+		manejadorBomba.colocarEnTienda(600,45);
+		manejadorEscudo.colocarEnTienda(600,80);
+		manejadorPortal.colocarEnTienda(600,115);
 	}
 
 	public void paint(Graphics g) {
@@ -102,7 +106,39 @@ public class Tienda extends JPanel{
     }
 
 	
-	public PowerUp getPowerUp(int x, int y, Mapa m) {
-		return manejadorCongelacion.getPowerUp(x,y,m);
+	public Recolectable getPowerUp(int x, int y, Mapa m) {
+		int numeroRandom = (int)(Math.random()*5+1);
+		int probabilidad = (int)(Math.random()*100+1);
+		Recolectable aux=null;
+		switch(numeroRandom) {
+			case 1:
+				if(probabilidad<50)
+					aux = manejadorCongelacion.getPowerUp(x,y,m);
+				break;
+			case 2:
+				if(probabilidad<50)
+					aux = manejadorPortal.getPowerUp(x, y, m);
+				break;
+			case 3:
+				if(probabilidad<50)
+					aux = manejadorEscudo.getPowerUp(x, y, m);
+				break;
+			case 4:
+				if(probabilidad<50)
+					aux = manejadorCongelacion.getPowerUp(x, y, m);
+				break;
+			case 5:
+				if(probabilidad<50)
+					aux = manejadorBomba.getPowerUp(x, y, m);
+				break;
+		}
+		return aux;
+	}
+	
+	public void actualizar() {
+		manejadorCongelacion.actualizar();
+		manejadorBomba.actualizar();
+		manejadorEscudo.actualizar();
+		manejadorPortal.actualizar();
 	}
 }
