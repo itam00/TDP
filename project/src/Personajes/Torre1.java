@@ -13,7 +13,7 @@ public class Torre1 extends Torre{
 		rango = 15;
 		danio = 10;
 		vida =2000;
-		cantFilas=6;
+		cantFilas=1;
 		frecuenciaDefault=1000;
 		frecuencia = frecuenciaDefault;
 	}

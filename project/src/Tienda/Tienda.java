@@ -79,12 +79,13 @@ public class Tienda extends JPanel{
 	}
 	
 	public void agregarBotones() {
-		JButton torres[] = new JButton[4];
+		JButton torres[] = new JButton[5];
 		
 		torres[0] = new BotonTorre1(this);
 		torres[1] = new BotonTorre2(this);
 		torres[2] = new BotonTorre3(this);
 		torres[3] = new BotonTorre4(this);
+		torres[4] = new BotonTorre5(this);
 		
 		for(int i=0;i<torres.length;i++) {
 			this.add(torres[i]);
