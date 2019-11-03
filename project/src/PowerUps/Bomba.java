@@ -28,6 +28,7 @@ public class Bomba extends PowerUp{
 	}
 	
 	public void afectar(Enemigo p) {
+		
 	}
 	
 	
@@ -35,6 +36,8 @@ public class Bomba extends PowerUp{
 	public float getInicioRangoX() {
 		return x-80;
 	}
+	
+	
 	@Override
 	public float getFinRangoX() {
 		return x+80;

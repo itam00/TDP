@@ -1,6 +1,5 @@
 package Disparos;
 
-import Graficos.DisparoGrafico4;
 import Graficos.DisparoGrafico5;
 import Juego.Mapa;
 import Visitor.VisitorDisparoTorre;

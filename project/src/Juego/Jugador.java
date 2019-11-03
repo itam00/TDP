@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 import PowerUps.PowerUp;
 
 public class Jugador extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int oro;
 	protected int puntaje;
 	protected List<PowerUp> powerUps;

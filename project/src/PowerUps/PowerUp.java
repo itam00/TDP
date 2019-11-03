@@ -13,14 +13,13 @@ import Visitor.Visitor;
 public abstract class PowerUp extends Elemento{
 	protected int precio;
 	protected long duracion;
-	long tiempoCreado;
+	protected long tiempoCreado;
 	
 	public PowerUp(int x, int y, Mapa m, ManejadorPowerUp maneja) {
 		super(x, y, m);
 		tiempoCreado=Long.MAX_VALUE;
 		duracion=Long.MAX_VALUE;
 	}
-	protected int duracion,precio;
 	
 	public PowerUp() {
 		super();

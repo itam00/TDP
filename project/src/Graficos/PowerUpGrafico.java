@@ -7,6 +7,10 @@ import Tienda.ManejadorPowerUp;
 
 public class PowerUpGrafico extends ElementoGrafico implements MouseListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected ManejadorPowerUp manejador;
 	
 	public PowerUpGrafico(ManejadorPowerUp m) {

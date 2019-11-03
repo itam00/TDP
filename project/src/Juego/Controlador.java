@@ -1,11 +1,10 @@
 package Juego;
-import java.util.*; 
+import java.util.*;  
 
 import GUI.*;
 import Personajes.*;
 import PowerUps.PowerUp;
 import Tienda.Tienda;
-import Entidad.*;
 
 public class Controlador {
 	protected GUI gui;

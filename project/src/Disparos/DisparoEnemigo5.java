@@ -1,6 +1,5 @@
 package Disparos;
 
-import Graficos.DisparoGraficoEnemigo2;
 import Graficos.DisparoGraficoEnemigo5;
 import Juego.Mapa;
 import Visitor.VisitorDisparoEnemigo;
