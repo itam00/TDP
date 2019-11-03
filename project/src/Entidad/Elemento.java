@@ -29,9 +29,8 @@ public abstract class Elemento {
 		
 		int fila= (int)(y/96); //Es la fila donde se encuentra el y pasado por parametro
 		filas= new LinkedList<Integer>();
-		for (int i=0;i<cantFilas;i++) {
-			filas.add(fila);
-			fila--;
+		for (int i=fila;i<fila+cantFilas;i++) {
+			filas.add(i);
 		}
 	}
 	
@@ -48,7 +47,7 @@ public abstract class Elemento {
 		return y;
 	}
 	
-	public List<Integer> obtenerFilas() {
+	public List<Integer> getFilas() {
 		return filas;
 	}
 	
@@ -56,9 +55,9 @@ public abstract class Elemento {
 		return grafico.getAncho();
 	}
 	
-	public int getCantFilas() {
+	/*public int getCantFilas() {
 		return cantFilas;
-	}
+	}*/
 
 	
 	public ElementoGrafico obtenerGrafico() {
@@ -84,9 +83,8 @@ public abstract class Elemento {
 		this.x=x-50; // por defecto es x-50 porque solo las torres tienen el formateo para que queden en "celdas" (se redefine en torre)
 		this.y=(int)(y/96)*96;
 		int fila= (int)(y/96); //Es la fila donde se encuentra el y pasado por parametro
-		for (Integer i=0;i<cantFilas;i++) {
-			filas.add(fila);
-			fila--;
+		for (int i=fila;i<fila+cantFilas;i++) {
+			filas.add(i);
 		}
 		mapa=m;
 	}

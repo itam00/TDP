@@ -33,7 +33,7 @@ public class nivel1 extends Nivel{
 				 
 			 Set<String> keys = prop.stringPropertyNames();
 			 for (String key : keys){
-				 int fila =  Integer.parseInt(key)%6;;
+				 int fila =  Integer.parseInt(key)%6;
 				 cantEnemigos++;
 				 switch(prop.getProperty(key)){
 				 

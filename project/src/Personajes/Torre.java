@@ -1,7 +1,5 @@
 package Personajes;
 
-
-import Entidad.Elemento;
 import Juego.Mapa;
 import State.DefaultTorre;
 import State.StateTorre;

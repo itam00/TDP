@@ -2,7 +2,7 @@ package Graficos;
 
 import javax.swing.ImageIcon;
 
-public class DisparoGrafico5 extends ElementoGrafico{
+public class DisparoGrafico5 extends DisparoGrafico{
 	public DisparoGrafico5(int x, int y) {
 		super();
 

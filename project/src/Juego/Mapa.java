@@ -51,7 +51,7 @@ public class Mapa{
 		}
 		
 		for(Elemento e: porAgregar) {
-			for (int fila:e.obtenerFilas()) {
+			for (int fila:e.getFilas()) {
 				entidades[fila].add(e);
 			}
 			gui.añadirElemento(e);
@@ -91,16 +91,11 @@ public class Mapa{
 	
 	public boolean puedoPoner(Elemento e, int x, int y) {
 		int fila= y/96;
-		boolean hayLugar=e.getCantFilas()-1<=fila;
 		boolean puedo=true;
-		if (hayLugar) {
-			for (int i=0;i<e.getCantFilas() && puedo;i++) {
-				puedo=!coincidePosicion(x,fila);
-				fila--;
-			}
+		
+		for(int i: e.getFilas()) {
+			puedo = !coincidePosicion(x,fila) && puedo;
 		}
-		else
-			puedo=false;
 		return puedo;
 		
 	}
@@ -111,7 +106,7 @@ public class Mapa{
 	 */
 	public void verificarColision(Elemento e) {
 		boolean colisiona1 = false;
-		for (Integer fila:e.obtenerFilas()) {
+		for (int fila:e.getFilas()) {
 			Iterator<Elemento> it = entidades[fila].iterator();
 			Elemento aux;
 			while(it.hasNext() ) {
@@ -148,12 +143,11 @@ public class Mapa{
 
 	public void agregar(Elemento e) {
 		porAgregar.add(e);
-		
 	}
 
 	public List<Elemento> enRango(Elemento e){
 		List<Elemento> toreturn= new LinkedList<Elemento>();
-		for (Integer fila: e.obtenerFilas())
+		for (int fila: e.getFilas())
 			for (Elemento elem:entidades[fila])
 				if (estaEnRango(e,elem))
 					toreturn.add(elem);
