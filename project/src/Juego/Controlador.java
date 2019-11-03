@@ -32,9 +32,6 @@ public class Controlador {
 		while(oleada.hasNext() && ultimaActualizacion>0 && frecuenciaAgregacion % 100==0) {
 			aux = oleada.next();
 			mapa.agregar(aux);
-			for(int x:aux.getFilas()) {
-				System.out.println("\n"+x+"\n");
-			}
 			oleada.remove();
 			ultimaActualizacion--;
 		}

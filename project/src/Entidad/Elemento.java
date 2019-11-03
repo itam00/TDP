@@ -55,9 +55,9 @@ public abstract class Elemento {
 		return grafico.getAncho();
 	}
 	
-	/*public int getCantFilas() {
+	public int getCantFilas() {
 		return cantFilas;
-	}*/
+	}
 
 	
 	public ElementoGrafico obtenerGrafico() {

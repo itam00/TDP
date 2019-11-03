@@ -86,9 +86,10 @@ public class Mapa{
 		int fila= y/96;
 		boolean puedo=true;
 		
-		for(int i: e.getFilas()) {
-			puedo = !coincidePosicion(x,fila) && puedo;
+		for(int i=fila;i<fila+e.getCantFilas() && puedo;i++) {
+			puedo = i<6 && !coincidePosicion(x,i);
 		}
+		
 		return puedo;
 		
 	}
