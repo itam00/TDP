@@ -24,6 +24,10 @@ public class Tienda extends JPanel{
 	ManejadorPowerUp manejadorBomba;
 	ManejadorPowerUp manejadorEscudo;
 	ManejadorPowerUp manejadorPortal;
+	ManejadorPowerUp manejadorFuego;
+	ManejadorPowerUp manejadorBarrera;
+	ManejadorPowerUp manejadorTrampa;
+	ManejadorPowerUp manejadorEscudoInvencible;
 	
 	public Tienda(Jugador j) {
 		this.setPreferredSize(new Dimension(824, 170));
@@ -33,6 +37,10 @@ public class Tienda extends JPanel{
 		manejadorBomba= new ManejadorBomba(this);
 		manejadorEscudo= new ManejadorEscudo(this);
 		manejadorPortal = new ManejadorPortal(this);
+		manejadorFuego = new ManejadorFuego(this);
+		manejadorBarrera= new ManejadorBarrera(this);
+		manejadorTrampa= new ManejadorTrampa(this);
+		manejadorEscudoInvencible= new ManejadorEscudoInvencible(this);
 		
 		
 		agregarBotones();
@@ -95,6 +103,10 @@ public class Tienda extends JPanel{
 		manejadorBomba.colocarEnTienda(600,45);
 		manejadorEscudo.colocarEnTienda(600,80);
 		manejadorPortal.colocarEnTienda(600,115);
+		manejadorFuego.colocarEnTienda(670, 10);
+		manejadorBarrera.colocarEnTienda(670, 45);
+		manejadorTrampa.colocarEnTienda(670, 80);
+		manejadorEscudoInvencible.colocarEnTienda(670,115);
 	}
 
 	public void paint(Graphics g) {
@@ -140,5 +152,9 @@ public class Tienda extends JPanel{
 		manejadorBomba.actualizar();
 		manejadorEscudo.actualizar();
 		manejadorPortal.actualizar();
+		manejadorFuego.actualizar();
+		manejadorBarrera.actualizar();
+		manejadorTrampa.actualizar();
+		manejadorEscudoInvencible.actualizar();
 	}
 }

@@ -2,8 +2,9 @@ package PowerUps;
 
 import Graficos.CongeladorEfectoGrafico;
 import Graficos.CongeladorGrafico;
-
+import Graficos.GraficoVacio;
 import Juego.Mapa;
+import Objetos.EscudoInvencible;
 import Personajes.Enemigo;
 import Personajes.Personaje;
 import Personajes.Torre;
@@ -14,25 +15,27 @@ import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
 import Visitor.VisitorVacio;
 
-public class Congelador extends PowerUp{
+public class EscudoInvenciblePlacebo extends PowerUp{
 
 	protected long tiempoCreado;
 	
 	
-	public Congelador() {
+	public EscudoInvenciblePlacebo() {
 		precio=0;
-		grafico = new CongeladorEfectoGrafico();
+		grafico = new GraficoVacio();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
-		duracion=2000;
+		duracion=5000;
 	}
 
 	public void afectar(Torre p) {
-		p.setState(new CongeladoTorre(p));
+		EscudoInvencible nuevo= new EscudoInvencible();
+		nuevo.setPos((int)p.getX()+50, (int)p.getY(), p.getMapa()); // el +50 es para que quede justo arriba de la torre
+		p.getMapa().agregar(nuevo);
+		muerto=true;
 	}
 	
 	public void afectar(Enemigo p) {
-		p.setState(new CongeladoEnemigo(p));
 	}
 	
 	

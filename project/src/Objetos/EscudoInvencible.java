@@ -1,16 +1,16 @@
 package Objetos;
 
-import Graficos.TrampaGrafico;
+import Graficos.EscudoInvencibleGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
 import Visitor.VisitorPowerUp;
 
-public class Trampa extends PowerUp{
+public class EscudoInvencible extends PowerUp{
 
-	public Trampa() {
+	public EscudoInvencible() {
 		precio=0;
-		grafico = new TrampaGrafico();
+		grafico = new EscudoInvencibleGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=-Integer.MAX_VALUE;
@@ -18,6 +18,7 @@ public class Trampa extends PowerUp{
 	
 	@Override
 	public void afectar(Enemigo e) {
+		
 		e.setMuerto(true);
 		muerto=true;
 		
@@ -25,8 +26,6 @@ public class Trampa extends PowerUp{
 
 	@Override
 	public void afectar(Torre t) {
-		t.setMuerto(true);
-		muerto=true;
 	}
 
 	@Override
@@ -36,7 +35,7 @@ public class Trampa extends PowerUp{
 
 	@Override
 	public float getFinRangoX() {
-		return x+50;
+		return x+70;
 	}
 
 	public void actualizar() {

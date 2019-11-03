@@ -68,6 +68,10 @@ public abstract class Elemento {
 		return muerto;
 	}
 	
+	public Mapa getMapa() {
+		return mapa;
+	}
+	
 
 	public void setMuerto(boolean b) {
 		muerto=b;

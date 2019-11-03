@@ -32,7 +32,6 @@ public class ManejadorEscudo extends ManejadorPowerUp {
 	}
 	
 	public Recolectable getPowerUp(int x, int y, Mapa m) {
-		cant++;
 		return new EscudoRecolectable(x,y,m,this);
 	}
 }
