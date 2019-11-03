@@ -1,11 +1,10 @@
 package Juego;
-import java.util.*; 
+import java.util.*;  
 
 import GUI.*;
 import Personajes.*;
 import PowerUps.PowerUp;
 import Tienda.Tienda;
-import Entidad.*;
 
 public class Controlador {
 	protected GUI gui;
@@ -30,7 +29,6 @@ public class Controlador {
 	
 	public synchronized void actualizar() {
 		Enemigo aux;
-		int i=1;
 		while(oleada.hasNext() && ultimaActualizacion>0 && frecuenciaAgregacion % 100==0) {
 			aux = oleada.next();
 			mapa.agregar(aux);
@@ -38,7 +36,6 @@ public class Controlador {
 				System.out.println("\n"+x+"\n");
 			}
 			oleada.remove();
-		//	System.out.println(i++);
 			ultimaActualizacion--;
 		}
 		mapa.actualizar();

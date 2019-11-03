@@ -3,6 +3,11 @@ package Graficos;
 import javax.swing.ImageIcon;
 
 public class PortalIzquierdoEfectoGrafico extends ElementoGrafico{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public PortalIzquierdoEfectoGrafico() {
 		super();
 		width = 100;

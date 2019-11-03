@@ -11,7 +11,7 @@ public class Torre3 extends Torre{
 		super();
 		precio = 0; //cambiar
 		rango = 10;
-		danio = 30;
+		danio = 1;
 		vida = 100;
 		frecuenciaDefault=800;
 		frecuencia =frecuenciaDefault;

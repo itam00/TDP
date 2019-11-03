@@ -13,4 +13,6 @@ public class DefaultEnemigo extends StateEnemigo{
 		enemigo.obtenerGrafico().actualizar(enemigo.getX(),enemigo.getY());
 		enemigo.mover();
 	}
+	
+	
 }

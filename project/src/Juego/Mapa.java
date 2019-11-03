@@ -17,6 +17,7 @@ public class Mapa{
 	protected Tienda tienda;
 	protected int enemigosDerrotados;
 	
+	@SuppressWarnings("unchecked")
 	public Mapa(GUI g, Tienda t) {
 		gui = g;
 		tienda=t;
@@ -24,10 +25,8 @@ public class Mapa{
 
 		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
 		porAgregar = new LinkedList<Elemento>();
-		Elemento aux;
 		for(int i=0;i<entidades.length;i++) {
 			entidades[i] = new LinkedList<Elemento>();
-			Iterator<Elemento> it = entidades[i].iterator();
 		}
 	}
 	
@@ -58,12 +57,6 @@ public class Mapa{
 		}
 		porAgregar.clear();
 
-	}
-	
-	
-	
-	public boolean coincidePosicion(Elemento e1, Elemento e2) {
-		return  Math.abs(e1.getX() - e2.getX()) <= 3;
 	}
 	
 	/**
@@ -141,7 +134,7 @@ public class Mapa{
 	 */
 	
 
-	public void agregar(Elemento e) {
+	public synchronized void agregar(Elemento e) {
 		porAgregar.add(e);
 	}
 

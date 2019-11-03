@@ -1,13 +1,15 @@
 package Graficos;
 
-import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-import Personajes.Enemigo;
-
 public class DisparoGrafico2 extends DisparoGrafico {
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public DisparoGrafico2(int x, int y) {
 		super();

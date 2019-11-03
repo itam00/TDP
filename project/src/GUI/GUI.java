@@ -1,13 +1,9 @@
 package GUI;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,7 +12,6 @@ import Graficos.ElementoGrafico;
 import Juego.Controlador;
 import Juego.Jugador;
 import Juego.Mapa;
-import Juego.nivel1;
 import Tienda.Tienda;
 
 public class GUI extends JFrame implements MouseListener{

@@ -6,6 +6,11 @@ import Tienda.ManejadorPowerUp;
 
 public class PortalGrafico extends PowerUpGrafico{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public PortalGrafico(ManejadorPowerUp m) {
 		super(m);
 		width  =103;
