@@ -21,14 +21,14 @@ public class ManejadorCongelacion extends ManejadorPowerUp {
 
 	@Override
 	public void usarPowerUp() {
-		if(cant>=0) {
+		if(cant>0) {
 			cant--;
 			tienda.setPowerUpUsado(new Congelador());
 			bloquear();
 		}
 	}
 	
-	public Recolectable getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getRecolectable(int x, int y, Mapa m) {
 		return new CongeladorRecolectable(x, y, m, this);
 	}
 	

@@ -5,6 +5,9 @@ import java.awt.Dimension;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -24,6 +27,7 @@ public class Tienda extends JPanel{
 	protected Obstaculo obstaculoComprado;
 	protected PowerUp usado;
 	protected Jugador jugador;
+	List<ManejadorComprable> botones;
 	ManejadorPowerUp manejadorCongelacion;
 	ManejadorPowerUp manejadorBomba;
 	ManejadorPowerUp manejadorEscudo;
@@ -37,14 +41,15 @@ public class Tienda extends JPanel{
 		this.setPreferredSize(new Dimension(824, 170));
 		this.setLayout(null);
 		jugador = j;
-		manejadorCongelacion = new ManejadorCongelacion(this);
-		manejadorBomba= new ManejadorBomba(this);
-		manejadorEscudo= new ManejadorEscudo(this);
-		manejadorPortal = new ManejadorPortal(this);
-		manejadorFuego = new ManejadorFuego(this);
-		manejadorBarrera= new ManejadorBarrera(this);
-		manejadorTrampa= new ManejadorTrampa(this);
-		manejadorEscudoInvencible= new ManejadorEscudoInvencible(this);
+		botones= new LinkedList<ManejadorComprable>();
+		botones.add( new ManejadorCongelacion(this));
+		botones.add(new ManejadorBomba(this));
+		botones.add(new ManejadorEscudo(this));
+		botones.add(new ManejadorPortal(this));
+		botones.add(new ManejadorFuego(this));
+		botones.add(new ManejadorBarrera(this));
+		botones.add(new ManejadorTrampa(this));
+		botones.add(new ManejadorEscudoInvencible(this));
 		
 		
 		agregarBotones();
@@ -117,14 +122,12 @@ public class Tienda extends JPanel{
 			this.add(torres[i]);
 			torres[i].setBounds(i*100+20, 20,100,100);
 		}
-		manejadorCongelacion.colocarEnTienda(600,10);
-		manejadorBomba.colocarEnTienda(600,45);
-		manejadorEscudo.colocarEnTienda(600,80);
-		manejadorPortal.colocarEnTienda(600,115);
-		manejadorFuego.colocarEnTienda(670, 10);
-		manejadorBarrera.colocarEnTienda(670, 45);
-		manejadorTrampa.colocarEnTienda(670, 80);
-		manejadorEscudoInvencible.colocarEnTienda(670,115);
+		for (int i=0; i<4;i++) {
+			botones.get(i).colocarEnTienda(600,i*35+10);
+		}
+		for (int i=0; i<4;i++) {
+			botones.get(i+4).colocarEnTienda(700,i*35+10);
+		}
 	}
 
 	public void paint(Graphics g) {
@@ -137,42 +140,12 @@ public class Tienda extends JPanel{
 
 	
 	public Recolectable getPowerUp(int x, int y, Mapa m) {
-		int numeroRandom = (int)(Math.random()*5+1);
-		int probabilidad = (int)(Math.random()*100+1);
-		Recolectable aux=null;
-		switch(numeroRandom) {
-			case 1:
-				if(probabilidad<50)
-					aux = manejadorCongelacion.getPowerUp(x,y,m);
-				break;
-			case 2:
-				if(probabilidad<50)
-					aux = manejadorPortal.getPowerUp(x, y, m);
-				break;
-			case 3:
-				if(probabilidad<50)
-					aux = manejadorEscudo.getPowerUp(x, y, m);
-				break;
-			case 4:
-				if(probabilidad<50)
-					aux = manejadorCongelacion.getPowerUp(x, y, m);
-				break;
-			case 5:
-				if(probabilidad<50)
-					aux = manejadorBomba.getPowerUp(x, y, m);
-				break;
-		}
-		return aux;
+		int numeroRandom = (int)(Math.random()*botones.size());
+		return botones.get(numeroRandom).getRecolectable(x, y, m);
 	}
 	
 	public void actualizar() {
-		manejadorCongelacion.actualizar();
-		manejadorBomba.actualizar();
-		manejadorEscudo.actualizar();
-		manejadorPortal.actualizar();
-		manejadorFuego.actualizar();
-		manejadorBarrera.actualizar();
-		manejadorTrampa.actualizar();
-		manejadorEscudoInvencible.actualizar();
+		for (ManejadorComprable m:botones)
+			m.actualizar();
 	}
 }

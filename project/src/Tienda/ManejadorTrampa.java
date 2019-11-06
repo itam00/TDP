@@ -29,7 +29,7 @@ public class ManejadorTrampa extends ManejadorPowerUp {
 		}
 	}
 	
-	public Recolectable getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getRecolectable(int x, int y, Mapa m) {
 		return null;
 	}
 	

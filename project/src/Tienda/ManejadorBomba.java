@@ -22,14 +22,14 @@ public class ManejadorBomba extends ManejadorPowerUp {
 
 	@Override
 	public void usarPowerUp() {
-		if(cant>=0) {
+		if(cant>0) {
 			cant--;
 			tienda.setPowerUpUsado(new Bomba());
 			bloquear();
 		}
 	}
 	
-	public Recolectable getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getRecolectable(int x, int y, Mapa m) {
 		cant++;
 		return new BombaRecolectable(x,y,m,this);
 	}
