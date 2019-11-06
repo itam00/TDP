@@ -23,7 +23,7 @@ public class ManejadorBarrera extends ManejadorPowerUp {
 	public void usarPowerUp() {
 		if(cant>=0) {
 			cant--;
-			tienda.setPowerUpUsado(new Barrera());
+			tienda.setObstaculoUsado(new Barrera());
 			bloquear();
 		}
 	}

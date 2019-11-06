@@ -8,16 +8,14 @@ import State.AtacandoEnemigo;
 import State.AtacandoTorre;
 import Visitor.VisitorPowerUp;
 
-public class Barrera extends PowerUp{
+public class Barrera extends Obstaculo{
 	
 	protected int vida;
 	
 	public Barrera(){
 		vida=100;
 		grafico = new BarreraGrafico();
-		visitor= new VisitorPowerUp(this);
-		tiempoCreado=System.currentTimeMillis();
-		duracion=7500;
+		vida = 500;
 	}
 
 	@Override
