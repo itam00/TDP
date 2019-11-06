@@ -1,14 +1,17 @@
 package Tienda;
 
-import java.awt.event.ActionEvent;
+import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-
-import Personajes.Torre4;
 import Personajes.Torre5;
 
 public class BotonTorre5 extends BotonTorre{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public BotonTorre5(Tienda t){
 		super(t);

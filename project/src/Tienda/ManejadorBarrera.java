@@ -1,13 +1,9 @@
 package Tienda;
 
-import javax.swing.ImageIcon;
+import javax.swing.ImageIcon; 
 
 import Juego.Mapa;
 import Objetos.Barrera;
-import PowerUps.Escudo;
-import PowerUps.PortalAliado;
-import PowerUps.PowerUp;
-import Recolectable.PortalRecolectable;
 import Recolectable.Recolectable;
 
 public class ManejadorBarrera extends ManejadorPowerUp {

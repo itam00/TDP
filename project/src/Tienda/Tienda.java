@@ -1,15 +1,11 @@
 package Tienda;
 
-import java.awt.Dimension;
-
-import java.awt.FlowLayout;
+import java.awt.Dimension; 
 import java.awt.Graphics;
 import java.awt.Image;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
 import Juego.Jugador;
 import Juego.Mapa;
 import Personajes.Torre;
@@ -17,6 +13,10 @@ import PowerUps.PowerUp;
 import Recolectable.*;
 
 public class Tienda extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected Torre comprado;
 	protected PowerUp usado;
 	protected Jugador jugador;

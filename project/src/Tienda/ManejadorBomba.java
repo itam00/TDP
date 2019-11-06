@@ -1,10 +1,9 @@
 package Tienda;
 
-import javax.swing.ImageIcon;
+import javax.swing.ImageIcon; 
 
 import Juego.Mapa;
 import PowerUps.Bomba;
-import PowerUps.PowerUp;
 import Recolectable.BombaRecolectable;
 import Recolectable.Recolectable;
 

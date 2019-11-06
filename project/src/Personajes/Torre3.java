@@ -1,7 +1,5 @@
 package Personajes;
 
-
-import Disparos.DisparoTorre1;
 import Disparos.DisparoTorre3;
 import Graficos.Torre3Grafica;
 

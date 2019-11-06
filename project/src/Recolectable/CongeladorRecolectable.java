@@ -1,9 +1,8 @@
 package Recolectable;
 
-import Graficos.CongeladorGrafico;
+import Graficos.CongeladorGrafico; 
 import Juego.Mapa;
 import Tienda.ManejadorCongelacion;
-import Visitor.Visitor;
 import Visitor.VisitorVacio;
 
 public class CongeladorRecolectable extends Recolectable{

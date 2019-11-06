@@ -1,9 +1,8 @@
 package Recolectable;
 
-import Graficos.EscudoGrafico;
+import Graficos.EscudoGrafico; 
 import Juego.Mapa;
 import Tienda.ManejadorEscudo;
-import Visitor.Visitor;
 import Visitor.VisitorVacio;
 
 public class EscudoRecolectable extends Recolectable{

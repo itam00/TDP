@@ -1,6 +1,5 @@
 package State;
 
-import Personajes.Personaje;
 
 import Personajes.Torre;
 

@@ -1,8 +1,6 @@
 package Graficos;
 
-import javax.swing.ImageIcon;
-
-import Tienda.ManejadorBomba;
+import javax.swing.ImageIcon; 
 
 public class BarreraGrafico extends ElementoGrafico {
 

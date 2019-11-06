@@ -1,7 +1,6 @@
 package Objetos;
 
-import Graficos.BarreraGrafico;
-import Graficos.CongeladorEfectoGrafico;
+import Graficos.BarreraGrafico; 
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;

@@ -1,8 +1,7 @@
 package Personajes;
 
-import Graficos.Enemigo4Grafico;
+import Graficos.Enemigo4Grafico; 
 import Juego.Mapa;
-import Recolectable.*;
 
 public class Enemigo4 extends Enemigo{
 

@@ -1,9 +1,7 @@
 package Personajes;
 
-import Disparos.DisparoEnemigo2;
 import Disparos.DisparoEnemigo5;
 import Entidad.Elemento;
-import Graficos.Enemigo2Grafico;
 import Graficos.Enemigo5Grafico;
 import Juego.Mapa;
 

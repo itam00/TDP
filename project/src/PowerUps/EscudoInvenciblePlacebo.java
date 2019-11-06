@@ -1,19 +1,10 @@
 package PowerUps; 
 
-import Graficos.CongeladorEfectoGrafico;
-import Graficos.CongeladorGrafico;
 import Graficos.GraficoVacio;
-import Juego.Mapa;
 import Objetos.EscudoInvencible;
 import Personajes.Enemigo;
-import Personajes.Personaje;
 import Personajes.Torre;
-import State.CongeladoEnemigo;
-import State.CongeladoTorre;
-import Tienda.ManejadorCongelacion;
-import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
-import Visitor.VisitorVacio;
 
 public class EscudoInvenciblePlacebo extends PowerUp{
 

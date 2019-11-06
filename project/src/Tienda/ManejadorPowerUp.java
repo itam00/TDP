@@ -1,15 +1,11 @@
 package Tienda;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-
 import Juego.Mapa;
-import PowerUps.PowerUp;
 import Recolectable.Recolectable;
 
 public abstract class ManejadorPowerUp {

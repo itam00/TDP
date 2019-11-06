@@ -1,6 +1,4 @@
 package Personajes;
-import Recolectable.*;
-
 import Entidad.Elemento;
 import Juego.Mapa;
 

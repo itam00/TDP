@@ -1,7 +1,7 @@
 package State;
 
-import Personajes.Enemigo;
-import PowerUps.Escudo;
+import Personajes.Enemigo; 
+
 
 public class ProtegidoEnemigo extends StateEnemigo{
 

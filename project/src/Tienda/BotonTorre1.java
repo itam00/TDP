@@ -6,6 +6,11 @@ import javax.swing.ImageIcon;
 import Personajes.Torre1;
 
 public class BotonTorre1 extends BotonTorre{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public BotonTorre1(Tienda t){
 		super(t);
 		this.setIcon(new ImageIcon(getClass().getResource("/Sprites/isaac.gif")));

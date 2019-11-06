@@ -1,9 +1,8 @@
 package Recolectable;
 
-import Graficos.PortalGrafico;
+import Graficos.PortalGrafico; 
 import Juego.Mapa;
 import Tienda.ManejadorPortal;
-import Visitor.Visitor;
 import Visitor.VisitorVacio;
 
 public class PortalRecolectable extends Recolectable{

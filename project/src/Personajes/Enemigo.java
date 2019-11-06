@@ -1,12 +1,10 @@
 package Personajes;
 
 
-import Entidad.Elemento;
+import Entidad.Elemento; 
 import Juego.Mapa;
-import PowerUps.Congelador;
 import State.DefaultEnemigo;
 import State.StateEnemigo;
-import State.StateTorre;
 import Visitor.Visitor;
 import Visitor.VisitorEnemigo;
 

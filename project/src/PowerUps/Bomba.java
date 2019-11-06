@@ -1,18 +1,13 @@
 package PowerUps;
 
 
-import java.util.List; 
+import java.util.List;  
 
 import Entidad.Elemento;
 import Graficos.BombaEfectoGrafico;
-import Graficos.BombaGrafico; 
-import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Tienda.ManejadorBomba;
-import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
-import Visitor.VisitorVacio;
 
 public class Bomba extends PowerUp{
 	
