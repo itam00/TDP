@@ -1,16 +1,8 @@
 package Tienda;
 
-import java.awt.event.ActionEvent; 
-import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-
 import Juego.Mapa;
 import Objetos.Fuego;
-import Personajes.Torre1;
-import PowerUps.Congelador;
-import PowerUps.PowerUp;
 import Recolectable.Recolectable;
 
 public class ManejadorFuego extends ManejadorPowerUp {

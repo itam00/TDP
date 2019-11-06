@@ -1,13 +1,11 @@
 package Recolectable;
 
-import Graficos.EscudoGrafico;
+import Graficos.EscudoGrafico; 
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
 import Tienda.ManejadorEscudo;
-import Tienda.ManejadorPowerUp;
-import Visitor.VisitorPowerUp;
 
 public class Invencibilidad extends PowerUp {
 	

@@ -1,21 +1,11 @@
 package PowerUps;
 
 
-import java.util.List;
-
-import Entidad.Elemento;
-import Graficos.BombaEfectoGrafico;
-import Graficos.BombaGrafico;
 import Graficos.EscudoEfectoGrafico;
-import Graficos.EscudoGrafico;
-import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import State.ProtegidoTorre;
-import Tienda.ManejadorEscudo;
-import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
-import Visitor.VisitorVacio;
 
 public class Escudo extends PowerUp{
 

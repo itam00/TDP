@@ -1,12 +1,9 @@
 package Objetos; 
 
-import Graficos.CongeladorEfectoGrafico;
 import Graficos.FuegoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
-import State.CongeladoEnemigo;
-import State.CongeladoTorre;
 import Visitor.VisitorPowerUp;
 
 public class Fuego extends PowerUp{

@@ -1,8 +1,7 @@
 package State;
 
-import Entidad.Elemento;
+import Entidad.Elemento; 
 import Personajes.Enemigo; 
-import Personajes.Torre;
 
 public class AtacandoEnemigo extends StateEnemigo{
 	Elemento ultimoAtacado;

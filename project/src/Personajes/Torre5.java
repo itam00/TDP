@@ -1,8 +1,6 @@
 package Personajes;
 
-import Disparos.DisparoTorre4;
 import Disparos.DisparoTorre5;
-import Graficos.Torre4Grafica;
 import Graficos.Torre5Grafica;
 
 public class Torre5 extends Torre{

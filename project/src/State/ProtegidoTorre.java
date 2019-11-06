@@ -1,8 +1,6 @@
 package State;
 
-import Personajes.Personaje;
 import Personajes.Torre;
-import PowerUps.Escudo;
 
 public class ProtegidoTorre extends StateTorre{
 

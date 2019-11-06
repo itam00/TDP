@@ -1,17 +1,10 @@
 package PowerUps;
 
-import Graficos.ElementoGrafico;
 import Graficos.PortalDerechoEfectoGrafico;
-import Graficos.PortalGrafico;
-import Graficos.PortalIzquierdoEfectoGrafico;
-import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import State.DefaultEnemigo;
-import Tienda.ManejadorPortal;
-import Tienda.Tienda;
 import Visitor.VisitorPowerUp;
-import Visitor.VisitorVacio;
 
 public class PortalAliado extends PowerUp{
 	

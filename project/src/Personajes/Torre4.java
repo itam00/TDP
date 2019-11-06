@@ -1,9 +1,7 @@
 package Personajes;
 
 
-import Disparos.DisparoTorre1;
 import Disparos.DisparoTorre4;
-import Entidad.Elemento;
 import Graficos.Torre4Grafica;
 
 public class Torre4 extends Torre{

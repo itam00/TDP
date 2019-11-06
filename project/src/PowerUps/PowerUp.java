@@ -1,13 +1,10 @@
 package PowerUps;
 
-import Entidad.Elemento;
+import Entidad.Elemento; 
 import Juego.Mapa;
 import Personajes.Enemigo;
-import Personajes.Personaje;
 import Personajes.Torre;
-import Recolectable.Recolectable;
 import Tienda.ManejadorPowerUp;
-import Tienda.Tienda;
 import Visitor.Visitor;
 
 public abstract class PowerUp extends Elemento{
