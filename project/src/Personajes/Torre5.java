@@ -6,7 +6,6 @@ import Graficos.Torre5Grafica;
 public class Torre5 extends Torre{
 	public Torre5() {
 		super();
-		precio = 0; //cambiar
 		rango = 5;
 		danio = 20;
 		vida = 100;

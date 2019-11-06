@@ -1,10 +1,10 @@
 package Recolectable;
+import Entidad.Elemento;
 import Juego.Mapa;
-import Objetos.Objeto;
 import Tienda.ManejadorPowerUp;
 import Visitor.Visitor;
 
-public abstract class Recolectable extends Objeto {
+public abstract class Recolectable extends Elemento {
 	long tiempoCreado;
 	
 	public Recolectable(int x, int y, Mapa m, ManejadorPowerUp maneja) {

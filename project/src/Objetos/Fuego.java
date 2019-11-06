@@ -1,6 +1,7 @@
 package Objetos; 
 
 import Graficos.FuegoGrafico;
+
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
@@ -12,7 +13,6 @@ public class Fuego extends PowerUp{
 	protected int frecuencia;
 	
 	public Fuego() {
-		precio=0;
 		grafico = new FuegoGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();

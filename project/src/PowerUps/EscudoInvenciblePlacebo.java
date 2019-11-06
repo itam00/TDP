@@ -12,7 +12,6 @@ public class EscudoInvenciblePlacebo extends PowerUp{
 	
 	
 	public EscudoInvenciblePlacebo() {
-		precio=0;
 		grafico = new GraficoVacio();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();

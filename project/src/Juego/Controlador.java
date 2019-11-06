@@ -1,7 +1,10 @@
 package Juego;
-import java.util.*;  
+import java.util.*;
 
+import Entidad.Elemento;
 import GUI.*;
+import Objetos.Objeto;
+import Objetos.Obstaculo;
 import Personajes.*;
 import PowerUps.PowerUp;
 import Tienda.Tienda;
@@ -73,14 +76,17 @@ public class Controlador {
 
 	public void click(int x,int y) {
 		if(y<576) {
-			if(tienda.hayComprado()){
-				Torre t = tienda.getComprado();
-				if (mapa.puedoPoner(t,x,y)) {
-					t.setPos(x, y,mapa);
-					mapa.agregar(t);
-				}
-				else
+			if(tienda.hayTorreComprada()){
+				Torre t = tienda.getTorreComprada();
+				if(!colocar(t,x,y)) {
 					tienda.devolver(t);
+				}
+			}
+			else if(tienda.hayObstaculoComprado()) {
+				Obstaculo o = tienda.getObstaculoComprado();
+				if(!colocar(o,x,y)) {
+					tienda.devolver(o);
+				}
 			}
 			else if(tienda.hayPowerUpUsado()) {
 				PowerUp p = tienda.getPowerUpUsado();
@@ -88,6 +94,14 @@ public class Controlador {
 				mapa.agregar(p);
 			}
 		}
+	}
+	public boolean colocar(Elemento e,int x,int y) {
+		boolean puedo = mapa.puedoPoner(e,x,y);
+		if (puedo) {
+			e.setPos(x, y,mapa);
+			mapa.agregar(e);
+		}
+		return puedo;
 	}
 	
 	

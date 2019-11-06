@@ -7,7 +7,6 @@ public class Torre1 extends Torre{
 	
 	public Torre1() {
 		super();
-		precio = 0; //cambiar
 		rango = 2;
 		danio = 1;
 		vida =200;

@@ -21,7 +21,7 @@ public class BotonTorre5 extends BotonTorre{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tienda.comprar(new Torre5());
+				tienda.comprarTorre(new Torre5());
 			}
 			
 		});

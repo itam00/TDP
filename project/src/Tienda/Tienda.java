@@ -1,23 +1,27 @@
 package Tienda;
 
 import java.awt.Dimension; 
+
+
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import Entidad.Comprable;
 import Juego.Jugador;
 import Juego.Mapa;
+import Objetos.Obstaculo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
 import Recolectable.*;
 
+@SuppressWarnings("serial")
 public class Tienda extends JPanel{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	protected Torre comprado;
+
+	protected Torre torreComprada;
+	protected Obstaculo obstaculoComprado;
 	protected PowerUp usado;
 	protected Jugador jugador;
 	ManejadorPowerUp manejadorCongelacion;
@@ -45,21 +49,27 @@ public class Tienda extends JPanel{
 		
 		agregarBotones();
 	}
-	public void comprar(Torre t) {
+	public void comprarObjeto(Obstaculo o) {
+		if(jugador.getOro()>=o.getPrecio()) {
+			obstaculoComprado = o;
+			jugador.quitarOro(o.getPrecio());
+		}
+	}
+	public void comprarTorre(Torre t) {
 		if(jugador.getOro()>=t.getPrecio()) {
-			comprado = t;
+			torreComprada = t;
 			jugador.quitarOro(t.getPrecio());
 		}
 	}
 	
-	public void comprar(PowerUp p,ManejadorPowerUp m) {
+	public void comprar(Comprable p,ManejadorPowerUp m) {
 		if(jugador.getOro()>=p.getPrecio()) {
 			jugador.quitarOro(p.getPrecio());
 			m.agregarPowerUp();
 		}
 	}
 	
-	public void devolver(Torre t) {
+	public void devolver(Comprable t) {
 		jugador.agregarOro(t.getPrecio());
 	}
 	
@@ -67,10 +77,20 @@ public class Tienda extends JPanel{
 		usado = p;
 	}
 	
-	public Torre getComprado() {
-		Torre aux = comprado;
-		//arreglar botones
-		comprado = null;
+	public boolean hayTorreComprada() {
+		return torreComprada!=null;
+	}
+	public boolean hayObstaculoComprado() {
+		return obstaculoComprado!=null;
+	}
+	public Torre getTorreComprada() {
+		Torre aux = torreComprada;
+		torreComprada =null;
+		return aux;
+	}
+	public Obstaculo getObstaculoComprado() {
+		Obstaculo aux = obstaculoComprado;
+		obstaculoComprado = null;
 		return aux;
 	}
 	
@@ -79,9 +99,7 @@ public class Tienda extends JPanel{
 		usado = null;
 		return aux;
 	}
-	public boolean hayComprado() {
-		return comprado != null;
-	}
+
 	public boolean hayPowerUpUsado() {
 		return usado != null;
 	}

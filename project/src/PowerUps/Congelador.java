@@ -12,7 +12,6 @@ public class Congelador extends PowerUp{
 	
 	
 	public Congelador() {
-		precio=0;
 		grafico = new CongeladorEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();

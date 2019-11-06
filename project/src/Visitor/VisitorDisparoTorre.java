@@ -1,7 +1,7 @@
 package Visitor;
 
 import Disparos.Disparo;
-import Entidad.Obstaculo;
+import Objetos.Objeto;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
@@ -35,7 +35,7 @@ public class VisitorDisparoTorre extends Visitor{
 		
 	}
 
-	public void visit(Obstaculo o) {
+	public void visit(Objeto o) {
 		o.disminuirVida(disparo.getDanio());
 		disparo.setMuerto(true);
 		

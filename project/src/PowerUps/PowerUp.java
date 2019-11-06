@@ -1,5 +1,6 @@
 package PowerUps;
 
+import Entidad.Comprable;
 import Entidad.Elemento; 
 import Juego.Mapa;
 import Personajes.Enemigo;
@@ -7,8 +8,7 @@ import Personajes.Torre;
 import Tienda.ManejadorPowerUp;
 import Visitor.Visitor;
 
-public abstract class PowerUp extends Elemento{
-	protected int precio;
+public abstract class PowerUp extends Elemento implements Comprable{
 	protected long duracion;
 	protected long tiempoCreado;
 	
@@ -31,7 +31,7 @@ public abstract class PowerUp extends Elemento{
 	}
 	
 	public int getPrecio() {
-		return precio;
+		return 0;
 	}
 	
 	public abstract void afectar(Enemigo e);

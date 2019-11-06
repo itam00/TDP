@@ -9,7 +9,6 @@ import Visitor.VisitorPowerUp;
 public class EscudoInvencible extends PowerUp{
 
 	public EscudoInvencible() {
-		precio=0;
 		grafico = new EscudoInvencibleGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();

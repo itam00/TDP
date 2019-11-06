@@ -13,7 +13,6 @@ public class Bomba extends PowerUp{
 	
 	public Bomba() {
 		super();
-		precio=0;
 		grafico = new BombaEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 	}

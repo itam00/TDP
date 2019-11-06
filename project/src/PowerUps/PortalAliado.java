@@ -10,7 +10,6 @@ public class PortalAliado extends PowerUp{
 	
 	public PortalAliado() {
 		super();
-		precio=0;
 		grafico = new PortalDerechoEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 		duracion=5000;

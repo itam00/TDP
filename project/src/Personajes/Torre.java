@@ -1,15 +1,14 @@
 package Personajes;
 
+import Entidad.Comprable;
 import Juego.Mapa;
 import State.DefaultTorre;
 import State.StateTorre;
 import Visitor.Visitor;
 import Visitor.VisitorTorre;
 
-public abstract class Torre extends Personaje{
+public abstract class Torre extends Personaje implements Comprable{
 	protected StateTorre state;
-	protected int precio;
-
 	public Torre() {
 		super();
 		visitor=new VisitorTorre(this);
@@ -44,7 +43,7 @@ public abstract class Torre extends Personaje{
 	}
 	
 	public int getPrecio() {
-		return precio;
+		return 0;
 	}
 	
 	public int getVida() {

@@ -5,7 +5,7 @@ import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
 
-public class Piedra extends Obstaculo {
+public class Piedra extends ObjetoMapa {
 
 	public Piedra(int x, int y, Mapa m) {
 		super(x, y, m);

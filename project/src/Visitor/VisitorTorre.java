@@ -1,7 +1,7 @@
 package Visitor;
 
 import Disparos.Disparo; 
-import Entidad.Obstaculo;
+import Objetos.Objeto;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
@@ -37,7 +37,7 @@ public class VisitorTorre extends Visitor{
 	}
 
 	@Override
-	public void visit(Obstaculo o) {
+	public void visit(Objeto o) {
 		// TODO Auto-generated method stub
 		
 	}

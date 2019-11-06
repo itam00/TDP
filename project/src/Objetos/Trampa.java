@@ -9,7 +9,6 @@ import Visitor.VisitorPowerUp;
 public class Trampa extends PowerUp{
 
 	public Trampa() {
-		precio=0;
 		grafico = new TrampaGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();

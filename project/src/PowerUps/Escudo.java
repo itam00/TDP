@@ -12,7 +12,6 @@ public class Escudo extends PowerUp{
 	protected long tiempoCreado;
 	
 	public Escudo() {
-		precio=0;
 		grafico = new EscudoEfectoGrafico();
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado= System.currentTimeMillis();
