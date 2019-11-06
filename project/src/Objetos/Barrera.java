@@ -10,10 +10,7 @@ import Visitor.VisitorPowerUp;
 
 public class Barrera extends Obstaculo{
 	
-	protected int vida;
-	
 	public Barrera(){
-		vida=100;
 		grafico = new BarreraGrafico();
 		vida = 500;
 	}
@@ -39,8 +36,5 @@ public class Barrera extends Obstaculo{
 	public float getFinRangoX() {
 		return x+50;
 	}
-	
-	public void disminuirVida(int n) {
-		vida-=n;
-	}
+
 }

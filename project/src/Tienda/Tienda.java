@@ -71,7 +71,7 @@ public class Tienda extends JPanel{
 	}
 	
 	public void setObstaculoUsado(Obstaculo o) {
-		
+		obstaculoUsado=o;
 	}
 	
 	public boolean hayTorreComprada() {

@@ -20,13 +20,14 @@ public abstract class Nivel {
 	protected Mapa mapa;
 	
 	public List<List<Enemigo>> getEnemigos(){
+		System.out.println(enemigos.size());
 		return enemigos;
 	}
 	public int getFrecuencia() {
 		return frecuencia;
 	}
 	
-	protected void agregarEnemigosAListas(String dir) {
+	protected synchronized void agregarEnemigosAListas(String dir) {
 		try {
 			Properties prop=new Properties();
 			 FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+dir);
