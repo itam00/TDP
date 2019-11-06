@@ -21,14 +21,14 @@ public class ManejadorBarrera extends ManejadorPowerUp {
 
 	@Override
 	public void usarPowerUp() {
-		if(cant>=0) {
+		if(cant>0) {
 			cant--;
 			tienda.setObstaculoUsado(new Barrera());
 			bloquear();
 		}
 	}
 	
-	public Recolectable getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getRecolectable(int x, int y, Mapa m) {
 		return null;
 	}
 }

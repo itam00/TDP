@@ -1,0 +1,76 @@
+package Tienda;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+import Juego.Mapa;
+import Recolectable.Recolectable;
+
+public abstract class ManejadorComprable {
+	protected Tienda tienda;
+	protected JButton comprar,usar;
+	protected JLabel cantidad;
+	protected int cant,tiempoEspera;
+	protected boolean bloqueado;
+	protected long ultimoUsado;
+	
+	public ManejadorComprable (Tienda t) {
+		this.tienda = t;
+		cant = 0;
+		comprar = new JButton();
+		usar = new JButton();
+		cantidad= new JLabel(""+cant);
+		comprar.setIcon(new ImageIcon(getClass().getResource("/Sprites/agregarIcono.gif")));
+		bloqueado = false;
+		ultimoUsado = 0;
+		Font fuente = new Font("Calibri", 2, 16);
+        cantidad.setFont(fuente);
+		usar.setHorizontalTextPosition( SwingConstants.CENTER );
+		usar.setVerticalTextPosition( SwingConstants.CENTER );
+		
+		comprar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				comprar();
+			}
+			
+		});
+	}
+	
+	public abstract void comprar();
+	
+	public abstract void bloquear();
+	
+	public abstract Recolectable getRecolectable(int x, int y, Mapa m);
+	
+	public void actualizar() {
+		
+		if(bloqueado) {
+			int tiempoRestante = (int)((System.currentTimeMillis()-ultimoUsado)/1000);
+			usar.setText(""+ (tiempoEspera-tiempoRestante));
+			System.out.println(tiempoRestante);
+			if(System.currentTimeMillis() - ultimoUsado >tiempoEspera) {
+				bloqueado = false;
+				usar.setEnabled(true);
+				usar.setText("");
+			}
+		}
+		cantidad.setText(""+cant);
+	}
+	
+	public void colocarEnTienda(int x, int y) {
+		tienda.add(usar);
+		tienda.add(comprar);
+		tienda.add(cantidad);
+		usar.setBounds(x,y,31,31);
+		comprar.setBounds(x+31,y,31,31);
+		cantidad.setBounds(x+65, y, 60, 30);
+	}
+}

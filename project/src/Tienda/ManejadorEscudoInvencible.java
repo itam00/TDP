@@ -22,14 +22,14 @@ public class ManejadorEscudoInvencible extends ManejadorPowerUp {
 
 	@Override
 	public void usarPowerUp() {
-		if(cant>=0) {
+		if(cant>0) {
 			cant--;
 			tienda.setPowerUpUsado(new EscudoInvenciblePlacebo());
 			bloquear();
 		}
 	}
 	
-	public Recolectable getPowerUp(int x, int y, Mapa m) {
+	public Recolectable getRecolectable(int x, int y, Mapa m) {
 		return null;
 	}
 	

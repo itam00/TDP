@@ -10,7 +10,7 @@ import Visitor.VisitorPowerUp;
 public class Fuego extends PowerUp{
 
 	protected long tiempoCreado,ultimoAfectar;
-	protected int frecuencia;
+	protected int frecuencia,daño;
 	
 	public Fuego() {
 		grafico = new FuegoGrafico();
@@ -19,13 +19,14 @@ public class Fuego extends PowerUp{
 		duracion=7500;
 		ultimoAfectar=0;
 		frecuencia=200;
+		daño=2;
 	}
 
 	public void afectar(Torre p) {
 		boolean puede=System.currentTimeMillis()-ultimoAfectar>frecuencia;
 		if(puede) {
 			ultimoAfectar = System.currentTimeMillis();
-			p.disminuirVida(2);
+			p.disminuirVida(daño);
 		}
 	}
 	
@@ -33,19 +34,19 @@ public class Fuego extends PowerUp{
 		boolean puede=System.currentTimeMillis()-ultimoAfectar>frecuencia;
 		if(puede) {
 			ultimoAfectar = System.currentTimeMillis();
-			p.disminuirVida(2);
+			p.disminuirVida(daño);
 		}
 	}
 	
 	
 	@Override
 	public float getInicioRangoX() {
-		return x-100;
+		return x-70;
 	}
 	
 	@Override
 	public float getFinRangoX() {
-		return x+100;
+		return x+70;
 	}
 
 }
