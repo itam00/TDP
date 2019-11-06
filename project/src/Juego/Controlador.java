@@ -82,7 +82,7 @@ public class Controlador {
 					tienda.devolver(t);
 				}
 			}
-			else if(tienda.hayObstaculoComprado()) {
+			else if(tienda.hayObstaculoUsado()) {
 				Obstaculo o = tienda.getObstaculoComprado();
 				if(!colocar(o,x,y)) {
 					tienda.devolver(o);

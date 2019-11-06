@@ -24,18 +24,11 @@ import Recolectable.*;
 public class Tienda extends JPanel{
 
 	protected Torre torreComprada;
-	protected Obstaculo obstaculoComprado;
+	protected Obstaculo obstaculoUsado;
 	protected PowerUp usado;
 	protected Jugador jugador;
 	List<ManejadorComprable> botones;
-	ManejadorPowerUp manejadorCongelacion;
-	ManejadorPowerUp manejadorBomba;
-	ManejadorPowerUp manejadorEscudo;
-	ManejadorPowerUp manejadorPortal;
-	ManejadorPowerUp manejadorFuego;
-	ManejadorPowerUp manejadorBarrera;
-	ManejadorPowerUp manejadorTrampa;
-	ManejadorPowerUp manejadorEscudoInvencible;
+
 	
 	public Tienda(Jugador j) {
 		this.setPreferredSize(new Dimension(824, 170));
@@ -54,12 +47,7 @@ public class Tienda extends JPanel{
 		
 		agregarBotones();
 	}
-	public void comprarObjeto(Obstaculo o) {
-		if(jugador.getOro()>=o.getPrecio()) {
-			obstaculoComprado = o;
-			jugador.quitarOro(o.getPrecio());
-		}
-	}
+	
 	public void comprarTorre(Torre t) {
 		if(jugador.getOro()>=t.getPrecio()) {
 			torreComprada = t;
@@ -82,11 +70,15 @@ public class Tienda extends JPanel{
 		usado = p;
 	}
 	
+	public void setObstaculoUsado(Obstaculo o) {
+		
+	}
+	
 	public boolean hayTorreComprada() {
 		return torreComprada!=null;
 	}
-	public boolean hayObstaculoComprado() {
-		return obstaculoComprado!=null;
+	public boolean hayObstaculoUsado() {
+		return obstaculoUsado!=null;
 	}
 	public Torre getTorreComprada() {
 		Torre aux = torreComprada;
@@ -94,8 +86,8 @@ public class Tienda extends JPanel{
 		return aux;
 	}
 	public Obstaculo getObstaculoComprado() {
-		Obstaculo aux = obstaculoComprado;
-		obstaculoComprado = null;
+		Obstaculo aux = obstaculoUsado;
+		obstaculoUsado = null;
 		return aux;
 	}
 	
