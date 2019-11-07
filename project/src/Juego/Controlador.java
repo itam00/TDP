@@ -8,6 +8,7 @@ import Objetos.Obstaculo;
 import Personajes.*;
 import PowerUps.PowerUp;
 import Tienda.Tienda;
+import Visitor.VisitorVenta;
 
 public class Controlador {
 	protected GUI gui;
@@ -92,6 +93,13 @@ public class Controlador {
 				PowerUp p = tienda.getPowerUpUsado();
 				p.setPos(x, y, mapa);
 				mapa.agregar(p);
+			}
+			else if(tienda.hayVenta()) {
+				VisitorVenta v= new VisitorVenta(tienda);
+				List<Elemento> elementos=mapa.elementosEn(x, y);
+				for (Elemento e:elementos)
+					e.accept(v);
+				tienda.vendio();
 			}
 		}
 	}

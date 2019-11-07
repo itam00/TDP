@@ -24,6 +24,7 @@ import Recolectable.*;
 public class Tienda extends JPanel{
 
 	protected Torre torreComprada;
+	protected boolean vender;
 	protected Obstaculo obstaculoUsado;
 	protected PowerUp usado;
 	protected Jugador jugador;
@@ -43,7 +44,7 @@ public class Tienda extends JPanel{
 		botones.add(new ManejadorBarrera(this));
 		botones.add(new ManejadorTrampa(this));
 		botones.add(new ManejadorEscudoInvencible(this));
-		
+		vender=false;
 		
 		agregarBotones();
 	}
@@ -81,7 +82,7 @@ public class Tienda extends JPanel{
 		return obstaculoUsado!=null;
 	}
 	public Torre getTorreComprada() {
-		Torre aux = torreComprada;
+		Torre aux  torreComprada;
 		torreComprada =null;
 		return aux;
 	}
@@ -120,6 +121,10 @@ public class Tienda extends JPanel{
 		for (int i=0; i<4;i++) {
 			botones.get(i+4).colocarEnTienda(700,i*35+10);
 		}
+		
+		BotonVenta venta= new BotonVenta(this);
+		venta.setBounds(520, 20, 80, 40);
+		add(venta);
 	}
 
 	public void paint(Graphics g) {
@@ -139,5 +144,17 @@ public class Tienda extends JPanel{
 	public void actualizar() {
 		for (ManejadorComprable m:botones)
 			m.actualizar();
+	}
+	
+	public boolean hayVenta() {
+		return vender;
+	}
+	
+	public void vendio() {
+		vender=false;
+	}
+	
+	public void quiereVender() {
+		vender=true;
 	}
 }

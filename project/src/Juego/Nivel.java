@@ -21,6 +21,7 @@ public abstract class Nivel {
 	protected Mapa mapa;
 	
 	public List<List<Enemigo>> getEnemigos(){
+		System.out.println(enemigos.size());
 		return enemigos;
 	}
 	public int getFrecuencia() {

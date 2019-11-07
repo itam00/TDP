@@ -55,7 +55,6 @@ public abstract class ManejadorComprable {
 		if(bloqueado) {
 			int tiempoRestante = (int)((System.currentTimeMillis()-ultimoUsado)/1000);
 			usar.setText(""+ (tiempoEspera-tiempoRestante));
-			System.out.println(tiempoRestante);
 			if(System.currentTimeMillis() - ultimoUsado >tiempoEspera) {
 				bloqueado = false;
 				usar.setEnabled(true);

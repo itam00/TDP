@@ -12,11 +12,11 @@ public abstract class Objeto extends Elemento{
 	public Objeto(int x, int y, Mapa m) {
 		super(x,y, m);
 		visitor= new VisitorObjeto(this);
-		vida =0;
 	}
 	
 	public Objeto() {
 		super();
+		visitor= new VisitorObjeto(this);
 	}
 	public abstract void afectar(Torre t);
 
@@ -26,6 +26,7 @@ public abstract class Objeto extends Elemento{
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
+	
 	public void disminuirVida(int n) {
 		vida-=n;
 		muerto = vida<=0;

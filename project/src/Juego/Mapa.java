@@ -163,6 +163,13 @@ public class Mapa{
 		return enemigosDerrotados;
 	}
 	
+	public List<Elemento> elementosEn(int x, int y){
+		List<Elemento> toreturn= new LinkedList<Elemento>();
+		for (Elemento e:entidades[y/96])                    // (y/96) es la fila
+			if ( e.getX()<= x && e.getX()+e.getAncho()>=x)
+				toreturn.add(e);
+		return toreturn;
+	}
 	
 
 }
