@@ -1,6 +1,7 @@
 package Juego;
 
 import java.io.FileInputStream;
+
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,7 +27,7 @@ public abstract class Nivel {
 		return frecuencia;
 	}
 	
-	protected void agregarEnemigosAListas(String dir) {
+	protected synchronized void agregarEnemigosAListas(String dir) {
 		try {
 			Properties prop=new Properties();
 			 FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+dir);
@@ -37,6 +38,7 @@ public abstract class Nivel {
 			 
 			 for (String key : keys){
 				 int fila =  Integer.parseInt(key)%6;
+				 System.out.println(prop.getProperty(key));
 				 
 				 switch(prop.getProperty(key)){
 				 
@@ -57,9 +59,9 @@ public abstract class Nivel {
 						 break;
 					 case "fin oleada":
 						 enemigos.add(oleada);
+						 System.out.println(oleada.size());
 						 oleada = new LinkedList<Enemigo>();
-						 break;
-						 
+						 break;	 
 				}
 	
 			 }
