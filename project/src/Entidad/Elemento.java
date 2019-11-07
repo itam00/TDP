@@ -105,7 +105,6 @@ public abstract class Elemento {
 
 	public void actualizar() {
 		grafico.actualizar(x,y);
-		//muerto= (muerto==true || grafico.estaMuerto());
 	}
 	
 	public Visitor getVisitor() {

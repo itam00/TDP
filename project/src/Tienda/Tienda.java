@@ -82,7 +82,7 @@ public class Tienda extends JPanel{
 		return obstaculoUsado!=null;
 	}
 	public Torre getTorreComprada() {
-		Torre aux  torreComprada;
+		Torre aux = torreComprada;
 		torreComprada =null;
 		return aux;
 	}

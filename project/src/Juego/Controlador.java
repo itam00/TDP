@@ -42,6 +42,9 @@ public class Controlador {
 	public synchronized void actualizar() {
 		
 		mapa.actualizar();
+		if(mapa.enemigoGana()) {
+			System.out.println("enemigo gana");
+		}
 		tienda.actualizar();
 		
 		agregarEnemigos();

@@ -87,6 +87,7 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void actualizar() {
+		grafico.actualizar(x,y);
 		state.actualizar();
 	}
 	
@@ -96,5 +97,8 @@ public abstract class Enemigo extends Personaje{
 	
 	public void mover() {
 		x-=velocidad;
+		if(x<0) {
+			mapa.enemigoLlegaFinMapa();
+		}
 	}
 }

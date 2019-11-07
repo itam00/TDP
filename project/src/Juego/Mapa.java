@@ -16,12 +16,14 @@ public class Mapa{
 	protected List<Elemento> porAgregar;
 	protected Tienda tienda;
 	protected int enemigosDerrotados;
+	protected boolean enemigoLlegaFin;
 	
 	@SuppressWarnings("unchecked")
 	public Mapa(GUI g, Tienda t) {
 		gui = g;
 		tienda=t;
 		enemigosDerrotados =0;
+		enemigoLlegaFin = false;
 
 		entidades = (List<Elemento>[]) new LinkedList[cantFilas];
 		porAgregar = new LinkedList<Elemento>();
@@ -161,6 +163,13 @@ public class Mapa{
 	}
 	public int getDerrotados() {
 		return enemigosDerrotados;
+	}
+	public void enemigoLlegaFinMapa() {
+		enemigoLlegaFin = true;
+	}
+	
+	public boolean enemigoGana() {
+		return enemigoLlegaFin;  
 	}
 	
 	public List<Elemento> elementosEn(int x, int y){
