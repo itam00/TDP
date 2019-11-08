@@ -54,12 +54,12 @@ public abstract class Torre extends Personaje implements Comprable{
 	
 	@Override
 	public float getInicioRangoX() {
-		return grafico.getX();
+		return x;
 	}
 
 	@Override
 	public float getFinRangoX() {
-		return grafico.getX()+rango*50;
+		return x+rango*100;
 	}
 	
 	public void setState(StateTorre state) {

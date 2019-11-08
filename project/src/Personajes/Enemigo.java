@@ -43,6 +43,9 @@ public abstract class Enemigo extends Personaje{
 	public void aplicarDaño(int n) {
 		vida-=n;
 		muerto=vida<=0;
+		if(muerto) {
+			mapa.incrementarDerrotados();
+		}
 	}
 
 	
@@ -78,7 +81,6 @@ public abstract class Enemigo extends Personaje{
 	public void soltarPowerUp() {
 		if(Math.random()<probCongelacion) {
 			mapa.soltarPowerUp((int)x,(int)y);
-			System.out.println("se solto un congelador");
 		}
 	}
 	
