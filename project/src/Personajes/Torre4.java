@@ -2,8 +2,7 @@ package Personajes;
 
 
 import Disparos.DisparoTorre4;
-import Graficos.Torre4Grafica;
-
+import Graficos.ElementoGrafico;
 public class Torre4 extends Torre{
 
 	
@@ -15,6 +14,8 @@ public class Torre4 extends Torre{
 		vida = 100;
 		frecuenciaDefault=500;
 		frecuencia =frecuenciaDefault;
+		direccionGrafico = "/Sprites/torre4.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 
 	@Override
@@ -26,11 +27,7 @@ public class Torre4 extends Torre{
 		}
 	}
 
-	@Override
-	public void crearGrafico(int x, int y) {
-		grafico = new Torre4Grafica();
-		
-	}
+
 
 
 

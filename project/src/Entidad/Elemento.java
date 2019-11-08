@@ -17,6 +17,7 @@ public abstract class Elemento {
 	protected int inicioRangoY,finRangoY; //no se usa
 	protected Visitor visitor;
 	protected List<Integer> filas;
+	protected String direccionGrafico;
 	
 	public Elemento(int x,int y, Mapa m) {
 		muerto=false;

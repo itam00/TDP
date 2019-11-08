@@ -17,7 +17,6 @@ public abstract class Torre extends Personaje implements Comprable{
 	
 	public void setPos(int x,int y, Mapa m) {
 		super.setPos(x,y,m);
-		crearGrafico(x,y);
 		this.x=(int)(x/102)*102;
 		
 	}
@@ -63,8 +62,6 @@ public abstract class Torre extends Personaje implements Comprable{
 	public void setState(StateTorre state) {
 		this.state = state;
 	}
-	
-	public abstract void crearGrafico(int x,int y);
 	
 	public abstract void disparar();
 	

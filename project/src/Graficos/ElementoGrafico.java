@@ -3,18 +3,20 @@ package Graficos;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public abstract class ElementoGrafico extends JLabel{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class ElementoGrafico extends JLabel{
+
 	protected int width, height;
 	protected ImageIcon image;
 	protected boolean muerto;
 	
-	public ElementoGrafico() {
-		muerto=false;
+	
+	public ElementoGrafico(String dir) {
+		muerto = false;
 		this.setOpaque(false);
+		image = new ImageIcon(getClass().getResource(dir));
+		width  =image.getIconWidth();
+		height = image.getIconHeight();
+		this.setIcon(image);
 	}
 	
 	public void setMuerto(boolean b) {

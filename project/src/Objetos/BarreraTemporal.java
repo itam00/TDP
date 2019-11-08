@@ -1,6 +1,6 @@
 package Objetos;
 
-import Graficos.BarreraGrafico; 
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
@@ -12,7 +12,8 @@ public class BarreraTemporal extends PowerUp{
 	
 	public BarreraTemporal(){
 		super();
-		grafico = new BarreraGrafico();
+		direccionGrafico = "/Sprites/muro.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=7500;

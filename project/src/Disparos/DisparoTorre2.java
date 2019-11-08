@@ -1,6 +1,6 @@
 package Disparos;
 
-import Graficos.DisparoGrafico2;
+import Graficos.ElementoGrafico;
 import Juego.Mapa;
 import Visitor.VisitorDisparoTorre;
 
@@ -9,7 +9,8 @@ public class DisparoTorre2 extends Disparo {
 
 	public DisparoTorre2(int x, int y,Mapa m,int danio, float rango) {
 		super(x, y,m,danio,rango);
-		grafico=  new DisparoGrafico2(x, y);
+		direccionGrafico = "/Sprites/proyectilTorre2.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 		velocidad = 3;
 		visitor = new VisitorDisparoTorre(this);
 	}

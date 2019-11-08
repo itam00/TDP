@@ -1,8 +1,9 @@
 package Personajes;
 
 import Disparos.DisparoEnemigo2;
+
 import Entidad.Elemento;
-import Graficos.Enemigo2Grafico;
+import Graficos.ElementoGrafico;
 import Juego.Mapa;
 
 public class Enemigo2 extends Enemigo{
@@ -18,8 +19,8 @@ public class Enemigo2 extends Enemigo{
 		recompensa = 100;
 		ultimoAtaque=0;
 		frecuenciaDefault=600;
-		frecuencia=frecuenciaDefault;
-		grafico= new Enemigo2Grafico();
+		direccionGrafico = "/Sprites/enemigo2.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 	
 	public void atacar(Elemento elem) {

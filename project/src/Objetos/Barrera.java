@@ -1,17 +1,18 @@
 package Objetos;
 
-import Graficos.BarreraGrafico; 
+
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import PowerUps.PowerUp;
 import State.AtacandoEnemigo;
 import State.AtacandoTorre;
-import Visitor.VisitorPowerUp;
+
 
 public class Barrera extends Obstaculo{
 	
 	public Barrera(){
-		grafico = new BarreraGrafico();
+		direccionGrafico = "/Sprites/muro.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 		vida = 500;
 	}
 

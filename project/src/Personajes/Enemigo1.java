@@ -1,6 +1,6 @@
 package Personajes;
 
-import Graficos.Enemigo1Grafico; 
+import Graficos.ElementoGrafico;
 import Juego.Mapa;
 
 public class Enemigo1 extends Enemigo{
@@ -17,7 +17,8 @@ public class Enemigo1 extends Enemigo{
 		ultimoAtaque=0;
 		frecuenciaDefault=500;
 		frecuencia=frecuenciaDefault;
-		grafico= new Enemigo1Grafico();
+		direccionGrafico = "/Sprites/enemigo1.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 
 	

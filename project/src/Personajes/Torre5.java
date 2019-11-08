@@ -1,7 +1,7 @@
 package Personajes;
 
 import Disparos.DisparoTorre5;
-import Graficos.Torre5Grafica;
+import Graficos.ElementoGrafico;
 
 public class Torre5 extends Torre{
 	public Torre5() {
@@ -12,6 +12,8 @@ public class Torre5 extends Torre{
 		frecuenciaDefault=500;
 		frecuencia =frecuenciaDefault;
 		cantFilas=2;
+		direccionGrafico = "/Sprites/torre5.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 
 	@Override
@@ -23,9 +25,5 @@ public class Torre5 extends Torre{
 		}
 	}
 
-	@Override
-	public void crearGrafico(int x, int y) {
-		grafico = new Torre5Grafica();
-		
-	}
+
 }

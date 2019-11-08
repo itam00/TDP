@@ -1,6 +1,8 @@
-package Entidad;
+package Objetos;
 
-import Graficos.PiedraGrafica;
+import Entidad.ObjetoMapa;
+import Graficos.ElementoGrafico;
+
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
@@ -10,7 +12,8 @@ public class Piedra extends ObjetoMapa {
 	public Piedra(int x, int y, Mapa m) {
 		super(x, y, m);
 		vida=100;
-		grafico= new PiedraGrafica(x,y);
+		direccionGrafico = "/Sprites/piedra.png";
+		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 	
 	public void afectar (Torre t) {

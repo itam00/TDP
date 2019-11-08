@@ -1,6 +1,8 @@
 package PowerUps; 
 
-import Graficos.CongeladorEfectoGrafico;
+
+
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import State.CongeladoEnemigo;
@@ -12,7 +14,8 @@ public class Congelador extends PowerUp{
 	
 	
 	public Congelador() {
-		grafico = new CongeladorEfectoGrafico();
+		direccionGrafico= "/Sprites/congelacionEfecto.gif";
+		grafico = new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=2000;

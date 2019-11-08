@@ -73,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="Entidad.Piedra" project="JuegoTDP" file="/JuegoTDP/src/Entidad/Piedra.java" 
+  <class id="9" language="java" name="Objetos.Piedra" project="JuegoTDP" file="/JuegoTDP/src/Objetos/Piedra.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1228" y="656"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -154,16 +154,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="Juego.nivel1" project="JuegoTDP" file="/JuegoTDP/src/Juego/nivel1.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3008" y="41"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="19" language="java" name="Juego.Nivel" project="JuegoTDP" file="/JuegoTDP/src/Juego/Nivel.java" 
+  <class id="18" language="java" name="Juego.Nivel" project="JuegoTDP" file="/JuegoTDP/src/Juego/Nivel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="3114" y="-163"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -172,7 +163,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="Juego.Jugador" project="JuegoTDP" file="/JuegoTDP/src/Juego/Jugador.java" 
+  <class id="19" language="java" name="Juego.Jugador" project="JuegoTDP" file="/JuegoTDP/src/Juego/Jugador.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="3634" y="-634"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -181,7 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="Tienda.ManejadorEscudo" project="JuegoTDP" 
+  <class id="20" language="java" name="Tienda.ManejadorEscudo" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorEscudo.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="3868" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -190,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="Tienda.ManejadorCongelacion" project="JuegoTDP" 
+  <class id="21" language="java" name="Tienda.ManejadorCongelacion" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorCongelacion.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4138" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -199,7 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="Tienda.ManejadorBarrera" project="JuegoTDP" 
+  <class id="22" language="java" name="Tienda.ManejadorBarrera" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorBarrera.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4408" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="Tienda.BotonTorre" project="JuegoTDP" file="/JuegoTDP/src/Tienda/BotonTorre.java" 
+  <class id="23" language="java" name="Tienda.BotonTorre" project="JuegoTDP" file="/JuegoTDP/src/Tienda/BotonTorre.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4875" y="-727"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -217,7 +208,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="Tienda.BotonTorre5" project="JuegoTDP" 
+  <class id="24" language="java" name="Tienda.BotonTorre5" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/BotonTorre5.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4459" y="-579"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,7 +217,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="Tienda.BotonTorre4" project="JuegoTDP" 
+  <class id="25" language="java" name="Tienda.BotonTorre4" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/BotonTorre4.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4627" y="-588"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -235,7 +226,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="Tienda.ManejadorEscudoInvencible" project="JuegoTDP" 
+  <class id="26" language="java" name="Tienda.ManejadorEscudoInvencible" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorEscudoInvencible.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4678" y="546"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -244,7 +235,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="Tienda.ManejadorPowerUp" project="JuegoTDP" 
+  <class id="27" language="java" name="Tienda.ManejadorPowerUp" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorPowerUp.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4779" y="353"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -253,7 +244,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="Tienda.ManejadorBomba" project="JuegoTDP" 
+  <class id="28" language="java" name="Tienda.ManejadorBomba" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorBomba.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4948" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -262,7 +253,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="Tienda.ManejadorComprable" project="JuegoTDP" 
+  <class id="29" language="java" name="Tienda.ManejadorComprable" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorComprable.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4500" y="-213"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -271,7 +262,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="Tienda.BotonTorre1" project="JuegoTDP" 
+  <class id="30" language="java" name="Tienda.BotonTorre1" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/BotonTorre1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4795" y="-579"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -280,7 +271,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="Tienda.ManejadorPortal" project="JuegoTDP" 
+  <class id="31" language="java" name="Tienda.ManejadorPortal" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorPortal.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="5218" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -289,7 +280,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="33" language="java" name="Tienda.BotonTorre3" project="JuegoTDP" 
+  <class id="32" language="java" name="Tienda.BotonTorre3" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/BotonTorre3.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4963" y="-588"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -298,7 +289,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="34" language="java" name="Tienda.BotonVenta" project="JuegoTDP" file="/JuegoTDP/src/Tienda/BotonVenta.java" 
+  <class id="33" language="java" name="Tienda.BotonVenta" project="JuegoTDP" file="/JuegoTDP/src/Tienda/BotonVenta.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4380" y="-709"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -307,7 +298,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="Tienda.BotonTorre2" project="JuegoTDP" 
+  <class id="34" language="java" name="Tienda.BotonTorre2" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/BotonTorre2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="5131" y="-579"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -316,7 +307,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="Tienda.ManejadorFuego" project="JuegoTDP" 
+  <class id="35" language="java" name="Tienda.ManejadorFuego" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorFuego.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="5488" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -325,7 +316,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="Tienda.Tienda" project="JuegoTDP" file="/JuegoTDP/src/Tienda/Tienda.java" 
+  <class id="36" language="java" name="Tienda.Tienda" project="JuegoTDP" file="/JuegoTDP/src/Tienda/Tienda.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="3990" y="-914"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -334,7 +325,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="38" language="java" name="Tienda.ManejadorTrampa" project="JuegoTDP" 
+  <class id="37" language="java" name="Tienda.ManejadorTrampa" project="JuegoTDP" 
     file="/JuegoTDP/src/Tienda/ManejadorTrampa.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="5758" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -343,278 +334,362 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="39">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="40" name="controlador"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="24"/>  
-  </generalization>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="38"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <association id="45">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="46" name="tienda"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <association id="49">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="50" name="entidades"/>      
-      <multiplicity id="51" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="52">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="53">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="54">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="55">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <association id="56">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="57" name="gui"/>      
-      <multiplicity id="58" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="59">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="60" name="tienda"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="62">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="63">    
-    <end type="SOURCE" refId="35"/>    
-    <end type="TARGET" refId="24"/>  
-  </generalization>  
-  <generalization id="64">    
+  <generalization id="38">    
     <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="28"/>  
+    <end type="TARGET" refId="29"/>  
   </generalization>  
-  <association id="65">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="66" name="jugador"/>      
-      <multiplicity id="67" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="68">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <association id="69">    
-    <end type="SOURCE" refId="37" navigable="false">      
-      <attribute id="70" name="botones"/>      
-      <multiplicity id="71" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="30" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="72">    
+  <association id="39">    
     <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="73" name="porAgregar"/>      
-      <multiplicity id="74" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="75">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="76" name="jugador"/>      
-      <multiplicity id="77" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="78">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="79" name="tienda"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="81">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="82" name="gui"/>      
-      <multiplicity id="83" minimum="0" maximum="1"/>    
+      <attribute id="40" name="gui">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="84">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="85">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <association id="86">    
+  <association id="42">    
     <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="87" name="tiempo"/>      
-      <multiplicity id="88" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="89">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="90" name="mapa"/>      
-      <multiplicity id="91" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="92">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="93" name="mapa"/>      
-      <multiplicity id="94" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="95">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <association id="96">    
-    <end type="SOURCE" refId="34" navigable="false">      
-      <attribute id="97" name="tienda"/>      
-      <multiplicity id="98" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="99">    
-    <end type="SOURCE" refId="37" navigable="false">      
-      <attribute id="100" name="jugador"/>      
-      <multiplicity id="101" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="102">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="103" name="mapa"/>      
-      <multiplicity id="104" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="105">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="106">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <association id="107">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="108" name="tienda"/>      
-      <multiplicity id="109" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="110">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <association id="111">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="112" name="elJuego"/>      
-      <multiplicity id="113" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="114">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="24"/>  
-  </generalization>  
-  <generalization id="115">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="30"/>  
-  </generalization>  
-  <association id="116">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="117" name="nivel"/>      
-      <multiplicity id="118" minimum="0" maximum="1"/>    
+      <attribute id="43" name="jugador">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="19" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="119">    
+  <association id="45">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="46" name="tienda">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="49">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="50" name="tienda">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="51" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="54">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="55" name="porAgregar">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="56" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="58">    
     <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="120" name="contador"/>      
-      <multiplicity id="121" minimum="0" maximum="1"/>    
+      <attribute id="59" name="nivel">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="60" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="61">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="62">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="63">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="64" name="jugador">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="65" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="68">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="69" name="jugador">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="70" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="72">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="73" name="entidades">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="74" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="75">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="76">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="77">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="78" name="mapa">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="79" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="81">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="82">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="83" name="controlador">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="84" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="86" name="mapa">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="87" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="88">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="89">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="90" name="elJuego">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="91" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="92">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="93">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="94" name="tienda">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="95" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="96">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="97" name="tienda">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="98" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="99">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="100">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="101" name="tiempo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="102" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="122">    
-    <end type="SOURCE" refId="6"/>    
+  <generalization id="103">    
+    <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <generalization id="123">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="24"/>  
-  </generalization>  
-  <generalization id="124">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="125">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="24"/>  
-  </generalization>  
-  <association id="126">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="127" name="tienda"/>      
-      <multiplicity id="128" minimum="0" maximum="1"/>    
+  <association id="104">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="105" name="tienda">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="106" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
+    <end type="TARGET" refId="36" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="107">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="108" name="botones">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="109" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="110">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="111">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="112" name="contador">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="113" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="114">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="115" name="tienda">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="116" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="117">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="118">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="119">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="120" name="mapa">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="121" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="123" name="gui">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="124" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="125">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="126">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

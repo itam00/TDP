@@ -1,6 +1,6 @@
 package Objetos;
 
-import Graficos.TrampaGrafico;
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
@@ -9,7 +9,8 @@ import Visitor.VisitorPowerUp;
 public class Trampa extends PowerUp{
 
 	public Trampa() {
-		grafico = new TrampaGrafico();
+		direccionGrafico = "/Sprites/moneda.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=-Integer.MAX_VALUE;

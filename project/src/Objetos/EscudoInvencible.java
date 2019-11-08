@@ -1,6 +1,7 @@
 package Objetos;
 
-import Graficos.EscudoInvencibleGrafico;
+import Graficos.ElementoGrafico;
+
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
@@ -9,7 +10,8 @@ import Visitor.VisitorPowerUp;
 public class EscudoInvencible extends PowerUp{
 
 	public EscudoInvencible() {
-		grafico = new EscudoInvencibleGrafico();
+		direccionGrafico = "/Sprites/veneno.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=-Integer.MAX_VALUE;

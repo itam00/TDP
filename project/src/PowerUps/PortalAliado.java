@@ -1,6 +1,6 @@
 package PowerUps;
 
-import Graficos.PortalDerechoEfectoGrafico;
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import State.DefaultEnemigo;
@@ -10,7 +10,8 @@ public class PortalAliado extends PowerUp{
 	
 	public PortalAliado() {
 		super();
-		grafico = new PortalDerechoEfectoGrafico();
+		direccionGrafico= "/Sprites/portalIzquierdo.gif";
+		grafico = new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		duracion=5000;
 	}

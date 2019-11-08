@@ -3,8 +3,9 @@ package PowerUps;
 
 import java.util.List;  
 
+
 import Entidad.Elemento;
-import Graficos.BombaEfectoGrafico;
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Visitor.VisitorPowerUp;
@@ -13,7 +14,8 @@ public class Bomba extends PowerUp{
 	
 	public Bomba() {
 		super();
-		grafico = new BombaEfectoGrafico();
+		direccionGrafico= "/Sprites/bombaEfecto.gif";
+		grafico = new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 	}
 
