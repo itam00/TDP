@@ -2,7 +2,7 @@ package Tienda;
 
 import javax.swing.ImageIcon;
 import Juego.Mapa;
-import Objetos.Fuego;
+import PowerUps.Fuego;
 import Recolectable.Recolectable;
 
 public class ManejadorFuego extends ManejadorPowerUp {

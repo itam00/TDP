@@ -1,10 +1,9 @@
-package Objetos; 
+package PowerUps; 
 
-import Graficos.FuegoGrafico;
+import Graficos.ElementoGrafico;
 
 import Personajes.Enemigo;
 import Personajes.Torre;
-import PowerUps.PowerUp;
 import Visitor.VisitorPowerUp;
 
 public class Fuego extends PowerUp{
@@ -13,7 +12,8 @@ public class Fuego extends PowerUp{
 	protected int frecuencia,daño;
 	
 	public Fuego() {
-		grafico = new FuegoGrafico();
+		direccionGrafico = "/Sprites/fuego.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=7500;

@@ -13,8 +13,8 @@ public class PowerUpGrafico extends ElementoGrafico implements MouseListener {
 	private static final long serialVersionUID = 1L;
 	protected ManejadorPowerUp manejador;
 	
-	public PowerUpGrafico(ManejadorPowerUp m) {
-		super();
+	public PowerUpGrafico(ManejadorPowerUp m,String dir) {
+		super(dir);
 		addMouseListener(this);
 		manejador=m;
 	}

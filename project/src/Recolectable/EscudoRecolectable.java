@@ -1,6 +1,7 @@
 package Recolectable;
 
-import Graficos.EscudoGrafico; 
+ 
+import Graficos.PowerUpGrafico;
 import Juego.Mapa;
 import Tienda.ManejadorEscudo;
 import Visitor.VisitorVacio;
@@ -8,7 +9,8 @@ import Visitor.VisitorVacio;
 public class EscudoRecolectable extends Recolectable{
 	public EscudoRecolectable(int x, int y, Mapa m,ManejadorEscudo maneja) {
 		super(x, y, m,maneja);
-		grafico = new EscudoGrafico(maneja);
+		direccionGrafico = "/Sprites/escudoPowerUp.gif";
+		grafico = new PowerUpGrafico(maneja,direccionGrafico);
 		visitor = new VisitorVacio();
 	}
 

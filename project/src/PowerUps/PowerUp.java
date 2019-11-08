@@ -39,4 +39,6 @@ public abstract class PowerUp extends Elemento implements Comprable{
 		super.actualizar();
 	}
 	
+	public void disminuirVida(int v) {}
+	
 }

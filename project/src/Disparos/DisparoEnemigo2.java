@@ -1,6 +1,6 @@
 package Disparos;
 
-import Graficos.DisparoGraficoEnemigo2;
+import Graficos.ElementoGrafico;
 import Juego.Mapa;
 import Visitor.VisitorDisparoEnemigo;
 
@@ -8,9 +8,11 @@ public class DisparoEnemigo2 extends Disparo{
 
 	public DisparoEnemigo2(int x, int y,Mapa m,int danio,float rango) {
 		super(x, y,m,danio,rango);
-		grafico=  new DisparoGraficoEnemigo2(x, y);
+		direccionGrafico = "/Sprites/enemigo2Proyectil.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 		velocidad = -4;
 		visitor = new VisitorDisparoEnemigo(this);
+		
 	}
 
 

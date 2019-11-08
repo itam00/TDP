@@ -23,7 +23,7 @@ public class GUI extends JFrame implements MouseListener{
 	private Controlador controlador;
 	protected List<ElementoGrafico>[] entidades;
 	protected ImageIcon fondo;
-	protected JPanel panelJuego,panelUtilidades;
+	protected JPanel panelJuego,panelTienda;
 	protected Tienda tienda;
 	protected Jugador jugador;
 
@@ -41,7 +41,7 @@ public class GUI extends JFrame implements MouseListener{
 		addMouseListener(this);
 		setearVentana();
 		setearPanelJuego();
-		setearPanelUtilidades();
+		setearPanelTienda();
 
 		tiempo.start();
 
@@ -85,7 +85,9 @@ public class GUI extends JFrame implements MouseListener{
 	}
 	
 
-
+	/**
+	 * configura el panel principal
+	 */
 	private void setearPanelJuego() {
 		panelJuego = new JPanel();
 		panelJuego.setLayout(null);
@@ -98,12 +100,18 @@ public class GUI extends JFrame implements MouseListener{
 		repaint();
 	}
 	
-	private void setearPanelUtilidades(){
-		tienda.setBounds(0,576,828,160);
+	/**
+	 * configura y agraga la tienda al panel principal
+	 */
+	
+	private void setearPanelTienda(){
+		tienda.setBounds(0,576,1028,160);
 		getContentPane().add(tienda);
-		jugador.setBounds(828,576,300,160);
-		getContentPane().add(jugador);
 	}
+	
+	/**
+	 * agrega un label con la imagen del mapa de fondo
+	 */
 
 	private void agregarFondo() {
 		ImageIcon imagen = new ImageIcon(this.getClass().getResource("/Sprites/sueloMapa.png"));
@@ -114,16 +122,22 @@ public class GUI extends JFrame implements MouseListener{
 		
 		panelJuego.add(dibujo);
 	}
+	
+	/**
+	 * añade el elemento grafico de un elemento e al panel principal
+	 * @param e elemento al que se le solicita su grafico para ser añadido
+	 */
 
 	public synchronized void añadirElemento(Elemento e) {
 		ElementoGrafico grafico = e.obtenerGrafico();
 		panelJuego.add(grafico);
-		float x = e.getX();
-		float y = e.getY();
-		//grafico.setBounds((int)x,(int)y, grafico.getAlto(), grafico.getAncho());
-		grafico.setSize(grafico.getAlto(), grafico.getAncho());
+		
 		panelJuego.setComponentZOrder(grafico, 0);
 	}
+	/**
+	 * Elimina el elemento grafico de un elemento e del panel principial
+	 * @param e elemento al que se le solicita su grafico para ser eliminado
+	 */
 
 	public void eliminar(Elemento e) {
 		panelJuego.remove(e.obtenerGrafico());
@@ -131,9 +145,6 @@ public class GUI extends JFrame implements MouseListener{
 		repaint();
 	}
 	
-	public Tienda getTienda() {
-		return tienda;
-	}
 	
 	public void enemigoGana() {
 		JLabel pierde= new JLabel ("gano la maquinola");
@@ -146,5 +157,4 @@ public class GUI extends JFrame implements MouseListener{
 		
 	}
 }
-//setbound
-//setlocation
+

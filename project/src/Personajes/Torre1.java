@@ -1,19 +1,22 @@
 package Personajes;
 
-import Disparos.DisparoTorre1; 
-import Graficos.Torre1Grafica;
+import Disparos.DisparoTorre1;
+import Graficos.ElementoGrafico;
 
 public class Torre1 extends Torre{
 	
 	public Torre1() {
 		super();
-		rango = 2;
+		rango = 200;
 		danio = 1;
 		vida =200;
 		vidaMaxima=vida;
 		cantFilas=1;
 		frecuenciaDefault=1000;
 		frecuencia = frecuenciaDefault;
+		direccionGrafico = "/Sprites/isaac.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
+		
 	}
 	
 	
@@ -21,14 +24,9 @@ public class Torre1 extends Torre{
 	public void disparar() {
 		if(puedeAtacar()) {
 			for (Integer fila:filas) {
-				mapa.agregar(new DisparoTorre1((int)x,fila*96,mapa,danio,rango*96));
+				mapa.agregar(new DisparoTorre1((int)x,fila*96,mapa,danio,rango));
 			}
 		}
-	}
-
-	@Override
-	public void crearGrafico(int x, int y) {
-		grafico = new Torre1Grafica(x,y);
 	}
 
 	

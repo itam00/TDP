@@ -1,6 +1,6 @@
 package Personajes;
 
-import Graficos.Enemigo4GemeloGrafico;
+import Graficos.ElementoGrafico;
 import Juego.Mapa;
 
 public class Enemigo4Gemelo extends Enemigo{
@@ -16,7 +16,8 @@ public class Enemigo4Gemelo extends Enemigo{
 		ultimoAtaque=0;
 		frecuenciaDefault=500;
 		frecuencia=frecuenciaDefault;
-		grafico= new Enemigo4GemeloGrafico();
+		direccionGrafico = "/Sprites/enemigo4Gemelo.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 	
 }

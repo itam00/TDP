@@ -1,7 +1,6 @@
 package PowerUps; 
 
-import Graficos.GraficoVacio;
-import Objetos.EscudoInvencible;
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Visitor.VisitorPowerUp;
@@ -12,7 +11,8 @@ public class EscudoInvenciblePlacebo extends PowerUp{
 	
 	
 	public EscudoInvenciblePlacebo() {
-		grafico = new GraficoVacio();
+		direccionGrafico= "/Sprites/transparente.gif";
+		grafico = new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=5000;

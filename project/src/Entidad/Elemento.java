@@ -17,6 +17,7 @@ public abstract class Elemento {
 	protected Mapa mapa;
 	protected Visitor visitor;
 	protected List<Integer> filas;
+	protected String direccionGrafico;
 	
 	public Elemento(int x,int y, Mapa m) {
 		muerto=false;
@@ -48,6 +49,10 @@ public abstract class Elemento {
 	public List<Integer> getFilas() {
 		return filas;
 	}
+	/**
+	 * retorna el ancho que ocupa el grafico de un elemento en la pantalla
+	 * @return ancho del elemento 
+	 */
 	
 	public int getAncho() {
 		return grafico.getAncho();
@@ -93,15 +98,24 @@ public abstract class Elemento {
 		mapa=m;
 	}
 	
-
+	/**
+	 * actualiza el grafico del elemento segun la posicion logica del mismo
+	 */
 	public void actualizar() {
 		grafico.actualizar(x,y);
 	}
 	
+	/**
+	 * retorna el visitor del elemento
+	 * @return visitor del elemento
+	 */
 	public Visitor getVisitor() {
 		return visitor;
 	}
-	
-	public void disminuirVida(int n) {}
+	 /**
+	  * disminuye la vida del elemento si es posible
+	  * @param n vida a disminuir en el elemento
+	  */
+	public abstract void disminuirVida(int n);
 	
 }

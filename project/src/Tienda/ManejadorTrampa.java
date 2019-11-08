@@ -4,7 +4,7 @@ package Tienda;
 import javax.swing.ImageIcon;
 
 import Juego.Mapa;
-import Objetos.Trampa;
+import PowerUps.Trampa;
 import Recolectable.Recolectable;
 
 public class ManejadorTrampa extends ManejadorPowerUp {

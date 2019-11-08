@@ -1,7 +1,7 @@
 package PowerUps;
 
 
-import Graficos.EscudoEfectoGrafico;
+import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import State.ProtegidoTorre;
@@ -12,7 +12,8 @@ public class Escudo extends PowerUp{
 	protected long tiempoCreado;
 	
 	public Escudo() {
-		grafico = new EscudoEfectoGrafico();
+		direccionGrafico= "/Sprites/escudoPowerUp.gif";
+		grafico = new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado= System.currentTimeMillis();
 	}

@@ -1,33 +1,29 @@
 package Personajes;
 
 import Disparos.DisparoTorre3;
-import Graficos.Torre3Grafica;
+import Graficos.ElementoGrafico;
 
 public class Torre3 extends Torre{
 
 	public Torre3() {
 		super();
-		rango = 7;
+		rango = 700;
 		danio = 1;
 		vida = 100;
 		vidaMaxima=vida;
 		frecuenciaDefault=800;
 		frecuencia =frecuenciaDefault;
+		direccionGrafico = "/Sprites/torre3.gif";
+		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 
 	@Override
 	public void disparar() {
 		if(puedeAtacar()) {
 			for (Integer fila:filas) {
-				mapa.agregar(new DisparoTorre3((int)x,fila*96,mapa,danio,rango*96));
+				mapa.agregar(new DisparoTorre3((int)x,fila*96,mapa,danio,rango));
 			}
 		}
-	}
-
-	@Override
-	public void crearGrafico(int x, int y) {
-		grafico = new Torre3Grafica();
-		
 	}
 
 	

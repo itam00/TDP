@@ -27,5 +27,6 @@ public abstract class Recolectable extends Elemento {
 	public float getFinRangoX() {
 		return x+15;
 	}
+	public void disminuirVida(int v) {}
 
 }
