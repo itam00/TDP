@@ -14,15 +14,12 @@ public abstract class Elemento {
 	protected float x,y;
 	protected int cantFilas;
 	protected Mapa mapa;
-	protected int inicioRangoY,finRangoY; //no se usa
 	protected Visitor visitor;
 	protected List<Integer> filas;
 	
 	public Elemento(int x,int y, Mapa m) {
 		muerto=false;
 		mapa=m;
-		inicioRangoY=y; //no se usa
-		finRangoY=y+96; //no se usa
 		this.x=(int)(x/102)*102;
 		this.y=(int)(y/96)*96;
 		cantFilas=1;
@@ -92,15 +89,6 @@ public abstract class Elemento {
 		}
 		mapa=m;
 	}
-	
-	public int getInicioRangoY() { //no se usa
-		return inicioRangoY;
-	}
-	
-	public int getFinRangoY() { //no se usa
-		return inicioRangoY;
-	}
-
 	
 
 	public void actualizar() {

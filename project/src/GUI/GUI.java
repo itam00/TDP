@@ -1,5 +1,7 @@
 package GUI;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
@@ -76,7 +78,7 @@ public class GUI extends JFrame implements MouseListener{
 
 	private void setearVentana() {
 		getContentPane().setLayout(null);
-		setResizable(true);
+		setResizable(false);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1028, 768);// esto quedo asi porque con 1024 no se ve el borde
@@ -130,6 +132,17 @@ public class GUI extends JFrame implements MouseListener{
 	
 	public Tienda getTienda() {
 		return tienda;
+	}
+	
+	public void enemigoGana() {
+		JLabel pierde= new JLabel ("gano la maquinola");
+		pierde.setForeground(new Color(0,0,0));
+		pierde.setFont(new Font("Arial",8,30));
+		pierde.setSize(350,50);
+		pierde.setLocation(400, 250);
+		panelJuego.add(pierde);
+		panelJuego.setComponentZOrder(pierde, 0);
+		
 	}
 }
 //setbound

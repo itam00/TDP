@@ -17,9 +17,11 @@ public class VisitorVenta extends Visitor {
 
 	@Override
 	public void visit(Torre t) {
+		int valor=t.getPrecio();
+		if (t.getVida()< t.getVidaMaxima())
+			valor/=2;
+		mio.devolver(valor);
 		t.setMuerto(true);
-		mio.devolver(t);
-		
 	}
 
 	@Override

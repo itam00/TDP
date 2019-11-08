@@ -1,12 +1,10 @@
 package Objetos;
 
-import Graficos.BarreraGrafico; 
+import Graficos.BarreraGrafico;  
 import Personajes.Enemigo;
 import Personajes.Torre;
-import PowerUps.PowerUp;
 import State.AtacandoEnemigo;
 import State.AtacandoTorre;
-import Visitor.VisitorPowerUp;
 
 public class Barrera extends Obstaculo{
 	

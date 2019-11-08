@@ -9,6 +9,8 @@ import Visitor.VisitorTorre;
 
 public abstract class Torre extends Personaje implements Comprable{
 	protected StateTorre state;
+	protected int vidaMaxima;
+	
 	public Torre() {
 		super();
 		visitor=new VisitorTorre(this);
@@ -62,6 +64,10 @@ public abstract class Torre extends Personaje implements Comprable{
 	
 	public void setState(StateTorre state) {
 		this.state = state;
+	}
+	
+	public int getVidaMaxima() {
+		return vidaMaxima;
 	}
 	
 	public abstract void crearGrafico(int x,int y);

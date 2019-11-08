@@ -1,9 +1,8 @@
 package Juego;
-import java.util.*;
+import java.util.*; 
 
 import Entidad.Elemento;
 import GUI.*;
-import Objetos.Objeto;
 import Objetos.Obstaculo;
 import Personajes.*;
 import PowerUps.PowerUp;
@@ -20,7 +19,7 @@ public class Controlador {
 	protected Iterator<List<Enemigo>> oleadasNivel;
 	protected Iterator<Enemigo> oleada;
 	protected int cantEnemigosOleada,tiempoEspera;
-	protected boolean esperando;
+	protected boolean esperando,termino;
 	protected long frecuenciaAgregacion,ultimaActualizacion;
 	
 	public Controlador(GUI g, Mapa m, Jugador j,Tienda t) {
@@ -37,28 +36,31 @@ public class Controlador {
 		cantEnemigosOleada = aux.size();
 		oleada = aux.iterator();
 		tiempoEspera = 5000;
+		termino=false;
 	}
 	
 	public synchronized void actualizar() {
-		
-		mapa.actualizar();
-		if(mapa.enemigoGana()) {
-			System.out.println("enemigo gana");
-		}
-		tienda.actualizar();
-		
-		agregarEnemigos();
-		if(mapa.getDerrotados()==cantEnemigosOleada) {
-			if(oleadasNivel.hasNext()) {
-				cargarSiguienteOleada();
+		if (!termino) {
+			mapa.actualizar();
+			if(mapa.enemigoGana()) {
+				gui.enemigoGana();
+				termino=true;
 			}
 			else {
-				//siguiente nivel
+				tienda.actualizar();
+				agregarEnemigos();
+				if(mapa.getDerrotados()==cantEnemigosOleada) {
+					if(oleadasNivel.hasNext()) {
+						cargarSiguienteOleada();
+					}
+					else {
+						//siguiente nivel
+					}
+				}
+				frecuenciaAgregacion++;
+				ultimaActualizacion=5;
 			}
 		}
-		frecuenciaAgregacion++;
-		ultimaActualizacion=5;
-		
 	}
 	
 	public void agregarEnemigos() {
@@ -83,13 +85,13 @@ public class Controlador {
 			if(tienda.hayTorreComprada()){
 				Torre t = tienda.getTorreComprada();
 				if(!colocar(t,x,y)) {
-					tienda.devolver(t);
+					tienda.devolver(t.getPrecio());
 				}
 			}
 			else if(tienda.hayObstaculoUsado()) {
 				Obstaculo o = tienda.getObstaculoComprado();
 				if(!colocar(o,x,y)) {
-					tienda.devolver(o);
+					tienda.devolver(o.getPrecio());
 				}
 			}
 			else if(tienda.hayPowerUpUsado()) {

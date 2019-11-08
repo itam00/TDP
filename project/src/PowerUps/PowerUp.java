@@ -1,11 +1,9 @@
 package PowerUps;
 
-import Entidad.Comprable;
+import Entidad.Comprable; 
 import Entidad.Elemento; 
-import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Tienda.ManejadorPowerUp;
 import Visitor.Visitor;
 
 public abstract class PowerUp extends Elemento implements Comprable{
