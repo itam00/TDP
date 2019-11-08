@@ -1,11 +1,8 @@
 package Tienda;
 
-import java.awt.event.ActionEvent;
+import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-
-import Personajes.Torre1;
 
 public class BotonVenta extends JButton {
 

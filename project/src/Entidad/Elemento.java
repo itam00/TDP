@@ -94,7 +94,6 @@ public abstract class Elemento {
 		}
 		mapa=m;
 	}
-
 	
 	/**
 	 * actualiza el grafico del elemento segun la posicion logica del mismo

@@ -7,7 +7,6 @@ import Personajes.Torre;
 import State.AtacandoEnemigo;
 import State.AtacandoTorre;
 
-
 public class Barrera extends Obstaculo{
 	
 	public Barrera(){

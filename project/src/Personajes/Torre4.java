@@ -12,6 +12,7 @@ public class Torre4 extends Torre{
 		rango = 500;
 		danio = 1;
 		vida = 100;
+		vidaMaxima=vida;
 		frecuenciaDefault=500;
 		frecuencia =frecuenciaDefault;
 		direccionGrafico = "/Sprites/torre4.gif";

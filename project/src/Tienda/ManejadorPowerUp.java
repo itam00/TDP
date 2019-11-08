@@ -2,11 +2,6 @@ package Tienda;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import Juego.Mapa;
-import Recolectable.Recolectable;
 
 public abstract class ManejadorPowerUp extends ManejadorComprable {
 	

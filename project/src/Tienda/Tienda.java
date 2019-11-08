@@ -64,8 +64,8 @@ public class Tienda extends JPanel{
 	}
 
 	
-	public void devolver(Comprable t) {
-		jugador.agregarOro(t.getPrecio());
+	public void devolver(int valor) {
+		jugador.agregarOro(valor);
 	}
 	
 	public void setPowerUpUsado(PowerUp p) {
