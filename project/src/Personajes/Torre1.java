@@ -8,7 +8,7 @@ public class Torre1 extends Torre{
 	public Torre1() {
 		super();
 		rango = 200;
-		danio = 1;
+		danio = 5;
 		vida =200;
 		vidaMaxima=vida;
 		cantFilas=1;

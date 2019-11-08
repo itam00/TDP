@@ -5,6 +5,10 @@ import javax.swing.JLabel;
 
 public class ElementoGrafico extends JLabel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int width, height;
 	protected ImageIcon image;
 	protected boolean muerto;

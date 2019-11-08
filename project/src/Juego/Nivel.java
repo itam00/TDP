@@ -3,7 +3,7 @@ package Juego;
 import java.util.LinkedList; 
 import java.util.List;
 
-import Entidad.Lago;
+import Objetos.Lago;
 import Objetos.Objeto;
 import Objetos.Piedra;
 import Personajes.Enemigo;

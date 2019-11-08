@@ -1,10 +1,9 @@
 package Personajes;
 
 
-import Entidad.Elemento; 
+import Entidad.Elemento;  
 import Juego.Mapa;
 import State.DefaultEnemigo;
-import State.RalentizadoEnemigo;
 import State.StateEnemigo;
 import Visitor.Visitor;
 import Visitor.VisitorEnemigo;

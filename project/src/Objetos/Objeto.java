@@ -1,9 +1,8 @@
 package Objetos;
-import Entidad.Elemento; 
+import Entidad.Elemento;  
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Visitor.Visitor;
 
 public abstract class Objeto extends Elemento{
 	protected int vida;

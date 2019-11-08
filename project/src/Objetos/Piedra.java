@@ -1,12 +1,10 @@
 package Objetos;
 
-import Entidad.ObjetoMapa; 
-import Graficos.ElementoGrafico;
+import Graficos.ElementoGrafico; 
 
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Visitor.Visitor;
 
 public class Piedra extends Obstaculo {
 

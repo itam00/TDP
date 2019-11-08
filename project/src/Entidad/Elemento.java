@@ -62,9 +62,7 @@ public abstract class Elemento {
 	}
 
 	
-	public ElementoGrafico obtenerGrafico() {
-		if(grafico==null)
-			System.out.println("es nulo");
+	public ElementoGrafico getGrafico() {
 		return grafico;
 	}
 	
