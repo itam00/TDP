@@ -2,6 +2,10 @@ package Juego;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import Entidad.Lago;
+import Entidad.ObjetoMapa;
+import Entidad.Piedra;
 import Personajes.Enemigo;
 import State.ProtegidoEnemigo;
 
@@ -46,6 +50,20 @@ public abstract class Nivel {
 		if(prob>probabilidadEscudo) {
 			enemigo.setState(new ProtegidoEnemigo(enemigo));
 		}
+	}
+	
+	public ObjetoMapa generarObjetoMapa(int x, int y, Mapa m){
+		ObjetoMapa toreturn;
+		int tipoObjeto= (int)(Math.random()*2)+1;
+		if (tipoObjeto==1) {
+			toreturn= new Lago(x,y,m);
+			System.out.println("cree un lago");
+		}
+		else {
+			toreturn= new Piedra(x,y,m);
+			System.out.println("cree una piedra");
+		}
+		return toreturn;
 	}
 
 

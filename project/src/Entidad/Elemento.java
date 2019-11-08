@@ -13,6 +13,7 @@ public abstract class Elemento {
 	protected boolean muerto;
 	protected float x,y;
 	protected int cantFilas;
+	protected String direccionGrafico;
 	protected Mapa mapa;
 	protected Visitor visitor;
 	protected List<Integer> filas;
@@ -58,6 +59,8 @@ public abstract class Elemento {
 
 	
 	public ElementoGrafico obtenerGrafico() {
+		if(grafico==null)
+			System.out.println("es nulo");
 		return grafico;
 	}
 	

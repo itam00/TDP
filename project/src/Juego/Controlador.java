@@ -2,6 +2,7 @@ package Juego;
 import java.util.*; 
 
 import Entidad.Elemento;
+import Entidad.ObjetoMapa;
 import GUI.*;
 import Objetos.Obstaculo;
 import Personajes.*;
@@ -20,7 +21,7 @@ public class Controlador {
 	protected Iterator<Enemigo> oleada;
 	protected int cantEnemigosOleada,tiempoEspera;
 	protected boolean esperando,termino;
-	protected long frecuenciaAgregacion,ultimaActualizacion;
+	protected long frecuenciaAgregacionEnemigo, frecuenciaAgregacionObjetos,ultimaActualizacion, ultVezAgregueObjeto;;
 	
 	public Controlador(GUI g, Mapa m, Jugador j,Tienda t) {
 		gui = g;
@@ -34,8 +35,10 @@ public class Controlador {
 		cantEnemigosOleada = aux.size();
 		oleada = aux.iterator();
 		
-		frecuenciaAgregacion = nivel.getFrecuencia();
+		frecuenciaAgregacionEnemigo = nivel.getFrecuencia();
+		frecuenciaAgregacionObjetos=-1;
 		ultimaActualizacion = 0;
+		ultVezAgregueObjeto=0;
 		
 		tiempoEspera = 5000;
 		termino=false;
@@ -44,12 +47,16 @@ public class Controlador {
 	public synchronized void actualizar() {
 			mapa.actualizar();
 			if(mapa.getEnemigoGana()) {
-				System.out.println("enemigo gana");
+				gui.enemigoGana();
 			}
 			tienda.actualizar();
 			
 			agregarEnemigos();
-			System.out.println("derrotados: " + mapa.getDerrotados());
+			if (System.currentTimeMillis()-ultVezAgregueObjeto>=frecuenciaAgregacionObjetos) {
+				agregarObjetosMapa();
+				frecuenciaAgregacionObjetos+=30000;
+				ultVezAgregueObjeto=System.currentTimeMillis();
+			}
 			if(mapa.getDerrotados()==cantEnemigosOleada) {
 				if(oleadasNivel.hasNext()) {
 					cargarSiguienteOleada();
@@ -65,7 +72,7 @@ public class Controlador {
 							//siguiente nivel
 						}
 					}
-					frecuenciaAgregacion++;
+					frecuenciaAgregacionEnemigo++;
 					ultimaActualizacion=5;
 				}
 			}
@@ -73,10 +80,26 @@ public class Controlador {
 	
 	public void agregarEnemigos() {
 		Enemigo aux;
-		while(oleada.hasNext() && System.currentTimeMillis()-ultimaActualizacion >= frecuenciaAgregacion) {
+		while(oleada.hasNext() && System.currentTimeMillis()-ultimaActualizacion >= frecuenciaAgregacionEnemigo) {
 			aux = oleada.next();
 			mapa.agregar(aux);
 			ultimaActualizacion = System.currentTimeMillis();
+		}
+	}
+	
+	public void agregarObjetosMapa() {
+		int cantObjetos= (int)(Math.random()*5);
+		System.out.println(cantObjetos);
+		int x, y,fila;
+		ObjetoMapa obj;
+		for (int i=0; i<cantObjetos;i++) {
+			x= (int)((Math.random()*700)+300); //divido por 102 para que quede colocado en alguna "celda" logica.
+			fila= (int)(Math.random()*5);
+			y=fila*96; //el constructor recibe el pixel y y computa la fila, por esto es necesario multiplicar por 96.
+			obj=nivel.generarObjetoMapa(x, y, mapa);
+			if (mapa.puedoPoner(obj,x,y))
+				mapa.agregar(obj);
+			//gui.añadirElemento(obj);
 		}
 	}
 	

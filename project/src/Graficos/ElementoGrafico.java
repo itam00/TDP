@@ -17,6 +17,15 @@ public abstract class ElementoGrafico extends JLabel{
 		this.setOpaque(false);
 	}
 	
+	public ElementoGrafico(String dir) {
+		image = new ImageIcon(getClass().getResource(dir));
+		this.setIcon(image);
+		width  =103;
+		height = 97;
+		setOpaque(false);
+		muerto=false;
+	}
+	
 	public void setMuerto(boolean b) {
 		muerto=b;
 	}

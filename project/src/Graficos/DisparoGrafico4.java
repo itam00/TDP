@@ -14,7 +14,6 @@ public class DisparoGrafico4 extends DisparoGrafico {
 
 	public DisparoGrafico4(int x, int y) {
 		super();
-
 		image = new ImageIcon(getClass().getResource("/Sprites/proyectilTorre4.gif"));
 		this.setIcon(image);
 	}

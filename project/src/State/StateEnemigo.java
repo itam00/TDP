@@ -12,4 +12,8 @@ public abstract class StateEnemigo {
 	public void disminuirVida(int n) {
 		enemigo.aplicarDaño(n);
 	}
+	
+	public void ralentizar(){
+		enemigo.setState(new RalentizadoEnemigo(enemigo));
+	}
 }
