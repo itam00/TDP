@@ -13,7 +13,6 @@ public abstract class Elemento {
 	protected boolean muerto;
 	protected float x,y;
 	protected int cantFilas;
-	protected String direccionGrafico;
 	protected Mapa mapa;
 	protected Visitor visitor;
 	protected List<Integer> filas;

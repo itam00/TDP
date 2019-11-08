@@ -6,37 +6,39 @@ import Objetos.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
-import State.AtacandoTorre;
 
-public class VisitorTorre extends Visitor{
+public class VisitorObstaculo extends Visitor{
 
-	protected Torre mio;
+	protected Obstaculo mio;
 	
-	public VisitorTorre(Torre t) {
-		mio=t;
+	public VisitorObstaculo (Obstaculo o) {
+		mio=o;
 	}
-	
+
 	@Override
 	public void visit(Torre t) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visit(Enemigo e) {
-		mio.setState(new AtacandoTorre(mio));
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visit(Disparo d) {
-		//System.out.println("llega a disparo");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void visit(PowerUp p) {
-		//System.out.println("llega a powerup");
+		// TODO Auto-generated method stub
+		
 	}
-
+	
 	@Override
 	public void visit(ObjetoMapa o) {
 		// TODO Auto-generated method stub
@@ -48,7 +50,4 @@ public class VisitorTorre extends Visitor{
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
 }

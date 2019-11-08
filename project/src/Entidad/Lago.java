@@ -3,7 +3,6 @@ import Graficos.ElementoGraficoConcreto;
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import Visitor.VisitorObjeto;
 public class Lago extends ObjetoMapa{
 
 	protected long tiempoCreado,ultimoAfectar;
@@ -15,7 +14,6 @@ public class Lago extends ObjetoMapa{
 		direccionGrafico="/Sprites/charco.gif";
 		grafico = new ElementoGraficoConcreto(direccionGrafico);
 		grafico.setLocation(x, y);
-		visitor= new VisitorObjeto(this);
 		tiempoCreado=System.currentTimeMillis();
 		duracion=7500;
 		ultimoAfectar=0;

@@ -1,16 +1,17 @@
 package Visitor;
 
 import Disparos.Disparo;
-import Objetos.Objeto;
+import Entidad.ObjetoMapa;
+import Objetos.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
 
-public class VisitorObjeto extends Visitor {
+public class VisitorObjetoMapa extends Visitor {
 
-	Objeto mio;
+	protected ObjetoMapa mio;
 	
-	public VisitorObjeto(Objeto o) {
+	public VisitorObjetoMapa(ObjetoMapa o) {
 		mio=o;
 	}
 	
@@ -37,9 +38,14 @@ public class VisitorObjeto extends Visitor {
 		
 	}
 
+	@Override
+	public void visit(ObjetoMapa o) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public void visit(Objeto o) {
+	public void visit(Obstaculo o) {
 		// TODO Auto-generated method stub
 		
 	}

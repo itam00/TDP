@@ -70,8 +70,6 @@ public abstract class Torre extends Personaje implements Comprable{
 		return vidaMaxima;
 	}
 	
-	public abstract void crearGrafico(int x,int y);
-	
 	public abstract void disparar();
 	
 	public void actualizar() {

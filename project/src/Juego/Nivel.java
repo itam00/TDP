@@ -1,11 +1,11 @@
 package Juego;
 
-import java.util.LinkedList;
+import java.util.LinkedList; 
 import java.util.List;
 
 import Entidad.Lago;
-import Entidad.ObjetoMapa;
-import Entidad.Piedra;
+import Objetos.Objeto;
+import Objetos.Piedra;
 import Personajes.Enemigo;
 import State.ProtegidoEnemigo;
 
@@ -52,8 +52,8 @@ public abstract class Nivel {
 		}
 	}
 	
-	public ObjetoMapa generarObjetoMapa(int x, int y, Mapa m){
-		ObjetoMapa toreturn;
+	public Objeto generarObjetoMapa(int x, int y, Mapa m){
+		Objeto toreturn;
 		int tipoObjeto= (int)(Math.random()*2)+1;
 		if (tipoObjeto==1) {
 			toreturn= new Lago(x,y,m);

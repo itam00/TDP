@@ -1,9 +1,9 @@
 package Juego;
-import java.util.*; 
+import java.util.*;  
 
 import Entidad.Elemento;
-import Entidad.ObjetoMapa;
 import GUI.*;
+import Objetos.Objeto;
 import Objetos.Obstaculo;
 import Personajes.*;
 import PowerUps.PowerUp;
@@ -91,10 +91,10 @@ public class Controlador {
 		int cantObjetos= (int)(Math.random()*5);
 		System.out.println(cantObjetos);
 		int x, y,fila;
-		ObjetoMapa obj;
+		Objeto obj;
 		for (int i=0; i<cantObjetos;i++) {
 			x= (int)((Math.random()*700)+300); //divido por 102 para que quede colocado en alguna "celda" logica.
-			fila= (int)(Math.random()*5);
+			fila= (int)((Math.random()*5));
 			y=fila*96; //el constructor recibe el pixel y y computa la fila, por esto es necesario multiplicar por 96.
 			obj=nivel.generarObjetoMapa(x, y, mapa);
 			if (mapa.puedoPoner(obj,x,y))

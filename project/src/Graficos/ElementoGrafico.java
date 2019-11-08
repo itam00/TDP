@@ -20,15 +20,6 @@ public class ElementoGrafico extends JLabel{
 		this.setIcon(image);
 	}
 	
-	public ElementoGrafico(String dir) {
-		image = new ImageIcon(getClass().getResource(dir));
-		this.setIcon(image);
-		width  =103;
-		height = 97;
-		setOpaque(false);
-		muerto=false;
-	}
-	
 	public void setMuerto(boolean b) {
 		muerto=b;
 	}
@@ -45,7 +36,7 @@ public class ElementoGrafico extends JLabel{
 	}
 	
 	public void actualizar(float x,float y) {
-		this.setLocation((int)x, (int)y);
+		this.setBounds((int)x, (int)y,width, height);
 	}
 
 }
