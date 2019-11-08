@@ -1,9 +1,8 @@
-package Objetos;
+package PowerUps;
 
 import Graficos.ElementoGrafico;
 import Personajes.Enemigo;
 import Personajes.Torre;
-import PowerUps.PowerUp;
 import Visitor.VisitorPowerUp;
 
 public class Trampa extends PowerUp{

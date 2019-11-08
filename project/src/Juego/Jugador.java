@@ -1,30 +1,12 @@
 package Juego;
 
-import java.awt.Graphics;
-import java.awt.Image;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-import PowerUps.PowerUp;
-
-public class Jugador extends JPanel{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Jugador{
 	protected int oro;
 	protected int puntaje;
-	protected List<PowerUp> powerUps;
 	
 	public Jugador() {
-		powerUps = new ArrayList<PowerUp>();
 		oro = 0;
 		puntaje = 0;
-		configurarPanel();
 	}
 	
 	public int getOro() {
@@ -45,28 +27,5 @@ public class Jugador extends JPanel{
 	public void reiniciarPuntaje() {
 		puntaje=0;
 	}
-	public void agregarPowerUp(PowerUp p) {
-		powerUps.add(p);
-	}
 
-	
-	public void configurarPanel(){
-		JLabel lPuntos = new JLabel("Puntos: ");
-		JLabel lOro = new JLabel("Oro: ");
-		
-		//setPreferredSize(new Dimension(300, 170));
-		setLayout(null);
-		
-		this.add(lPuntos);
-		lPuntos.setBounds(0,0,80,50);
-		this.add(lOro);
-	
-	}
-	public void paint(Graphics g) {
-		Image imagen = new ImageIcon(getClass().getResource("/Sprites/fondoTienda.png")).getImage();
-        g.drawImage(imagen, 0, 0, this.getWidth(), this.getHeight(),this);
- 
-        setOpaque(false);
-        super.paint(g);
-    }
 }

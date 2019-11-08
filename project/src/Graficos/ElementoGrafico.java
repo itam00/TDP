@@ -16,6 +16,7 @@ public class ElementoGrafico extends JLabel{
 		image = new ImageIcon(getClass().getResource(dir));
 		width  =image.getIconWidth();
 		height = image.getIconHeight();
+		this.setSize(width,height);
 		this.setIcon(image);
 	}
 	

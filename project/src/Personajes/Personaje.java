@@ -16,9 +16,6 @@ public abstract class Personaje extends Elemento{
 		super();
 	}
 	
-	public abstract void disminuirVida(int n);
-	
-	
 	public abstract void setDefault();
 	
 	public boolean getMuerto() {

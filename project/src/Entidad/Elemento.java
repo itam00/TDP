@@ -14,7 +14,6 @@ public abstract class Elemento {
 	protected float x,y;
 	protected int cantFilas;
 	protected Mapa mapa;
-	protected int inicioRangoY,finRangoY; //no se usa
 	protected Visitor visitor;
 	protected List<Integer> filas;
 	protected String direccionGrafico;
@@ -22,8 +21,6 @@ public abstract class Elemento {
 	public Elemento(int x,int y, Mapa m) {
 		muerto=false;
 		mapa=m;
-		inicioRangoY=y; //no se usa
-		finRangoY=y+96; //no se usa
 		this.x=(int)(x/102)*102;
 		this.y=(int)(y/96)*96;
 		cantFilas=1;
@@ -51,6 +48,10 @@ public abstract class Elemento {
 	public List<Integer> getFilas() {
 		return filas;
 	}
+	/**
+	 * retorna el ancho que ocupa el grafico de un elemento en la pantalla
+	 * @return ancho del elemento 
+	 */
 	
 	public int getAncho() {
 		return grafico.getAncho();
@@ -93,25 +94,26 @@ public abstract class Elemento {
 		}
 		mapa=m;
 	}
-	
-	public int getInicioRangoY() { //no se usa
-		return inicioRangoY;
-	}
-	
-	public int getFinRangoY() { //no se usa
-		return inicioRangoY;
-	}
 
 	
-
+	/**
+	 * actualiza el grafico del elemento segun la posicion logica del mismo
+	 */
 	public void actualizar() {
 		grafico.actualizar(x,y);
 	}
 	
+	/**
+	 * retorna el visitor del elemento
+	 * @return visitor del elemento
+	 */
 	public Visitor getVisitor() {
 		return visitor;
 	}
-	
-	public void disminuirVida(int n) {}
+	 /**
+	  * disminuye la vida del elemento si es posible
+	  * @param n vida a disminuir en el elemento
+	  */
+	public abstract void disminuirVida(int n);
 	
 }

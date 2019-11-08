@@ -8,7 +8,7 @@ public class Torre2 extends Torre{
 
 	public Torre2() {
 		super();
-		rango = 5;
+		rango = 500;
 		danio = 10;
 		vida = 100;
 		frecuenciaDefault=300;
@@ -21,7 +21,7 @@ public class Torre2 extends Torre{
 	public void disparar() {
 		if(puedeAtacar()) {
 			for (Integer fila:filas) {
-				mapa.agregar(new DisparoTorre2((int)x,fila*96,mapa,danio,rango*96));
+				mapa.agregar(new DisparoTorre2((int)x,fila*96,mapa,danio,rango));
 			}
 		}
 	}

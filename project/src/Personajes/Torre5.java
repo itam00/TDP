@@ -6,7 +6,7 @@ import Graficos.ElementoGrafico;
 public class Torre5 extends Torre{
 	public Torre5() {
 		super();
-		rango = 5;
+		rango = 500;
 		danio = 20;
 		vida = 100;
 		frecuenciaDefault=500;
@@ -20,7 +20,7 @@ public class Torre5 extends Torre{
 	public void disparar() {
 		if(puedeAtacar()) {
 			for (Integer fila:filas) {
-				mapa.agregar(new DisparoTorre5((int)x,fila*96,mapa,danio,rango*96));
+				mapa.agregar(new DisparoTorre5((int)x,fila*96,mapa,danio,rango));
 			}
 		}
 	}

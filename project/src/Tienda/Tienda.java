@@ -24,7 +24,7 @@ import Recolectable.*;
 public class Tienda extends JPanel{
 
 	protected Torre torreComprada;
-	protected boolean vender;
+	protected boolean seVendeTorre;
 	protected Obstaculo obstaculoUsado;
 	protected PowerUp usado;
 	protected Jugador jugador;
@@ -44,7 +44,7 @@ public class Tienda extends JPanel{
 		botones.add(new ManejadorBarrera(this));
 		botones.add(new ManejadorTrampa(this));
 		botones.add(new ManejadorEscudoInvencible(this));
-		vender=false;
+		seVendeTorre=false;
 		
 		agregarBotones();
 	}
@@ -62,6 +62,7 @@ public class Tienda extends JPanel{
 			m.agregarPowerUp();
 		}
 	}
+
 	
 	public void devolver(Comprable t) {
 		jugador.agregarOro(t.getPrecio());
@@ -135,6 +136,13 @@ public class Tienda extends JPanel{
         super.paint(g);
     }
 
+	/**
+	 * retorna o no un recolectable al al azar y lo inicializa con los atributos del mapa, x e y
+	 * @param x lugar en x donde se inicializara el recolectable
+	 * @param y lugar en y donde se inicializara el recolectable
+	 * @param m mapa con el que se inicializara el recolecatable
+	 * @return recolectable o nulo
+	 */
 	
 	public Recolectable getPowerUp(int x, int y, Mapa m) {
 		int numeroRandom = (int)(Math.random()*botones.size());
@@ -147,14 +155,14 @@ public class Tienda extends JPanel{
 	}
 	
 	public boolean hayVenta() {
-		return vender;
+		return seVendeTorre;
 	}
 	
 	public void vendio() {
-		vender=false;
+		seVendeTorre=false;
 	}
 	
 	public void quiereVender() {
-		vender=true;
+		seVendeTorre=true;
 	}
 }

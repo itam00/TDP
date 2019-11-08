@@ -1,32 +1,31 @@
-package Objetos;
+package PowerUps;
 
 import Graficos.ElementoGrafico;
+
 import Personajes.Enemigo;
 import Personajes.Torre;
-import PowerUps.PowerUp;
 import Visitor.VisitorPowerUp;
 
-public class BarreraTemporal extends PowerUp{
-	
-	protected int vida;
-	
-	public BarreraTemporal(){
-		super();
-		direccionGrafico = "/Sprites/muro.gif";
+public class EscudoInvencible extends PowerUp{
+
+	public EscudoInvencible() {
+		direccionGrafico = "/Sprites/veneno.gif";
 		grafico=  new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		tiempoCreado=System.currentTimeMillis();
-		duracion=7500;
+		duracion=-Integer.MAX_VALUE;
 	}
-
+	
 	@Override
 	public void afectar(Enemigo e) {
+		
+		e.setMuerto(true);
+		muerto=true;
 		
 	}
 
 	@Override
 	public void afectar(Torre t) {
-		
 	}
 
 	@Override
@@ -36,7 +35,9 @@ public class BarreraTemporal extends PowerUp{
 
 	@Override
 	public float getFinRangoX() {
-		return x+50;
+		return x+70;
 	}
 
+	public void actualizar() {
+	}
 }

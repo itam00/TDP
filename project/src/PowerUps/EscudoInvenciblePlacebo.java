@@ -1,7 +1,6 @@
 package PowerUps; 
 
 import Graficos.ElementoGrafico;
-import Objetos.EscudoInvencible;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import Visitor.VisitorPowerUp;
