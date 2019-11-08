@@ -1,74 +1,53 @@
 package Juego;
 
-import java.io.FileInputStream;
-
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Properties;
-import java.util.Set;
-
 import Personajes.Enemigo;
-import Personajes.Enemigo1;
-import Personajes.Enemigo2;
-import Personajes.Enemigo3;
-import Personajes.Enemigo4;
-import Personajes.Enemigo5;
+import State.ProtegidoEnemigo;
+
 
 public abstract class Nivel {
+	protected final int finMapa = 1028;
 	protected int frecuencia;
-	protected List<List<Enemigo>> enemigos;
+	protected List<List<Enemigo>> oleadasNivel;
 	protected Mapa mapa;
+	protected int cantEnemigos,cantOleadas,probabilidadEscudo;
+	
+	public Nivel(Mapa mapa) {
+		this.mapa = mapa;
+	}
 	
 	public List<List<Enemigo>> getEnemigos(){
-		System.out.println(enemigos.size());
-		return enemigos;
+		return oleadasNivel;
 	}
 	public int getFrecuencia() {
 		return frecuencia;
 	}
 	
-	protected synchronized void agregarEnemigosAListas(String dir) {
-		try {
-			Properties prop=new Properties();
-			 FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+dir);
-			 prop.load(ip);		 
-				 
-			 Set<String> keys = prop.stringPropertyNames();
-			 List<Enemigo> oleada = new LinkedList<Enemigo>();
-			 
-			 for (String key : keys){
-				 int fila =  Integer.parseInt(key)%6;
-				 System.out.println(prop.getProperty(key));
-				 
-				 switch(prop.getProperty(key)){
-				 
-					 case "enemigo1":
-						 oleada.add(new Enemigo1(1100,96*fila,mapa));
-						 break;
-					 case "enemigo2":
-						 oleada.add(new Enemigo2(1100,96*fila,mapa));
-						 break;
-					 case "enemigo3":
-						 oleada.add(new Enemigo3(1100,96*fila,mapa));
-						 break;
-					 case "enemigo4":
-						 oleada.add(new Enemigo4(1100,96*fila,mapa));
-						 break;
-					 case "enemigo5":
-						 oleada.add(new Enemigo5(1100,96*fila,mapa));
-						 break;
-					 case "fin oleada":
-						 enemigos.add(oleada);
-						 System.out.println(oleada.size());
-						 oleada = new LinkedList<Enemigo>();
-						 break;	 
-				}
-	
-			 }
-	
-	   } catch (IOException ex) {
-	   	ex.printStackTrace();
-	   }
+	protected void generarOleadas() {
+		List<Enemigo> oleada;
+		oleadasNivel = new LinkedList<List<Enemigo>>();
+		for(int i=0;i<cantOleadas;i++) {
+			oleada = new LinkedList<Enemigo>();
+			while(oleada.size()<cantEnemigos) {
+				oleada.add(generarEnemigo());
+			}
+			oleadasNivel.add(oleada);
+		}
 	}
+	
+	protected abstract Enemigo generarEnemigo();
+	
+	public int filaRandom() {
+		return (int)(Math.random()*6)*96;
+	}
+	public void agregarEscudo(Enemigo enemigo) {
+		int prob = (int)(Math.random()*101);
+		if(prob>probabilidadEscudo) {
+			enemigo.setState(new ProtegidoEnemigo(enemigo));
+		}
+	}
+
+
+
 }

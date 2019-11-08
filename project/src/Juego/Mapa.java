@@ -168,7 +168,10 @@ public class Mapa{
 		enemigoLlegaFin = true;
 	}
 	
-	public boolean enemigoGana() {
+	public void resetDerrotados() {
+		enemigosDerrotados = 0;
+	}
+	public boolean getEnemigoGana() {
 		return enemigoLlegaFin;  
 	}
 	

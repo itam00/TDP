@@ -28,26 +28,29 @@ public class Controlador {
 		mapa=m;
 		jugador = j;
 		tienda = t;
-		frecuenciaAgregacion = 0;
-		ultimaActualizacion = 5;
 		
-		nivel = new nivel1(mapa);
+		nivel = new Nivel1(mapa);
 		oleadasNivel = nivel.getEnemigos().iterator();
 		List<Enemigo>aux = oleadasNivel.next();
 		cantEnemigosOleada = aux.size();
 		oleada = aux.iterator();
+		
+		frecuenciaAgregacion = nivel.getFrecuencia();
+		ultimaActualizacion = 0;
+		
 		tiempoEspera = 5000;
 	}
 	
 	public synchronized void actualizar() {
 		
 		mapa.actualizar();
-		if(mapa.enemigoGana()) {
+		if(mapa.getEnemigoGana()) {
 			System.out.println("enemigo gana");
 		}
 		tienda.actualizar();
 		
 		agregarEnemigos();
+		System.out.println("derrotados: " + mapa.getDerrotados());
 		if(mapa.getDerrotados()==cantEnemigosOleada) {
 			if(oleadasNivel.hasNext()) {
 				cargarSiguienteOleada();
@@ -56,18 +59,15 @@ public class Controlador {
 				//siguiente nivel
 			}
 		}
-		frecuenciaAgregacion++;
-		ultimaActualizacion=5;
 		
 	}
 	
 	public void agregarEnemigos() {
 		Enemigo aux;
-		while(oleada.hasNext() && ultimaActualizacion>0 && frecuenciaAgregacion % 100==0) {
+		while(oleada.hasNext() && System.currentTimeMillis()-ultimaActualizacion >= frecuenciaAgregacion) {
 			aux = oleada.next();
 			mapa.agregar(aux);
-			oleada.remove();
-			ultimaActualizacion--;
+			ultimaActualizacion = System.currentTimeMillis();
 		}
 	}
 	
@@ -75,7 +75,7 @@ public class Controlador {
 		List<Enemigo> aux = oleadasNivel.next();
 		cantEnemigosOleada = aux.size();
 		oleada = aux.iterator();
-		
+		mapa.resetDerrotados();
 	}
 
 	public void click(int x,int y) {
