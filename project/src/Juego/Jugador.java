@@ -5,7 +5,7 @@ public class Jugador{
 	protected int puntaje;
 	
 	public Jugador() {
-		oro = 0;
+		oro = 600;
 		puntaje = 0;
 	}
 	
@@ -26,7 +26,7 @@ public class Jugador{
 	}
 	public void reiniciar() {
 		puntaje=0;
-		oro=0;
+		oro=1000;
 	}
 
 }

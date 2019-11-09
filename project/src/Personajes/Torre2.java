@@ -27,6 +27,11 @@ public class Torre2 extends Torre{
 		}
 	}
 
+	@Override
+	public int getPrecio() {
+		return 100;
+	}
+
 
 
 }

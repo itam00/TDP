@@ -42,9 +42,7 @@ public abstract class Torre extends Personaje implements Comprable{
 		muerto=vida<=0;
 	}
 	
-	public int getPrecio() {
-		return 0;
-	}
+	public abstract int getPrecio();
 	
 	public int getVida() {
 		return vida;

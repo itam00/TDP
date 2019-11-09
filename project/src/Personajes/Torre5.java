@@ -6,7 +6,7 @@ import Graficos.ElementoGrafico;
 public class Torre5 extends Torre{
 	public Torre5() {
 		super();
-		rango = 500;
+		rango = 300;
 		danio = 6;
 		vida = 100;
 		vidaMaxima=vida;
@@ -24,6 +24,11 @@ public class Torre5 extends Torre{
 				mapa.agregar(new DisparoTorre5((int)x,fila*96,mapa,danio,rango));
 			}
 		}
+	}
+
+	@Override
+	public int getPrecio() {
+		return 200;
 	}
 
 

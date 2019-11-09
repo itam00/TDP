@@ -7,7 +7,7 @@ public class Torre1 extends Torre{
 	
 	public Torre1() {
 		super();
-		rango = 200;
+		rango = 500;
 		danio = 5;
 		vida =200;
 		vidaMaxima=vida;
@@ -27,6 +27,12 @@ public class Torre1 extends Torre{
 				mapa.agregar(new DisparoTorre1((int)x,fila*96,mapa,danio,rango));
 			}
 		}
+	}
+
+
+	@Override
+	public int getPrecio() {
+		return 50;
 	}
 
 
