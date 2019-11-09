@@ -11,7 +11,7 @@ public class DefaultTorre extends StateTorre{
 	
 	@Override
 	public void actualizar() {
-		torre.obtenerGrafico().actualizar(torre.getX(),torre.getY());
+		torre.getGrafico().actualizar(torre.getX(),torre.getY());
 	}
 
 

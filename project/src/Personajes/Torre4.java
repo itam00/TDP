@@ -10,7 +10,7 @@ public class Torre4 extends Torre{
 	public Torre4() {
 		super();
 		rango = 500;
-		danio = 1;
+		danio = 3;
 		vida = 100;
 		vidaMaxima=vida;
 		frecuenciaDefault=500;

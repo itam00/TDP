@@ -18,6 +18,7 @@ public class Enemigo2 extends Enemigo{
 		puntos =  10;
 		recompensa = 100;
 		ultimoAtaque=0;
+		frecuencia= 600;
 		frecuenciaDefault=600;
 		direccionGrafico = "/Sprites/enemigo2.gif";
 		grafico=  new ElementoGrafico(direccionGrafico);

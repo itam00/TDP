@@ -40,12 +40,12 @@ public class Bomba extends PowerUp{
 	}
 
 	public void actualizar() {
-		if (System.currentTimeMillis()-tiempoCreado>3000) {
+		if (System.currentTimeMillis()-tiempoCreado>1500) {
 			List<Elemento> enRango= mapa.enRango(this);
 			for (Elemento e:enRango)
 				e.setMuerto(true);
 			muerto=true;
 		}
-		muerto= (muerto || grafico.estaMuerto());
+		grafico.actualizar(x, y);
 	}
 }

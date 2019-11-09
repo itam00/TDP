@@ -62,7 +62,7 @@ public abstract class Elemento {
 	}
 
 	
-	public ElementoGrafico obtenerGrafico() {
+	public ElementoGrafico getGrafico() {
 		return grafico;
 	}
 	

@@ -27,6 +27,10 @@ public class EscudoInvencible extends PowerUp{
 	@Override
 	public void afectar(Torre t) {
 	}
+	
+	public int getAncho() {
+		return 80;
+	}
 
 	@Override
 	public float getInicioRangoX() {

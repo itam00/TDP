@@ -1,7 +1,7 @@
 package Personajes;
 
 
-import Entidad.Elemento; 
+import Entidad.Elemento;  
 import Juego.Mapa;
 import State.DefaultEnemigo;
 import State.StateEnemigo;
@@ -94,5 +94,14 @@ public abstract class Enemigo extends Personaje{
 		if(x<0) {
 			mapa.enemigoLlegaFinMapa();
 		}
+	}
+	
+	public void ralentizar() {
+		state.ralentizar();
+	}
+
+	public void setVelocidad(float v) {
+		velocidad=v;
+		
 	}
 }

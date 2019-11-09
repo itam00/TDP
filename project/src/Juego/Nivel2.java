@@ -1,10 +1,9 @@
 package Juego;
 
-import Personajes.Enemigo;
+import Personajes.Enemigo; 
 import Personajes.Enemigo3;
 import Personajes.Enemigo4;
 import Personajes.Enemigo5;
-import State.ProtegidoEnemigo;
 
 public class Nivel2 extends Nivel{
 	public Nivel2(Mapa mapa) {

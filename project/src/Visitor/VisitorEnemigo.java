@@ -1,7 +1,8 @@
 package Visitor;
 
 import Disparos.Disparo;
-import Objetos.Objeto;
+import Objetos.ObjetoMapa;
+import Objetos.Obstaculo;
 import Personajes.Enemigo;
 import Personajes.Torre;
 import PowerUps.PowerUp;
@@ -37,8 +38,15 @@ public class VisitorEnemigo extends Visitor {
 	}
 
 	@Override
-	public void visit(Objeto o) {
+	public void visit(ObjetoMapa o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(Obstaculo o) {
 		enemigo.setState(new AtacandoEnemigo(enemigo,o));
+		
 	}
 
 }

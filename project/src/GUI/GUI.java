@@ -129,7 +129,7 @@ public class GUI extends JFrame implements MouseListener{
 	 */
 
 	public synchronized void añadirElemento(Elemento e) {
-		ElementoGrafico grafico = e.obtenerGrafico();
+		ElementoGrafico grafico = e.getGrafico();
 		panelJuego.add(grafico);
 		
 		panelJuego.setComponentZOrder(grafico, 0);
@@ -140,7 +140,7 @@ public class GUI extends JFrame implements MouseListener{
 	 */
 
 	public void eliminar(Elemento e) {
-		panelJuego.remove(e.obtenerGrafico());
+		panelJuego.remove(e.getGrafico());
 		panelJuego.repaint();
 		repaint();
 	}

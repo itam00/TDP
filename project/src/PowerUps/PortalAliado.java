@@ -10,7 +10,7 @@ public class PortalAliado extends PowerUp{
 	
 	public PortalAliado() {
 		super();
-		direccionGrafico= "/Sprites/portalIzquierdo.gif";
+		direccionGrafico= "/Sprites/portalDerecho.gif";
 		grafico = new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
 		duracion=5000;

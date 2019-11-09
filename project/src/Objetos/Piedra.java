@@ -1,13 +1,12 @@
 package Objetos;
 
-import Entidad.ObjetoMapa;
-import Graficos.ElementoGrafico;
+import Graficos.ElementoGrafico; 
 
 import Juego.Mapa;
 import Personajes.Enemigo;
 import Personajes.Torre;
 
-public class Piedra extends ObjetoMapa {
+public class Piedra extends Obstaculo {
 
 	public Piedra(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -30,6 +29,7 @@ public class Piedra extends ObjetoMapa {
 	public float getFinRangoX() {
 		return grafico.getX()+50;
 	}
+
 
 
 }
