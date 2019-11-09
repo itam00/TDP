@@ -23,15 +23,7 @@ public abstract class Enemigo extends Personaje{
 		probCongelacion = 0.8f;
 		state = new DefaultEnemigo(this);
 	}
-	
-	public int getPuntos() {
-		return puntos;
-	}
-	
-	public int getRecompensa() {
-		return recompensa;
-	}
-	
+
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
@@ -44,7 +36,7 @@ public abstract class Enemigo extends Personaje{
 		vida-=n;
 		muerto=vida<=0;
 		if(muerto) {
-			mapa.incrementarDerrotados();
+			mapa.incrementarDerrotados(recompensa,puntos);
 		}
 	}
 

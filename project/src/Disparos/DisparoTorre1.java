@@ -5,7 +5,7 @@ import Juego.Mapa;
 import Visitor.VisitorDisparoTorre;
 
 
-public class DisparoTorre1 extends Disparo {
+public class DisparoTorre1 extends DisparoTorre {
 
 
 	public DisparoTorre1(int x, int y,Mapa m,int danio,float rango) {

@@ -16,6 +16,7 @@ public abstract class Nivel {
 	protected List<List<Enemigo>> oleadasNivel;
 	protected Mapa mapa;
 	protected int cantEnemigos,cantOleadas,probabilidadEscudo;
+	protected Nivel siguienteNivel;
 	
 	public Nivel(Mapa mapa) {
 		this.mapa = mapa;
@@ -57,13 +58,18 @@ public abstract class Nivel {
 		int tipoObjeto= (int)(Math.random()*2)+1;
 		if (tipoObjeto==1) {
 			toreturn= new Lago(x,y,m);
-			System.out.println("cree un lago");
 		}
 		else {
 			toreturn= new Piedra(x,y,m);
-			System.out.println("cree una piedra");
 		}
 		return toreturn;
+	}
+	
+	public boolean haySiguienteNivel() {
+		return siguienteNivel!=null;
+	}
+	public  Nivel getSiguienteNivel() {
+		return siguienteNivel;
 	}
 
 

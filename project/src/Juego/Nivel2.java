@@ -1,6 +1,7 @@
 package Juego;
 
-import Personajes.Enemigo; 
+import Personajes.Enemigo;
+import Personajes.Enemigo2;
 import Personajes.Enemigo3;
 import Personajes.Enemigo4;
 import Personajes.Enemigo5;
@@ -12,10 +13,11 @@ public class Nivel2 extends Nivel{
 		cantEnemigos = 40;
 		cantOleadas = 3;
 		probabilidadEscudo = 30;
+		generarOleadas();
 	}
 
 	protected Enemigo generarEnemigo() {
-		int tipoEnemigo = (int)(Math.random()*3);
+		int tipoEnemigo = (int)(Math.random()*4)+1;
 		
 		Enemigo toReturn = null;
 		switch(tipoEnemigo) {
@@ -27,6 +29,9 @@ public class Nivel2 extends Nivel{
 				break;
 			case 3:
 				toReturn = new Enemigo3(finMapa,filaRandom(),mapa);
+				break;
+			case 4:
+				toReturn = new Enemigo2(finMapa,filaRandom(),mapa);
 				break;
 		}
 		agregarEscudo(toReturn);

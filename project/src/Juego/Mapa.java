@@ -158,9 +158,16 @@ public class Mapa{
 			porAgregar.add(powerup);
 		}
 	}
+	/**
+	 * incrementa la cantidad de enemigos derrotados brindando el oro y los puntos para que sean
+	 * agreados al jugador
+	 * @param oro Oro del enemigo derrotado
+	 * @param puntos Puntos del enemigo derrotado
+	 */
 	
-	public void incrementarDerrotados() {
+	public void incrementarDerrotados(int oro,int puntos) {
 		enemigosDerrotados++;
+		tienda.agregarRecompensa(oro, puntos);
 	}
 	public int getDerrotados() {
 		return enemigosDerrotados;

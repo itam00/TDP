@@ -4,7 +4,7 @@ import Graficos.ElementoGrafico;
 import Juego.Mapa;
 import Visitor.VisitorDisparoTorre;
 
-public class DisparoTorre3 extends Disparo {
+public class DisparoTorre3 extends DisparoTorre {
 
 
 	public DisparoTorre3(int x, int y,Mapa m,int danio, float rango) {

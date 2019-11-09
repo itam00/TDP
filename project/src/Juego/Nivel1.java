@@ -14,6 +14,7 @@ public class Nivel1 extends Nivel{
 		cantOleadas = 3;
 		probabilidadEscudo = 25;
 		generarOleadas();
+		siguienteNivel = new Nivel2(mapa);
 	}
 
 
@@ -37,6 +38,9 @@ public class Nivel1 extends Nivel{
 		return toReturn;
 		
 	}
+
+
+
 	
 	
 	
