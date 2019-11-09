@@ -243,5 +243,6 @@ public class GUI extends JFrame implements MouseListener{
 		repaint();
 		controlador.reiniciar();
 	}
+	
 }
 

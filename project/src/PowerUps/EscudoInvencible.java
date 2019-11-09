@@ -12,8 +12,6 @@ public class EscudoInvencible extends PowerUp{
 		direccionGrafico = "/Sprites/veneno.gif";
 		grafico=  new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
-		tiempoCreado=System.currentTimeMillis();
-		duracion=-Integer.MAX_VALUE;
 	}
 	
 	@Override
@@ -43,5 +41,6 @@ public class EscudoInvencible extends PowerUp{
 	}
 
 	public void actualizar() {
+		grafico.actualizar(x,y);
 	}
 }

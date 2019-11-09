@@ -3,8 +3,8 @@ package Graficos;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-@SuppressWarnings("serial")
 public class ElementoGrafico extends JLabel{
+
 	protected int width, height;
 	protected ImageIcon image;
 	protected boolean muerto;

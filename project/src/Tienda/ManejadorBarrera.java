@@ -28,6 +28,7 @@ public class ManejadorBarrera extends ManejadorPowerUp {
 		}
 	}
 	
+	
 	public Recolectable getRecolectable(int x, int y, Mapa m) {
 		return null;
 	}

@@ -31,12 +31,12 @@ public class EscudoInvenciblePlacebo extends PowerUp{
 	
 	@Override
 	public float getInicioRangoX() {
-		return x-100;
+		return x-40;
 	}
 	
 	@Override
 	public float getFinRangoX() {
-		return x+100;
+		return x+40;
 	}
 	
 
