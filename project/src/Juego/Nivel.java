@@ -16,6 +16,7 @@ public abstract class Nivel {
 	protected List<List<Enemigo>> oleadasNivel;
 	protected Mapa mapa;
 	protected int cantEnemigos,cantOleadas,probabilidadEscudo;
+	protected Nivel siguienteNivel;
 	
 	public Nivel(Mapa mapa) {
 		this.mapa = mapa;
@@ -62,6 +63,13 @@ public abstract class Nivel {
 			toreturn= new Piedra(x,y,m);
 		}
 		return toreturn;
+	}
+	
+	public boolean haySiguienteNivel() {
+		return siguienteNivel!=null;
+	}
+	public  Nivel getSiguienteNivel() {
+		return siguienteNivel;
 	}
 
 

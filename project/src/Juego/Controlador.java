@@ -30,18 +30,22 @@ public class Controlador {
 		tienda = t;
 		
 		nivel = new Nivel1(mapa);
-		oleadasNivel = nivel.getEnemigos().iterator();
-		List<Enemigo>aux = oleadasNivel.next();
-		cantEnemigosOleada = aux.size();
-		oleada = aux.iterator();
+		cargarNivel();
 		
-		frecuenciaAgregacionEnemigo = nivel.getFrecuencia();
 		frecuenciaAgregacionObjetos=-1;
 		ultimaActualizacion = 0;
 		ultVezAgregueObjeto=0;
 		
 		tiempoEspera = 5000;
 		termino=false;
+	}
+	
+	public void cargarNivel() {
+		oleadasNivel = nivel.getEnemigos().iterator();
+		List<Enemigo>aux = oleadasNivel.next();
+		cantEnemigosOleada = aux.size();
+		oleada = aux.iterator();
+		frecuenciaAgregacionEnemigo = nivel.getFrecuencia();
 	}
 	
 	public synchronized void actualizar() {
@@ -62,18 +66,13 @@ public class Controlador {
 					cargarSiguienteOleada();
 				}
 				else {
-					tienda.actualizar();
-					agregarEnemigos();
-					if(mapa.getDerrotados()==cantEnemigosOleada) {
-						if(oleadasNivel.hasNext()) {
-							cargarSiguienteOleada();
-						}
-						else {
-							//siguiente nivel
-						}
+					if(nivel.haySiguienteNivel()) {
+						nivel = nivel.getSiguienteNivel();	
+						cargarNivel();
 					}
-					frecuenciaAgregacionEnemigo++;
-					ultimaActualizacion=5;
+					else {
+						//gana el juego
+					}
 				}
 			}
 	}
