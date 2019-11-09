@@ -1,11 +1,10 @@
 package GUI;
 
-import java.awt.Color;
+import java.awt.Color; 
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,8 +17,8 @@ import Juego.Jugador;
 import Juego.Mapa;
 import Tienda.Tienda;
 
+@SuppressWarnings("serial")
 public class GUI extends JFrame implements MouseListener{
-	private static final long serialVersionUID = 1L;
 
 	protected Controlador controlador;
 	protected ImageIcon fondo;
