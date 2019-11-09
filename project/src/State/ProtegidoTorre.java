@@ -17,15 +17,14 @@ public class ProtegidoTorre extends StateTorre{
 	public void actualizar() {
 		if (vidaEscudo<=0 || System.currentTimeMillis()-tiempoCreado>10000) {
 			torre.setState(new DefaultTorre(torre));
+			System.out.println("deje de estar protegida");
 		}
-		System.out.println("estoy protegida");
 	}
 	
 	public void disminuirVida(int n) {
 		vidaEscudo-=n;
 		if (vidaEscudo<0) {
 			torre.aplicarDaño(n);
-			System.out.println("llegue");
 		}
 	}
 
