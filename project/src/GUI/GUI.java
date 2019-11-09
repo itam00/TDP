@@ -21,7 +21,6 @@ import Tienda.Tienda;
 public class GUI extends JFrame implements MouseListener{
 	private static final long serialVersionUID = 1L;
 
-	protected ContadorTiempo tiempo;
 	protected Controlador controlador;
 	protected ImageIcon fondo;
 	protected JPanel panelJuego,panelTienda,panelPerder;
@@ -38,7 +37,7 @@ public class GUI extends JFrame implements MouseListener{
 		tienda = new Tienda(jugador);
 		Mapa mapa= new Mapa(this,tienda);
 		controlador = new Controlador(this,mapa, jugador,tienda);
-		tiempo = new ContadorTiempo(controlador);
+		ContadorTiempo tiempo = new ContadorTiempo(controlador);
 		addMouseListener(this);
 		setearVentana();
 		setearPanelJuego();
