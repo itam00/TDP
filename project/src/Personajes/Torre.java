@@ -20,7 +20,6 @@ public abstract class Torre extends Personaje implements Comprable{
 	public void setPos(int x,int y, Mapa m) {
 		super.setPos(x,y,m);
 		this.x=(int)(x/102)*102;
-		
 	}
 	
 	public void setVelocidad(float v) {

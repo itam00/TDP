@@ -3,12 +3,8 @@ package Graficos;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-@SuppressWarnings("serial")
 public class ElementoGrafico extends JLabel{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	protected int width, height;
 	protected ImageIcon image;
