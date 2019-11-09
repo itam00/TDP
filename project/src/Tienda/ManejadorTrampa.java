@@ -11,7 +11,7 @@ public class ManejadorTrampa extends ManejadorPowerUp {
 	
 	public ManejadorTrampa(Tienda t) {
 		super(t);
-		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/congelacionIcono.png")));
+		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/trampaIcono.png")));
 		tiempoEspera = 2000;
 	}
 
