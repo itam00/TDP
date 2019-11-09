@@ -10,7 +10,7 @@ public class ManejadorBarrera extends ManejadorPowerUp {
 	
 	public ManejadorBarrera(Tienda t) {
 		super(t);
-		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/portalIcono.png")));
+		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/muroIcono.png")));
 		tiempoEspera = 10000;
 	}
 

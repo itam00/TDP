@@ -9,7 +9,7 @@ public class ManejadorFuego extends ManejadorPowerUp {
 	
 	public ManejadorFuego(Tienda t) {
 		super(t);
-		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/congelacionIcono.png")));
+		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/fuegoIcono.png")));
 		tiempoEspera = 2000;
 	}
 

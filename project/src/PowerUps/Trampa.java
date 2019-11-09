@@ -8,11 +8,9 @@ import Visitor.VisitorPowerUp;
 public class Trampa extends PowerUp{
 
 	public Trampa() {
-		direccionGrafico = "/Sprites/moneda.gif";
+		direccionGrafico = "/Sprites/trampa.gif";
 		grafico=  new ElementoGrafico(direccionGrafico);
 		visitor= new VisitorPowerUp(this);
-		tiempoCreado=System.currentTimeMillis();
-		duracion=-Integer.MAX_VALUE;
 	}
 	
 	@Override
@@ -37,7 +35,8 @@ public class Trampa extends PowerUp{
 	public float getFinRangoX() {
 		return x+50;
 	}
-
 	public void actualizar() {
+		grafico.actualizar(x, y);
 	}
+
 }
