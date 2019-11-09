@@ -1,8 +1,7 @@
 package Tienda;
 
-import java.awt.Dimension; 
-
-
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.util.LinkedList;
@@ -10,6 +9,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Entidad.Comprable;
@@ -28,6 +28,7 @@ public class Tienda extends JPanel{
 	protected Obstaculo obstaculoUsado;
 	protected PowerUp usado;
 	protected Jugador jugador;
+	protected JLabel oro,puntos;
 	List<ManejadorComprable> botones;
 
 	
@@ -47,6 +48,7 @@ public class Tienda extends JPanel{
 		seVendeTorre=false;
 		
 		agregarBotones();
+		agregarDatosJugador();
 	}
 	
 	public void comprarTorre(Torre t) {
@@ -103,7 +105,7 @@ public class Tienda extends JPanel{
 		return usado != null;
 	}
 	
-	public void agregarBotones() {
+	protected void agregarBotones() {
 		JButton torres[] = new JButton[5];
 		
 		torres[0] = new BotonTorre1(this);
@@ -126,6 +128,24 @@ public class Tienda extends JPanel{
 		BotonVenta venta= new BotonVenta(this);
 		venta.setBounds(520, 20, 80, 40);
 		add(venta);
+	}
+	
+	protected void agregarDatosJugador() {
+		oro = new JLabel(jugador.getOro()+"");
+		JLabel oroIcono = new JLabel();
+		puntos = new JLabel("Puntos: "+jugador.getPuntaje());
+		oro.setFont(new Font("Arial",3,32));
+		puntos.setFont(new Font("Arial",3,32));
+		
+		oroIcono.setIcon(new ImageIcon(getClass().getResource("/Sprites/oro.gif")));
+		this.add(oroIcono);
+		this.add(oro);
+		this.add(puntos);
+		oro.setBounds(850, 50, 50, 50);
+		oroIcono.setBounds(900, 50, 50,50);
+		puntos.setBounds(850,90,150,50);
+		
+		
 	}
 
 	public void paint(Graphics g) {
@@ -150,8 +170,11 @@ public class Tienda extends JPanel{
 	}
 	
 	public void actualizar() {
-		for (ManejadorComprable m:botones)
+		for (ManejadorComprable m:botones) {
 			m.actualizar();
+		}
+		oro.setText(""+ jugador.getOro());
+		puntos.setText("Puntos: "+ jugador.getPuntaje());
 	}
 	
 	public boolean hayVenta() {
@@ -164,5 +187,9 @@ public class Tienda extends JPanel{
 	
 	public void quiereVender() {
 		seVendeTorre=true;
+	}
+	public void agregarRecompensa(int oro, int puntos) {
+		jugador.agregarOro(oro);
+		jugador.agregarPuntos(puntos);
 	}
 }

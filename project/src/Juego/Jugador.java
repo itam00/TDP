@@ -21,7 +21,7 @@ public class Jugador{
 	public void quitarOro(int o) {
 		oro-=o;
 	}
-	public void sumarPuntaje(int p) {
+	public void agregarPuntos(int p) {
 		puntaje+=p;
 	}
 	public void reiniciarPuntaje() {
