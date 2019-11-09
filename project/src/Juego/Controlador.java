@@ -71,7 +71,7 @@ public class Controlador {
 						cargarNivel();
 					}
 					else {
-						//gana el juego
+						gui.jugadorGana();
 					}
 				}
 			}

@@ -22,9 +22,10 @@ public class GUI extends JFrame implements MouseListener{
 
 	protected Controlador controlador;
 	protected ImageIcon fondo;
-	protected JPanel panelJuego,panelTienda,panelPerder;
+	protected JPanel panelJuego,panelTienda,panelFinal;
 	protected Tienda tienda;
 	protected Jugador jugador;
+	protected JLabel labelFinalJuego;
 
 	public static void main(String[] args) {
 		GUI frame = new GUI();
@@ -146,8 +147,8 @@ public class GUI extends JFrame implements MouseListener{
 	}
 	
 	public void setearPanelPerder() {
-		panelPerder= new JPanel();
-		panelPerder.setLayout(new GridLayout());
+		panelFinal= new JPanel();
+		panelFinal.setLayout(new GridLayout());
 		JButton volverAJugar= (new JButton("volver a jugar"));
 		JButton salir= new JButton("salir");
 		volverAJugar.addMouseListener(new MouseListener() {
@@ -215,31 +216,40 @@ public class GUI extends JFrame implements MouseListener{
 		});
 		volverAJugar.setBounds(100,50,100, 50);
 		salir.setBounds(100, 100, 100, 50);
-		JLabel pierde= new JLabel ("Perdiste");
-		pierde.setForeground(new Color(0,0,0));
-		pierde.setFont(new Font("Arial",8,30));
-		pierde.setBounds(100,0,350,50);
-		panelPerder.setBounds(400,200,300, 300);
-		panelPerder.setBackground(new Color(100,255,100));
-		panelPerder.add(pierde);
-		panelPerder.add(volverAJugar);
-		panelPerder.add(salir);
+		labelFinalJuego= new JLabel ();
+		labelFinalJuego.setForeground(new Color(0,0,0));
+		labelFinalJuego.setFont(new Font("Arial",8,30));
+		labelFinalJuego.setBounds(100,0,350,50);
+		panelFinal.setBounds(400,200,300, 300);
+		panelFinal.setBackground(new Color(100,255,100));
+		panelFinal.add(labelFinalJuego);
+		panelFinal.add(volverAJugar);
+		panelFinal.add(salir);
 			
 	}
 	
 	public void enemigoGana() {
-		panelPerder.setEnabled(true);
-		panelPerder.setVisible(true);
-		panelJuego.add(panelPerder);
-		panelJuego.setComponentZOrder(panelPerder, 0);
+		labelFinalJuego.setText("Perdiste");
+		mostrarPanelFinal();
+	}
+	
+	public void jugadorGana() {
+		labelFinalJuego.setText("Ganaste");
+		mostrarPanelFinal();
+	}
+	protected void mostrarPanelFinal() {
+		panelFinal.setEnabled(true);
+		panelFinal.setVisible(true);
+		panelJuego.add(panelFinal);
+		panelJuego.setComponentZOrder(panelFinal, 0);
 		panelJuego.repaint();
 		repaint();
 	}
 	
 	public void reiniciar() {
-		panelPerder.setEnabled(false);
-		panelPerder.setVisible(false);
-		panelJuego.remove(panelPerder);
+		panelFinal.setEnabled(false);
+		panelFinal.setVisible(false);
+		panelJuego.remove(panelFinal);
 		panelJuego.repaint();
 		repaint();
 		controlador.reiniciar();
