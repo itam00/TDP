@@ -166,6 +166,7 @@ public class Mapa{
 	
 	public void incrementarDerrotados(int oro,int puntos) {
 		enemigosDerrotados++;
+		tienda.agregarRecompensa(oro, puntos);
 	}
 	public int getDerrotados() {
 		return enemigosDerrotados;

@@ -4,7 +4,7 @@ import Graficos.ElementoGrafico;
 import Juego.Mapa;
 import Visitor.VisitorDisparoTorre;
 
-public class DisparoTorre5 extends Disparo{
+public class DisparoTorre5 extends DisparoTorre{
 	public DisparoTorre5(int x, int y,Mapa m,int danio,float rango) {
 		super(x, y,m,danio,rango);
 		direccionGrafico = "/Sprites/proyectilTorre5.gif";

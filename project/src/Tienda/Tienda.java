@@ -141,9 +141,9 @@ public class Tienda extends JPanel{
 		this.add(oroIcono);
 		this.add(oro);
 		this.add(puntos);
-		oro.setBounds(850, 50, 50, 50);
+		oro.setBounds(800, 50, 100, 50);
 		oroIcono.setBounds(900, 50, 50,50);
-		puntos.setBounds(850,90,150,50);
+		puntos.setBounds(800,90,200,50);
 		
 		
 	}

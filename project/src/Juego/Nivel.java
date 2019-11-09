@@ -57,11 +57,9 @@ public abstract class Nivel {
 		int tipoObjeto= (int)(Math.random()*2)+1;
 		if (tipoObjeto==1) {
 			toreturn= new Lago(x,y,m);
-			System.out.println("cree un lago");
 		}
 		else {
 			toreturn= new Piedra(x,y,m);
-			System.out.println("cree una piedra");
 		}
 		return toreturn;
 	}

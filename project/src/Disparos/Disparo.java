@@ -36,7 +36,7 @@ public abstract class Disparo extends Elemento {
 	 */
 	@Override
 	public void actualizar() {
-		x+=velocidad;
+		mover();
 		rango-=velocidad;
 		super.actualizar();
 		if(rango<=0) {
@@ -49,6 +49,7 @@ public abstract class Disparo extends Elemento {
 	public int getAncho() {
 		return 0;
 	}
+	protected abstract void mover();
 	
 	public void disminuirVida(int v) {
 	}

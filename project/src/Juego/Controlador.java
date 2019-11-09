@@ -89,7 +89,6 @@ public class Controlador {
 	
 	public void agregarObjetosMapa() {
 		int cantObjetos= (int)(Math.random()*5);
-		System.out.println(cantObjetos);
 		int x, y,fila;
 		Objeto obj;
 		for (int i=0; i<cantObjetos;i++) {
