@@ -46,9 +46,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="GUI.GUI" project="JuegoTDP" file="/JuegoTDP/src/GUI/GUI.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="513" width="193" x="51" y="-116"/>    
+  <class id="6" language="java" name="Objetos.Lago" project="JuegoTDP" file="/JuegoTDP/src/Objetos/Lago.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="135" x="34" y="8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

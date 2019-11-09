@@ -11,7 +11,6 @@ import Visitor.VisitorEnemigo;
 public abstract class Enemigo extends Personaje{
 	protected int puntos, recompensa;
 	protected float velocidad, velocidadDefault;
-	protected boolean quieto;
 	protected final float probCongelacion;
 	protected StateEnemigo state;
 	
@@ -39,16 +38,6 @@ public abstract class Enemigo extends Personaje{
 			mapa.incrementarDerrotados(recompensa,puntos);
 		}
 	}
-
-	
-	public void setQuieto(boolean q) {
-		quieto=q;
-	}
-	
-	public boolean getQuieto() {
-		return quieto;
-	}
-
 	
 	public float getInicioRangoX() {
 		return grafico.getX();
