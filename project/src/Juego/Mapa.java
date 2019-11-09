@@ -34,30 +34,31 @@ public class Mapa{
 	
 	public synchronized void actualizar() {
 		Elemento aux;
-		
-		for(int i=0;i<entidades.length;i++) {
-			Iterator<Elemento> it = entidades[i].iterator();
-		
-			while(it.hasNext()) {
-				aux = it.next();
-				aux.actualizar();
-				if(aux.estaMuerto()) {
-					it.remove();
-					gui.eliminar(aux);
-				}
-				else {
-					verificarColision(aux);
+		if (!enemigoLlegaFin){
+			for(int i=0;i<entidades.length;i++) {
+				Iterator<Elemento> it = entidades[i].iterator();
+			
+				while(it.hasNext()) {
+					aux = it.next();
+					aux.actualizar();
+					if(aux.estaMuerto()) {
+						it.remove();
+						gui.eliminar(aux);
+					}
+					else {
+						verificarColision(aux);
+					}
 				}
 			}
-		}
 		
-		for(Elemento e: porAgregar) {
-			for (int fila:e.getFilas()) {
-				entidades[fila].add(e);
+			for(Elemento e: porAgregar) {
+				for (int fila:e.getFilas()) {
+					entidades[fila].add(e);
+				}
+				gui.añadirElemento(e);
 			}
-			gui.añadirElemento(e);
+			porAgregar.clear();
 		}
-		porAgregar.clear();
 
 	}
 	
@@ -183,5 +184,16 @@ public class Mapa{
 		return toreturn;
 	}
 	
+	public void reiniciar() {
+		for (List<Elemento> lista:entidades) {
+			for (Elemento e:lista) {
+				e.setMuerto(true);
+				gui.remove(e.getGrafico());
+				gui.eliminar(e);
+			}
+			lista.clear();
+		}
+		enemigoLlegaFin=false;
+	}
 
 }
