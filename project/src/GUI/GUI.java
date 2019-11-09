@@ -241,6 +241,7 @@ public class GUI extends JFrame implements MouseListener{
 		panelPerder.setEnabled(false);
 		panelPerder.setVisible(false);
 		panelJuego.remove(panelPerder);
+		panelPerder = null;
 		panelJuego.repaint();
 		repaint();
 		controlador.reiniciar();

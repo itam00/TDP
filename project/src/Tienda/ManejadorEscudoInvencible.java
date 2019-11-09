@@ -11,7 +11,7 @@ public class ManejadorEscudoInvencible extends ManejadorPowerUp {
 	
 	public ManejadorEscudoInvencible(Tienda t) {
 		super(t);
-		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/congelacionIcono.png")));
+		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/escudoInvencibleIcono.png")));
 		tiempoEspera = 2000;
 	}
 
