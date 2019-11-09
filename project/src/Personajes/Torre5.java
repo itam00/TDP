@@ -7,10 +7,10 @@ public class Torre5 extends Torre{
 	public Torre5() {
 		super();
 		rango = 300;
-		danio = 6;
+		danio = 8;
 		vida = 100;
 		vidaMaxima=vida;
-		frecuenciaDefault=500;
+		frecuenciaDefault=800;
 		frecuencia =frecuenciaDefault;
 		cantFilas=2;
 		direccionGrafico = "/Sprites/torre5.gif";

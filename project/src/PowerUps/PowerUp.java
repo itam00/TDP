@@ -23,7 +23,7 @@ public abstract class PowerUp extends Elemento implements Comprable{
 	}
 	
 	public int getPrecio() {
-		return 0;
+		return 100;
 	}
 	
 	public abstract void afectar(Enemigo e);

@@ -22,7 +22,6 @@ public abstract class ManejadorPowerUp extends ManejadorComprable {
 	public abstract void usarPowerUp();
 	
 	public void recogido() {
-		System.out.println("contador de congeladores aumenta en 1");
 		cant++;
 	}
 	
