@@ -72,4 +72,8 @@ public abstract class ManejadorComprable {
 		comprar.setBounds(x+31,y,31,31);
 		cantidad.setBounds(x+65, y, 60, 30);
 	}
+	
+	public void reiniciar() {
+		cant=0;
+	}
 }

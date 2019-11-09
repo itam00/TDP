@@ -2,10 +2,12 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,11 +21,9 @@ import Tienda.Tienda;
 public class GUI extends JFrame implements MouseListener{
 	private static final long serialVersionUID = 1L;
 
-	private ContadorTiempo tiempo;
-	private Controlador controlador;
-	protected List<ElementoGrafico>[] entidades;
+	protected Controlador controlador;
 	protected ImageIcon fondo;
-	protected JPanel panelJuego,panelTienda;
+	protected JPanel panelJuego,panelTienda,panelPerder;
 	protected Tienda tienda;
 	protected Jugador jugador;
 
@@ -37,11 +37,12 @@ public class GUI extends JFrame implements MouseListener{
 		tienda = new Tienda(jugador);
 		Mapa mapa= new Mapa(this,tienda);
 		controlador = new Controlador(this,mapa, jugador,tienda);
-		tiempo = new ContadorTiempo(controlador);
+		ContadorTiempo tiempo = new ContadorTiempo(controlador);
 		addMouseListener(this);
 		setearVentana();
 		setearPanelJuego();
 		setearPanelTienda();
+		setearPanelPerder();
 
 		tiempo.start();
 
@@ -145,16 +146,104 @@ public class GUI extends JFrame implements MouseListener{
 		repaint();
 	}
 	
+	public void setearPanelPerder() {
+		panelPerder= new JPanel();
+		panelPerder.setLayout(new GridLayout());
+		JButton volverAJugar= (new JButton("volver a jugar"));
+		JButton salir= new JButton("salir");
+		volverAJugar.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				reiniciar();
+			}
 	
-	public void enemigoGana() {
-		JLabel pierde= new JLabel ("gano la maquinola");
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+	
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+	
+			@Override
+			public void mousePressed(MouseEvent e) {
+				controlador.reiniciar();
+				
+			}
+	
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				controlador.reiniciar();
+				
+			}
+		});
+		
+		salir.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				System.exit(0);
+			}
+	
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+	
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+	
+			@Override
+			public void mousePressed(MouseEvent e) {
+				System.exit(0);
+				
+			}
+	
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				System.exit(0);
+				
+			}
+		});
+		volverAJugar.setBounds(100,50,100, 50);
+		salir.setBounds(100, 100, 100, 50);
+		JLabel pierde= new JLabel ("Perdiste");
 		pierde.setForeground(new Color(0,0,0));
 		pierde.setFont(new Font("Arial",8,30));
-		pierde.setSize(350,50);
-		pierde.setLocation(400, 250);
-		panelJuego.add(pierde);
-		panelJuego.setComponentZOrder(pierde, 0);
-		
+		pierde.setBounds(100,0,350,50);
+		panelPerder.setBounds(400,200,300, 300);
+		panelPerder.setBackground(new Color(100,255,100));
+		panelPerder.add(pierde);
+		panelPerder.add(volverAJugar);
+		panelPerder.add(salir);
+			
+	}
+	
+	public void enemigoGana() {
+		panelPerder.setEnabled(true);
+		panelPerder.setVisible(true);
+		panelJuego.add(panelPerder);
+		panelJuego.setComponentZOrder(panelPerder, 0);
+		panelJuego.repaint();
+		repaint();
+	}
+	
+	public void reiniciar() {
+		panelPerder.setEnabled(false);
+		panelPerder.setVisible(false);
+		panelJuego.remove(panelPerder);
+		panelJuego.repaint();
+		repaint();
+		controlador.reiniciar();
 	}
 }
 

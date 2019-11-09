@@ -145,5 +145,24 @@ public class Controlador {
 		return puedo;
 	}
 	
+	public void reiniciar() {
+		mapa.reiniciar();
+		tienda.reiniciar();
+		jugador.reiniciar();
+		nivel = new Nivel1(mapa);
+		oleadasNivel = nivel.getEnemigos().iterator();
+		List<Enemigo>aux = oleadasNivel.next();
+		cantEnemigosOleada = aux.size();
+		oleada = aux.iterator();
+		
+		frecuenciaAgregacionEnemigo = nivel.getFrecuencia();
+		frecuenciaAgregacionObjetos=-1;
+		ultimaActualizacion = 0;
+		ultVezAgregueObjeto=0;
+		
+		tiempoEspera = 5000;
+		termino=false;
+	}
+	
 	
 }

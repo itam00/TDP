@@ -192,4 +192,10 @@ public class Tienda extends JPanel{
 		jugador.agregarOro(oro);
 		jugador.agregarPuntos(puntos);
 	}
+	
+	public void reiniciar() {
+		for (ManejadorComprable m:botones) {
+			m.reiniciar();
+		}
+	}
 }
