@@ -149,6 +149,7 @@ public class Controlador {
 		mapa.reiniciar();
 		tienda.reiniciar();
 		jugador.reiniciar();
+		
 		nivel = new Nivel1(mapa);
 		oleadasNivel = nivel.getEnemigos().iterator();
 		List<Enemigo>aux = oleadasNivel.next();

@@ -4,6 +4,7 @@ import Personajes.Enemigo;
 import Personajes.Enemigo1;
 import Personajes.Enemigo2;
 import Personajes.Enemigo3;
+import Personajes.Enemigo4;
 import Personajes.Enemigo5;
 
 public class Nivel1 extends Nivel{

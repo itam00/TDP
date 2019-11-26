@@ -16,7 +16,7 @@ public class Enemigo4Gemelo extends Enemigo{
 		ultimoAtaque=0;
 		frecuenciaDefault=500;
 		frecuencia=frecuenciaDefault;
-		direccionGrafico = "/Sprites/enemigo4Gemelo.gif";
+		direccionGrafico = "/Sprites/enemigo4gemelo.gif";
 		grafico=  new ElementoGrafico(direccionGrafico);
 	}
 	

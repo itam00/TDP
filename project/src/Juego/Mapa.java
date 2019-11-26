@@ -195,12 +195,12 @@ public class Mapa{
 		for (List<Elemento> lista:entidades) {
 			for (Elemento e:lista) {
 				e.setMuerto(true);
-				//gui.remove(e.getGrafico());
 				gui.eliminar(e);
 			}
 			lista.clear();
 		}
 		enemigoLlegaFin=false;
+		enemigosDerrotados = 0;
 	}
 
 }

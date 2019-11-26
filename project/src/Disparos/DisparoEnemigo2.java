@@ -8,7 +8,7 @@ public class DisparoEnemigo2 extends DisparoEnemigo{
 
 	public DisparoEnemigo2(int x, int y,Mapa m,int danio,float rango) {
 		super(x, y,m,danio,rango);
-		direccionGrafico = "/Sprites/enemigo5Proyectil.gif";
+		direccionGrafico = "/Sprites/enemigo2proyectil.gif";
 		grafico=  new ElementoGrafico(direccionGrafico);
 		velocidad = 4;
 		visitor = new VisitorDisparoEnemigo(this);
