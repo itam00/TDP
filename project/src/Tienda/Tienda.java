@@ -52,7 +52,7 @@ public class Tienda extends JPanel{
 	}
 	
 	public void comprarTorre(Torre t) {
-		if(jugador.getOro()>=t.getPrecio()) {
+		if(torreComprada==null && jugador.getOro()>=t.getPrecio()) {
 			torreComprada = t;
 			jugador.quitarOro(t.getPrecio());
 		}

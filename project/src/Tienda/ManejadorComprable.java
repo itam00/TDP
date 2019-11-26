@@ -17,7 +17,6 @@ public abstract class ManejadorComprable {
 	protected JButton comprar,usar;
 	protected JLabel cantidad;
 	protected int cant,tiempoEspera;
-	protected boolean bloqueado;
 	protected long ultimoUsado;
 	
 	public ManejadorComprable (Tienda t) {
@@ -27,7 +26,6 @@ public abstract class ManejadorComprable {
 		usar = new JButton();
 		cantidad= new JLabel(""+cant);
 		comprar.setIcon(new ImageIcon(getClass().getResource("/Sprites/agregarIcono.gif")));
-		bloqueado = false;
 		ultimoUsado = 0;
 		Font fuente = new Font("Calibri", 2, 16);
         cantidad.setFont(fuente);
@@ -52,11 +50,10 @@ public abstract class ManejadorComprable {
 	
 	public void actualizar() {
 		
-		if(bloqueado) {
+		if(!usar.isEnabled()) {
 			int tiempoRestante = (int)((System.currentTimeMillis()-ultimoUsado)/1000);
 			usar.setText(""+ (tiempoEspera-tiempoRestante));
 			if(System.currentTimeMillis() - ultimoUsado >tiempoEspera) {
-				bloqueado = false;
 				usar.setEnabled(true);
 				usar.setText("");
 			}
