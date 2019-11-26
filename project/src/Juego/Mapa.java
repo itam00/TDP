@@ -191,11 +191,11 @@ public class Mapa{
 		return toreturn;
 	}
 	
-	public void reiniciar() {
+	public synchronized void reiniciar() {
 		for (List<Elemento> lista:entidades) {
 			for (Elemento e:lista) {
 				e.setMuerto(true);
-				gui.remove(e.getGrafico());
+				//gui.remove(e.getGrafico());
 				gui.eliminar(e);
 			}
 			lista.clear();

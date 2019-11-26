@@ -5,11 +5,8 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import Personajes.Torre2;
 
+@SuppressWarnings("serial")
 public class BotonTorre2 extends BotonTorre{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	public BotonTorre2(Tienda t){
 		super(t);
