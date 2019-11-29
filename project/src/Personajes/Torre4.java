@@ -11,7 +11,7 @@ public class Torre4 extends Torre{
 		super();
 		rango = 700;
 		danio = 7;
-		vida = 130;
+		vida = 150;
 		vidaMaxima=vida;
 		frecuenciaDefault=500;
 		frecuencia =frecuenciaDefault;

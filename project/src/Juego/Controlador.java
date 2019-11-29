@@ -19,9 +19,9 @@ public class Controlador {
 	protected Nivel nivel;
 	protected Iterator<List<Enemigo>> oleadasNivel;
 	protected Iterator<Enemigo> oleada;
-	protected int cantEnemigosOleada,tiempoEspera;
+	protected int cantEnemigosOleada,tiempoEspera,numeroNivel, numeroOleada;
 	protected boolean esperando,termino;
-	protected long frecuenciaAgregacionEnemigo, frecuenciaAgregacionObjetos,ultimaActualizacion, ultVezAgregueObjeto;;
+	protected long frecuenciaAgregacionEnemigo, frecuenciaAgregacionObjetos,ultimaActualizacion, ultVezAgregueObjeto;
 	
 	public Controlador(GUI g, Mapa m, Jugador j,Tienda t) {
 		gui = g;
@@ -30,25 +30,30 @@ public class Controlador {
 		tienda = t;
 		
 		nivel = new Nivel1(mapa);
+		numeroNivel = 0;
 		cargarNivel();
 		
 		frecuenciaAgregacionObjetos=-1;
 		ultimaActualizacion = 0;
 		ultVezAgregueObjeto=0;
-		
 		tiempoEspera = 5000;
 		termino=false;
 	}
 	
 	public void cargarNivel() {
 		oleadasNivel = nivel.getEnemigos().iterator();
+		numeroNivel++;
+		numeroOleada=1;
 		List<Enemigo>aux = oleadasNivel.next();
 		cantEnemigosOleada = aux.size();
 		oleada = aux.iterator();
 		frecuenciaAgregacionEnemigo = nivel.getFrecuencia();
+		mapa.resetDerrotados();
+		gui.mostrarLabelNivel(numeroNivel, numeroOleada);
 	}
 	
 	public synchronized void actualizar() {
+			System.out.println("Eliminados:" + mapa.getDerrotados()+ "   Enemigos oleada:"+cantEnemigosOleada);
 			mapa.actualizar();
 			if(mapa.getEnemigoGana()) {
 				gui.enemigoGana();
@@ -97,7 +102,6 @@ public class Controlador {
 			obj=nivel.generarObjetoMapa(x, y, mapa);
 			if (mapa.puedoPoner(obj,x,y))
 				mapa.agregar(obj);
-			//gui.añadirElemento(obj);
 		}
 	}
 	
@@ -105,7 +109,9 @@ public class Controlador {
 		List<Enemigo> aux = oleadasNivel.next();
 		cantEnemigosOleada = aux.size();
 		oleada = aux.iterator();
+		numeroOleada++;
 		mapa.resetDerrotados();
+		gui.mostrarLabelNivel(numeroNivel, numeroOleada);
 	}
 
 	public void click(int x,int y) {
@@ -151,6 +157,7 @@ public class Controlador {
 		jugador.reiniciar();
 		
 		nivel = new Nivel1(mapa);
+		numeroNivel=0;
 		cargarNivel();
 		
 		frecuenciaAgregacionObjetos=-1;
@@ -159,10 +166,6 @@ public class Controlador {
 		
 		tiempoEspera = 5000;
 		termino=false;
-		//oleadasNivel = nivel.getEnemigos().iterator();
-		//List<Enemigo>aux = oleadasNivel.next();
-		//cantEnemigosOleada = aux.size();
-		//oleada = aux.iterator();
 	}
 	
 	

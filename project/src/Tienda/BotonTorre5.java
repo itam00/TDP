@@ -1,29 +1,27 @@
 package Tienda;
 
-import java.awt.event.ActionEvent; 
-import java.awt.event.ActionListener;
+
 
 import javax.swing.ImageIcon;
+
+
 import Personajes.Torre5;
 
+@SuppressWarnings("serial")
 public class BotonTorre5 extends BotonTorre{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	public BotonTorre5(Tienda t){
 		super(t);
-		this.setIcon(new ImageIcon(getClass().getResource("/Sprites/torre5.gif")));
-		
-		this.addActionListener(new ActionListener() {
+		precio.setText(new Torre5().getPrecio()+"");
+	}
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				tienda.comprarTorre(new Torre5());
-			}
-			
-		});
+	@Override
+	public void comprar() {
+		tienda.comprarTorre(new Torre5());
+	}
+
+	@Override
+	public void colocarIconoTorre() {
+		this.setIcon(new ImageIcon(getClass().getResource("/Sprites/torre5.gif")));
 	}
 }

@@ -12,7 +12,7 @@ public class Enemigo2 extends Enemigo{
 		super(x, y, m);
 		velocidadDefault=0.8f;
 		velocidad=velocidadDefault;
-		vida = 100;
+		vida = 80;
 		danio = 15;
 		rango = 5;
 		puntos =  50;

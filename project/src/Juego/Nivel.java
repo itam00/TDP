@@ -15,7 +15,7 @@ public abstract class Nivel {
 	protected int frecuencia;
 	protected List<List<Enemigo>> oleadasNivel;
 	protected Mapa mapa;
-	protected int cantEnemigos,cantOleadas,probabilidadEscudo;
+	protected int cantEnemigos,cantOleadas,probabilidadEscudo,enemigosPorOleada;
 	protected Nivel siguienteNivel;
 	
 	public Nivel(Mapa mapa) {
@@ -38,6 +38,7 @@ public abstract class Nivel {
 				oleada.add(generarEnemigo());
 			}
 			oleadasNivel.add(oleada);
+			cantEnemigos+=enemigosPorOleada;
 		}
 	}
 	

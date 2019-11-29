@@ -10,9 +10,10 @@ public class Nivel2 extends Nivel{
 	public Nivel2(Mapa mapa) {
 		super(mapa);
 		frecuencia=500;
-		cantEnemigos = 40;
+		cantEnemigos = 20;
 		cantOleadas = 3;
 		probabilidadEscudo = 30;
+		enemigosPorOleada = 15;
 		generarOleadas();
 	}
 

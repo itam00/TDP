@@ -149,7 +149,7 @@ public class Tienda extends JPanel{
 	}
 
 	public void paint(Graphics g) {
-		Image imagen = new ImageIcon(getClass().getResource("/Sprites/fondoTienda.png")).getImage();
+		Image imagen = new ImageIcon(getClass().getResource("/Sprites/fondoTienda.jpg")).getImage();
         g.drawImage(imagen, 0, 0, this.getWidth(), this.getHeight(),this);
  
         setOpaque(false);

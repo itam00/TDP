@@ -1,20 +1,20 @@
 package Juego;
 
 import Personajes.Enemigo;
+
 import Personajes.Enemigo1;
 import Personajes.Enemigo2;
 import Personajes.Enemigo3;
-import Personajes.Enemigo4;
-import Personajes.Enemigo5;
 
 public class Nivel1 extends Nivel{
 	
 	public Nivel1(Mapa mapa) {
 		super(mapa);
 		frecuencia=500;
-		cantEnemigos = 10;
+		cantEnemigos = 5;
 		cantOleadas = 3;
 		probabilidadEscudo = 25;
+		enemigosPorOleada = 5;
 		generarOleadas();
 		siguienteNivel = new Nivel2(mapa);
 	}

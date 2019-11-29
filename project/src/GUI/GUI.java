@@ -25,7 +25,7 @@ public class GUI extends JFrame implements MouseListener{
 	protected JPanel panelJuego,panelTienda,panelFinal;
 	protected Tienda tienda;
 	protected Jugador jugador;
-	protected JLabel labelFinalJuego;
+	protected JLabel labelFinalJuego,labelNivel;
 
 	public static void main(String[] args) {
 		GUI frame = new GUI();
@@ -33,17 +33,20 @@ public class GUI extends JFrame implements MouseListener{
 	}
 
 	public GUI() {
-		jugador = new Jugador();
-		tienda = new Tienda(jugador);
-		Mapa mapa= new Mapa(this,tienda);
-		controlador = new Controlador(this,mapa, jugador,tienda);
-		ContadorTiempo tiempo = new ContadorTiempo(controlador);
-		addMouseListener(this);
+		
 		setearVentana();
 		setearPanelJuego();
+		
+		jugador = new Jugador();
+		tienda = new Tienda(jugador);
+		addMouseListener(this);
+		
 		setearPanelTienda();
 		setearPanelPerder();
 
+		Mapa mapa= new Mapa(this,tienda);
+		controlador = new Controlador(this,mapa, jugador,tienda);
+		ContadorTiempo tiempo = new ContadorTiempo(controlador);
 		tiempo.start();
 
 	}
@@ -107,6 +110,7 @@ public class GUI extends JFrame implements MouseListener{
 	private void setearPanelTienda(){
 		tienda.setBounds(0,576,1028,160);
 		getContentPane().add(tienda);
+		this.repaint();
 	}
 	
 	/**
@@ -158,28 +162,17 @@ public class GUI extends JFrame implements MouseListener{
 			}
 	
 			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void mouseEntered(MouseEvent e) {	}
 	
 			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void mouseExited(MouseEvent e) {}
 	
 			@Override
 			public void mousePressed(MouseEvent e) {
-				controlador.reiniciar();
-				
+				controlador.reiniciar();	
 			}
-	
 			@Override
-			public void mouseReleased(MouseEvent e) {
-				controlador.reiniciar();
-				
-			}
+			public void mouseReleased(MouseEvent e) {}
 		});
 		
 		salir.addMouseListener(new MouseListener() {
@@ -188,29 +181,17 @@ public class GUI extends JFrame implements MouseListener{
 			public void mouseClicked(MouseEvent arg0) {
 				System.exit(0);
 			}
-	
 			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-	
+			public void mouseEntered(MouseEvent e) {}
 			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-	
+			public void mouseExited(MouseEvent e) {}
 			@Override
 			public void mousePressed(MouseEvent e) {
 				System.exit(0);
-				
 			}
-	
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				System.exit(0);
-				
+				System.exit(0);	
 			}
 		});
 		volverAJugar.setBounds(100,50,100, 50);
@@ -224,6 +205,8 @@ public class GUI extends JFrame implements MouseListener{
 		panelFinal.add(labelFinalJuego);
 		panelFinal.add(volverAJugar);
 		panelFinal.add(salir);
+		
+		setearLabelNivel();
 			
 	}
 	
@@ -243,6 +226,19 @@ public class GUI extends JFrame implements MouseListener{
 		panelJuego.setComponentZOrder(panelFinal, 0);
 		panelJuego.repaint();
 		repaint();
+	}
+	
+	public void mostrarLabelNivel(int nivel, int oleada) {
+		labelNivel.setText("Nivel :"+nivel+" Oleada: "+oleada);
+	}
+	
+	protected void setearLabelNivel() {
+		labelNivel = new JLabel();
+		labelNivel.setFont(new Font("Arial",3,32));
+		labelNivel.setForeground(Color.black);
+		panelJuego.add(labelNivel);
+		labelNivel.setBounds(740, 0, 500, 40);
+		panelJuego.setComponentZOrder(labelNivel, 0);
 	}
 	
 	public void reiniciar() {

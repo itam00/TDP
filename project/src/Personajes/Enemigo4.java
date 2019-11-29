@@ -28,6 +28,11 @@ public class Enemigo4 extends Enemigo{
 			mapa.agregar(new Enemigo4Gemelo((int)x,(int)random,mapa));
 		}
 	}
+	//solo su gemelo debe incrementar la cantidad de enemigos por eso se redefine
+	public void aplicarDaño(int n) {
+		vida-=n;
+		muerto=vida<=0;
+	}
 
 	
 	

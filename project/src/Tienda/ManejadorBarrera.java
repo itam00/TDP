@@ -12,6 +12,7 @@ public class ManejadorBarrera extends ManejadorPowerUp {
 		super(t);
 		usar.setIcon(new ImageIcon(getClass().getResource("/Sprites/muroIcono.png")));
 		tiempoEspera = 10000;
+		precio.setText(new Barrera().getPrecio()+"");
 	}
 
 	@Override

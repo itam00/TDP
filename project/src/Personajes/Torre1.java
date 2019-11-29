@@ -9,7 +9,7 @@ public class Torre1 extends Torre{
 		super();
 		rango = 1000;
 		danio = 8;
-		vida =100;
+		vida =150;
 		vidaMaxima=vida;
 		cantFilas=1;
 		frecuenciaDefault=1000;

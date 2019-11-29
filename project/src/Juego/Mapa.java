@@ -202,5 +202,6 @@ public class Mapa{
 		enemigoLlegaFin=false;
 		enemigosDerrotados = 0;
 	}
+	
 
 }
