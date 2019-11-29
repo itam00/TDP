@@ -24,14 +24,17 @@ public abstract class ManejadorComprable {
 	
 	public ManejadorComprable (Tienda t) {
 		this.tienda = t;
-		precio = new JLabel(" asdf");
+		
 		cant = 0;
 		comprar = new JButton();
 		usar = new JButton();
 		cantidad= new JLabel(""+cant);
+		precio = new JLabel(" asdf");
 		comprar.setIcon(new ImageIcon(getClass().getResource("/Sprites/agregarIcono.gif")));
 		ultimoUsado = 0;
 		Font fuente = new Font("Calibri", 2, 16);
+		precio.setFont(fuente);
+		precio.setForeground(Color.black);
         cantidad.setFont(fuente);
         cantidad.setForeground(Color.black);
 		usar.setHorizontalTextPosition( SwingConstants.CENTER );
@@ -57,7 +60,6 @@ public abstract class ManejadorComprable {
 		});
 		
 		comprar.add(precio);
-		comprar.setVisible(false);
 	}
 	
 	protected abstract void comprar();
