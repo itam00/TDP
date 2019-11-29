@@ -53,7 +53,6 @@ public class Controlador {
 	}
 	
 	public synchronized void actualizar() {
-			System.out.println("Eliminados:" + mapa.getDerrotados()+ "   Enemigos oleada:"+cantEnemigosOleada);
 			mapa.actualizar();
 			if(mapa.getEnemigoGana()) {
 				gui.enemigoGana();
