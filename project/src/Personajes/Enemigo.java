@@ -93,4 +93,9 @@ public abstract class Enemigo extends Personaje{
 		velocidad=v;
 		
 	}
+	
+	public void setMuerto(boolean b) {
+		muerto=b;
+		mapa.incrementarDerrotados(recompensa,puntos);
+	}
 }
