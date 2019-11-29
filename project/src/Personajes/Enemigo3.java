@@ -10,12 +10,12 @@ public class Enemigo3 extends Enemigo {
 		velocidadDefault= 0.5f;
 		velocidad = velocidadDefault;
 		vida = 100;
-		danio = 20;
+		danio = 15;
 		rango = 1;
-		puntos =  10;
-		recompensa = 100;
+		puntos =  20;
+		recompensa = 30;
 		ultimoAtaque=0;
-		frecuenciaDefault=500;
+		frecuenciaDefault=800;
 		frecuencia = frecuenciaDefault;
 		direccionGrafico = "/Sprites/enemigo3.gif";
 		grafico=  new ElementoGrafico(direccionGrafico);

@@ -11,8 +11,8 @@ public class Enemigo4Gemelo extends Enemigo{
 		vida = 100;
 		danio = 5;
 		rango = 1;
-		puntos =  10;
-		recompensa = 100;
+		puntos =  30;
+		recompensa = 10;
 		ultimoAtaque=0;
 		frecuenciaDefault=500;
 		frecuencia=frecuenciaDefault;

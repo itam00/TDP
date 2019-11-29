@@ -8,8 +8,8 @@ public class Torre2 extends Torre{
 
 	public Torre2() {
 		super();
-		rango = 500;
-		danio = 300;
+		rango = 400;
+		danio = 3;
 		vida = 100;
 		vidaMaxima=vida;
 		frecuenciaDefault=300;
@@ -29,7 +29,7 @@ public class Torre2 extends Torre{
 
 	@Override
 	public int getPrecio() {
-		return 100;
+		return 250;
 	}
 
 

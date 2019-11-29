@@ -12,8 +12,8 @@ public class Enemigo4 extends Enemigo{
 		vida = 100;
 		danio = 5;
 		rango = 1;
-		puntos =  10;
-		recompensa = 100;
+		puntos =  20;
+		recompensa = 30;
 		ultimoAtaque=0;
 		frecuenciaDefault=500;
 		frecuencia=frecuenciaDefault;

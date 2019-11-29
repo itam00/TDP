@@ -6,9 +6,9 @@ import Graficos.ElementoGrafico;
 public class Torre5 extends Torre{
 	public Torre5() {
 		super();
-		rango = 300;
-		danio = 8;
-		vida = 100;
+		rango = 200;
+		danio = 15;
+		vida = 250;
 		vidaMaxima=vida;
 		frecuenciaDefault=800;
 		frecuencia =frecuenciaDefault;
@@ -28,7 +28,7 @@ public class Torre5 extends Torre{
 
 	@Override
 	public int getPrecio() {
-		return 200;
+		return 400;
 	}
 
 

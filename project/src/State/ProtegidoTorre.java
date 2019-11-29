@@ -14,6 +14,7 @@ public class ProtegidoTorre extends StateTorre{
 	}
 	
 	@Override
+	
 	public void actualizar() {
 		if (vidaEscudo<=0 || System.currentTimeMillis()-tiempoCreado>10000) {
 			torre.setState(new DefaultTorre(torre));

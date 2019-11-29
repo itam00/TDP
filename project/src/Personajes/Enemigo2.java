@@ -13,10 +13,10 @@ public class Enemigo2 extends Enemigo{
 		velocidadDefault=0.8f;
 		velocidad=velocidadDefault;
 		vida = 100;
-		danio = 10;
+		danio = 15;
 		rango = 5;
-		puntos =  10;
-		recompensa = 100;
+		puntos =  50;
+		recompensa = 60;
 		ultimoAtaque=0;
 		frecuencia= 600;
 		frecuenciaDefault=600;
