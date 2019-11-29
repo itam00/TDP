@@ -6,7 +6,7 @@ import Graficos.ElementoGrafico;
 public class Torre5 extends Torre{
 	public Torre5() {
 		super();
-		rango = 200;
+		rango = 400;
 
 		danio = 15;
 		vida = 300;
