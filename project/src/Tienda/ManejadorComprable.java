@@ -18,7 +18,7 @@ import Recolectable.Recolectable;
 public abstract class ManejadorComprable {
 	protected Tienda tienda;
 	protected JButton comprar,usar;
-	protected JLabel cantidad,precio;
+	protected JLabel cantidad;
 	protected int cant,tiempoEspera;
 	protected long ultimoUsado;
 	
@@ -29,12 +29,10 @@ public abstract class ManejadorComprable {
 		comprar = new JButton();
 		usar = new JButton();
 		cantidad= new JLabel(""+cant);
-		precio = new JLabel(" asdf");
+
 		comprar.setIcon(new ImageIcon(getClass().getResource("/Sprites/agregarIcono.gif")));
 		ultimoUsado = 0;
 		Font fuente = new Font("Calibri", 2, 16);
-		precio.setFont(fuente);
-		precio.setForeground(Color.black);
         cantidad.setFont(fuente);
         cantidad.setForeground(Color.black);
 		usar.setHorizontalTextPosition( SwingConstants.CENTER );
@@ -49,17 +47,7 @@ public abstract class ManejadorComprable {
 			
 		});
 		
-		comprar.addMouseListener(new MouseAdapter() {
-		    public void mouseEntered(MouseEvent evt) {
-		    	precio.setVisible(true);	
-		    }
 
-		    public void mouseExited(MouseEvent evt) {
-		    	precio.setVisible(false);
-		    }
-		});
-		
-		comprar.add(precio);
 	}
 	
 	protected abstract void comprar();
