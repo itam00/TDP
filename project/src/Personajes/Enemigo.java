@@ -11,7 +11,7 @@ import Visitor.VisitorEnemigo;
 public abstract class Enemigo extends Personaje{
 	protected int puntos, recompensa;
 	protected float velocidad, velocidadDefault;
-	protected final float probCongelacion;
+	protected final float propSoltarPowerUp;
 	protected StateEnemigo state;
 	
 	
@@ -19,7 +19,7 @@ public abstract class Enemigo extends Personaje{
 		super(x,y,m);
 		mapa = m;
 		visitor= new VisitorEnemigo(this);
-		probCongelacion = 0.8f;
+		propSoltarPowerUp = 0.2f;
 		state = new DefaultEnemigo(this);
 	}
 
@@ -32,10 +32,12 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void aplicarDaño(int n) {
-		vida-=n;
-		muerto=vida<=0;
-		if(muerto) {
-			mapa.incrementarDerrotados(recompensa,puntos);
+		if(!muerto) {
+			vida-=n;
+			muerto=vida<=0;
+			if(muerto) {
+				mapa.incrementarDerrotados(recompensa,puntos);
+			}
 		}
 	}
 	
@@ -60,7 +62,7 @@ public abstract class Enemigo extends Personaje{
 	
 
 	public void soltarPowerUp() {
-		if(Math.random()<probCongelacion) {
+		if(Math.random()<propSoltarPowerUp) {
 			mapa.soltarPowerUp((int)x,(int)y);
 		}
 	}
@@ -95,7 +97,9 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void setMuerto(boolean b) {
-		muerto=b;
-		mapa.incrementarDerrotados(recompensa,puntos);
+		if(!muerto) {
+			muerto=b;
+			mapa.incrementarDerrotados(recompensa,puntos);
+		}
 	}
 }

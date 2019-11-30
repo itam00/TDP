@@ -79,7 +79,7 @@ public class Mapa{
 		while(it.hasNext() && !coincide) {
 			aux = it.next();
 			ancho= aux.getAncho();
-			coincide = aux.getX()<= x && aux.getX()+ancho>=x;
+			coincide = aux.getX()< x && aux.getX()+ancho>x;
 		}
 		
 		return coincide;

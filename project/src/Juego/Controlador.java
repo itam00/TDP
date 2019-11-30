@@ -53,6 +53,7 @@ public class Controlador {
 	}
 	
 	public synchronized void actualizar() {
+		System.out.println("enemigos eliminados: "+ mapa.getDerrotados()+" enemigos de oleada: "+ cantEnemigosOleada);
 			mapa.actualizar();
 			if(mapa.getEnemigoGana()) {
 				gui.enemigoGana();
@@ -65,7 +66,7 @@ public class Controlador {
 				frecuenciaAgregacionObjetos+=30000;
 				ultVezAgregueObjeto=System.currentTimeMillis();
 			}
-			if(mapa.getDerrotados()==cantEnemigosOleada) {
+			if(mapa.getDerrotados()>=cantEnemigosOleada) {
 				if(oleadasNivel.hasNext()) {
 					cargarSiguienteOleada();
 				}

@@ -165,14 +165,8 @@ public class Tienda extends JPanel{
 	 */
 	
 	public Recolectable getPowerUp(int x, int y, Mapa m) {
-		Recolectable toReturn=null;
-		int numeroRandom = (int)(Math.random()*botones.size());
-		double probabilidad = Math.random();
-		if(probabilidad>0.5) {
-			toReturn = botones.get(numeroRandom).getRecolectable(x, y, m);
-		}
-		
-		return toReturn;
+		int numeroRandom = (int)(Math.random()*botones.size());	
+		return botones.get(numeroRandom).getRecolectable(x, y, m);
 	}
 	
 	public void actualizar() {
